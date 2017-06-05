@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="113px" viewBox="0 0 160 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Comparison Chart</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="50" width="15" height="33"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="33" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="20" y="36" width="15" height="47"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="47" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="40" y="17" width="15" height="66"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="66" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="60" y="0" width="15" height="83"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="83" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="80" y="7" width="15" height="76"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="76" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="100" y="17" width="15" height="66"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15" height="66" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+        <rect id="path-13" x="0" y="0" width="152" height="105"></rect>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="160" height="113">
+            <rect x="-4" y="-4" width="160" height="113" fill="white"></rect>
+            <use xlink:href="#path-13" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-245.000000, -53.000000)">
+            <g id="Comparison-Chart" transform="translate(249.000000, 57.000000)">
+                <g id="Comparison-Bars" transform="translate(19.000000, 12.000000)" stroke="#979797" stroke-opacity="0.434810915" stroke-width="2">
+                    <use id="Rectangle-2" mask="url(#mask-2)" fill="#007DA0" xlink:href="#path-1"></use>
+                    <use id="Rectangle-2" mask="url(#mask-4)" fill="#8B698E" xlink:href="#path-3"></use>
+                    <use id="Rectangle-2" mask="url(#mask-6)" fill="#EA6153" xlink:href="#path-5"></use>
+                    <use id="Rectangle-2" mask="url(#mask-8)" fill="#FED16C" xlink:href="#path-7"></use>
+                    <use id="Rectangle-2" mask="url(#mask-10)" fill="#1FAF84" xlink:href="#path-9"></use>
+                    <use id="Rectangle-2" mask="url(#mask-12)" fill="#F49064" xlink:href="#path-11"></use>
+                </g>
+                <use id="Rectangle-3" stroke="#FFFFFF" mask="url(#mask-14)" stroke-width="8" xlink:href="#path-13"></use>
+            </g>
+        </g>
+    </g>
+</svg>
