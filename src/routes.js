@@ -1,5 +1,6 @@
-import Home from './apps/home/index';
-import ReportBuilder from './apps/reportBuilder/index';
+import Home from './apps/home/';
+import ReportBuilder from './apps/reportBuilder/';
+import Events from './apps/events';
 
 export default [
   {
@@ -12,5 +13,10 @@ export default [
     component: ReportBuilder,
     linkName: "Report Builder",
     path: '/report-builder'
+  },
+    {
+    component: Events,
+    linkName: "Events",
+    path: '/events'
   }
 ]
