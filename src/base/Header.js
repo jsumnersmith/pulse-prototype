@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
+import coffee from '../images/new_coffee.png';
 import './header.css';
 
 export default class Header extends Component {
@@ -58,7 +59,7 @@ export default class Header extends Component {
           <div className="ku-header-logo text-center">
           </div>
           <div className="ku-header-profile">
-            <img src="/pulse-ui/images/avatars/avatar2.jpg" alt="Sample Avatar" className="ku-header-profile-image" />
+            <img src={coffee} alt="Sample Avatar" className="ku-header-profile-image" />
             <div className="ku-header-profile-name">
               <h4>Joel Sumner Smith</h4>
               <h6 className="meta meta-soft">Irving ISD</h6>
