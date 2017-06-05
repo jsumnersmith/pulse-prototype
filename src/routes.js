@@ -5,12 +5,12 @@ export default [
   {
     component: Home,
     linkName: "Home",
-    path: '#/',
+    path: '/',
     exact: true
   },
   {
     component: ReportBuilder,
     linkName: "Report Builder",
-    path: '#/report-builder'
+    path: '/report-builder'
   }
 ]
