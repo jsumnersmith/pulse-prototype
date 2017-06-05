@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="85px" viewBox="0 0 86 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Calendar Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="4" y="26" width="78" height="56"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="78" height="56" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="2" y="3" width="84" height="23" rx="2"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="84" height="23" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="14" y="7" width="16" height="16" rx="8"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="56" y="7" width="16" height="16" rx="8"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-138.000000, -212.000000)">
+            <g id="Calendar-Icon" transform="translate(138.000000, 212.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="4" y="8.00480606" width="76" height="74.9951939"></rect>
+                <rect id="Rectangle-7" fill="#B5B6B4" x="5" y="26" width="11" height="11"></rect>
+                <rect id="Rectangle-7" fill="#B5B6B4" x="58" y="71" width="11" height="11"></rect>
+                <rect id="Rectangle-7" fill="#B5B6B4" x="69" y="71" width="11" height="11"></rect>
+                <rect id="Rectangle-7" fill="#B5B6B4" x="15" y="26" width="11" height="11"></rect>
+                <g id="columns" transform="translate(14.000000, 27.000000)" stroke-opacity="0.991706295" stroke="#E3E6DF" stroke-width="2" stroke-linecap="square">
+                    <path d="M1,0.5 L1,54.5" id="Line"></path>
+                    <path d="M12,0.5 L12,54.5" id="Line"></path>
+                    <path d="M23,0.5 L23,54.5" id="Line"></path>
+                    <path d="M34,0.5 L34,54.5" id="Line"></path>
+                    <path d="M45,0.5 L45,54.5" id="Line"></path>
+                    <path d="M56,0.5 L56,54.5" id="Line"></path>
+                </g>
+                <g id="rows" transform="translate(5.000000, 37.000000)" stroke-opacity="0.991706295" stroke="#E3E6DF" stroke-width="2" stroke-linecap="square">
+                    <path d="M0.52,1 L74.4933333,1" id="Line"></path>
+                    <path d="M0.52,12 L74.4933333,12" id="Line"></path>
+                    <path d="M0.52,23 L74.4933333,23" id="Line"></path>
+                    <path d="M0.506666667,34 L74.48,34" id="Line"></path>
+                </g>
+                <use id="Rectangle-4" stroke="#E2E6DF" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                <use id="Rectangle-6" stroke="#B5B6B4" mask="url(#mask-4)" stroke-width="6" fill="#B5B6B4" xlink:href="#path-3"></use>
+                <use id="Rectangle-6" stroke="#B5B6B4" mask="url(#mask-6)" stroke-width="6" fill="#FFFFFF" xlink:href="#path-5"></use>
+                <use id="Rectangle-6" stroke="#B5B6B4" mask="url(#mask-8)" stroke-width="6" fill="#FFFFFF" xlink:href="#path-7"></use>
+                <path d="M5.02415093,3.32332699 C4.54484786,3.32332699 4.1384485,3.64694684 4.1384485,4.03280129 L4.1384485,80.9671987 C4.1384485,81.3530532 4.54484786,81.676673 5.02415093,81.676673 L80.9758491,81.676673 C81.4567033,81.676673 81.8631026,81.3530532 81.8631026,80.9671987 L81.8631026,4.03280129 C81.8631026,3.64694684 81.4567033,3.32332699 80.9758491,3.32332699 L5.02415093,3.32332699 L5.02415093,3.32332699 Z M80.9758491,85 L5.02415093,85 C2.25381022,85 0,83.18275 0,80.9671987 L0,4.03280129 C0,1.80480305 2.25381022,0 5.02415093,0 L80.9758491,0 C83.7461898,0 86,1.80480305 86,4.03280129 L86,80.9671987 C86,83.18275 83.7461898,85 80.9758491,85 L80.9758491,85 Z" id="Fill-86" fill="#B5B6B5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

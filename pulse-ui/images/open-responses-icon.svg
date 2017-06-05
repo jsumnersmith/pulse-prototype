@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="113px" viewBox="0 0 160 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Open Response</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="152" height="105"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="160" height="113">
+            <rect x="-4" y="-4" width="160" height="113" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-492.000000, -199.000000)" stroke="#FFFFFF">
+            <g id="Open-Response" transform="translate(496.000000, 203.000000)">
+                <use id="Rectangle-3" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
+                <path d="M62.5,62.44 C82.1061086,62.44 98,52.2679095 98,39.72 C98,27.1720905 82.1061086,17 62.5,17 C42.8938914,17 27,27.1720905 27,39.72 C27,47.2853494 28.5558365,51.9205903 37.4411765,56.05 C39.3033826,56.9154494 40.0514706,77.35 40.0514706,77.35 C40.0514706,77.35 51.2717507,61.3181038 53.1949357,61.651523 C56.1605388,62.1656644 59.2802112,62.44 62.5,62.44 Z" id="Oval-3" stroke-width="2" fill="#007DA0"></path>
+                <path d="M89.5,73.44 C109.106109,73.44 125,63.2679095 125,50.72 C125,38.1720905 109.106109,28 89.5,28 C69.8938914,28 54,38.1720905 54,50.72 C54,58.2853494 55.5558365,62.9205903 64.4411765,67.05 C66.3033826,67.9154494 67.0514706,88.35 67.0514706,88.35 C67.0514706,88.35 78.2717507,72.3181038 80.1949357,72.651523 C83.1605388,73.1656644 86.2802112,73.44 89.5,73.44 Z" id="Oval-3" stroke-width="3" fill="#8B698E" transform="translate(89.500000, 58.175000) scale(-1, 1) translate(-89.500000, -58.175000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
