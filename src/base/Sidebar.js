@@ -7,7 +7,7 @@ export default ({open, toggle = () => {}}) => (
     <div className="cl-navblock">
       <ul className="cl-vnavigation">
         {
-          routes.map(route => {
+          routes.filter(el => el.linkName).map(route => {
             return <li onClick={toggle} key={route.linkName}><Link to={route.path} >{route.linkName}</Link></li>
           })
         }
