@@ -1,7 +1,16 @@
 {
-  "main.css": "static/css/main.311fd412.css",
-  "main.css.map": "static/css/main.311fd412.css.map",
+  "main.css": "static/css/main.205b0624.css",
+  "main.css.map": "static/css/main.205b0624.css.map",
   "main.js": "static/js/main.733df464.js",
   "main.js.map": "static/js/main.733df464.js.map",
-  "static/media/new_coffee.png": "static/media/new_coffee.b27b05e8.png"
+  "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
+  "static/media/comparison-chart-icon.svg": "static/media/comparison-chart-icon.1c91950b.svg",
+  "static/media/interests-icon.svg": "static/media/interests-icon.5249c32e.svg",
+  "static/media/multiple-choice-icon.svg": "static/media/multiple-choice-icon.84dea95a.svg",
+  "static/media/new_coffee.png": "static/media/new_coffee.b27b05e8.png",
+  "static/media/open-responses-icon.svg": "static/media/open-responses-icon.a57fb09c.svg",
+  "static/media/possible-leaders-icon.svg": "static/media/possible-leaders-icon.8bd34c87.svg",
+  "static/media/ratings-heatmap-icon.svg": "static/media/ratings-heatmap-icon.7b5bbfa0.svg",
+  "static/media/section-icon.svg": "static/media/section-icon.a9549215.svg",
+  "static/media/success-and-needs-icon.svg": "static/media/success-and-needs-icon.a7d5c2b5.svg"
 }
