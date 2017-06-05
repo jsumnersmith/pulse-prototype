@@ -10,7 +10,7 @@ export default () => (
       <div>
         <Header />
         <div className="">
-          { routes.map(route => <Route {...route} />) }
+          { routes.map(route => <Route {...route} key={`route-${route.linkName}`}/>) }
         </div>
       </div>
     </Router>

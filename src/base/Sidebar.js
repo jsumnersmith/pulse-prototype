@@ -8,7 +8,7 @@ export default ({open, toggle = () => {}}) => (
       <ul className="cl-vnavigation">
         {
           routes.map(route => {
-            return <li onClick={toggle}><Link to={route.path} >{route.linkName}</Link></li>
+            return <li onClick={toggle} key={route.linkName}><Link to={route.path} >{route.linkName}</Link></li>
           })
         }
       </ul>
