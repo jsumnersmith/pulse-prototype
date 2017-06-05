@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import routes from '../routes.js';
 
 export default ({open, toggle = () => {}}) => (
   <nav className={`${open ? "active" : ""} ku-navigation cl-sidebar text-left`}>
     <div className="cl-navblock">
       <ul className="cl-vnavigation">
-        <li onClick={toggle}><Link to="/" >Home</Link></li>
-        <li onClick={toggle}><Link to="/report-builder" >Report Builder</Link></li>
+        {
+          routes.map(route => {
+            return <li onClick={toggle}><Link to={route.path} >{route.linkName}</Link></li>
+          })
+        }
       </ul>
     </div>
   </nav>

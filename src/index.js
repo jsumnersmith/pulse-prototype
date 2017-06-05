@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import Routes from './routes';
+import Page from './base/Page';
 
-
-ReactDOM.render(<Routes />, document.getElementById('root'));
+ReactDOM.render(<Page />, document.getElementById('root'));
 registerServiceWorker();
