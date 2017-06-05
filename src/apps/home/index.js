@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div className="text-center">
-        Home
+        Homesian.
       </div>
     );
   }

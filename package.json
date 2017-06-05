@@ -1,6 +1,6 @@
 {
   "name": "pulse-prototype",
-  "homepage": "https://kickup-dev.github.io/pulse-protoype/#/",
+  "homepage": "https://kickup-dev.github.io/pulse-protoype",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
