@@ -210,6 +210,10 @@ module.exports = {
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
       {
+        test: /\.json$/,
+        use: 'json-loader'
+      },
+      {
         enforce: 'post',
         test: /node_modules/,
         // include: [

@@ -4,14 +4,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "clean-pslg": "1.1.0",
     "history": "^4.6.1",
+    "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
     "text-ellipsis": "^1.0.3",
-    "clean-pslg": "1.1.0"
+    "yarn": "^0.24.5"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
