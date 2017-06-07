@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import moment from 'moment';
 import ellipsis from 'text-ellipsis';
@@ -12,7 +12,7 @@ class EventCard extends Component {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
       <div className="event-card">
-        <a href={this.props.eventLink || '#'}>
+        <Link to={`/events/view/${sampleEvent.id}`}>
           <div className="event-card-date">
             <div className="event-card-date-month">
               {moment(sampleEvent.date).format('MMM')}
@@ -41,7 +41,7 @@ class EventCard extends Component {
 
 
           </div>
-        </a>
+        </Link>
       </div>
     );
   }
@@ -60,7 +60,7 @@ class AdminControls extends Component {
   render() {
     return (
       <div className="event-admin-control text-center">
-        <a href={'/events/edit.html'} className="btn btn-primary btn-block" style={{ marginLeft: 0 }}><i className="fa fa-pencil" /> Edit Event</a>
+        <Link to="/events/edit" className="btn btn-primary btn-block"><i className="fa fa-pencil" /> Edit Event</Link>
         <a className="btn btn-default btn-block" style={{ marginLeft: 0, marginTop: 10, display: (!this.state.showCode ? 'block' : 'none') }} onClick={() => this.onClick()}>Generate Attendance Code</a>
         <div className="event-attendance-code" style={{ marginTop: 10, display: (this.state.showCode ? 'block' : 'none') }}>X5fH8Gn</div>
       </div>
@@ -74,7 +74,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
       isAttending ?
         <div>
           { isList ?
-            <a href={actionLink} className="btn btn-primary">{actionTitle}</a>
+            <Link to={actionLink} className="btn btn-primary">{actionLink}</Link>
           :
             <div style={{ marginBottom: 10 }}>
               <label>Confirm Attendance</label>
@@ -91,7 +91,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (
 
   <div className="event-card">
-    <a href={eventLink}>
+    <Link to={`/events/view/${sampleEvent.id}`}>
       <div className={`event-card-header ${showAction ? 'event-card-header--narrow' : ''}`}>
         <h5 className="event-card-time">
           <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
@@ -100,7 +100,7 @@ export const QuickCard = ({ sampleEvent, isAttending, showAction = false, action
       </div>
       { showAction ? (<div className="event-card-actions"> { isAttending ? <h5 className="meta green" style={{ marginBottom: 0 }}><i className="fa fa-check" />{"You're Attending"}</h5> : <a href={actionLink} className="btn btn-primary btn-block" style={{ display: 'inline-block', width: 160 }}>{actionTitle}</a> } </div>) : null }
       { sampleEvent.description ? <p>{ellipsis(sampleEvent.description, 200)}</p> : null }
-    </a>
+    </Link>
   </div>
  );
 
