@@ -8,6 +8,8 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 
+import SaveButtons from './apps/buttons/Save';
+
 export default [
   {
     component: Home,
@@ -24,6 +26,12 @@ export default [
     component: AdminEvents,
     linkName: "Events",
     path: '/events/admin/',
+    exact: true
+  },
+  {
+    component: SaveButtons,
+    linkName: "Saving Buttons",
+    path: '/buttons/saving/',
     exact: true
   },
   {
