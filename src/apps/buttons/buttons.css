@@ -1,5 +1,5 @@
 .wrapper {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .btn {
@@ -8,4 +8,11 @@
 
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
   opacity: 1;
+}
+
+.error {
+  margin-top: 3px;
+  margin-left: 10px;
+  color:#EA6153;
+  font-weight: 500;
 }

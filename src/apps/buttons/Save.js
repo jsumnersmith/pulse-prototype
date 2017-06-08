@@ -66,6 +66,7 @@ export default class SaveButtons extends Component {
               <option value="success">Success</option>
               <option value="error">Error</option>
             </select>
+            { this.state.buttonState === 'error' ? <p className="error">This is what an error message should look like.</p> : null}
             <div style={{marginTop: 20}}>
               <a href="#no-changes" className={`btn ${this.getButtonClass()}`} disabled={this.checkDisabled()}>
                 <Icon icon={this.getIcon()} />{this.state.buttonState}
