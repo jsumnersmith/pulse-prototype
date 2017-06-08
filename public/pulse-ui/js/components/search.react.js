@@ -12,6 +12,8 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 var _react = require('react');
 
+var _react2 = _interopRequireDefault(_react);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -137,18 +139,18 @@ var Search = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return React.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'search-box' },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'input-group' },
-          React.createElement(
+          _react2.default.createElement(
             'span',
             { className: 'input-group-addon' },
-            React.createElement('i', { className: 'fa fa-search' })
+            _react2.default.createElement('i', { className: 'fa fa-search' })
           ),
-          React.createElement('input', {
+          _react2.default.createElement('input', {
             className: 'form-control search-box-input',
             type: 'text',
             value: this.state.query,
@@ -157,7 +159,7 @@ var Search = function (_Component) {
             onKeyDown: this.onKeyPress
           })
         ),
-        React.createElement(SearchResults, {
+        _react2.default.createElement(SearchResults, {
           activeIndex: this.state.activeIndex,
           results: this.getResults(),
           renderResultMethod: this.props.renderResultMethod,
@@ -192,11 +194,11 @@ var SearchResults = function SearchResults(_ref3) {
       activeIndex = _ref3.activeIndex,
       renderResultMethod = _ref3.renderResultMethod,
       onClickForResult = _ref3.onClickForResult;
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: results.length ? 'search-box-results' : '' },
     results.map(function (result, i) {
-      return React.createElement(
+      return _react2.default.createElement(
         'div',
         {
           key: _lodash2.default.uniqueId(),

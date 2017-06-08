@@ -1,11 +1,12 @@
 import Home from './apps/home/';
 import ReportBuilder from './apps/reportBuilder/';
-import Events from './apps/events';
-import BrowseEvents from './apps/events/Browse';
-import ManageEvents from './apps/events/Manage';
-import Event from './apps/events/Event'
-import Create from './apps/events/Create'
-import Edit from './apps/events/Edit'
+//Events Admin
+import AdminEvents from './apps/events/admin';
+import AdminBrowseEvents from './apps/events/admin/Browse';
+import AdminManageEvents from './apps/events/admin/Manage';
+import AdminEvent from './apps/events/admin/Event';
+import AdminCreate from './apps/events/admin/Create';
+import AdminEdit from './apps/events/admin/Edit';
 
 export default [
   {
@@ -20,29 +21,29 @@ export default [
     path: '/report-builder'
   },
   {
-    component: Events,
+    component: AdminEvents,
     linkName: "Events",
-    path: '/events',
+    path: '/events/admin/',
     exact: true
   },
   {
-    component: BrowseEvents,
-    path: '/events/browse-upcoming'
+    component: AdminBrowseEvents,
+    path: '/events/admin/browse-upcoming'
   },
   {
-    component: ManageEvents,
-    path: '/events/manage'
+    component: AdminManageEvents,
+    path: '/events/admin/manage'
   },
   {
-    component: Event,
-    path: '/events/view/:id'
+    component: AdminEvent,
+    path: '/events/admin/view/:id'
   },
   {
-    component: Create,
-    path: '/events/create'
+    component: AdminCreate,
+    path: '/events/admin/create'
   },
    {
-    component: Edit,
-    path: '/events/edit'
+    component: AdminEdit,
+    path: '/events/admin/edit'
   }
 ]

@@ -17,16 +17,16 @@ export default class Nav extends Component {
     return (
       <ul className="nav nav-links transparent" style={{marginTop: 20, paddingLeft: 0}}>
         <li className={this.checkActive("home")}>
-          <Link to="/events/" className="nav-link"><span>Home</span></Link>
+          <Link to="/events/admin/" className="nav-link"><span>Home</span></Link>
         </li>
         <li className={this.checkActive("browse")}>
-          <Link to="/events/browse-upcoming/" className="nav-link"><span>Browse Events</span></Link>
+          <Link to="/events/admin/browse-upcoming/" className="nav-link"><span>Browse Events</span></Link>
         </li>
 
         <li className={this.checkActive("manage")}>
-          <Link to="/events/manage/" className="nav-link"><span>Manage</span></Link>
+          <Link to="/events/admin/manage/" className="nav-link"><span>Manage</span></Link>
         </li>
-        <Link to="/events/create" className="btn btn-primary">Add Event</Link>
+        <Link to="/events/admin/create" className="btn btn-primary">Add Event</Link>
       </ul>
     )
   }
