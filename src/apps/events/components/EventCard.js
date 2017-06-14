@@ -12,7 +12,7 @@ class EventCard extends Component {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
       <div className="event-card">
-        <Link to={`/events/view/${sampleEvent.id}`}>
+        <Link to={actionLink}>
           <div className="event-card-date">
             <div className="event-card-date-month">
               {moment(sampleEvent.date).format('MMM')}
@@ -60,7 +60,7 @@ class AdminControls extends Component {
   render() {
     return (
       <div className="event-admin-control text-center">
-        <Link to="/events/edit" className="btn btn-primary btn-block"><i className="fa fa-pencil" /> Edit Event</Link>
+        <Link to="/events/admin/edit" className="btn btn-primary btn-block"><i className="fa fa-pencil" /> Edit Event</Link>
         <a className="btn btn-default btn-block" style={{ marginLeft: 0, marginTop: 10, display: (!this.state.showCode ? 'block' : 'none') }} onClick={() => this.onClick()}>Generate Attendance Code</a>
         <div className="event-attendance-code" style={{ marginTop: 10, display: (this.state.showCode ? 'block' : 'none') }}>X5fH8Gn</div>
       </div>
@@ -91,7 +91,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (
 
   <div className="event-card">
-    <Link to={`/events/view/${sampleEvent.id}`}>
+    <Link to={eventLink}>
       <div className={`event-card-header ${showAction ? 'event-card-header--narrow' : ''}`}>
         <h5 className="event-card-time">
           <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>

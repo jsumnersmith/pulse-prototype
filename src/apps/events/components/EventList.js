@@ -106,11 +106,13 @@ const stubIsAttending = id => id === 1;
 class DayOfEvents extends Component {
   render() {
     const { date, events, color, urlPrefix, isAdmin } = this.props;
+    console.log(`URL prefix is ${urlPrefix}`);
     return (
       <div>
         <p style={{ marginTop: 20, marginBottom: 0, borderBottom: `3px solid ${color}`, paddingBottom: 5 }}><strong>{moment(date).format('dddd MMMM Do, YYYY')}</strong></p>
         { events.map(sampleEvent => (
           <EventCard
+            key={isAdmin + sampleEvent.id}
             isList
             isAdmin={isAdmin}
             showAction
