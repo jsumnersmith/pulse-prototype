@@ -196,10 +196,10 @@ export default () => (
           <div className="block-flat closed" draggable="true">
             <div className="header">
               <div className="actions">
-                <a href="#" className="minimize">
+                <a href="#sample" className="minimize">
                   <i className="fa fa-chevron-down"></i>
                 </a>
-                <a href="#" className="close-down">
+                <a href="#sample" className="close-down">
                   <i className="fa fa-times"></i>
                 </a>
               </div>
@@ -228,10 +228,10 @@ export default () => (
           <div className="block-flat" draggable="true">
             <div className="header">
               <div className="actions">
-                <a href="#" className="minimize">
+                <a href="#sample" className="minimize">
                   <i className="fa fa-chevron-down"></i>
                 </a>
-                <a href="#" className="close-down">
+                <a href="#sample" className="close-down">
                   <i className="fa fa-times"></i>
                 </a>
               </div>
@@ -311,10 +311,10 @@ export default () => (
           <div className="block-flat closed" draggable="true">
             <div className="header">
               <div className="actions">
-                <a href="#" className="minimize">
+                <a href="#sample" className="minimize">
                   <i className="fa fa-chevron-down"></i>
                 </a>
-                <a href="#" className="close-down">
+                <a href="#sample" className="close-down">
                   <i className="fa fa-times"></i>
                 </a>
               </div>
@@ -343,10 +343,10 @@ export default () => (
           <div className="block-flat" draggable="true">
             <div className="header">
               <div className="actions">
-                <a href="#" className="minimize">
+                <a href="#sample" className="minimize">
                   <i className="fa fa-chevron-down"></i>
                 </a>
-                <a href="#" className="close-down">
+                <a href="#sample" className="close-down">
                   <i className="fa fa-times"></i>
                 </a>
               </div>

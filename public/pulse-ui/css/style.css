@@ -1971,6 +1971,7 @@ body.texture {
   margin: 0;
 }
 .login-container {
+  background: #23262B url('../images/table-bg.jpg') center center no-repeat;
   background-size: cover;
 }
 .login-container .middle-login {
@@ -2884,6 +2885,7 @@ table.information > tbody > tr > td {
   margin: 0;
 }
 .sign-up-container {
+  background: #23262B url('../images/table-bg.jpg') center center no-repeat;
   background-size: cover;
 }
 .sign-up-container .middle-sign-up {
