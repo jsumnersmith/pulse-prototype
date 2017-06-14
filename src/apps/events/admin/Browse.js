@@ -7,7 +7,7 @@ import '../events.css';
 
 export default () => (
   <div className="wrapper">
-    <SubHeader activeName="browse" />
-    <EventList events={sampleEvents} urlPrefix={'/events/'} isAdmin={true}/>
+    <SubHeader activeName="browse" admin={true}/>
+    <EventList events={sampleEvents} urlPrefix={'/events/admin/'} isAdmin={true}/>
   </div>
 )

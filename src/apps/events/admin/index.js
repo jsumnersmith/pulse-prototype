@@ -9,7 +9,7 @@ export default class Events extends Component {
   render(){
     return (
       <div className="wrapper">
-        <SubHeader activeName="home" />
+        <SubHeader activeName="home" admin={true}/>
         <div className="row">
           <div className="col-md-12">
             <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="fa fa-calendar circle-icon--medium pulse-blue color-text"></i> <strong>Welcome!</strong></h5>

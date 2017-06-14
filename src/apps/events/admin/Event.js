@@ -17,7 +17,7 @@ export default class EventPage extends Component {
   render(){
     return (
       <div className="wrapper">
-        <SubHeader activeName="browse" />
+        <SubHeader activeName="browse" admin={true}/>
         <EventCard
           sampleEvent={this.getEvent()}
           showAction={true}

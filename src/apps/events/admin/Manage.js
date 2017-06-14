@@ -7,7 +7,7 @@ import '../events.css';
 
 export default () => (
   <div className="wrapper">
-    <SubHeader activeName="manage" />
+    <SubHeader activeName="manage" admin={true}/>
     <div className="row" style={{marginTop: 0}}>
     <div className="col-md-12" style={{marginBottom: 20}}>
         <h5 className="event-list-title" style={{ background: "#007DA0"}}><i className="fa fa-calendar-check-o circle-icon--medium pulse-blue"></i> <strong>Approve Submitted Events</strong></h5>

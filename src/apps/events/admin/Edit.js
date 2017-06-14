@@ -7,7 +7,7 @@ import '../events.css';
 
 export default () => (
   <div className="wrapper wrapper--narrow">
-    <SubHeader />
+    <SubHeader activeName="edit" admin={true}/>
     <div className="block-flat">
       <h3 ><i className="fa fa-calendar circle-icon pulse-blue"></i> <strong> Details</strong></h3>
       <form>

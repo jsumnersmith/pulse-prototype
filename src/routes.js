@@ -8,6 +8,12 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 
+import UserEvents from './apps/events/user';
+import UserBrowseEvents from './apps/events/user/Browse';
+import UserManageEvents from './apps/events/user/Manage';
+import UserEvent from './apps/events/user/Event';
+import UserSubmit from './apps/events/user/Submit';
+
 import SaveButtons from './apps/buttons/Save';
 
 export default [
@@ -24,7 +30,7 @@ export default [
   },
   {
     component: AdminEvents,
-    linkName: "Events",
+    linkName: "Events Admin",
     path: '/events/admin/',
     exact: true
   },
@@ -32,6 +38,12 @@ export default [
     component: SaveButtons,
     linkName: "Saving Buttons",
     path: '/buttons/saving/',
+    exact: true
+  },
+  {
+    component: UserEvents,
+    linkName: "Events",
+    path: '/events/',
     exact: true
   },
   {
@@ -53,5 +65,21 @@ export default [
    {
     component: AdminEdit,
     path: '/events/admin/edit'
-  }
+  },
+  {
+    component: UserBrowseEvents,
+    path: '/events/browse-upcoming'
+  },
+  {
+    component: UserManageEvents,
+    path: '/events/manage'
+  },
+  {
+    component: UserEvent,
+    path: '/events/view/:id'
+  },
+  {
+    component: UserSubmit,
+    path: '/events/submit'
+  },
 ]

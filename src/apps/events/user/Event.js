@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import SubHeader from './components/SubHeader';
-import EventCard from './components/EventCard';
-import sampleEvents from './components/sampleEvents';
-import './events.css';
+import SubHeader from '../components/SubHeader';
+import EventCard from '../components/EventCard';
+import sampleEvents from '../components/sampleEvents';
+import '../events.css';
 
 
 export default class EventPage extends Component {
@@ -21,10 +21,10 @@ export default class EventPage extends Component {
         <EventCard
           sampleEvent={this.getEvent()}
           showAction={true}
-          isAttending={false}
+          isAttending={true}
           actionLink={'/events/edit'}
           actionTitle={'Sign Up'}
-          isAdmin={true}
+          isAdmin={false}
           />
       </div>
     )
