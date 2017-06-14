@@ -74,7 +74,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
       isAttending ?
         <div>
           { isList ?
-            <Link to={actionLink} className="btn btn-primary">{actionLink}</Link>
+            <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
           :
             <div style={{ marginBottom: 10 }}>
               <label>Confirm Attendance</label>
@@ -83,7 +83,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
         }
         <h4 className="green"><strong><i className="fa fa-check" /> {"You're Attending"}</strong></h4>
         </div>
-      : <a href={actionLink} className="btn btn-primary">{actionTitle}</a>
+      : <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
     }
   </div>
 );

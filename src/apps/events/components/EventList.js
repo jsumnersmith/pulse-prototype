@@ -115,9 +115,9 @@ class DayOfEvents extends Component {
             isAdmin={isAdmin}
             showAction
             sampleEvent={sampleEvent}
-            actionLink={`${urlPrefix}event.html#${sampleEvent.id}`}
+            actionLink={`${urlPrefix}view/${sampleEvent.id}`}
             actionTitle={'See Details'}
-            eventLink={`${urlPrefix}event.html#${sampleEvent.id}`}
+            eventLink={`${urlPrefix}view/${sampleEvent.id}`}
             isAttending={stubIsAttending(sampleEvent.id)}
           />
           ),
