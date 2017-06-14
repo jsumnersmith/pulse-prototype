@@ -14,6 +14,9 @@ import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 
+import TagList from './apps/tags/index.js';
+import AttributeEditor from './apps/attributes/index.js';
+
 import SaveButtons from './apps/buttons/Save';
 
 export default [
@@ -29,8 +32,14 @@ export default [
     path: '/report-builder'
   },
   {
+    component: UserEvents,
+    linkName: "Events",
+    path: '/events/',
+    exact: true
+  },
+  {
     component: AdminEvents,
-    linkName: "Events Admin",
+    linkName: "Events - Admin",
     path: '/events/admin/',
     exact: true
   },
@@ -40,10 +49,17 @@ export default [
     path: '/buttons/saving/',
     exact: true
   },
+
   {
-    component: UserEvents,
-    linkName: "Events",
-    path: '/events/',
+    component: TagList,
+    linkName: "Tag Manager",
+    path: '/tags/',
+    exact: true
+  },
+  {
+    component: AttributeEditor,
+    linkName: "Attributes",
+    path: '/attributes/',
     exact: true
   },
   {
