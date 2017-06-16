@@ -1,0 +1,31 @@
+.block-flat.loading  .portlet-loading--wide { width: 100px; }
+.standard-loader {
+  position: relative;
+  max-width: 150px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[class*="standard-loader-bar-"] {
+  height: 15px;
+  width: 90%;
+  left: 0;
+  border: 3px solid rgba(0,0,0,.3);
+  margin-bottom: 5px;
+  animation: pulse-lines 1.5s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.standard-loader-bar-0 { background: #FED16C; margin-left: auto;}
+.standard-loader-bar-1 { background: #E59062; background: #007DA0; animation-delay: .357s; margin-right: auto; }
+.standard-loader-bar-2 { background: #8B698E; animation-delay: .75s; margin-left: auto;}
+.standard-loader-bar-3 { background: #EA6153; animation-delay: 1.157s; margin-right: auto;}
+
+@keyframes pulse-lines {
+  0% { opacity: .25; }
+  50% {
+    opacity: 1;
+  }
+  100% { opacity: .25; }
+}
