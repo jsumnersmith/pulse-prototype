@@ -1,8 +1,6 @@
-.block-flat.loading  .portlet-loading--wide { width: 100px; }
+.block-flat.loading  .portlet-loading--wide { width: 300px; }
 .standard-loader {
   position: relative;
-  max-width: 150px;
-  height: 200px;
   margin-left: auto;
   margin-right: auto;
 }

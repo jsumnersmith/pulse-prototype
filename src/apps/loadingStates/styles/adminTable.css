@@ -19,16 +19,14 @@
   padding: 5px;
   display: flex;
   min-height: 20px;
-  animation: pulse-bg 1s infinite;
 }
 
-.loading-table-row:nth-child(2) {animation-delay: .25s; }
-.loading-table-row:nth-child(3) {animation-delay: .5s; }
-.loading-table-row:nth-child(4) {animation-delay: .75s; }
+.loading-table-row:nth-child(3) {animation: pulse-bg 1s infinite; background: #eee; }
+.loading-table-row:nth-child(5) {animation: pulse-bg 1s infinite; background: #eee; animation-delay: .5s; }
 
 @keyframes pulse-bg {
-  0% { background: #fff; }
-  10% { background: #eee; }
-  100% { background: #fff; }
+  0% { opacity: .25; }
+  50% { opacity: .75; }
+  100% {opacity: .25; }
 }
 
