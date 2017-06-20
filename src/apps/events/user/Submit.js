@@ -2,7 +2,7 @@ import React from 'react';
 import SubHeader from '../components/SubHeader';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
-import '../events.css';
+import '../events.less';
 
 export default () => (
   <div className="wrapper wrapper--narrow">

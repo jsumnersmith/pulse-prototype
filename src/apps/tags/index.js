@@ -1,5 +1,5 @@
 import React from 'react';
-import './tags.css';
+import './tags.less';
 
 export default () => (
   <div className="wrapper">

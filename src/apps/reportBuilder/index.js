@@ -1,5 +1,5 @@
 import React from 'react';
-import './reportBuilder.css';
+import './reportBuilder.less';
 
 export default () => (
   <div className="report-builder">

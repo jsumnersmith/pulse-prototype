@@ -2,7 +2,7 @@ import React from 'react';
 import EventCardLoader from './components/eventCard';
 import StandardContentLoader from './components/standardContent';
 import AdminTableLoader from './components/adminTable';
-import './loading.css';
+import './loading.less';
 export default () => (
   <div className="wrapper">
     <div className="block-flat loading">

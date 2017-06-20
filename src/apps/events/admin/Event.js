@@ -4,7 +4,7 @@ import SubHeader from '../components/SubHeader';
 import EventCard from '../components/EventCard';
 import AttendanceTable from '../components/AttendanceTable';
 import sampleEvents from '../components/sampleEvents';
-import '../events.css';
+import '../events.less';
 
 
 export default class EventPage extends Component {

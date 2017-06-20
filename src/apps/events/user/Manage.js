@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import EventTable from '../components/EventTable';
 import sampleEvents from '../components/sampleEvents';
-import '../events.css';
+import '../events.less';
 
 export default () => (
   <div className="wrapper">

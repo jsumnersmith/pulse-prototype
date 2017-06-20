@@ -24,7 +24,7 @@ export default class Nav extends Component {
         </li>
 
         <li className={this.checkActive("manage")}>
-          <Link to="/events/admin/manage/" className="nav-link"><span>Manage</span></Link>
+          <Link to="/events/admin/manage/attendance" className="nav-link"><span>Manage</span></Link>
         </li>
         <Link to="/events/admin/create" className="btn btn-primary">Add Event</Link>
       </ul>

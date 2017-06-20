@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import EventSummaryList from '../components/EventSummaryList';
 import sampleEvents from '../components/sampleEvents';
-import '../events.css';
+import '../events.less';
 
 export default class Events extends Component {
   render(){
