@@ -11,6 +11,9 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extractLESS = new ExtractTextPlugin('css/[name].css');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -101,7 +104,7 @@ module.exports = {
     ],
   },
   module: {
-    strictExportPresence: true,
+    //strictExportPresence: true,
     rules: [
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
@@ -178,6 +181,11 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
+        test: /\.less$/,
+        include: paths.appSrc,
+        use: extractLESS.extract(['css-loader', 'less-loader']),
+      },
+      {
         test: /\.css$/,
         use: [
           require.resolve('style-loader'),
@@ -213,19 +221,10 @@ module.exports = {
         test: /\.json$/,
         use: 'json-loader'
       },
-      {
-        enforce: 'post',
-        test: /node_modules/,
-        // include: [
-        //   /(node_modules)\/gl-*/,
-        //   /(node_modules)\/mapbox\-gl/,
-        //   /(node_modules)\/plotly\.js/,
-        // ],
-        loader: require.resolve('ify-loader'),
-      }
     ],
   },
   plugins: [
+    extractLESS,
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">

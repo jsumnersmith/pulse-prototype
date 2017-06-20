@@ -1,0 +1,59 @@
+.ghost-card {
+  background: white;
+  border: 1px solid #eee;
+  padding: 20px;
+  max-width: 500px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+.ghost-title {
+  display: block;
+  width: 50%;
+  height: 20px;
+  background: #eee;
+  animation: pulse-opacity 1s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.ghost-line {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: pulse-opacity 1s infinite;
+  animation-timing-function: ease-in-out;
+}
+.ghost-line:nth-child(2n) {
+  animation-delay: .5s;
+}
+.ghost-meta-wrapper { text-align: center; }
+.ghost-meta {
+  display: inline-block;
+  width: 30%;
+  height: 10px;
+  background: #eee;
+  margin-top: 10px;
+  animation: pulse-opacity 1s infinite;
+  animation-timing-function: ease-in-out;
+}
+.ghost-meta + .ghost-meta {
+  margin-left: 3.3%;
+}
+
+@keyframes pulse-lines {
+  0% { width: 100%; }
+  50% {
+    width: 98%;
+    opacity: .75;
+  }
+  100% { width: 100%; }
+}
+
+@keyframes pulse-opacity {
+  50% { opacity: .5; }
+}

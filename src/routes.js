@@ -14,8 +14,10 @@ import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 
-import TagList from './apps/tags/index.js';
-import AttributeEditor from './apps/attributes/index.js';
+import TagList from './apps/tags';
+import AttributeEditor from './apps/attributes';
+
+import LoadingStates from './apps/loadingStates';
 
 import SaveButtons from './apps/buttons/Save';
 
@@ -49,7 +51,12 @@ export default [
     path: '/buttons/saving/',
     exact: true
   },
-
+  {
+    component: LoadingStates,
+    linkName: "Loading States",
+    path: '/loading/',
+    exact: true
+  },
   {
     component: TagList,
     linkName: "Tag Manager",

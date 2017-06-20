@@ -1,5 +1,5 @@
 import React from 'react';
-import './attributes.css';
+import './attributes.less';
 
 export default () => (
   <div className="wrapper">

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
 import coffee from '../images/new_coffee.png';
-import './header.css';
+import './header.less';
 
 export default class Header extends Component {
   constructor(props){
