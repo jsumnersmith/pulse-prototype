@@ -1,6 +1,11 @@
 import Home from './apps/home/';
+
+//Simple Apps
 import ReportBuilder from './apps/reportBuilder/';
-//Events Admin
+import TagList from './apps/tags';
+import AttributeEditor from './apps/attributes';
+
+//Events - Admin User
 import AdminEvents from './apps/events/admin';
 import AdminBrowseEvents from './apps/events/admin/Browse';
 import AdminManageEvents from './apps/events/admin/Manage';
@@ -8,18 +13,17 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 
+//Events - Normal User
 import UserEvents from './apps/events/user';
 import UserBrowseEvents from './apps/events/user/Browse';
 import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 
-import TagList from './apps/tags';
-import AttributeEditor from './apps/attributes';
-
-import LoadingStates from './apps/loadingStates';
-
-import SaveButtons from './apps/buttons/Save';
+// Components
+import LoadingStates from './components/loadingStates';
+import SaveButtons from './components/buttons/Save';
+import NameCreator from './components/nameCreator';
 
 export default [
   {
@@ -67,6 +71,12 @@ export default [
     component: AttributeEditor,
     linkName: "Attributes",
     path: '/attributes/',
+    exact: true
+  },
+  {
+    component: NameCreator,
+    linkName: "Name Creator",
+    path: '/name-creator/',
     exact: true
   },
   {
