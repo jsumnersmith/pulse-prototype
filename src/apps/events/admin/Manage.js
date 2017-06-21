@@ -4,6 +4,7 @@ import SubHeader from '../components/SubHeader';
 import AttendanceSummaryTable from '../components/AttendanceSummaryTable';
 import ApprovalTable from '../components/ApprovalTable';
 import AttributeManager from '../components/AttributeManager';
+import AttributeEditor from '../components/AttributeEditor';
 import sampleEvents from '../components/sampleEvents';
 import '../events.less';
 import '../../../base/subnav.less';
@@ -21,7 +22,8 @@ export default ({ match }) => (
         <div>
           <Route component={ApprovalTableWrapper} path={`${match.url}/approval`}/>
           <Route component={AttendanceTableWrapper} path={`${match.url}/attendance`}/>
-          <Route component={AttributeManager} path={`${match.url}/attributes`}/>
+          <Route component={AttributeManager} path={`${match.url}/attributes`} exact={true}/>
+          <Route component={AttributeEditor} path={`${match.url}/attributes/type-of-pd`}/>
         </div>
       </Router>
     </div>
