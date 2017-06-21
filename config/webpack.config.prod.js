@@ -13,6 +13,8 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
+const extractLESS = new ExtractTextPlugin('css/[name].css');
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
@@ -175,6 +177,11 @@ module.exports = {
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
       {
+        test: /\.less$/,
+        include: paths.appSrc,
+        use: extractLESS.extract(['css-loader', 'less-loader']),
+      },
+      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
@@ -233,6 +240,7 @@ module.exports = {
     ],
   },
   plugins: [
+    extractLESS,
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
