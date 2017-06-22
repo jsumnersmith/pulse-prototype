@@ -23,6 +23,12 @@ export default () => (
           <label>Leaders</label>
           <input className="form-control" value="Bella Smith"/>
         </fieldset>
+        <fieldset className="form-group">
+          <label>Allow users to confirm their own attendance (with confirmation code)?</label>
+          <div style={{padding: "5px 0"}}>
+            <a className="btn btn-sm btn-success"><i className="fa fa-check"/> Yes, allow user confirmation</a> <a className="btn btn-sm btn-default btn-trans"><i className="fa fa-times"/> No, I'll manage confirmation</a>
+          </div>
+        </fieldset>
         <hr/>
         <h3><i className="fa fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
         <fieldset className="form-group">
