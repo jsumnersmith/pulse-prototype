@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default () => (
+export default ({title}) => (
   <div className="standard-loader">
-
+    { title ? <div className="standard-loader-title">{title}</div> : null }
     <div className="standard-loader-bar-1">
     </div>
     <div className="standard-loader-bar-2">

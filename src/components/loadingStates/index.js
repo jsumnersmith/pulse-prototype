@@ -13,6 +13,15 @@ export default () => (
         <StandardContentLoader />
       </div>
     </div>
+    <div className="block-flat loading">
+      <div className="content">
+        Default with Title
+        <div style={{background: "#000", height: 300, width: '100%'}}></div>
+      </div>
+      <div className="portlet-loading portlet-loading--wide">
+        <StandardContentLoader title={"This is a loading text message..."}/>
+      </div>
+    </div>
     <div className="block-flat">
       <div className="content">
         Admin Table
