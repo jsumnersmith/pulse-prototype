@@ -1,5 +1,5 @@
 # Pulse Prototype
-This repo functions as a playground for testing out design patterns and new UIs for the Pulse app built by Kickup, Inc.
+This repo functions as a playground for testing out design patterns and new UIs for the Pulse app built by KickUp, Inc.
 
 ## Interface with Pulse UI
 This prototyping app depends on the universal style and globally shared components made available in the [`pulse-ui` repo](https://github.com/kickup-dev/pulse-ui). When styles or components are confirmed and ready to be polished for use in production work, they ought to be trasferred to the `pulse-ui` package and reviewed with or passed off to the engineering team. 
