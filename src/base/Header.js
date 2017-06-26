@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
 import coffee from '../images/new_coffee.png';
+import logo from '../images/logo.png';
 import './header.less';
 
 export default class Header extends Component {
@@ -57,6 +58,7 @@ export default class Header extends Component {
             <a onClick={()=>this.toggleOpen()}>Menu <i className="fa fa-bars"></i></a>
           </div>
           <div className="ku-header-logo text-center">
+            <img src={logo} alt="Kickup Logo"/>
           </div>
           <div className="ku-header-profile">
             <img src={coffee} alt="Sample Avatar" className="ku-header-profile-image" />

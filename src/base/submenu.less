@@ -1,0 +1,17 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.ku-navigation {
+  .is-open &__menu-toggle { transform: rotate(90deg); }
+  &__menu-toggle {
+    font-size: 10px !important;
+    float: right;
+    transition: transform .2s ease-in-out;
+  }
+  a { text-decoration: none; font-weight: 700; }
+  &__submenu-item {
+    background: #fafafa;
+    & + & a { border-top: none }
+    a { padding: 10px 10px 10px 50px; }
+  }
+}
+

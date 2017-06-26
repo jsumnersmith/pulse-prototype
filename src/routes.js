@@ -29,53 +29,62 @@ export default [
   {
     component: Home,
     linkName: "Home",
+    parent: false,
     path: '/',
     exact: true
   },
   {
     component: ReportBuilder,
     linkName: "Report Builder",
+    parent: 'Apps',
     path: '/report-builder'
   },
   {
     component: UserEvents,
     linkName: "Events",
+    parent: 'Apps',
     path: '/events/',
     exact: true
   },
   {
     component: AdminEvents,
     linkName: "Events - Admin",
+    parent: 'Apps',
     path: '/events/admin/',
     exact: true
   },
   {
     component: SaveButtons,
     linkName: "Saving Buttons",
+    parent: 'Components',
     path: '/buttons/saving/',
     exact: true
   },
   {
     component: LoadingStates,
     linkName: "Loading States",
+    parent: 'Components',
     path: '/loading/',
     exact: true
   },
   {
     component: TagList,
     linkName: "Tag Manager",
+    parent: 'Components',
     path: '/tags/',
     exact: true
   },
   {
     component: AttributeEditor,
     linkName: "Attributes",
+    parent: 'Apps',
     path: '/attributes/',
     exact: true
   },
   {
     component: NameCreator,
     linkName: "Name Creator",
+    parent: 'Components',
     path: '/name-creator/',
     exact: true
   },
