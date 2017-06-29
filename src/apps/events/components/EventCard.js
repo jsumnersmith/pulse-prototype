@@ -12,7 +12,6 @@ class EventCard extends Component {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
       <div className="event-card">
-        <Link to={actionLink}>
           <div className="event-card-date">
             <div className="event-card-date-month">
               {moment(sampleEvent.date).format('MMM')}
@@ -25,6 +24,10 @@ class EventCard extends Component {
             <h5 className="event-card-time">
               <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
             </h5>
+            <div className="event-card-menu">
+              <a className="btn btn-trans btn-default dropdown-toggle" data-toggle="dropdown"><i className="fa fa-bars"/> Options</a>
+              {isAdmin ? <AdminDropdown /> : <UserDropdown />}
+            </div>
           </div>
           <div className="row event-card-content">
             <div className="col-md-8">
@@ -38,10 +41,7 @@ class EventCard extends Component {
             <div className="col-md-4">
               { showAction ? (isAdmin ? <AdminControls /> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
             </div>
-
-
           </div>
-        </Link>
       </div>
     );
   }
@@ -73,19 +73,26 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
     {
       isAttending ?
         <div>
-          { isList ?
-            <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
-          :
-            <div style={{ marginBottom: 10 }}>
-              <label>Confirm Attendance</label>
-              <input className="form-control" placeholder="Enter code to confirm your attendance." />
-            </div>
-        }
-        <h4 className="green"><strong><i className="fa fa-check" /> {"You're Attending"}</strong></h4>
+        { isList
+          ? <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
+          : <a className="btn btn-success btn-block"><i className="fa fa-calendar-check-o"/> You're Registered</a> }
         </div>
-      : <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
+      : <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
     }
   </div>
+);
+
+const AdminDropdown = () => (
+  <ul className="dropdown-menu dropdown-menu-right" role="menu">
+    <li><a><i className="fa fa-trash-o"/> Delete Event</a></li>
+  </ul>
+);
+
+const UserDropdown = () => (
+  <ul className="dropdown-menu dropdown-menu-right" role="menu">
+    <li><a><i className="fa fa-calendar-times-o"/> Unregister</a></li>
+    <li><a><i className="fa fa-envelope"/> Request Confirmation</a></li>
+  </ul>
 );
 
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (

@@ -13,7 +13,7 @@
 .event-card {
   background: white;
   padding: 10px 20px;
-  cursor: pointer;
+  //cursor: pointer;
   &+& { border-top: 1px solid @gray-light !important; }
   &:hover {
     .event-card-time {
@@ -54,8 +54,15 @@
 
 .event-card-header {
   display: inline-block;
+  position: relative;
 
   &--narrow { width: ~"calc(100% - 173px)"; }
+}
+
+.event-card-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .event-card-content {
