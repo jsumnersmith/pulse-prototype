@@ -24,10 +24,7 @@ class EventCard extends Component {
             <h5 className="event-card-time">
               <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
             </h5>
-            <div className="event-card-menu">
-              <a className="btn btn-trans btn-default dropdown-toggle" data-toggle="dropdown"><i className="fa fa-bars"/> Options</a>
-              {isAdmin ? <AdminDropdown /> : <UserDropdown />}
-            </div>
+
           </div>
           <div className="row event-card-content">
             <div className="col-md-8">
@@ -39,7 +36,7 @@ class EventCard extends Component {
               <h6 style={{marginTop: 0}} className="col-md-4"><i className="fa fa-check circle-icon--medium"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6>
             </div>
             <div className="col-md-4">
-              { showAction ? (isAdmin ? <AdminControls /> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
+              { showAction ? (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
             </div>
           </div>
       </div>
@@ -58,11 +55,21 @@ class AdminControls extends Component {
     this.setState({ showCode: true });
   }
   render() {
+    const {isList, actionLink, actionTitle } = this.props;
     return (
       <div className="event-admin-control text-center">
-        <Link to="/events/admin/edit" className="btn btn-primary btn-block"><i className="fa fa-pencil" /> Edit Event</Link>
-        <a className="btn btn-default btn-block" style={{ marginLeft: 0, marginTop: 10, display: (!this.state.showCode ? 'block' : 'none') }} onClick={() => this.onClick()}>Generate Attendance Code</a>
-        <div className="event-attendance-code" style={{ marginTop: 10, display: (this.state.showCode ? 'block' : 'none') }}>X5fH8Gn</div>
+        { isList ?
+          <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
+          :
+            <span>
+              <div className="event-attendance-code" style={{marginBottom: 10}}>X5fH8Gn</div>
+              <div className="btn-group">
+                <Link to="/events/admin/edit" className="btn btn-primary"><i className="fa fa-pencil" /> Edit Event</Link>
+                <a className="btn btn-default dropdown-toggle btn-primary" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+                <AdminDropdown />
+              </div>
+            </span>
+        }
       </div>
     );
   }
@@ -75,7 +82,12 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
         <div>
         { isList
           ? <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
-          : <a className="btn btn-success btn-block"><i className="fa fa-calendar-check-o"/> You're Registered</a> }
+          : <div className="btn-group">
+              <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> You're Registered</a>
+              <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+              <UserDropdown />
+            </div>
+        }
         </div>
       : <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
     }
