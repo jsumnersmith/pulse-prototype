@@ -21,7 +21,7 @@ export default class Nav extends Component {
           <Link to="/events/" className="nav-link"><span>Home</span></Link>
         </li>
         <li className={this.checkActive("browse")}>
-          <Link to="/events/browse-upcoming/" className="nav-link"><span>Browse Events</span></Link>
+          <Link to="/events/browse/" className="nav-link"><span>Browse Events</span></Link>
         </li>
 
         <li className={this.checkActive("manage")}>

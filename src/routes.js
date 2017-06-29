@@ -90,7 +90,7 @@ export default [
   },
   {
     component: AdminBrowseEvents,
-    path: '/events/admin/browse-upcoming'
+    path: '/events/admin/browse'
   },
   {
     component: AdminManageEvents,
@@ -110,7 +110,7 @@ export default [
   },
   {
     component: UserBrowseEvents,
-    path: '/events/browse-upcoming'
+    path: '/events/browse'
   },
   {
     component: UserManageEvents,
