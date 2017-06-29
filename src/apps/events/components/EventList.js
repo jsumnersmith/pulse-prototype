@@ -116,8 +116,8 @@ class EventList extends Component {
           <div className="block-flat text-center" style={{marginTop: 48, marginLeft: 40, borderTop: "3px solid #007DA0"}}>
             <div style={{marginBottom: 10}}><label>Show Me events</label></div>
             <div className="btn-group text-center" style={{width: "100%"}}>
-              <a className={`btn btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Before</a>
-              <a className={`btn btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>After <i className="fa fa-angle-right"/></a>
+              <a className={`btn btn-sm btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Before</a>
+              <a className={`btn btn-sm btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>After <i className="fa fa-angle-right"/></a>
             </div>
             <DayPicker
               onDayClick={this.onDayClick}
