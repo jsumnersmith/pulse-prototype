@@ -13,6 +13,7 @@ class EventList extends Component {
     this.filterEvent = this.filterEvent.bind(this);
     this.onDayClick = this.onDayClick.bind(this);
     this.toggleUpcoming = this.toggleUpcoming.bind(this);
+    this.setUpcoming = this.setUpcoming.bind(this);
     this.state = {
       searchQuery: '',
       selectedDay: new Date(),
@@ -60,10 +61,12 @@ class EventList extends Component {
   }
 
   toggleUpcoming(){
-    console.log("I'm toggling...")
-    this.setState({
-      upcoming: !this.state.upcoming
-    })
+    this.setState({ upcoming: !this.state.upcoming })
+  }
+
+  setUpcoming(e){
+    const value = e.target.value === 'true' ? true : false ;
+    this.setState({ upcoming: value });
   }
 
   render() {
@@ -71,6 +74,8 @@ class EventList extends Component {
     const colorsArr = this.props.colors || colors(5);
     const urlPrefix = this.props.urlPrefix || '/events/';
     const isAdmin = this.props.isAdmin;
+
+    console.log("Is it upcoming?", this.state.upcoming);
 
     return (
       <div className="row">
@@ -113,11 +118,13 @@ class EventList extends Component {
               onDayClick={this.onDayClick}
               selectedDays={[this.state.selectedDay]}
             />
-            <div style={{marginTop: 10, marginBottom: 5}}><label>Show Me</label></div>
-            <div className="btn-group text-center" style={{width: "100%"}}>
-
-              <a className={`btn btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Past</a>
-              <a className={`btn btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>Upcoming <i className="fa fa-angle-right"/></a>
+            <div style={{marginTop: 10, marginBottom: 5}}>
+              <label>Show Me events</label>
+              <select className="form-control" onChange={this.setUpcoming} style={{display: "inline-block", width: 100, marginLeft: 2, marginRight: 2}}>
+                <option value="true">After</option>
+                <option value="false">Before</option>
+              </select>
+              <label>this date</label>
             </div>
           </div>
         </div>
