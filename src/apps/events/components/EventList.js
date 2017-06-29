@@ -12,15 +12,17 @@ class EventList extends Component {
     this.onSearch = this.onSearch.bind(this);
     this.filterEvent = this.filterEvent.bind(this);
     this.onDayClick = this.onDayClick.bind(this);
+    this.toggleUpcoming = this.toggleUpcoming.bind(this);
     this.state = {
       searchQuery: '',
-      selectedDay: null,
+      selectedDay: new Date(),
+      upcoming: true
     };
   }
 
   onDayClick(day, { selected }) {
     this.setState({
-      selectedDay: selected ? undefined : day,
+      selectedDay: selected ? new Date() : day,
     });
   }
 
@@ -32,20 +34,36 @@ class EventList extends Component {
   }
 
   getEventsByDate(events) {
+    const order = this.state.upcoming ? 'asc' : 'desc';
     return _(events)
       .filter(eventItem => this.filterEvent(eventItem))
       .groupBy('date')
       .toPairs()
+      .orderBy(item => item[0], order)
       .value();
   }
 
   filterEvent(eventItem) {
-    if (this.state.selectedDay && !DateUtils.isSameDay(this.state.selectedDay, new Date(eventItem.date))) {
+    const sortMethod = (day1, day2) => {
+      if (this.state.upcoming) {
+        return DateUtils.isDayAfter(day1, day2);
+      } else {
+        return DateUtils.isDayBefore(day1, day2);
+      }
+    }
+    if (this.state.selectedDay && !(DateUtils.isSameDay(this.state.selectedDay, new Date(eventItem.date)) || sortMethod(new Date(eventItem.date), this.state.selectedDay))) {
       return false;
     } else if (this.state.searchQuery) {
       return new RegExp(this.state.searchQuery, 'ig').test(JSON.stringify(eventItem));
     }
     return true;
+  }
+
+  toggleUpcoming(){
+    console.log("I'm toggling...")
+    this.setState({
+      upcoming: !this.state.upcoming
+    })
   }
 
   render() {
@@ -70,19 +88,13 @@ class EventList extends Component {
                 <div className="col-md-12" style={{ position: 'relative', marginTop: 10 }}>
                   <div className="collapse" style={{ position: 'relative' }} id="filtersDropdown">
                     <div className="col-md-8">Filters</div>
-                    <div className="col-md-4">
-                      <DayPicker
-                        onDayClick={this.onDayClick}
-                        selectedDays={[this.state.selectedDay]}
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-12">
+        <div className="col-md-8">
           {
             _.map(eventsByDay, ([date, eventsForDay], index) => (<DayOfEvents
               isAdmin={isAdmin}
@@ -95,7 +107,20 @@ class EventList extends Component {
               ))
           }
         </div>
+        <div className="col-md-4">
+          <div className="block-flat" style={{marginTop: 48, marginLeft: 40, borderTop: "3px solid #007DA0"}}>
+            <DayPicker
+              onDayClick={this.onDayClick}
+              selectedDays={[this.state.selectedDay]}
+            />
+            <div style={{marginTop: 10, marginBottom: 5}}><label>Show Me</label></div>
+            <div className="btn-group text-center" style={{width: "100%"}}>
 
+              <a className={`btn btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Past</a>
+              <a className={`btn btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>Upcoming <i className="fa fa-angle-right"/></a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
