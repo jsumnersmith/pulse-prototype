@@ -4307,6 +4307,21 @@ button::-moz-focus-inner {
 .btn-group .dropdown-menu {
   border-radius: 1px;
 }
+.btn-group .btn {
+  margin-right: 2px;
+}
+.btn-success.active.focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.btn-success:active.focus,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.open > .dropdown-toggle.btn-success.focus,
+.open > .dropdown-toggle.btn-success:focus,
+.open > .dropdown-toggle.btn-success:hover {
+  background: #1FAF84;
+  border-color: #178463;
+}
 /*disable*/
 .btn-primary.disabled,
 .btn-primary[disabled],
