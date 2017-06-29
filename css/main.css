@@ -12486,7 +12486,6 @@ body {
 .event-card {
   background: white;
   padding: 10px 20px;
-  cursor: pointer;
 }
 .event-card + .event-card {
   border-top: 1px solid #eee !important;
@@ -12533,9 +12532,15 @@ body {
 }
 .event-card-header {
   display: inline-block;
+  position: relative;
 }
 .event-card-header--narrow {
   width: calc(100% - 173px);
+}
+.event-card-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .event-card-content {
   margin-top: 0 !important;
