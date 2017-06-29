@@ -75,8 +75,6 @@ class EventList extends Component {
     const urlPrefix = this.props.urlPrefix || '/events/';
     const isAdmin = this.props.isAdmin;
 
-    console.log("Is it upcoming?", this.state.upcoming);
-
     return (
       <div className="row">
         <div className="col-md-12">
