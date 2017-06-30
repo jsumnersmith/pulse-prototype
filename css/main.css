@@ -12680,6 +12680,60 @@ body {
 .event-quick-link-title {
   width: calc(100% - 33px);
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.DayPicker {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+}
+.DayPicker:focus {
+  outline: none;
+}
+.DayPicker-Day--today {
+  color: #00556d;
+  font-weight: 700;
+  position: relative;
+}
+.DayPicker-Day--today:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  height: 2px;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #E59062;
+}
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background: #007DA0;
+}
+.DayPicker-Day--inRange {
+  background: rgba(0, 125, 160, 0.1);
+}
+.DayPicker-NavBar {
+  left: initial;
+  right: 50px;
+}
+.DayPicker-NavButton--prev {
+  right: 4rem;
+  left: initial;
+}
+.DayPicker-Caption {
+  text-align: left;
+  height: 2rem;
+}
 .attribute-editor {
   display: block;
   width: 100%;
