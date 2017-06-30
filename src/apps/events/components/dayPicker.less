@@ -1,0 +1,32 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.DayPicker {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+  &:focus {
+    outline: none;
+  }
+}
+.DayPicker-Day--today {
+  color: darken(@pulse-blue, 10%);
+  font-weight: 700;
+  position: relative;
+  &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    height: 2px;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: @orange;
+  }
+}
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) { background: @pulse-blue; }
+.DayPicker-Day--inRange { background: fadeout(@pulse-blue, 90%); }
+
+.DayPicker-NavBar  { left: initial; right: 50px; }
+.DayPicker-NavButton--prev { right: 4rem; left: initial; }
+
+.DayPicker-Caption { text-align: left; height: 2rem; }

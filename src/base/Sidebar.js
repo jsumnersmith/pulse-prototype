@@ -13,9 +13,9 @@ const nestedLinks = _.chain(routes)
                       .value();
 
 const iconLookup = (name) => {
-  if (name == 'Apps') {
+  if (name === 'Apps') {
     return 'fa-dashboard';
-  } else if (name == 'Components') {
+  } else if (name === 'Components') {
     return 'fa-cog';
   } else {
     return 'fa-home';
@@ -35,9 +35,9 @@ export default ({open, toggle = () => {}}) => (
           _.map(nestedLinks, (nestedItems, name) => {
             return (
               <li className="ku-navigation__menu-item">
-                <Collapsible transitionTime={200} trigger={<a href="#"><i className={`fa ${iconLookup(name)}`}/> {name} <i className="fa fa-chevron-down ku-navigation__menu-toggle" /></a>}>
+                <Collapsible transitionTime={200} trigger={<a><i className={`fa ${iconLookup(name)}`}/> {name} <i className="fa fa-chevron-down ku-navigation__menu-toggle" /></a>}>
                   <div className="ku-navigation__submenu">
-                    <Subnav navItems={nestedItems} />
+                    <Subnav navItems={nestedItems} toggle={toggle}/>
                   </div>
                 </Collapsible>
               </li>
@@ -49,11 +49,11 @@ export default ({open, toggle = () => {}}) => (
   </nav>
 )
 
-const Subnav = ({navItems}) => (
+const Subnav = ({navItems, toggle}) => (
   <div>
     {
       navItems.map(route => {
-        return <li key={route.linkName} className="ku-navigation__submenu-item"><Link to={route.path} >{route.linkName}</Link></li>
+        return <li onClick={toggle} key={route.linkName} className="ku-navigation__submenu-item"><Link to={route.path} >{route.linkName}</Link></li>
       })
     }
   </div>

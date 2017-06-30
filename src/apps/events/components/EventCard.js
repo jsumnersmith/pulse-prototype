@@ -12,7 +12,6 @@ class EventCard extends Component {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
       <div className="event-card">
-        <Link to={actionLink}>
           <div className="event-card-date">
             <div className="event-card-date-month">
               {moment(sampleEvent.date).format('MMM')}
@@ -25,6 +24,7 @@ class EventCard extends Component {
             <h5 className="event-card-time">
               <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
             </h5>
+
           </div>
           <div className="row event-card-content">
             <div className="col-md-8">
@@ -36,12 +36,9 @@ class EventCard extends Component {
               <h6 style={{marginTop: 0}} className="col-md-4"><i className="fa fa-check circle-icon--medium"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6>
             </div>
             <div className="col-md-4">
-              { showAction ? (isAdmin ? <AdminControls /> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
+              { showAction ? (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
             </div>
-
-
           </div>
-        </Link>
       </div>
     );
   }
@@ -58,11 +55,21 @@ class AdminControls extends Component {
     this.setState({ showCode: true });
   }
   render() {
+    const {isList, actionLink, actionTitle } = this.props;
     return (
       <div className="event-admin-control text-center">
-        <Link to="/events/admin/edit" className="btn btn-primary btn-block"><i className="fa fa-pencil" /> Edit Event</Link>
-        <a className="btn btn-default btn-block" style={{ marginLeft: 0, marginTop: 10, display: (!this.state.showCode ? 'block' : 'none') }} onClick={() => this.onClick()}>Generate Attendance Code</a>
-        <div className="event-attendance-code" style={{ marginTop: 10, display: (this.state.showCode ? 'block' : 'none') }}>X5fH8Gn</div>
+        { isList ?
+          <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
+          :
+            <span>
+              <div className="event-attendance-code" style={{marginBottom: 10}}>X5fH8Gn</div>
+              <div className="btn-group">
+                <Link to="/events/admin/edit" className="btn btn-primary"><i className="fa fa-pencil" /> Edit Event</Link>
+                <a className="btn btn-default dropdown-toggle btn-primary" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+                <AdminDropdown />
+              </div>
+            </span>
+        }
       </div>
     );
   }
@@ -73,19 +80,31 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
     {
       isAttending ?
         <div>
-          { isList ?
-            <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
-          :
-            <div style={{ marginBottom: 10 }}>
-              <label>Confirm Attendance</label>
-              <input className="form-control" placeholder="Enter code to confirm your attendance." />
+        { isList
+          ? <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
+          : <div className="btn-group">
+              <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> You're Registered</a>
+              <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+              <UserDropdown />
             </div>
         }
-        <h4 className="green"><strong><i className="fa fa-check" /> {"You're Attending"}</strong></h4>
         </div>
-      : <Link to={actionLink} className="btn btn-primary">{actionTitle}</Link>
+      : <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
     }
   </div>
+);
+
+const AdminDropdown = () => (
+  <ul className="dropdown-menu dropdown-menu-right" role="menu">
+    <li><a><i className="fa fa-trash-o"/> Delete Event</a></li>
+  </ul>
+);
+
+const UserDropdown = () => (
+  <ul className="dropdown-menu dropdown-menu-right" role="menu">
+    <li><a><i className="fa fa-calendar-times-o"/> Unregister</a></li>
+    <li><a><i className="fa fa-envelope"/> Request Confirmation</a></li>
+  </ul>
 );
 
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (

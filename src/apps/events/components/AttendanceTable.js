@@ -113,20 +113,32 @@ class AttendanceTable extends Component {
             width={100}
           />
           <Column
-            header={<Cell>Action</Cell>}
+            header={<Cell>Attendance</Cell>}
             allowCellsRecycling
             cell={({ rowIndex, ...props }) => (
               <Cell {...props}>
-                <div className="text-left" style={{ paddingRight: 5 }}>
+                <div className="text-center" style={{ paddingRight: 5 }}>
                   {
                       sampleEvent.attendees[rowIndex].confirmed
-                      ? <a className="btn btn-danger btn-trans btn-block" style={{ marginLeft: 0 }}><i className="fa fa-times" /> Reset Attendence</a>
-                      : <a className="btn btn-success btn-trans btn-block" style={{ marginLeft: 0 }}><i className="fa fa-check" /> Confirm Attendence</a>
-                    }
+                      ? <a className="btn btn-danger btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-times" /> Reset Attendence</a>
+                      : <a className="btn btn-success btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-check" /> Confirm Attendence</a>
+                  }
                 </div>
               </Cell>
               )}
-            width={250}
+            width={200}
+          />
+          <Column
+            header={<Cell>Registration</Cell>}
+            allowCellsRecycling
+            cell={({ rowIndex, ...props }) => (
+              <Cell {...props}>
+                <div className="text-center" style={{ paddingRight: 5 }}>
+                  <a className="btn btn-default btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-calendar-times-o" /> Unregister</a>
+                </div>
+              </Cell>
+              )}
+            width={150}
           />
         </Table>
         <label style={{ marginTop: 10 }}>Add Attendees</label>
