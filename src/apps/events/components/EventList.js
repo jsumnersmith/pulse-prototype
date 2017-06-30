@@ -6,6 +6,8 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 import EventCard from './EventCard';
 import {colors, SearchWithFilters as SearchInput } from 'pulse-ui';
 
+import './dayPicker.less';
+
 class EventList extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ class EventList extends Component {
     this.onDayClick = this.onDayClick.bind(this);
     this.toggleUpcoming = this.toggleUpcoming.bind(this);
     this.setUpcoming = this.setUpcoming.bind(this);
+    this.getModifiers = this.getModifiers.bind(this);
     this.state = {
       searchQuery: '',
       selectedDay: new Date(),
@@ -69,6 +72,12 @@ class EventList extends Component {
     this.setState({ upcoming: value });
   }
 
+  getModifiers(){
+    const modifier = {};
+    modifier[this.state.upcoming ? 'after' : 'before'] = this.state.selectedDay;
+    return { inRange: modifier }
+  }
+
   render() {
     const eventsByDay = this.getEventsByDate(this.props.events);
     const colorsArr = this.props.colors || colors(5);
@@ -120,6 +129,7 @@ class EventList extends Component {
             <DayPicker
               onDayClick={this.onDayClick}
               selectedDays={[this.state.selectedDay]}
+              modifiers={this.getModifiers()}
             />
 
           </div>
