@@ -26,10 +26,7 @@ class Home extends Component {
   render() {
     return (
       <div className="wrapper">
-
-        <h3><strong>Let's get down to the data.</strong></h3>
         <LandingPage view={this.state.view} />
-
         <div className="home-view-toggle">
           <label>Select a User to Change View</label>
           <select className="form-control" onChange={this.updateView}>

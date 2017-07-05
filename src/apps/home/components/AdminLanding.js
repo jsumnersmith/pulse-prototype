@@ -5,6 +5,7 @@ import './underline.less';
 
 export default () => (
   <div>
+    <h3><strong>Let's get down to the data.</strong></h3>
     <StatsWidget />
     <hr className="dark" />
     <div className="row">
