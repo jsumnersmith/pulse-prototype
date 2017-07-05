@@ -1,3 +1,5 @@
+@import '~pulse-ui/src/css/globals.less';
+
 .ku-header {
   position: relative;
   z-index: 4;
@@ -8,6 +10,9 @@
   background-color: white;
   border-bottom: 2px solid rgba(187, 187, 187, 0.9);
   justify-content: space-between;
+  @media screen and (max-width: 660px) {
+   display: block;
+  }
 }
 
 .ku-header {
@@ -26,17 +31,31 @@
   display: block;
   border-right: 1px solid #eee;
   font-weight: 700;
+  @media screen and (max-width: 660px) {
+   display: inline-block;
+  }
 }
 
 .ku-header-toggle a:hover { text-decoration: none; }
 
-.ku-header-logo { padding-top: 9px;}
+.ku-header-logo {
+  padding-top: 9px;
+  @media screen and (max-width: 660px) {
+    display: inline-block;
+    width: ~"calc(100% - 120px)";
+  }
+}
 .ku-header-logo img { max-width: 125px;}
 
 .ku-header-profile {
   display: block;
   padding: 7px 15px;
   border-left: 1px solid #eee;
+  @media screen and (max-width: 660px) {
+   width: 100%;
+   border-left: none;
+   border-top: 1px solid @gray-light;
+  }
 }
 .ku-header-profile-image {
   display: inline-block;
