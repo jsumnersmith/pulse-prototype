@@ -27,7 +27,7 @@ class Home extends Component {
     return (
       <div className="wrapper">
 
-        <h3><strong>I'm a quirky little message.</strong></h3>
+        <h3><strong>Let's get down to the data.</strong></h3>
         <LandingPage view={this.state.view} />
 
         <div className="home-view-toggle">

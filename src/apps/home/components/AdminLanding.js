@@ -15,14 +15,14 @@ export default () => (
         <BigButton
           iconClass="fa-file-text-o"
           title="Browse Reports"
-          description="Some descriptive text with a count?"
+          description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
         />
       </div>
       <div className="col-md-6">
         <BigButton
           iconClass="fa-calendar"
           title="Upcoming Events"
-          description="Some descriptive text with a count?"
+          description={<span>Check out the <strong>65</strong> upcoming events in your organization.</span>}
         />
       </div>
     </div>

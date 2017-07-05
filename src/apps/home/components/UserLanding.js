@@ -13,7 +13,7 @@ export default () => (
         <BigButton
           iconClass="fa-line-chart"
           title="See Your History Page"
-          description="Some descriptive text with a count?"
+          description="See all responses by or about you"
         />
       </div>
     </div>
