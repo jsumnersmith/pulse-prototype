@@ -12252,6 +12252,229 @@ body {
   max-width: 90%;
   width: 1240px;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.btn-huge {
+  border: 2px solid rgba(102, 102, 102, 0.2);
+  border-radius: 3px;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge__icon {
+  padding: 30px;
+}
+.btn-huge__icon:before {
+  color: #bbb;
+  font-size: 28px;
+  line-height: 28px;
+}
+.btn-huge__content {
+  flex-grow: 1;
+  padding: 20px 20px 20px 0;
+}
+.btn-huge__title {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 5px 0;
+  text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+}
+.btn-huge__title:after {
+  content: " ";
+  position: relative;
+  display: block;
+  z-index: -1;
+  margin-top: -2px;
+  height: 2px;
+  width: 100%;
+  background: #1FAF84;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge:hover {
+  border: 2px solid rgba(102, 102, 102, 0.4);
+}
+.btn-huge:hover .btn-huge__title:after {
+  background: #007DA0;
+}
+.btn-huge__description {
+  display: block;
+  margin: 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.feed-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.feed-item + .feed-item {
+  padding-top: 20px;
+}
+.feed-item + .feed-item:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 3px;
+  background: #eee;
+  height: 20px;
+  top: 0;
+  left: 28.5px;
+}
+.feed-item__date {
+  width: 60px;
+  text-align: center;
+  border: 2px solid #eee;
+  font-weight: 600;
+  color: #666;
+  font-size: 13px;
+}
+.feed-item__day {
+  font-size: 20px;
+  line-height: 22px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.feed-item__month {
+  background: #eee;
+  font-weight: 700;
+  line-height: 18px;
+  padding: 0 0 3px;
+  vertical-align: top;
+}
+.feed-item__content {
+  flex-grow: 1;
+  padding: 0px 20px;
+}
+.feed-item__type {
+  font-size: 12px;
+}
+.feed-item__type .circle-icon:before {
+  color: white !important;
+}
+.feed-item__type .meta {
+  color: #007DA0;
+  font-weight: 700;
+}
+.feed-item__action {
+  width: 150px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.underline {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  border-bottom: none !important;
+  text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+  line-height: 1.1 !important;
+}
+.underline:after {
+  content: " ";
+  height: 2px;
+  display: block;
+  position: relative;
+  z-index: -1;
+  margin-top: -2px;
+  width: 100%;
+  background: transparent;
+}
+.underline--pulse-blue:after {
+  background: #007DA0;
+}
+.underline--green:after {
+  background: #1FAF84;
+}
+.underline--orange:after {
+  background: #E59062;
+}
+.underline--yellow:after {
+  background: #FED16C;
+}
+.underline--purple:after {
+  background: #8B698E;
+}
+.underline--red:after {
+  background: #EA6153;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.home-view-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  border: 3px solid rgba(102, 102, 102, 0.2);
+}
+.home-view-toggle label {
+  display: block;
+  margin-bottom: 5px;
+}
+.district-stats-widget .bg-pulse-blue {
+  background: #007DA0;
+  color: #007DA0;
+}
+.district-stats-widget .bg-green {
+  background: #1FAF84;
+  color: #1FAF84;
+}
+.district-stats-widget .bg-orange {
+  background: #E59062;
+  color: #E59062;
+}
+.district-stats-widget .event-data-point-icon {
+  padding: 20px;
+}
+.district-stats-widget .event-data-point strong {
+  font-size: 28px;
+}
 .report-builder {
   max-width: 1240px;
   margin-left: auto;
@@ -12442,11 +12665,6 @@ body {
 .collapse-icon.collapsed {
   transform: rotate(0deg);
 }
-.wrapper {
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .attribute-value-list {
   background: #eee;
   padding: 20px;
@@ -12469,11 +12687,6 @@ body {
   display: inline-block;
   width: 100px;
 }
-.wrapper {
-  width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -12493,13 +12706,8 @@ body {
 .btn-group .btn {
   margin-right: 3px;
 }
-.wrapper {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .wrapper--narrow {
-  max-width: 960px;
+  width: 960px;
 }
 .event-card {
   background: white;
@@ -12803,11 +13011,6 @@ body {
   background: #ddd;
   transition: width 0.1s ease-in-out;
 }
-.wrapper {
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .block-flat .content {
   padding-top: 0;
 }
@@ -12984,9 +13187,6 @@ body {
   100% {
     opacity: .25;
   }
-}
-.wrapper {
-  margin-top: 20px;
 }
 .btn {
   transition: all 0.2s ease-in-out;
