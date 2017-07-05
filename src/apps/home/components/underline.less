@@ -1,0 +1,26 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.underline {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  border-bottom: none !important;
+  text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white ;
+  line-height: 1.1 !important;
+  &:after {
+    content: " ";
+    height: 2px;
+    display: block;
+    position: relative;
+    z-index: -1;
+    margin-top: -2px;
+    width: 100%;
+    background: transparent;
+  }
+  &--pulse-blue:after { background: @pulse-blue; }
+  &--green:after { background: @green; }
+  &--orange:after { background: @orange; }
+  &--yellow:after { background: @yellow; }
+  &--purple:after { background: @purple; }
+  &--red:after { background: @red; }
+}

@@ -1,0 +1,23 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.home-view-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  border: 3px solid fadeout(@gray-dark, 80%);
+
+  label { display: block; margin-bottom: 5px; }
+}
+
+.district-stats-widget {
+  .bg-pulse-blue { background: @pulse-blue; color: @pulse-blue; }
+  .bg-green { background: @green; color: @green; }
+  .bg-orange { background: @orange; color: @orange; }
+
+  .event-data-point-icon {
+    padding: 20px;
+  }
+  .event-data-point strong { font-size: 28px;}
+}
