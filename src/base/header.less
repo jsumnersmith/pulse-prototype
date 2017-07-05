@@ -10,6 +10,7 @@
   background-color: white;
   border-bottom: 2px solid rgba(187, 187, 187, 0.9);
   justify-content: space-between;
+  align-items: center;
   @media screen and (max-width: 660px) {
    display: block;
   }
@@ -21,6 +22,9 @@
   margin-top: -72px;
   width: 100vw;
   transition: all .1s ease-in-out;
+  @media screen and (max-width: 660px) {
+   margin-top: -72px;
+  }
 }
 .ku-header.fixed {
   margin-top: 0;
@@ -31,6 +35,7 @@
   display: block;
   border-right: 1px solid #eee;
   font-weight: 700;
+  background: white;
   @media screen and (max-width: 660px) {
    display: inline-block;
   }
@@ -39,7 +44,8 @@
 .ku-header-toggle a:hover { text-decoration: none; }
 
 .ku-header-logo {
-  padding-top: 9px;
+  background: white;
+  padding: 15px 0;
   @media screen and (max-width: 660px) {
     display: inline-block;
     width: ~"calc(100% - 120px)";
@@ -50,11 +56,23 @@
 .ku-header-profile {
   display: block;
   padding: 7px 15px;
+  background: white;
   border-left: 1px solid #eee;
   @media screen and (max-width: 660px) {
+   .ku-header.open & {
+     transform: translateY(0);
+     max-height: 70px;
+     padding: 7px 15px;
+   }
+   max-height: 0;
+   position: relative;
+   z-index:-1;
    width: 100%;
    border-left: none;
    border-top: 1px solid @gray-light;
+   transform: translateY(-75px);
+   transition: all .2s ease-in-out;
+   padding: 0px 15px;
   }
 }
 .ku-header-profile-image {
