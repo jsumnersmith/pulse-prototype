@@ -1,0 +1,46 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.feed-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  & + &{
+    padding-top: 20px;
+    &:before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 3px;
+      background: @gray-light;
+      height: 20px;
+      top: 0;
+      left: 28.5px;
+    }
+  }
+  &__date {
+    width: 60px;
+    text-align: center;
+    border: 2px solid @gray-light;
+    font-weight: 600;
+    color: #666;
+    font-size: 13px;
+  }
+  &__day {
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  &__month {
+    background: @gray-light;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 0 0 3px;;
+    vertical-align: top;
+  }
+  &__content { flex-grow: 1; padding: 0px 20px; }
+  &__type { font-size: 12px;}
+  &__type .circle-icon:before { color: white !important; }
+  &__type .meta { color: @pulse-blue; font-weight: 700; }
+  &__action { width: 150px; }
+}
