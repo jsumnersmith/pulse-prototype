@@ -13241,6 +13241,7 @@ fieldset[disabled] .btn {
     width: 100%;
     background: rgba(255, 255, 255, 0.99);
     transform: translateX(-100%);
+    padding-top: 70px;
   }
 }
 /*---------------------------------------------------
@@ -13266,6 +13267,7 @@ fieldset[disabled] .btn {
   background-color: white;
   border-bottom: 2px solid rgba(187, 187, 187, 0.9);
   justify-content: space-between;
+  align-items: center;
 }
 @media screen and (max-width: 660px) {
   .ku-header {
@@ -13279,6 +13281,11 @@ fieldset[disabled] .btn {
   width: 100vw;
   transition: all 0.1s ease-in-out;
 }
+@media screen and (max-width: 660px) {
+  .ku-header {
+    margin-top: -72px;
+  }
+}
 .ku-header.fixed {
   margin-top: 0;
 }
@@ -13287,6 +13294,7 @@ fieldset[disabled] .btn {
   display: block;
   border-right: 1px solid #eee;
   font-weight: 700;
+  background: white;
 }
 @media screen and (max-width: 660px) {
   .ku-header-toggle {
@@ -13297,7 +13305,8 @@ fieldset[disabled] .btn {
   text-decoration: none;
 }
 .ku-header-logo {
-  padding-top: 9px;
+  background: white;
+  padding: 15px 0;
 }
 @media screen and (max-width: 660px) {
   .ku-header-logo {
@@ -13311,13 +13320,25 @@ fieldset[disabled] .btn {
 .ku-header-profile {
   display: block;
   padding: 7px 15px;
+  background: white;
   border-left: 1px solid #eee;
 }
 @media screen and (max-width: 660px) {
   .ku-header-profile {
+    max-height: 0;
+    position: relative;
+    z-index: -1;
     width: 100%;
     border-left: none;
     border-top: 1px solid #eee;
+    transform: translateY(-75px);
+    transition: all 0.2s ease-in-out;
+    padding: 0px 15px;
+  }
+  .ku-header.open .ku-header-profile {
+    transform: translateY(0);
+    max-height: 70px;
+    padding: 7px 15px;
   }
 }
 .ku-header-profile-image {
