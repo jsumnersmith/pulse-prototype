@@ -13215,6 +13215,14 @@ fieldset[disabled] .btn {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.ku-navigation {
+  position: fixed;
+  height: 100vh;
+}
+.ku-navigation .cl-navblock {
+  height: 100%;
+  overflow: scroll;
+}
 .is-open .ku-navigation__menu-toggle {
   transform: rotate(90deg);
 }
