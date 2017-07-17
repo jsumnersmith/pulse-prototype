@@ -53,7 +53,7 @@ export default class Header extends Component {
     const {fixed, open} = this.state;
     return (
       <div className="cl-wrapper">
-        <header className={`ku-header ${fixed || open  ? "fixed" : null}`}>
+        <header className={`ku-header ${fixed || open  ? "fixed" : null} ${open  ? "open" : null}`}>
           <div className="ku-header-toggle">
             <a onClick={()=>this.toggleOpen()}>Menu <i className="fa fa-bars"></i></a>
           </div>

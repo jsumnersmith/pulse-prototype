@@ -1,6 +1,12 @@
 @import '~pulse-ui/src/css/globals.less';
 
 .ku-navigation {
+  position: fixed;
+  height: 100vh;
+  .cl-navblock {
+    height: 100%;
+    overflow:scroll;
+  }
   .is-open &__menu-toggle { transform: rotate(90deg); }
   &__menu-toggle {
     font-size: 10px !important;
@@ -12,6 +18,13 @@
     background: #fafafa;
     & + & a { border-top: none }
     a { padding: 10px 10px 10px 50px; }
+  }
+  @media screen and (max-width: 660px) {
+   width: 100%;
+   background: fadeout(white, 1%);
+   transform: translateX(-100%);
+   padding-top: 70px;
+
   }
 }
 

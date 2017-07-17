@@ -23,7 +23,7 @@ const iconLookup = (name) => {
 }
 
 export default ({open, toggle = () => {}}) => (
-  <nav className={`${open ? "active" : ""} ku-navigation cl-sidebar text-left`}>
+  <nav className={`${open ? "active" : ""} ku-navigation text-left`}>
     <div className="cl-navblock">
       <ul className="cl-vnavigation">
         {
