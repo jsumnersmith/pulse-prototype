@@ -106,7 +106,7 @@ class EventList extends Component {
             </div>
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-9">
           <h4 style={{marginBottom: 30}}><strong>Showing events <span className="underline underline--pulse-blue">{`${this.state.upcoming ? 'after' : 'before'}`}</span> {moment(this.state.selectedDay).format('MMMM Do YYYY')}.</strong> <i style={{color: '#aaa'}} className={`fa ${this.state.upcoming ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc'}`}/></h4>
           {
             _.map(eventsByDay, ([date, eventsForDay], index) => (<DayOfEvents
@@ -120,8 +120,8 @@ class EventList extends Component {
               ))
           }
         </div>
-        <div className="col-md-4">
-          <div className="block-flat text-center" style={{marginTop: 48, marginLeft: 40, borderTop: "3px solid #007DA0"}}>
+        <div className="col-md-3">
+          <div className="block-flat text-center" style={{marginTop: 85, marginLeft: 0, borderTop: "3px solid #007DA0"}}>
             <div style={{marginBottom: 10}}><label>Show Me events</label></div>
             <div className="btn-group text-center" style={{width: "100%"}}>
               <a className={`btn btn-sm btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Before</a>
