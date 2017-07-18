@@ -12531,7 +12531,7 @@ body {
 }
 .event-card {
   background: white;
-  padding: 10px 20px;
+  padding: 20px;
 }
 .event-card + .event-card {
   border-top: 1px solid #eee !important;
@@ -12548,12 +12548,12 @@ body {
 }
 .event-card-date {
   text-transform: uppercase;
-  margin-top: 10px;
   display: inline-block;
   border: 2px solid #eee;
   text-align: center;
   width: 60px;
   margin-right: 10px;
+  vertical-align: top;
 }
 .event-card-date-month {
   background: #eee;
@@ -12589,17 +12589,17 @@ body {
   top: 0;
 }
 .event-card-content {
+  display: inline-block;
   margin-top: 0 !important;
-  padding-left: 57px;
+  padding-left: 10px;
+  width: calc(100% - 80px);
 }
 .event-card-description {
   margin-bottom: 20px;
 }
 .event-card-actions {
   vertical-align: top;
-  padding-top: 5px;
-  display: inline-block;
-  max-width: 170px;
+  max-width: 250px;
 }
 .event-attendance-code {
   padding: 10px;
