@@ -60,6 +60,11 @@ export default () => (
         <fieldset className="form-group">
           <span>LIST TABLE</span>
         </fieldset>
+        <h3><i className="fa fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
+        <fieldset className="form-group">
+          <label>Feedback Form URL</label>
+          <input className="form-control"/>
+        </fieldset>
         <fieldset className="text-center form-group">
           <a href="#submitted" className="btn btn-success"><i className="fa fa-check"></i> Save and Publish Event</a>
           <a href="#invited" className="btn btn-primary"><i className="fa fa-envelope"></i> Invite People</a>
