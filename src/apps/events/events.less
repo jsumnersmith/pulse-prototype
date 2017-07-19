@@ -8,7 +8,7 @@
 
 .event-card {
   background: white;
-  padding: 10px 20px;
+  padding: 20px;
   //cursor: pointer;
   &+& { border-top: 1px solid @gray-light !important; }
   &:hover {
@@ -22,12 +22,12 @@
 
 .event-card-date {
   .meta;
-  margin-top: 10px;
   display: inline-block;
   border: 2px solid @gray-light;
   text-align: center;
   width: 60px;
   margin-right: 10px;
+  vertical-align: top;
   &-month { background: @gray-light; }
   &-day {
     font-size: 20px;
@@ -62,8 +62,10 @@
 }
 
 .event-card-content {
+  display:inline-block;
   margin-top: 0 !important;
-  padding-left: 57px;
+  padding-left: 10px;
+  width: ~"calc(100% - 80px)";
 }
 
 .event-card-description {
@@ -72,9 +74,7 @@
 
 .event-card-actions {
   vertical-align:top;
-  padding-top: 5px;
-  display: inline-block;
-  max-width: 170px;
+  max-width: 250px;
 }
 
 .event-attendance-code {
