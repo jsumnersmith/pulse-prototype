@@ -227,9 +227,6 @@ blockquote {
 blockquote.pull-right {
   border-right: 5px solid #007DA0;
 }
-.fa-spin {
-  animation: 1.2s linear 0s normal none infinite spin;
-}
 /*Pre & Code*/
 pre {
   border-radius: 2px;
@@ -13021,6 +13018,96 @@ fieldset[disabled] .btn {
   margin-left: 10px;
   color: #EA6153;
   font-weight: 500;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.btn-huge {
+  position: relative;
+  z-index: 0;
+  border: 2px solid rgba(102, 102, 102, 0.2);
+  border-radius: 3px;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge + .btn-huge {
+  margin-top: -2px;
+}
+.btn-huge__icon {
+  padding: 20px;
+}
+.btn-huge__icon:before {
+  color: #bbb;
+  font-size: 28px;
+  line-height: 28px;
+}
+.btn-huge__content {
+  flex-grow: 1;
+  padding: 10px 10px 10px 0;
+}
+.btn-huge__title {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 5px 0;
+  text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+}
+.btn-huge__title:after {
+  content: " ";
+  position: relative;
+  display: block;
+  z-index: -1;
+  margin-top: -2px;
+  height: 2px;
+  width: 100%;
+  background: #1FAF84;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge__active {
+  border: 2px solid #1FAF84;
+  z-index: 2;
+}
+.btn-huge__active:after {
+  content: "\2714";
+  color: white;
+  font-size: 8px;
+  padding: 3px 4px;
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #1FAF84;
+  background: #82CCB2;
+  border-radius: 50%;
+}
+.btn-huge:hover {
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  z-index: 1;
+}
+.btn-huge__active:hover {
+  border: 2px solid #1FAF84;
+  z-index: 2;
+}
+.btn-huge:hover .btn-huge__title:after {
+  background: #007DA0;
+}
+.btn-huge__description {
+  display: block;
+  margin: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
