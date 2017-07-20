@@ -12,14 +12,15 @@
   transition: all .2s ease-in-out;
   & + & { margin-top: 1px; }
   &__icon {
-    padding: 10px;
+    padding: 10px 20px;
     &:before {
       color: @gray-medium;
       font-size: 28px;
       line-height: 28px;
+      .btn-huge__active & { color: @green; }
     }
   }
-  &__content { flex-grow: 1; padding: 10px 10px 10px 0; }
+  &__content { flex-grow: 1; padding: 5px 5px 5px 0; }
   &__title {
     position: relative;
     z-index: 2;
@@ -42,18 +43,18 @@
     border: 2px solid @green;
     z-index: 2;
     &:after {
-      content: "\2714";
-      color: white;
-      font-size: 8px;
-      padding: 3px 4px;
-      position: absolute;
-      top: 10px;
-      left: -10px;
-      height: 20px;
-      width: 20px;
-      border: 2px solid @green;
-      background: @acceptable;
-      border-radius: 50%;
+      // content: "\2714";
+      // color: white;
+      // font-size: 8px;
+      // padding: 3px 4px;
+      // position: absolute;
+      // top: 10px;
+      // left: -10px;
+      // height: 20px;
+      // width: 20px;
+      // border: 2px solid @green;
+      // background: @acceptable;
+      // border-radius: 50%;
     }
   }
   &:hover { border: 2px solid fadeout(@gray-dark, 60%); z-index: 1;}
