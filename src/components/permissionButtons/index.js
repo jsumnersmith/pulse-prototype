@@ -22,7 +22,7 @@ export default () => (
           </fieldset>
         </div>
         <div className="col-md-6">
-          <h3><i className="fa fa-user circle-icon green"/> <strong>Set Permissions</strong></h3>
+          <h3><i className="fa fa-unlock-alt circle-icon green"/> <strong>Set Permissions</strong></h3>
           <BigButton
             iconClass="fa-file-text-o"
             title="Manage Reports"
