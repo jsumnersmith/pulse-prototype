@@ -24,6 +24,7 @@ import UserSubmit from './apps/events/user/Submit';
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
 import NameCreator from './components/nameCreator';
+import PermissionButtons from './components/permissionButtons';
 
 export default [
   {
@@ -86,6 +87,13 @@ export default [
     linkName: "Name Creator",
     parent: 'Components',
     path: '/name-creator/',
+    exact: true
+  },
+  {
+    component: PermissionButtons,
+    linkName: "Permissions Buttons",
+    parent: 'Components',
+    path: '/permission-buttons/',
     exact: true
   },
   {
