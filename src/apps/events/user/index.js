@@ -5,6 +5,8 @@ import EventSummaryList from '../components/EventSummaryList';
 import sampleEvents from '../components/sampleEvents';
 import '../events.less';
 
+const teacher = {name: 'Joel Smith', id: 1};
+
 export default class Events extends Component {
   render(){
     return (
@@ -18,6 +20,7 @@ export default class Events extends Component {
               events={sampleEvents.slice(3,6)}
               url={''}
               linkText={"Browse All Upcoming Events"}
+              teacher={teacher}
             />
             <h5 className="event-list-title" style={{background: "#8B698E", marginTop: 40}}><i className="fa fa-check circle-icon--medium purple color-text"></i> <strong>Recent Events</strong></h5>
             <EventSummaryList
