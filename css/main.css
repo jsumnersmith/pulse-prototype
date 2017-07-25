@@ -13117,6 +13117,27 @@ fieldset[disabled] .btn {
   display: block;
   margin: 0;
 }
+.rubric-color-wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.rubric-color {
+  flex-grow: 1;
+  height: 100px;
+  padding-top: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+}
+.rubric-color + .rubric-color {
+  margin-left: 5px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
