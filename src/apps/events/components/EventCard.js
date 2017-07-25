@@ -81,17 +81,23 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
     {
       isAttending ?
         <div>
-        { isList
-          ? <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
-          : <span>
-              <div className="btn-group btn-block">
-                <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> You're Registered</a>
-                <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
-                <UserDropdown />
+
+          { isList
+            ? <div>
+                <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
+                <div className="event-card-status text-right">
+                  <i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong>
+                </div>
               </div>
-              <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="fa fa-clipboard" /> Add Your Feedback</a>
-            </span>
-        }
+            : <span>
+                <div className="btn-group btn-block">
+                  <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> You're Registered</a>
+                  <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+                  <UserDropdown />
+                </div>
+                <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="fa fa-clipboard" /> Add Your Feedback</a>
+              </span>
+          }
         </div>
       : <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
     }
@@ -113,7 +119,7 @@ const UserDropdown = () => (
 
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (
 
-  <div className="event-card">
+  <div className="event-card event-card--quick">
     <Link to={eventLink}>
       <div className={`event-card-header ${showAction ? 'event-card-header--narrow' : ''}`}>
         <h5 className="event-card-time">
@@ -121,6 +127,13 @@ export const QuickCard = ({ sampleEvent, isAttending, showAction = false, action
         </h5>
         <h4 className="event-card-title"><strong>{sampleEvent.name}</strong></h4>
       </div>
+      {
+        isAttending ?
+          <div className="event-card-status--quick">
+            <i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong>
+          </div>
+        : null
+      }
       { showAction ? (<div className="event-card-actions"> { isAttending ? <h5 className="meta green" style={{ marginBottom: 0 }}><i className="fa fa-check" />{"You're Attending"}</h5> : <a href={actionLink} className="btn btn-primary btn-block" style={{ display: 'inline-block', width: 160 }}>{actionTitle}</a> } </div>) : null }
       { sampleEvent.description ? <p>{ellipsis(sampleEvent.description, 200)}</p> : null }
     </Link>

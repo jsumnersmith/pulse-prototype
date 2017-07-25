@@ -1,0 +1,21 @@
+.rubric-color-wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.rubric-color {
+  //display: flex;
+  flex-grow: 1;
+  height: 100px;
+  padding-top: 20px;
+  border: 3px solid fadeout(white, 50%);
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  & + & { margin-left: 5px; }
+}

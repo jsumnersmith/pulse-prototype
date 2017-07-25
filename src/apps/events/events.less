@@ -7,8 +7,10 @@
 .wrapper--narrow { width: 960px; }
 
 .event-card {
+  position: relative;
   background: white;
   padding: 20px;
+  &--quick { padding-right: 110px;}
   //cursor: pointer;
   &+& { border-top: 1px solid @gray-light !important; }
   &:hover {
@@ -51,7 +53,7 @@
 .event-card-header {
   display: inline-block;
   position: relative;
-
+  .event-card--quick & { padding-right: 110px;}
   &--narrow { width: ~"calc(100% - 173px)"; }
 }
 
@@ -70,6 +72,16 @@
 
 .event-card-description {
   margin-bottom: 20px;
+}
+
+.event-card-status {
+  margin-top: 10px;
+  margin-left: 10px;
+  &--quick {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
 }
 
 .event-card-actions {

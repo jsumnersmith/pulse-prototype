@@ -25,6 +25,7 @@ import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
 import NameCreator from './components/nameCreator';
 import PermissionButtons from './components/permissionButtons';
+import RubricColors from './components/rubricColors';
 
 export default [
   {
@@ -94,6 +95,13 @@ export default [
     linkName: "Permissions Buttons",
     parent: 'Components',
     path: '/permission-buttons/',
+    exact: true
+  },
+  {
+    component: RubricColors,
+    linkName: "Rubric Colors",
+    parent: 'Components',
+    path: '/rubric-colors/',
     exact: true
   },
   {
