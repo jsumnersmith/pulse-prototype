@@ -5,24 +5,41 @@ export default class BigButton extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
+      isConfused: this.props.isConfused
     }
     this.toggleActive = this.toggleActive.bind(this);
+    this.getIconClassName = this.getIconClassName.bind(this);
   }
 
   toggleActive(){
-    this.setState({isActive: !this.state.isActive });
+    this.setState({
+      isActive: !this.state.isActive,
+      isConfused: false
+    });
+  }
+
+  getIconClassName(){
+    const {isActive, isConfused} = this.state;
+    if (isActive){
+      return "fa-check-circle green";
+    } else  if (isConfused){
+      return "fa-minus-circle";
+    } else {
+      return "fa-circle-thin"
+    }
   }
 
   render(){
-    const { iconClass, title, description } = this.props;
-    const { isActive } = this.state;
+    const { title, description } = this.props;
+    const { isActive, isConfused } = this.state;
     return (
       <div className={`btn-huge ${isActive ? "btn-huge__active" : ""}`} onClick={this.toggleActive}>
-        <i className={`fa ${isActive ? "fa-check-circle green" : "fa-circle-thin"} btn-huge__icon`} />
+        <i className={`fa ${this.getIconClassName()} btn-huge__icon`} />
         <div className="btn-huge__content">
           <h4 className="btn-huge__title"><strong>{title}</strong></h4>
           <p className="btn-huge__description">{description}</p>
+          { isConfused ? <p className="btn-huge__warning meta">There are users with conflicting permissions.</p>: null}
         </div>
       </div>
     )
