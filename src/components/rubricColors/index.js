@@ -23,6 +23,18 @@ export default class RubricColors extends Component {
     return (
       <div className="wrapper">
         <div className="block-flat">
+          <h3><strong>2 Point</strong></h3>
+          <div className="rubric-color-wrapper">
+            {_.map(this.getBlocks(2), (block) => block)}
+          </div>
+          <h3><strong>3 Point</strong></h3>
+          <div className="rubric-color-wrapper">
+            {_.map(this.getBlocks(3), (block) => block)}
+          </div>
+          <h3><strong>4 Point</strong></h3>
+          <div className="rubric-color-wrapper">
+            {_.map(this.getBlocks(4), (block) => block)}
+          </div>
           <h3><strong>5 Point</strong></h3>
           <div className="rubric-color-wrapper">
             {_.map(this.getBlocks(5), (block) => block)}
