@@ -13117,6 +13117,12 @@ fieldset[disabled] .btn {
   display: block;
   margin: 0;
 }
+.btn-huge__warning {
+  display: block;
+  margin: 0;
+  color: #007DA0;
+  font-size: 9px;
+}
 .rubric-color-wrapper {
   display: flex;
   align-content: center;
