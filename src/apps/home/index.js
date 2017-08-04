@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import AdminLanding from './components/AdminLanding';
+import AdminEventsLanding from './components/AdminLandingEvents';
 import UserLanding from './components/UserLanding';
 import UserEventsLanding from './components/UserEventsLanding';
 
@@ -31,6 +32,7 @@ class Home extends Component {
           <label>Select a User to Change View</label>
           <select className="form-control" onChange={this.updateView}>
             <option value="admin">Admin</option>
+            <option value="adminEvents">Admin with Events</option>
             <option value="user">User</option>
             <option value="userEvents">User with Events</option>
           </select>
@@ -43,6 +45,7 @@ class Home extends Component {
 const LandingPage = ({view}) => (
   <div>
     { view === 'admin' ? <AdminLanding /> : null }
+    { view === 'adminEvents' ? <AdminEventsLanding /> : null }
     { view === 'user' ? <UserLanding /> : null }
     { view === 'userEvents' ? <UserEventsLanding /> : null }
   </div>
