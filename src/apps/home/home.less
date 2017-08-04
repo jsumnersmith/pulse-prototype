@@ -21,3 +21,42 @@
   }
   .event-data-point strong { font-size: 28px;}
 }
+
+.bars {
+  display: inline-flex;
+  position:relative;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  align-items: baseline;
+  > * {
+    position: absolute;
+    bottom: 0;
+    width: 7px;
+    height: 30px;
+    border: 2px solid fadeout(@gray-dark, 50%);
+    background: @blue;
+    &:first-child { margin-left: 0; }
+  }
+  .bar-1 { left: 0; height: 20px; animation: bar1 .75s; animation-iteration-count: 3;}
+  .bar-2 { left: 8px; background: @green; animation: bar2 .75s; animation-iteration-count: 3;}
+  .bar-3 { left: 16px; height: 25px; background: @yellow; animation: bar3 .75s; animation-iteration-count: 3;}
+}
+
+@keyframes bar1 {
+  0%   { height: 20px; }
+  25% { height: 25px; }
+  100% { height: 20px; }
+}
+
+@keyframes bar2 {
+  0%   { height: 30px; }
+  50% { height: 35px; }
+  100% { height: 30px; }
+}
+
+@keyframes bar3 {
+  0%   { height: 25px; }
+  75% { height: 30px; }
+  100% { height: 25px; }
+}

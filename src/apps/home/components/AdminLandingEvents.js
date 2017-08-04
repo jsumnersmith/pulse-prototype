@@ -4,50 +4,27 @@ import LandingPageFeed from './LandingPageFeed';
 import './underline.less';
 
 export default () => (
-  <div style={{marginTop: 40}}>
-    <h3>
-      <span className="bars">
-        <span className="bar-1"></span>
-        <span className="bar-2"></span>
-        <span className="bar-3"></span>
-      </span>
-      <strong>Welcome, Joel!</strong>
-    </h3>
-    <div className="">
-      <div className="row">
-        <div className="col-md-12">
-          <h4><strong>You might want to... </strong></h4>
-        </div>
-        <div className="col-md-6">
-          <BigButton
-            iconClass="fa-file-text-o"
-            title="Browse Reports"
-            description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
-          />
-        </div>
-        <div className="col-md-6">
-          <BigButton
-            iconClass="fa-plus-circle"
-            title="Create a Report"
-            description={<span>Create reports to share with your organization.</span>}
-          />
-        </div>
+  <div>
+    <h3><strong>Welcome to Kickup!</strong></h3>
+
+    <hr className="dark" />
+    <div className="row">
+      <div className="col-md-12">
+        <h3><strong>Quick Links</strong></h3>
       </div>
-      <div className="row" style={{marginTop: 20}}>
-        <div className="col-md-6">
-          <BigButton
-            iconClass="fa-user-o"
-            title="View an Individual Log"
-            description={<span>See historical data for the 236 people in your organization.</span>}
-          />
-        </div>
-        <div className="col-md-6">
-          <BigButton
-            iconClass="fa-line-chart"
-            title="View Your Log"
-            description={<span>See your own feedback and historical data.</span>}
-          />
-        </div>
+      <div className="col-md-6">
+        <BigButton
+          iconClass="fa-file-text-o"
+          title="Browse Reports"
+          description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
+        />
+      </div>
+      <div className="col-md-6">
+        <BigButton
+          iconClass="fa-calendar"
+          title="Upcoming Events"
+          description={<span>Check out the <strong>65</strong> upcoming events in your organization.</span>}
+        />
       </div>
     </div>
   </div>
