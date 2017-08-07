@@ -12125,7 +12125,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .btn-huge:hover {
-  border: 2px solid rgba(102, 102, 102, 0.4);
+  border: 2px solid rgba(0, 125, 160, 0.8) !important;
 }
 .btn-huge:hover .btn-huge__title:after {
   background: #007DA0;
@@ -12216,7 +12216,7 @@ body {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
-.underline {
+.underline-thick {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -12224,9 +12224,9 @@ body {
   text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
   line-height: 1.1 !important;
 }
-.underline:after {
+.underline-thick:after {
   content: " ";
-  height: 2px;
+  height: 3px;
   display: block;
   position: relative;
   z-index: -1;
@@ -12234,22 +12234,25 @@ body {
   width: 100%;
   background: transparent;
 }
-.underline--pulse-blue:after {
+.underline-thick--gray-bg {
+  text-shadow: 1px 1px #eee, -1px -1px #eee, 1px -1px #eee, -1px 1px #eee;
+}
+.underline-thick--pulse-blue:after {
   background: #007DA0;
 }
-.underline--green:after {
+.underline-thick--green:after {
   background: #1FAF84;
 }
-.underline--orange:after {
+.underline-thick--orange:after {
   background: #E59062;
 }
-.underline--yellow:after {
+.underline-thick--yellow:after {
   background: #FED16C;
 }
-.underline--purple:after {
+.underline-thick--purple:after {
   background: #8B698E;
 }
-.underline--red:after {
+.underline-thick--red:after {
   background: #EA6153;
 }
 /*---------------------------------------------------
