@@ -29,21 +29,21 @@ export default () => (
             <BigButton
               iconClass="fa-calendar-o"
               title="Browse Events"
-              description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
+              description={<span>View and register for the 18 events in your organization.</span>}
             />
           </div>
           <div style={{marginTop: 10}}>
             <BigButton
               iconClass="fa-calendar-check-o"
               title="Confirm Attendance at Event"
-              description={<span>See historical data for the 236 people in your organization.</span>}
+              description={<span>Confirm that you went and share your feedback</span>}
             />
           </div>
           <div style={{marginTop: 10}}>
             <BigButton
               iconClass="fa-list-alt"
               title="View Your Events Log"
-              description={<span>See your own feedback and historical data.</span>}
+              description={<span>See a record of you events you've attended or registered for.</span>}
             />
           </div>
         </div>

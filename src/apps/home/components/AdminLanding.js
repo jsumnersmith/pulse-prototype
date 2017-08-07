@@ -39,7 +39,7 @@ export default () => (
           <BigButton
             iconClass="fa-user-o"
             title="View an Individual Log"
-            description={<span>See historical data for the 236 people in your organization.</span>}
+            description={<span>See feedback and activity for one of the 236 people in your organization.</span>}
           />
         </div>
         <div className="col-md-6">
