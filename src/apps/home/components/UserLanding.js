@@ -4,41 +4,28 @@ import LandingPageFeed from './LandingPageFeed';
 import './underline.less';
 
 export default () => (
-  <div>
-    <div className="row">
-      <div className="col-md-12">
-        <h3><strong>Quick Links</strong></h3>
-      </div>
-      <div className="col-md-6">
-        <BigButton
-          iconClass="fa-line-chart"
-          title="See Your History Page"
-          description="See all responses by or about you"
-        />
-      </div>
-    </div>
-    <hr className="dark" />
-    <div className="row">
-      <div className="col-md-12">
-        <h3><strong>Activity Feed</strong></h3>
-      </div>
-      <div className="col-md-12">
-        <LandingPageFeed
-          items={[
-            {
-              title: <span>You submitted a response for <strong>Needs Assessment</strong></span>,
-              type: 'report',
-              date: new Date(),
-              isTeacher: true
-            },
-            {
-              title: <span>You submitted a response for <strong>Post-PD Feedback</strong></span>,
-              type: 'report',
-              date: new Date(),
-              isTeacher: true
-            }
-          ]}
-        />
+  <div style={{marginTop: 40}}>
+    <h3>
+      <span className="bars">
+        <span className="bar-1"></span>
+        <span className="bar-2"></span>
+        <span className="bar-3"></span>
+      </span>
+      <strong>Welcome, <span className="underline-thick underline-thick--orange underline-thick--gray-bg">Joel</span>! You might want to...</strong>
+    </h3>
+    <div className="">
+      <div className="row">
+        <div className="col-md-12">
+          <h5 className="meta" style={{marginLeft: 10}}><i className="fa fa-pie-chart" /> Analytics</h5>
+          <hr className="dark"/>
+        </div>
+        <div className="col-md-6">
+          <BigButton
+            iconClass="fa-line-chart"
+            title="View Your Log"
+            description={<span>See your own feedback and historical data.</span>}
+          />
+        </div>
       </div>
     </div>
   </div>

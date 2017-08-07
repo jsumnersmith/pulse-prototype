@@ -1,6 +1,6 @@
 @import '~pulse-ui/src/css/globals.less';
 
-.underline {
+.underline-thick {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -9,14 +9,15 @@
   line-height: 1.1 !important;
   &:after {
     content: " ";
-    height: 2px;
+    height: 3px;
     display: block;
     position: relative;
     z-index: -1;
     margin-top: -2px;
-    width: 100%;
+    width:100%;
     background: transparent;
   }
+  &--gray-bg {   text-shadow: 1px 1px @gray-light, -1px -1px @gray-light, 1px -1px @gray-light, -1px 1px @gray-light; }
   &--pulse-blue:after { background: @pulse-blue; }
   &--green:after { background: @green; }
   &--orange:after { background: @orange; }

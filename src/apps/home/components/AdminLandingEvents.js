@@ -11,12 +11,17 @@ export default () => (
         <span className="bar-2"></span>
         <span className="bar-3"></span>
       </span>
-      <strong>Welcome, Joel!</strong>
+      <strong>Welcome, <span className="underline-thick underline-thick--orange underline-thick--gray-bg">Joel</span>! You might want to...</strong>
     </h3>
     <div className="">
       <div className="row">
-        <div className="col-md-12">
-          <h4><strong>You might want to... </strong></h4>
+        <div className="col-md-6">
+          <h5 className="meta" style={{marginLeft: 10}}><i className="fa fa-pie-chart" /> Analytics</h5>
+          <hr className="dark"/>
+        </div>
+        <div className="col-md-6" >
+          <h5 className="meta" style={{marginLeft: 10}}><i className="fa fa-calendar" /> Events</h5>
+          <hr className="dark"/>
         </div>
         <div className="col-md-6">
           <div>
@@ -48,10 +53,10 @@ export default () => (
             />
           </div>
         </div>
-        <div className="col-md-6" style={{borderLeft: "2px solid #ddd"}}>
+        <div className="col-md-6" >
           <div>
             <BigButton
-              iconClass="fa-calendar"
+              iconClass="fa-calendar-o"
               title="Browse Events"
               description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
             />
