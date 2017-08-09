@@ -34,7 +34,7 @@ export default class BigButton extends Component {
     const { title, description } = this.props;
     const { isActive, isConfused } = this.state;
     return (
-      <div className={`btn-huge ${isActive ? "btn-huge__active" : ""}`} onClick={this.toggleActive}>
+      <div className={`btn-huge btn-huge__tight ${isActive ? "btn-huge__active" : ""}`} onClick={this.toggleActive}>
         <i className={`fa ${this.getIconClassName()} btn-huge__icon`} />
         <div className="btn-huge__content">
           <h4 className="btn-huge__title"><strong>{title}</strong></h4>
