@@ -20,6 +20,8 @@ import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 
+import FormBuilder from './apps/formBuilder';
+
 // Components
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
@@ -53,6 +55,13 @@ export default [
     linkName: "Events - Admin",
     parent: 'Apps',
     path: '/events/admin/',
+    exact: true
+  },
+  {
+    component: FormBuilder,
+    linkName: "Form Builder",
+    parent: 'Apps',
+    path: '/form-builder/',
     exact: true
   },
   {
