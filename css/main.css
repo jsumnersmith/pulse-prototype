@@ -13077,6 +13077,14 @@ body {
 .active .form-builder__editable-item-close {
   display: block;
 }
+.form-builder__edit-button {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+.active .form-builder__edit-button {
+  display: none;
+}
 .block-flat .content {
   padding-top: 0;
 }
