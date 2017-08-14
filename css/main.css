@@ -13085,6 +13085,28 @@ body {
 .active .form-builder__edit-button {
   display: none;
 }
+.form-builder__editable-content-form {
+  display: none;
+  padding: 30px;
+}
+.active .form-builder__editable-content-form {
+  display: block;
+}
+.form-builder__editable-content-form fieldset + fieldset {
+  margin-top: 20px;
+}
+.form-builder__scaled-questions {
+  border: 2px dashed #bbb;
+  background: #eee;
+  padding: 10px;
+}
+.form-builder__scaled-question {
+  background: white;
+  padding: 20px;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
 .block-flat .content {
   padding-top: 0;
 }
