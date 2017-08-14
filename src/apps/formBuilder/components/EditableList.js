@@ -4,11 +4,11 @@ import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-ho
 const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
   <div className={`form-builder__editable-item ${ value.name == activeName ? 'active' : ''}`}>
     <div className={`form-builder__editable-item-inner`}>
-      <h5 onClick={()=>{ return toggleActive(value.name)}}>
+      <h5 style={{display: 'inline-block', verticalAlign: 'top'}}>
         <span className={`form-builder__sidebar-item-icon ${value.iconClass}`}/>
         <strong style={{display: 'table-cell'}} >{value.name}</strong>
       </h5>
-      <button className="btn btn-xs" onClick={()=>{ return toggleActive(value.name)}}>Launch editor</button>
+      <button className="btn btn-xs btn-default form-builder__edit-button" onClick={()=>{ return toggleActive(value.name)}}>Launch editor</button>
       <i className="fa fa-times circle-icon form-builder__editable-item-close" onClick={()=>{ return toggleActive('')}}/>
     </div>
   </div>
