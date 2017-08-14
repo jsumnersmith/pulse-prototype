@@ -12921,6 +12921,162 @@ body {
   background: #ddd;
   transition: width 0.1s ease-in-out;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.form-builder__header {
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.form-builder__header-icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+.form-builder__header-text {
+  display: inline-block;
+  width: calc(100% - 65px);
+  flex-grow: 1;
+  vertical-align: top;
+}
+.form-builder__header-title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.form-builder__header-subtitle {
+  display: block;
+}
+.form-builder__section-content {
+  padding: 10px 0;
+}
+.form-builder__section-action {
+  margin-top: 20px;
+}
+.form-builder__sidebar-item {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.form-builder__sidebar-item-title {
+  display: table-cell;
+  padding-left: 10px;
+}
+.form-builder__sidebar-item-icon {
+  display: table-cell;
+  min-height: 30px;
+  min-width: 30px;
+  vertical-align: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.form-builder__sidebar-item-icon.text {
+  background-image: url(./static/media/rich-text-widget-icon.2a0b4bca.svg);
+}
+.form-builder__sidebar-item-icon.section {
+  background-image: url(./static/media/section-icon.a9549215.svg);
+}
+.form-builder__sidebar-item-icon.heatmap {
+  background-image: url(./static/media/ratings-heatmap-icon.7b5bbfa0.svg);
+}
+.form-builder__sidebar-item-icon.comparison-chart {
+  background-image: url(./static/media/comparison-chart-icon.1c91950b.svg);
+}
+.form-builder__sidebar-item-icon.possible-leaders {
+  background-image: url(./static/media/possible-leaders-icon.8bd34c87.svg);
+}
+.form-builder__sidebar-item-icon.interests {
+  background-image: url(./static/media/interests-icon.5249c32e.svg);
+}
+.form-builder__sidebar-item-icon.multiple-choice {
+  background-image: url(./static/media/multiple-choice-icon.84dea95a.svg);
+}
+.form-builder__sidebar-item-icon.open-responses {
+  background-image: url(./static/media/open-responses-icon.a57fb09c.svg);
+}
+.form-builder__sidebar-item-icon.all-table {
+  background-image: url(./static/media/all-table-icon.cdd68bfd.svg);
+}
+.form-builder__editable-section {
+  margin-bottom: 0;
+}
+.form-builder__editable-content {
+  vertical-align: top;
+  margin-left: 20px;
+  padding: 10px;
+  border: dashed 2px rgba(0, 0, 0, 0.05);
+  background: #eee;
+  border-radius: 3px;
+}
+.form-builder__editable-place-holder {
+  margin: 20px;
+  text-align: center;
+  color: #bbb;
+  font-weight: 700;
+  font-size: 20px;
+}
+.form-builder__editable-section-content {
+  margin-top: 35px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.form-builder__editable-item {
+  background: white;
+  padding: 30px;
+  border: 0.5px solid #eee;
+}
+.form-builder__editable-item + .form-builder__editable-item {
+  margin-top: -1px;
+}
+.form-builder__editable-item.active {
+  position: fixed;
+  z-index: 99999;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transition: all 1s ease-in-out;
+  background: rgba(102, 102, 102, 0.8);
+}
+.form-builder__editable-item.active .form-builder__editable-item-inner {
+  padding: 30px;
+  background: white;
+  position: absolute;
+  width: 90vw;
+  min-height: 90vh;
+  margin: auto;
+  top: 5vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.form-builder__editable-item-close {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.active .form-builder__editable-item-close {
+  display: block;
+}
 .block-flat .content {
   padding-top: 0;
 }
