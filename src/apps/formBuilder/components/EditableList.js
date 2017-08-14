@@ -9,7 +9,10 @@ const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
         <strong style={{display: 'table-cell'}} >{value.name}</strong>
       </h5>
       <button className="btn btn-xs btn-default form-builder__edit-button" onClick={()=>{ return toggleActive(value.name)}}>Launch editor</button>
-      <i className="fa fa-times circle-icon form-builder__editable-item-close" onClick={()=>{ return toggleActive('')}}/>
+      <i className="fa fa-times circle-icon--small form-builder__editable-item-close" onClick={()=>{ return toggleActive('')}}/>
+      <div className="form-builder__editable-content-form">
+        {value.form}
+      </div>
     </div>
   </div>
 );

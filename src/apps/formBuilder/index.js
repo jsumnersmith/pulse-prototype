@@ -4,9 +4,6 @@ import EditableList from './components/EditableList';
 import './form-builder.less';
 
 export default class FormBuilder extends Component {
-  constructor(props){
-    super(props);
-  }
   render(){
     return (
       <div className="wrapper" style={{paddingTop: 20}}>
@@ -16,7 +13,7 @@ export default class FormBuilder extends Component {
             <div className="form-builder__header">
               <div className="circle-icon pulse-blue form-builder__header-icon">1</div>
               <div className="form-builder__header-text">
-                <h3 className="form-builder__header-title">Setup Form</h3>
+                <h3 className="form-builder__header-title">Form Details</h3>
                 <div className="form-builder__header-subtitle">Enter a name for your form to continue.</div>
               </div>
             </div>
@@ -32,7 +29,7 @@ export default class FormBuilder extends Component {
             <div className="form-builder__header">
               <div className="circle-icon purple form-builder__header-icon">2</div>
               <div className="form-builder__header-text">
-                <h3 className="form-builder__header-title">Configure Form Content</h3>
+                <h3 className="form-builder__header-title">Form Content</h3>
                 <div className="form-builder__header-subtitle">Add and configure questions</div>
               </div>
             </div>
@@ -99,17 +96,133 @@ const SideBarItem = ({title, iconClass}) => (
   </div>
 )
 
+const multipleChoiceForm = (
+    <div>
+    <fieldset>
+      <label>Prompt</label>
+      <input className="form-control"/>
+    </fieldset>
+    <hr className="dark" />
+    <div className="form-builder__scaled-questions">
+      <div className="form-builder__scaled-question">
+        <fieldset>
+          <label>Option Name</label>
+          <input className="form-control"/>
+        </fieldset>
+      </div>
+      <button className="btn btn-block btn-trans btn-primary"><i className="fa fa-plus"/> Add New Option</button>
+    </div>
+  </div>
+)
+
+const openResponseForm = (
+  <div>
+    <fieldset>
+      <label>Prompt</label>
+      <input className="form-control"/>
+    </fieldset>
+
+    <fieldset>
+      <label>Short Desription</label>
+      <input className="form-control"/>
+    </fieldset>
+  </div>
+)
+
+const scaledMatrixForm = (
+  <div>
+    <fieldset>
+      <label>Rubric</label>
+      <select className="form-control">
+        <option>Rubric 1</option>
+        <option>Rubric 2</option>
+        <option>Rubric 3</option>
+        <option>Rubric 4</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <label>Scale Values (1-5)</label>
+      <input className="form-control" placeholder="Rubric Value 1"/>
+      <input className="form-control" placeholder="Rubric Value 2"/>
+      <input className="form-control" placeholder="Rubric Value 3"/>
+      <input className="form-control" placeholder="Rubric Value 4"/>
+      <input className="form-control" placeholder="Rubric Value 5"/>
+    </fieldset>
+    <hr className="dark"/>
+    <div className="form-builder__scaled-questions">
+      <div className="form-builder__scaled-question">
+        <fieldset>
+          <label>Prompt</label>
+          <input className="form-control"/>
+        </fieldset>
+        <fieldset>
+          <label>Goal</label>
+          <select className="form-control">
+            <option>Goal 1</option>
+            <option>Goal 1a</option>
+            <option>Goal 1b</option>
+            <option>Goal 1c</option>
+          </select>
+        </fieldset>
+      </div>
+      <button className="btn btn-block btn-trans btn-primary"><i className="fa fa-plus"/> Add New Prompt and Goal</button>
+    </div>
+  </div>
+)
+
+const interestsForm = (
+  <div>
+    <p><i className="fa fa-info-circle orange"/> Select topics in which survey respondents can express interest or ask for further support.</p>
+     <fieldset>
+      <label>Prompt</label>
+      <input className="form-control"/>
+    </fieldset>
+    <hr />
+    <fieldset>
+      <label>Topics</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1a</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1b</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1c</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1d</label>
+    </fieldset>
+    <fieldset>
+      <label><input type="checkbox" /> Goal 1e</label>
+    </fieldset>
+  </div>
+);
+
 const widgets = [
   {
     name: "Multiple Choice",
-    iconClass: "multiple-choice"
+    iconClass: "multiple-choice",
+    form: multipleChoiceForm
   },
   {
     name: "Open Response",
-    iconClass: "open-responses"
+    iconClass: "open-responses",
+    form: openResponseForm
+
   },
   {
     name: "Scaled Matrix",
-    iconClass: "heatmap"
+    iconClass: "heatmap",
+    form: scaledMatrixForm
+  },
+  {
+    name: "Interests",
+    iconClass: "interests",
+    form: interestsForm
   }
 ];
+

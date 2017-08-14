@@ -135,4 +135,22 @@
     margin-left: 10px;
     .active & { display: none; }
   }
+  &__editable-content-form {
+    display: none;
+    padding: 30px;
+    .active & { display: block; }
+    fieldset + fieldset { margin-top: 20px; }
+  }
+  &__scaled-questions {
+    border: 2px dashed @gray-medium;
+    background: @gray-light;
+    padding: 10px;
+  }
+  &__scaled-question {
+    background: white;
+    padding: 20px;
+    border: 1px solid @gray-medium;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
 }
