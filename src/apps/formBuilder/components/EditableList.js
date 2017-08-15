@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
 const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
-  <div className={`form-builder__editable-item ${ value.name == activeName ? 'active' : ''}`}>
+  <div className={`form-builder__editable-item ${ value.name === activeName ? 'active' : ''}`}>
     <div className={`form-builder__editable-item-inner`}>
       <h5 style={{display: 'inline-block', verticalAlign: 'top'}}>
         <span className={`form-builder__sidebar-item-icon ${value.iconClass}`}/>
