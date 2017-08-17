@@ -13116,8 +13116,10 @@ th.empty {
 .scale-table__matrix thead {
   border-bottom: 2px solid white;
 }
+.scale-table__matrix th:first-child {
+  width: 500px;
+}
 .scale-table__matrix th.scale-table__score-column {
-  width: 8.33333333%;
   padding: 10px;
   border: 3px solid #eee;
   border-right: none;
@@ -13126,6 +13128,7 @@ th.empty {
   text-align: center;
   font-size: 12px;
   font-weight: 700;
+  background: #f8f8f8;
 }
 .scale-table__matrix th.scale-table__score-column:last-child {
   border-right: 3px solid #eee;
@@ -13152,6 +13155,10 @@ th.empty {
 .scale-table tbody tr td:first-child {
   text-align: left;
   cursor: initial;
+}
+.scale-table__rubric td:first-child {
+  min-width: 300px;
+  max-width: 500px;
 }
 .scale-table__rubric .rubric-box {
   position: relative;
