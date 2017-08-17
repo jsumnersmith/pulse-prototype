@@ -1,33 +1,11 @@
 import React, {Component} from 'react';
-const rubricList = [
-  "N/A (not observed)",
-  "Not Attempting",
-  "Ineffective",
-  "Minimally Effective",
-  "Effective",
-  "Highly Effective"
-]
 
-export default () => (
+
+export default ({data}) => (
   <div>
     <table className="scale-table scale-table__rubric">
       <tbody>
-         <TableRow
-          text="DIFFERENTIATION: Differentiating lessons based on student readiness, interest or other factors."
-          rubrics={rubricList}
-        />
-        <TableRow
-          text="RIGOR: Implementing lessons and activities that consistently require rigorous thinking of students."
-          rubrics={rubricList}
-        />
-        <TableRow
-          text="FORMATIVE ASSESSMENT: Checking for understanding throughout the lesson using information deliberate methods (such as questioning or short tasks)."
-          rubrics={rubricList}
-          />
-        <TableRow
-          text="ADJUSTING INSTRUCTION: Using formative assessment data to make in-the-moment instructional adjustments and provide feedback."
-          rubrics={rubricList}
-          />
+        { data.map((datum)=> <TableRow {...datum}/>) }
       </tbody>
     </table>
   </div>
