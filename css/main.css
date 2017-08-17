@@ -13156,6 +13156,16 @@ th.empty {
   text-align: left;
   cursor: initial;
 }
+.scale-table__rubric tbody td {
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.scale-table__rubric tbody td:hover {
+  box-shadow: 0px 0px 0px 2px #eee inset;
+}
+.scale-table__rubric tbody td:first-child:hover {
+  box-shadow: none;
+}
 .scale-table__rubric td:first-child {
   min-width: 300px;
   max-width: 500px;
@@ -13165,7 +13175,8 @@ th.empty {
   cursor: pointer;
   padding: 10px;
 }
-.scale-table__rubric .rubric-box__active {
+.scale-table__rubric .rubric-box__active,
+.scale-table__rubric .rubric-box__active:hover {
   box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.9) inset;
 }
 .scale-table__rubric .rubric-box__check {
