@@ -35,12 +35,16 @@ th.empty {
   tbody td i.fa { font-size: 24px; }
   tbody tr td:first-child { text-align: left; cursor: initial; }
   &__rubric {
+    tbody td { text-align: left; transition: all .2s ease-in-out; }
+    tbody td:hover { box-shadow: 0px 0px 0px 2px @gray-light inset; }
+    tbody td:first-child:hover { box-shadow: none; }
     td:first-child { min-width: 300px; max-width: 500px; }
     .rubric-box {
       position: relative;
       cursor: pointer;
       padding: 10px;
-      &__active {
+      &__active,
+      &__active:hover {
         box-shadow: 0px 0px 0px 4px fadeout(@pulse-blue, 10%) inset;
       }
       &__check {
