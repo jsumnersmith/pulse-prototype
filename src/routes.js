@@ -21,6 +21,7 @@ import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 
 import FormBuilder from './apps/formBuilder';
+import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
 
 // Components
 import LoadingStates from './components/loadingStates';
@@ -112,6 +113,10 @@ export default [
     parent: 'Components',
     path: '/rubric-colors/',
     exact: true
+  },
+    {
+    component: ScaleQuestions,
+    path: '/form-builder/scale-questions'
   },
   {
     component: AdminBrowseEvents,

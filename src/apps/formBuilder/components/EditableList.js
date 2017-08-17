@@ -54,7 +54,6 @@ export default class SortableComponent extends Component {
     return <SortableList
       items={this.state.items}
       onSortEnd={this.onSortEnd}
-      lockToContainerEdges={true}
       toggleActive={this.toggleActive}
       activeName={this.state.activeItem}
       />;

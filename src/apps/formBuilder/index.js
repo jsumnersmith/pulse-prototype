@@ -58,6 +58,24 @@ export default class FormBuilder extends Component {
                         />
                       </div>
                     </div>
+                    <div className="form-builder__editable-section-adder text-center">
+                      <i className="fa fa-plus circle-icon--small pulse-blue form-builder__adder-icon" />
+                    </div>
+                    <div className="form-builder__editable-section block-flat">
+                      <div className="actions">
+                        <a className="minimize">
+                          <i className="fa fa-chevron-down" />
+                        </a>
+                        <a className="close-down">
+                          <i className="fa fa-times" />
+                        </a>
+                      </div>
+                      <div className="form-builder__editable-section-content">
+                        <EditableList
+                          items={widgets.slice(0,2)}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="col-md-3">

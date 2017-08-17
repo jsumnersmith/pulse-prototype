@@ -1,0 +1,51 @@
+@import '~pulse-ui/src/css/globals.less';
+
+th.empty {
+  border: none;
+}
+
+.scale-table {
+  border-collapse: separate;
+  &__matrix {
+    thead { border-bottom: 2px solid white; }
+    th.scale-table__score-column {
+      width: 50% / 6;
+      padding: 10px;
+      border: 3px solid @gray-light;
+      border-right: none;
+      border-bottom: none;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      &:last-child { border-right: 3px solid @gray-light; }
+    }
+  }
+  tbody td {
+    text-align: center;
+    border: 3px solid @gray-light;
+    border-bottom: none;
+    border-right: none;
+  }
+  tbody tr td:last-child {border-right: 3px solid @gray-light; }
+  tbody tr:last-child td {border-bottom: 3px solid @gray-light; }
+  tbody tr td:first-child { font-weight: 700; }
+  tbody td i.fa { font-size: 24px; }
+  tbody tr td:first-child { text-align: left; }
+  &__rubric {
+    .rubric-box {
+      position: relative;
+      cursor: pointer;
+      padding: 10px;
+      &__active {
+        box-shadow: 0px 0px 0px 4px fadeout(@pulse-blue, 50%) inset;
+      }
+      &__check {
+        font-size: 14px !important;
+        position: absolute;
+        top: 0;
+        right: -5px;
+      }
+    }
+  }
+}
