@@ -12147,75 +12147,6 @@ body {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
-.feed-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.feed-item + .feed-item {
-  padding-top: 20px;
-}
-.feed-item + .feed-item:before {
-  content: " ";
-  position: absolute;
-  display: block;
-  width: 3px;
-  background: #eee;
-  height: 20px;
-  top: 0;
-  left: 28.5px;
-}
-.feed-item__date {
-  width: 60px;
-  text-align: center;
-  border: 2px solid #eee;
-  font-weight: 600;
-  color: #666;
-  font-size: 13px;
-}
-.feed-item__day {
-  font-size: 20px;
-  line-height: 22px;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-.feed-item__month {
-  background: #eee;
-  font-weight: 700;
-  line-height: 18px;
-  padding: 0 0 3px;
-  vertical-align: top;
-}
-.feed-item__content {
-  flex-grow: 1;
-  padding: 0px 20px;
-}
-.feed-item__type {
-  font-size: 12px;
-}
-.feed-item__type .circle-icon:before {
-  color: white !important;
-}
-.feed-item__type .meta {
-  color: #007DA0;
-  font-weight: 700;
-}
-.feed-item__action {
-  width: 150px;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
 .underline-thick {
   position: relative;
   z-index: 1;
@@ -13017,6 +12948,38 @@ body {
 .form-builder__editable-section {
   margin-bottom: 0;
 }
+.form-builder__editable-section + .form-builder__editable-section {
+  margin-top: 20px;
+}
+.form-builder__editable-section-adder {
+  position: relative;
+  margin: 10px 0;
+}
+.form-builder__editable-section-adder:before,
+.form-builder__editable-section-adder:after {
+  content: " ";
+  position: absolute;
+  top: 8px;
+  height: 3px;
+  background: #bbb;
+  width: calc(50% - 30px);
+}
+.form-builder__editable-section-adder:before {
+  left: 0;
+}
+.form-builder__editable-section-adder:after {
+  right: 0;
+}
+.form-builder__adder-icon {
+  cursor: pointer;
+}
+.form-builder__adder-icon:hover {
+  background: #007DA0;
+  color: #002d3a !important;
+  border-color: #002d3a;
+  transform: scale(1.1) rotate(180deg);
+  transition: all 0.1s ease-in-out;
+}
 .form-builder__editable-content {
   vertical-align: top;
   margin-left: 20px;
@@ -13034,10 +12997,11 @@ body {
 }
 .form-builder__editable-section-content {
   margin-top: 35px;
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -21px;
+  margin-right: -21px;
 }
 .form-builder__editable-item {
+  position: relative;
   background: white;
   padding: 30px;
   border: 0.5px solid #eee;
@@ -13066,6 +13030,29 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+.form-builder__editable-item:before {
+  opacity: 0;
+  content: "+";
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  top: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 20px;
+  width: 20px;
+  line-height: 15px;
+  background: #eee;
+  border: 2px solid #bbb;
+  color: #bbb;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.form-builder__editable-item:hover:before {
+  opacity: 1;
+  transform: rotate(180deg);
 }
 .form-builder__editable-item-close {
   display: none;
@@ -13106,6 +13093,77 @@ body {
   border: 1px solid #bbb;
   border-radius: 2px;
   margin-bottom: 10px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+th.empty {
+  border: none;
+}
+.scale-table {
+  border-collapse: separate;
+}
+.scale-table__matrix thead {
+  border-bottom: 2px solid white;
+}
+.scale-table__matrix th.scale-table__score-column {
+  width: 8.33333333%;
+  padding: 10px;
+  border: 3px solid #eee;
+  border-right: none;
+  border-bottom: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.scale-table__matrix th.scale-table__score-column:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody td {
+  text-align: center;
+  border: 3px solid #eee;
+  border-bottom: none;
+  border-right: none;
+}
+.scale-table tbody tr td:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody tr:last-child td {
+  border-bottom: 3px solid #eee;
+}
+.scale-table tbody tr td:first-child {
+  font-weight: 700;
+}
+.scale-table tbody td i.fa {
+  font-size: 24px;
+}
+.scale-table tbody tr td:first-child {
+  text-align: left;
+}
+.scale-table__rubric .rubric-box {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+}
+.scale-table__rubric .rubric-box__active {
+  box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.5) inset;
+}
+.scale-table__rubric .rubric-box__check {
+  font-size: 14px !important;
+  position: absolute;
+  top: 0;
+  right: -5px;
 }
 .block-flat .content {
   padding-top: 0;
