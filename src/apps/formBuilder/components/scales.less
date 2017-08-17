@@ -22,6 +22,7 @@ th.empty {
     }
   }
   tbody td {
+    cursor: pointer;
     text-align: center;
     border: 3px solid @gray-light;
     border-bottom: none;
@@ -31,20 +32,20 @@ th.empty {
   tbody tr:last-child td {border-bottom: 3px solid @gray-light; }
   tbody tr td:first-child { font-weight: 700; }
   tbody td i.fa { font-size: 24px; }
-  tbody tr td:first-child { text-align: left; }
+  tbody tr td:first-child { text-align: left; cursor: initial; }
   &__rubric {
     .rubric-box {
       position: relative;
       cursor: pointer;
       padding: 10px;
       &__active {
-        box-shadow: 0px 0px 0px 4px fadeout(@pulse-blue, 50%) inset;
+        box-shadow: 0px 0px 0px 4px fadeout(@pulse-blue, 10%) inset;
       }
       &__check {
         font-size: 14px !important;
         position: absolute;
-        top: 0;
-        right: -5px;
+        top: 4px;
+        right: -1px;
       }
     }
   }
