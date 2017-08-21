@@ -1,6 +1,5 @@
 import React from 'react';
 import BigButton from './BigButton';
-import LandingPageFeed from './LandingPageFeed';
 import './underline.less';
 
 export default () => (
