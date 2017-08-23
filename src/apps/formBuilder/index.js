@@ -4,7 +4,10 @@ import {
     multipleChoiceForm,
     scaledMatrixForm,
     interestsForm,
-    openResponseForm
+    openResponseForm,
+    AddingTableButton,
+    AddingTableScale,
+    AddingTableRubric,
   } from './components/Forms';
 
 import './form-builder.less';
@@ -108,6 +111,8 @@ export default class FormBuilder extends Component {
               </div>
             </div>
           </div>
+          <hr className="dark" />
+
         </div>
       </div>
     );

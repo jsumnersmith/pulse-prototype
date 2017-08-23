@@ -149,7 +149,7 @@
         top: 5vh; bottom: 0; left: 0; right: 0;
       }
     }
-    &:before {
+    &-menu-toggle {
       opacity: 0;
       content: "+";
       position: absolute;
@@ -166,8 +166,9 @@
       color: @gray-medium;
       border-radius: 50%;
       transition: all .2s ease-in-out;
+      &:before { font-size: 16px; }
     }
-    &:hover:before { opacity: 1;  transform: rotate(180deg); }
+    &:hover .form-builder__editable-item-menu-toggle { opacity: 1; }
   }
   &__editable-item-close {
     display: none;
@@ -200,5 +201,20 @@
     border: 1px solid @gray-medium;
     border-radius: 2px;
     margin-bottom: 10px;
+  }
+  &__widget-menu {
+    display: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    padding-left: 200px;
+    &-content {
+      border: 2px solid @gray-light;
+    }
+    &.active { display: inline-block; }
+    .form-builder__sidebar-item { margin-bottom: 0;}
   }
 }
