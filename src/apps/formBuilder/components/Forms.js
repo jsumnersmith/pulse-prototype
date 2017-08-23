@@ -201,8 +201,8 @@ export class AddingTableScale extends Component {
           addOption={this.addEmptyValue}
         />
         <div className="text-right">
-          <button className="btn btn-xs btn-default btn-trans" data-toggle="collapse" data-target="#button-sample">Add Options as Text</button>
-          <fieldset id="button-sample" className="collapse">
+          <button className="btn btn-xs btn-default btn-trans" data-toggle="collapse" data-target="#button-sample2">Add Options as Text</button>
+          <fieldset id="button-sample2" className="collapse">
             <textarea className="form-control" value={values.join('\n')}/>
           </fieldset>
         </div>
@@ -260,8 +260,8 @@ export class AddingTableRubric extends Component {
           addOption={this.addEmptyValue}
         />
         <div className="text-right">
-          <button className="btn btn-xs btn-default btn-trans" data-toggle="collapse" data-target="#button-sample">Add Options as Text</button>
-          <fieldset id="button-sample" className="collapse">
+          <button className="btn btn-xs btn-default btn-trans" data-toggle="collapse" data-target="#button-sample3">Add Options as Text</button>
+          <fieldset id="button-sample3" className="collapse">
             <textarea className="form-control" value={values.join('\n')}/>
           </fieldset>
         </div>
