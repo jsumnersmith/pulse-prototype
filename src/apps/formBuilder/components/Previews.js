@@ -5,6 +5,7 @@ import MultipleChoice from './MultipleChoice';
 
 export const MultipleChoicePreview = (
   <div>
+    <p className="form-builder__prompt">How are you feeling today?</p>
     <MultipleChoice options={["I am feeling fine.", "I am not feeling fine."]} />
   </div>
 );
@@ -18,6 +19,7 @@ export const OpenResponsePreview = (
 
 export const MatrixScalePreview = (
   <div>
-  <Matrix />
+    <p className="form-builder__prompt">Fill out the following based on what you see in the classroom.</p>
+    <Matrix />
   </div>
 );

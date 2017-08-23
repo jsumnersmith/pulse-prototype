@@ -209,7 +209,7 @@ export const openResponseForm = (
   <div>
     <fieldset>
       <label>Prompt</label>
-      <input className="form-control"/>
+      <input className="form-control" value="What are some general other comments?"/>
     </fieldset>
 
     <fieldset>
@@ -223,7 +223,7 @@ export const scaledMatrixForm = (
   <div>
     <fieldset>
       <label>Prompt</label>
-      <input className="form-control"/>
+      <input className="form-control" value="Fill out the following based on what you see in the classroom."/>
     </fieldset>
     <fieldset>
       <label>Rubric</label>
