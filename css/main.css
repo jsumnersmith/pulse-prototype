@@ -12914,6 +12914,97 @@ body {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+th.empty {
+  border: none;
+}
+.scale-table {
+  border-collapse: separate;
+}
+.scale-table__matrix thead {
+  border-bottom: 2px solid white;
+}
+.scale-table__matrix th:first-child {
+  width: 500px;
+}
+.scale-table__matrix th.scale-table__score-column {
+  padding: 10px;
+  border: 3px solid #eee;
+  border-right: none;
+  border-bottom: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f8f8f8;
+}
+.scale-table__matrix th.scale-table__score-column:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody td {
+  cursor: pointer;
+  text-align: center;
+  border: 3px solid #eee;
+  border-bottom: none;
+  border-right: none;
+}
+.scale-table tbody tr td:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody tr:last-child td {
+  border-bottom: 3px solid #eee;
+}
+.scale-table tbody tr td:first-child {
+  font-weight: 700;
+}
+.scale-table tbody td i.fa {
+  font-size: 24px;
+}
+.scale-table tbody tr td:first-child {
+  text-align: left;
+  cursor: initial;
+}
+.scale-table__rubric tbody td {
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.scale-table__rubric tbody td:hover {
+  box-shadow: 0px 0px 0px 2px #eee inset;
+}
+.scale-table__rubric tbody td:first-child:hover {
+  box-shadow: none;
+}
+.scale-table__rubric td:first-child {
+  min-width: 300px;
+  max-width: 500px;
+}
+.scale-table__rubric .rubric-box {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+}
+.scale-table__rubric .rubric-box__active,
+.scale-table__rubric .rubric-box__active:hover {
+  box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.9) inset;
+}
+.scale-table__rubric .rubric-box__check {
+  font-size: 14px !important;
+  position: absolute;
+  top: 4px;
+  right: -1px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .form-builder__header {
   padding: 10px 0;
   margin-bottom: 10px;
@@ -12996,6 +13087,7 @@ body {
 }
 .form-builder__editable-section {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 .form-builder__editable-section + .form-builder__editable-section {
   margin-top: 20px;
@@ -13052,7 +13144,7 @@ body {
 .form-builder__editable-item {
   position: relative;
   background: white;
-  padding: 30px;
+  padding: 15px;
   border: 0.5px solid #eee;
 }
 .form-builder__editable-item + .form-builder__editable-item {
@@ -13079,6 +13171,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+.form-builder__editable-item.active .form-builder__editable-preview {
+  display: none;
 }
 .form-builder__editable-item-menu-toggle {
   opacity: 0;
@@ -13163,97 +13258,6 @@ body {
 }
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
-th.empty {
-  border: none;
-}
-.scale-table {
-  border-collapse: separate;
-}
-.scale-table__matrix thead {
-  border-bottom: 2px solid white;
-}
-.scale-table__matrix th:first-child {
-  width: 500px;
-}
-.scale-table__matrix th.scale-table__score-column {
-  padding: 10px;
-  border: 3px solid #eee;
-  border-right: none;
-  border-bottom: none;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  background: #f8f8f8;
-}
-.scale-table__matrix th.scale-table__score-column:last-child {
-  border-right: 3px solid #eee;
-}
-.scale-table tbody td {
-  cursor: pointer;
-  text-align: center;
-  border: 3px solid #eee;
-  border-bottom: none;
-  border-right: none;
-}
-.scale-table tbody tr td:last-child {
-  border-right: 3px solid #eee;
-}
-.scale-table tbody tr:last-child td {
-  border-bottom: 3px solid #eee;
-}
-.scale-table tbody tr td:first-child {
-  font-weight: 700;
-}
-.scale-table tbody td i.fa {
-  font-size: 24px;
-}
-.scale-table tbody tr td:first-child {
-  text-align: left;
-  cursor: initial;
-}
-.scale-table__rubric tbody td {
-  text-align: left;
-  transition: all 0.2s ease-in-out;
-}
-.scale-table__rubric tbody td:hover {
-  box-shadow: 0px 0px 0px 2px #eee inset;
-}
-.scale-table__rubric tbody td:first-child:hover {
-  box-shadow: none;
-}
-.scale-table__rubric td:first-child {
-  min-width: 300px;
-  max-width: 500px;
-}
-.scale-table__rubric .rubric-box {
-  position: relative;
-  cursor: pointer;
-  padding: 10px;
-}
-.scale-table__rubric .rubric-box__active,
-.scale-table__rubric .rubric-box__active:hover {
-  box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.9) inset;
-}
-.scale-table__rubric .rubric-box__check {
-  font-size: 14px !important;
-  position: absolute;
-  top: 4px;
-  right: -1px;
 }
 .block-flat .content {
   padding-top: 0;
