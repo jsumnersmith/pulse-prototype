@@ -12865,6 +12865,55 @@ body {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.adding-table {
+  border: 2px solid #eee;
+  background-color: #eee;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+.adding-table__row {
+  display: flex;
+  padding: 5px 5px 5px 15px;
+  border: 1px solid #eee;
+  background: white;
+  align-items: center;
+}
+.adding-table__row-icon {
+  margin-right: 15px;
+  align-content: center;
+}
+.adding-table__row-content {
+  flex: 1;
+  align-items: center;
+  display: flex;
+}
+.adding-table__row-content > * {
+  flex: 1;
+  padding: 5px;
+}
+.adding-table__form {
+  padding: 10px;
+  background: white;
+}
+.adding-table__header {
+  background: #eee;
+  padding: 5px 15px;
+}
+.adding-table__header .adding-table__row-content > * {
+  padding: 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .form-builder__header {
   padding: 10px 0;
   margin-bottom: 10px;
@@ -13031,7 +13080,7 @@ body {
   left: 0;
   right: 0;
 }
-.form-builder__editable-item:before {
+.form-builder__editable-item-menu-toggle {
   opacity: 0;
   content: "+";
   position: absolute;
@@ -13050,9 +13099,11 @@ body {
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
 }
-.form-builder__editable-item:hover:before {
+.form-builder__editable-item-menu-toggle:before {
+  font-size: 16px;
+}
+.form-builder__editable-item:hover .form-builder__editable-item-menu-toggle {
   opacity: 1;
-  transform: rotate(180deg);
 }
 .form-builder__editable-item-close {
   display: none;
@@ -13093,6 +13144,25 @@ body {
   border: 1px solid #bbb;
   border-radius: 2px;
   margin-bottom: 10px;
+}
+.form-builder__widget-menu {
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  padding-left: 200px;
+}
+.form-builder__widget-menu-content {
+  border: 2px solid #eee;
+}
+.form-builder__widget-menu.active {
+  display: inline-block;
+}
+.form-builder__widget-menu .form-builder__sidebar-item {
+  margin-bottom: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
