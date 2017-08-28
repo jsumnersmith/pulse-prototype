@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
+import WidgetMenu from './WidgetMenu.js';
 
-const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
+const SortableItem = SortableElement(({value, toggleActive, toggleMenu, activeName, activeMenuName}) =>
   <div className={`form-builder__editable-item ${ value.name === activeName ? 'active' : ''}`}>
     <div className={`form-builder__editable-item-inner`}>
       <h5 style={{display: 'inline-block', verticalAlign: 'top'}}>
@@ -9,6 +10,9 @@ const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
         <strong style={{display: 'table-cell'}} >{value.name}</strong>
       </h5>
       <button className="btn btn-xs btn-default form-builder__edit-button" onClick={()=>{ return toggleActive(value.name)}}>Launch editor</button>
+      <div className="form-builder__editable-preview">
+        {value.preview}
+      </div>
       <i className="fa fa-times circle-icon--small form-builder__editable-item-close" onClick={()=>{ return toggleActive('')}}/>
       <div className="form-builder__editable-content-form">
         {value.form}
@@ -17,7 +21,7 @@ const SortableItem = SortableElement(({value, toggleActive, activeName}) =>
   </div>
 );
 
-const SortableList = SortableContainer(({items, toggleActive, activeName}) => {
+const SortableList = SortableContainer(({items, toggleActive, toggleMenu, activeName, activeMenuName}) => {
   return (
     <div className="form-builder__editable-items">
       {items.map((value, index) => (
@@ -26,6 +30,8 @@ const SortableList = SortableContainer(({items, toggleActive, activeName}) => {
           index={index}
           value={value}
           toggleActive={toggleActive}
+          toggleMenu={toggleMenu}
+          activeMenuName={activeMenuName}
           activeName={activeName}/>
       ))}
     </div>
@@ -37,13 +43,19 @@ export default class SortableComponent extends Component {
     super(props)
     this.state = {
       items:  this.props.items,
-      activeItem: ''
+      activeItem: '',
+      activeMenu: '',
     };
     this.toggleActive = this.toggleActive.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
   toggleActive(itemName){
     console.log("Setting value", itemName);
     this.setState({activeItem: itemName})
+  }
+  toggleMenu(itemName){
+    console.log("Setting Menu active")
+    this.setState({activeMenu: itemName})
   }
   onSortEnd = ({oldIndex, newIndex}) => {
     this.setState({
@@ -55,7 +67,9 @@ export default class SortableComponent extends Component {
       items={this.state.items}
       onSortEnd={this.onSortEnd}
       toggleActive={this.toggleActive}
+      toggleMenu={this.toggleMenu}
       activeName={this.state.activeItem}
+      activeMenuName={this.state.activeMenu}
       />;
   }
 }

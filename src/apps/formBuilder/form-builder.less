@@ -71,6 +71,7 @@
   //Editable Stuff
   &__editable-section {
     margin-bottom: 0;
+    padding-bottom: 0;
     & + & { margin-top: 20px; }
   }
 
@@ -127,7 +128,7 @@
   &__editable-item {
     position: relative;
     background: white;
-    padding: 30px;
+    padding: 15px;
     border: .5px solid @gray-light;
     & + & { margin-top: -1px; }
     &.active {
@@ -148,8 +149,9 @@
         margin: auto;
         top: 5vh; bottom: 0; left: 0; right: 0;
       }
+      .form-builder__editable-preview { display: none; }
     }
-    &:before {
+    &-menu-toggle {
       opacity: 0;
       content: "+";
       position: absolute;
@@ -166,8 +168,9 @@
       color: @gray-medium;
       border-radius: 50%;
       transition: all .2s ease-in-out;
+      &:before { font-size: 16px; }
     }
-    &:hover:before { opacity: 1;  transform: rotate(180deg); }
+    &:hover .form-builder__editable-item-menu-toggle { opacity: 1; }
   }
   &__editable-item-close {
     display: none;
@@ -200,5 +203,20 @@
     border: 1px solid @gray-medium;
     border-radius: 2px;
     margin-bottom: 10px;
+  }
+  &__widget-menu {
+    display: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    padding-left: 200px;
+    &-content {
+      border: 2px solid @gray-light;
+    }
+    &.active { display: inline-block; }
+    .form-builder__sidebar-item { margin-bottom: 0;}
   }
 }

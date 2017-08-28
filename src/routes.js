@@ -22,6 +22,7 @@ import UserSubmit from './apps/events/user/Submit';
 
 import FormBuilder from './apps/formBuilder';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
+import QuestionEditors from './apps/formBuilder/QuestionEditors';
 
 // Components
 import LoadingStates from './components/loadingStates';
@@ -114,9 +115,13 @@ export default [
     path: '/rubric-colors/',
     exact: true
   },
-    {
+  {
     component: ScaleQuestions,
     path: '/form-builder/scale-questions'
+  },
+  {
+    component: QuestionEditors,
+    path: '/form-builder/question-editors'
   },
   {
     component: AdminBrowseEvents,

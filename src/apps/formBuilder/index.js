@@ -3,9 +3,13 @@ import EditableList from './components/EditableList';
 import {
     multipleChoiceForm,
     scaledMatrixForm,
-    interestsForm,
     openResponseForm
   } from './components/Forms';
+import {
+    MultipleChoicePreview,
+    OpenResponsePreview,
+    MatrixScalePreview
+  } from './components/Previews';
 
 import './form-builder.less';
 
@@ -97,10 +101,6 @@ export default class FormBuilder extends Component {
                     iconClass="multiple-choice"
                   />
                   <SideBarItem
-                    title="Interest Question"
-                    iconClass="interests"
-                  />
-                  <SideBarItem
                     title="Open Response Question"
                     iconClass="open-responses"
                   />
@@ -108,6 +108,8 @@ export default class FormBuilder extends Component {
               </div>
             </div>
           </div>
+          <hr className="dark" />
+
         </div>
       </div>
     );
@@ -124,23 +126,20 @@ const widgets = [
   {
     name: "Multiple Choice",
     iconClass: "multiple-choice",
-    form: multipleChoiceForm
+    form: multipleChoiceForm,
+    preview: MultipleChoicePreview
   },
   {
     name: "Open Response",
     iconClass: "open-responses",
-    form: openResponseForm
-
+    form: openResponseForm,
+    preview: OpenResponsePreview
   },
   {
     name: "Scaled Matrix",
     iconClass: "heatmap",
-    form: scaledMatrixForm
-  },
-  {
-    name: "Interests",
-    iconClass: "interests",
-    form: interestsForm
+    form: scaledMatrixForm,
+    preview: MatrixScalePreview
   }
 ];
 
