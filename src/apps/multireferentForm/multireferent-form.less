@@ -1,0 +1,33 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.response-configurations {
+  margin-top: 20px;
+  padding: 10px;
+  border: 3px dashed @gray-medium;
+  background: @gray-light;
+  border-radius: 3px;
+}
+
+.response-configuration {
+  display: flex;
+  flex-wrap: wrap;
+  //align-items: flex-start;
+  padding: 15px;
+  border: 2px solid @gray-medium;
+  background: white;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  &__content {
+    flex-grow: 1;
+    padding-left: 15px;
+  }
+  &__title { margin-top: 0 !important;}
+  &__details {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0;
+  }
+  &__processors {
+    width: 100%;
+  }
+}
