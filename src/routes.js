@@ -33,6 +33,7 @@ import SaveButtons from './components/buttons/Save';
 import NameCreator from './components/nameCreator';
 import PermissionButtons from './components/permissionButtons';
 import RubricColors from './components/rubricColors';
+import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
 
 export default [
   {
@@ -127,6 +128,13 @@ export default [
     linkName: "Rubric Colors",
     parent: 'Components',
     path: '/rubric-colors/',
+    exact: true
+  },
+  {
+    component: MultipleChoiceGrouping,
+    linkName: "Multiple Choice Groupings",
+    parent: 'Components',
+    path: '/multichoice/',
     exact: true
   },
   {
