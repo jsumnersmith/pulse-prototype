@@ -19,7 +19,33 @@ export default ({ match }) => (
               </ul>
             </div>
             <div>
+              <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors"><i className="fa fa-list"/> Processor List</button>
+            </div>
+            <div>
               <button className="btn btn-primary">Edit</button>
+            </div>
+            <div className="response-configuration__processors collapse" id="proccessors" style={{width: "100%"}}>
+              <table className="no-border" style={{marginTop: 20}}>
+                <thead className="no-border">
+                  <tr>
+                    <th><strong>Column</strong></th>
+                    <th><strong>Processor Type</strong></th>
+                    <th><strong>Processor ID</strong></th>
+                  </tr>
+                </thead>
+                <tbody className="no-border-y">
+                  <tr>
+                    <td>#7 -- Column Text</td>
+                    <td>Confidence</td>
+                    <td>23423623</td>
+                  </tr>
+                  <tr>
+                    <td>#8 -- Column Text</td>
+                    <td>Confidence</td>
+                    <td>23423624</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <div className="response-configuration">
@@ -31,8 +57,34 @@ export default ({ match }) => (
             </ul>
           </div>
           <div>
+            <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors2"><i className="fa fa-list"/> Processor List</button>
+          </div>
+          <div>
             <button className="btn btn-primary">Edit</button>
           </div>
+          <div className="response-configuration__processors collapse" id="proccessors2" style={{width: "100%"}}>
+          <table className="no-border" style={{marginTop: 20}}>
+            <thead className="no-border">
+              <tr>
+                <th><strong>Column</strong></th>
+                <th><strong>Processor Type</strong></th>
+                <th><strong>Processor ID</strong></th>
+              </tr>
+            </thead>
+            <tbody className="no-border-y">
+              <tr>
+                <td>#9 -- Column Text</td>
+                <td>Confidence</td>
+                <td>23423625</td>
+              </tr>
+              <tr>
+                <td>#10 -- Column Text</td>
+                <td>Confidence</td>
+                <td>23423626</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         </div>
           <Link to={`${match.url}/add`} className="btn btn-block btn-default" style={{marginLeft:0}}>
             <i className="fa fa-plus-circle"/> Add Response Configuration
