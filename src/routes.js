@@ -24,6 +24,9 @@ import FormBuilder from './apps/formBuilder';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
 import QuestionEditors from './apps/formBuilder/QuestionEditors';
 
+import MultireferentForm from './apps/multireferentForm';
+import MultireferentFormAdd from './apps/multireferentForm/AddForm';
+
 // Components
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
@@ -65,6 +68,17 @@ export default [
     parent: 'Apps',
     path: '/form-builder/',
     exact: true
+  },
+  {
+    component: MultireferentForm,
+    linkName: "Multireferent Form",
+    parent: 'Apps',
+    path: '/multi-form/',
+    exact: true
+  },
+  {
+    component: MultireferentFormAdd,
+    path: '/multi-form/add',
   },
   {
     component: SaveButtons,
