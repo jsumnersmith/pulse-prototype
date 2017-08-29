@@ -13281,6 +13281,7 @@ th.empty {
 }
 .response-configuration {
   display: flex;
+  flex-wrap: wrap;
   padding: 15px;
   border: 2px solid #bbb;
   background: white;
@@ -13298,6 +13299,9 @@ th.empty {
   list-style: none;
   padding-left: 0px;
   margin-bottom: 0;
+}
+.response-configuration__processors {
+  width: 100%;
 }
 .block-flat .content {
   padding-top: 0;
