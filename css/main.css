@@ -13259,6 +13259,46 @@ th.empty {
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.response-configurations {
+  margin-top: 20px;
+  padding: 10px;
+  border: 3px dashed #bbb;
+  background: #eee;
+  border-radius: 3px;
+}
+.response-configuration {
+  display: flex;
+  padding: 15px;
+  border: 2px solid #bbb;
+  background: white;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.response-configuration__content {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+.response-configuration__title {
+  margin-top: 0 !important;
+}
+.response-configuration__details {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0;
+}
 .block-flat .content {
   padding-top: 0;
 }
