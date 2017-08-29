@@ -45,6 +45,11 @@ class AttendanceTable extends Component {
     const { sampleEvent } = this.props;
     return (
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
+        <label style={{ marginTop: 10 }}>Add Attendees</label>
+        <Search placeholder={'Begin typing to add a person to the attendance list.'} />
+        <div style={{marginTop: 5, marginBottom: 10}} className="text-right">
+          <label>1 user has not received email notification.</label><button className="btn btn-sm btn-default btn-trans">Send Email Notfication</button>
+        </div>
         <Table
           rowHeight={55}
           rowsCount={sampleEvent.attendees.length}
@@ -97,7 +102,7 @@ class AttendanceTable extends Component {
             width={150}
           />
           <Column
-            header={<Cell>Confirmed</Cell>}
+            header={<Cell>Notified</Cell>}
             allowCellsRecycling
             cell={({ rowIndex, ...props }) => (
               <Cell {...props}>
@@ -112,6 +117,22 @@ class AttendanceTable extends Component {
               )}
             width={100}
           />
+          <Column
+          header={<Cell>Confirmed</Cell>}
+          allowCellsRecycling
+          cell={({ rowIndex, ...props }) => (
+            <Cell {...props}>
+              <div className="text-center">
+                {
+                    sampleEvent.attendees[rowIndex].confirmed
+                    ? <i className="fa fa-check circle-icon--small green" />
+                    : <i className="fa fa-times circle-icon--small" />
+                  }
+              </div>
+            </Cell>
+            )}
+          width={100}
+        />
           <Column
             header={<Cell>Attendance</Cell>}
             allowCellsRecycling
@@ -141,8 +162,7 @@ class AttendanceTable extends Component {
             width={150}
           />
         </Table>
-        <label style={{ marginTop: 10 }}>Add Attendees</label>
-        <Search placeholder={'Begin typing to add a person to the attendance list.'} />
+
       </div>
     );
   }
