@@ -81,9 +81,8 @@ class GroupingsControls extends Component {
           <label>grouped by:</label>
         </span>
       )
-    } else {
-      <label>Show me answers grouped by:</label>
-    }
+    } else return <label>Show me answers grouped by:</label>
+
   }
 
   render() {
