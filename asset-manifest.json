@@ -1,8 +1,8 @@
 {
   "main.css": "css/main.css",
   "main.css.map": "css/main.css.map",
-  "main.js": "static/js/main.f06e7a84.js",
-  "main.js.map": "static/js/main.f06e7a84.js.map",
+  "main.js": "static/js/main.69eccdad.js",
+  "main.js.map": "static/js/main.69eccdad.js.map",
   "static/media/adding-table.less": "static/media/adding-table.b2328beb.less",
   "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
   "static/media/attributeEditor.less": "static/media/attributeEditor.b2328beb.less",
@@ -13,6 +13,7 @@
   "static/media/comparison-chart-icon.svg": "static/media/comparison-chart-icon.1c91950b.svg",
   "static/media/dayPicker.less": "static/media/dayPicker.b2328beb.less",
   "static/media/events.less": "static/media/events.b2328beb.less",
+  "static/media/folders.less": "static/media/folders.b2328beb.less",
   "static/media/form-builder.less": "static/media/form-builder.b2328beb.less",
   "static/media/header.less": "static/media/header.b2328beb.less",
   "static/media/home.less": "static/media/home.61ed6b32.less",
@@ -34,6 +35,7 @@
   "static/media/submenu.less": "static/media/submenu.b2328beb.less",
   "static/media/subnav.less": "static/media/subnav.b2328beb.less",
   "static/media/success-and-needs-icon.svg": "static/media/success-and-needs-icon.a7d5c2b5.svg",
+  "static/media/survey-icon.svg": "static/media/survey-icon.45499f82.svg",
   "static/media/tags.less": "static/media/tags.b2328beb.less",
   "static/media/underline.less": "static/media/underline.b2328beb.less"
 }

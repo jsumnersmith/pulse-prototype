@@ -13303,6 +13303,120 @@ th.empty {
 .response-configuration__processors {
   width: 100%;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.collections {
+  border: 2px solid #eee;
+  display: flex;
+}
+.collections__list {
+  position: relative;
+  min-width: 190px;
+  border-right: 2px solid #eee;
+}
+.collections__item {
+  font-weight: 500;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+}
+.collections__item:hover {
+  border-left-color: rgba(238, 238, 238, 0.8);
+}
+.collections__item.active {
+  border-left: 4px solid rgba(229, 144, 98, 0.5);
+  margin-left: -2px;
+}
+.collections__reports {
+  flex-grow: 1;
+}
+.collections__add-collection,
+.collections__add-report {
+  display: block;
+  margin: 20px auto !important;
+  width: 95%;
+}
+.tags .search-box {
+  height: 34px;
+}
+.tags__tag-list {
+  margin: 10px 0;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+}
+.tags__tag-list label {
+  display: inline-block;
+  margin-right: 5px;
+}
+.tags__tag {
+  cursor: pointer;
+}
+.tags__all {
+  margin-bottom: 0 !important;
+}
+.folders__grid {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
+.folders__grid-item {
+  text-align: center;
+  width: 20%;
+  margin: 10px;
+  cursor: pointer;
+}
+.folders__grid-icon {
+  position: relative;
+  pointer-events: none;
+  display: inline-block;
+  max-width: 35px;
+}
+.folders__grid-icon img {
+  width: 100%;
+  height: auto;
+}
+.report-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.report-item + .report-item {
+  border-top: 1px solid #eee;
+}
+.report-item__content {
+  flex-grow: 1;
+}
+.report-item__tags {
+  width: 250px;
+}
+.report-item__icon {
+  width: 50px;
+  margin-right: 20px;
+}
+.report-item__icon img {
+  width: 100%;
+}
+.report-item__title {
+  margin-top: 5px;
+}
+.report-item__action .btn {
+  margin-bottom: 0 !important;
+}
 .block-flat .content {
   padding-top: 0;
 }
