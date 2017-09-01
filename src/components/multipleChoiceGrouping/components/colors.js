@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import chroma from 'chroma-js';
 
 export default (dataLength) => {
