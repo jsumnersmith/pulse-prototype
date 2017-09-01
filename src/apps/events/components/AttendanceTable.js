@@ -44,11 +44,12 @@ class AttendanceTable extends Component {
   render() {
     const { sampleEvent } = this.props;
     return (
+    <div>
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
         <label style={{ marginTop: 10 }}>Add Attendees</label>
         <Search placeholder={'Begin typing to add a person to the attendance list.'} />
         <div style={{marginTop: 5, marginBottom: 10}} className="text-right">
-          <label>1 user has not received email notification.</label><button className="btn btn-sm btn-default btn-trans">Send Email Notfication</button>
+          <label>1 user has not received a registration email notification.</label><button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
         </div>
         <Table
           rowHeight={55}
@@ -102,22 +103,6 @@ class AttendanceTable extends Component {
             width={150}
           />
           <Column
-            header={<Cell>Notified</Cell>}
-            allowCellsRecycling
-            cell={({ rowIndex, ...props }) => (
-              <Cell {...props}>
-                <div className="text-center">
-                  {
-                      sampleEvent.attendees[rowIndex].confirmed
-                      ? <i className="fa fa-check circle-icon--small green" />
-                      : <i className="fa fa-times circle-icon--small" />
-                    }
-                </div>
-              </Cell>
-              )}
-            width={100}
-          />
-          <Column
           header={<Cell>Confirmed</Cell>}
           allowCellsRecycling
           cell={({ rowIndex, ...props }) => (
@@ -162,8 +147,40 @@ class AttendanceTable extends Component {
             width={150}
           />
         </Table>
-
       </div>
+      <div className="modal modal-background colored-header success fade in" id="attendance-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header text-center">
+              <h3 className="text-center">Review and Send Registration Notifications</h3>
+              <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+            </div>
+            <div className="modal-body text-left">
+              <div>
+                <p>The following <span className="underline--green">1</span> user hasn't received a registration email notification.</p>
+                <table className="no-border">
+                  <thead className="no-border">
+                    <tr>
+                      <th><strong>User</strong></th>
+                      <th><strong>Email</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody className="no-border-y">
+                    <tr>
+                      <th style={{fontWeight: "normal", padding: 8}}>Joel Smith</th>
+                      <th style={{fontWeight: "normal", padding: 8}}>jsumnersmith@gmail.com</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-success btn-flat md-close btn-block" data-dismiss="modal">Send Registration Notifications</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     );
   }
 }
