@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
-import WidgetMenu from './WidgetMenu.js';
 
 const SortableItem = SortableElement(({value, toggleActive, toggleMenu, activeName, activeMenuName}) =>
   <div className={`form-builder__editable-item ${ value.name === activeName ? 'active' : ''}`}>

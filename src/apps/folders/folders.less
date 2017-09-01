@@ -1,0 +1,85 @@
+@import '~pulse-ui/src/css/globals.less';
+
+//Collection
+.collections {
+  border: 2px solid @gray-light;
+  display: flex;
+  &__list {
+    position: relative;
+    min-width: 190px;
+    border-right: 2px solid @gray-light;
+  }
+  &__item {
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 1px solid @gray-light;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    &:hover { border-left-color: fadeout(@gray-light, 20%);}
+    &.active { border-left: 4px solid fadeout(@orange, 50%); margin-left: -2px }
+  }
+  &__reports {
+    flex-grow: 1;
+  }
+  &__add-collection, &__add-report {
+    display: block;
+    margin: 20px auto !important;
+    width: 95%;
+  }
+}
+
+//Tag View
+.tags {
+  .search-box { height: 34px; }
+  &__tag-list {
+    margin: 10px 0;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    align-items: center;
+    label { display: inline-block; margin-right: 5px; }
+  }
+  &__tag { cursor: pointer; }
+  &__all { margin-bottom: 0 !important; }
+}
+
+//Folder View
+
+.folders {
+  &__grid { display: flex; flex-direction: row; flex-flow: row wrap; align-content: flex-end;}
+  &__grid-item {
+    text-align: center;
+    width: 20%;
+    //flex-grow:3;
+    margin: 10px;
+    cursor: pointer;
+  }
+  &__grid-icon {
+    position: relative;
+    pointer-events: none;
+    display: inline-block;
+    max-width: 35px;
+    img { width: 100%; height: auto; }
+  }
+}
+
+//Report Item Recreation
+.report-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  & + & { border-top: 1px solid @gray-light; }
+  &__content {
+    flex-grow: 1;
+  }
+  &__tags { width: 250px;}
+  &__icon {
+    width: 50px;
+    margin-right: 20px;
+    img { width: 100%; }
+  }
+  &__title {
+    margin-top: 5px;
+  }
+  &__action .btn { margin-bottom: 0 !important; }
+}

@@ -27,6 +27,8 @@ import QuestionEditors from './apps/formBuilder/QuestionEditors';
 import MultireferentForm from './apps/multireferentForm';
 import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
+import Folders from './apps/folders';
+
 // Components
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
@@ -75,6 +77,13 @@ export default [
     linkName: "Multireferent Form",
     parent: 'Apps',
     path: '/multi-form/',
+    exact: true
+  },
+  {
+    component: Folders,
+    linkName: "Folders",
+    parent: 'Apps',
+    path: '/folders/',
     exact: true
   },
   {
