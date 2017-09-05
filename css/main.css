@@ -1010,7 +1010,8 @@ body.boxed #cl-wrapper {
   background-color: #F0F0F0;
 }
 /*Forms*/
-label {
+label,
+.label-text {
   margin-bottom: 2px;
   font-family: "Open Sans", "Helvetica", sans-serif;
   text-transform: uppercase;
@@ -1022,14 +1023,16 @@ label {
   color: #007DA0;
   padding-left: 3px;
 }
-.checkbox label {
+.checkbox label,
+.checkbox .label-text {
   font-family: "Museo Sans", "Helvetica", sans-serif;
   color: #555;
   font-size: 14px;
   text-transform: none;
   letter-spacing: initial;
 }
-.form-horizontal label {
+.form-horizontal label,
+.form-horizontal .label-text {
   padding-left: 0;
 }
 .form {
@@ -5156,13 +5159,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.circle-icon.action-required,
-.circle-icon.orange {
+.circle-icon.action-required {
   border-color: #e1814c;
 }
-.circle-icon.action-required.color-text:before,
-.circle-icon.orange.color-text:before {
+.circle-icon.action-required.color-text:before {
   color: #de7136;
+}
+.circle-icon.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .circle-icon.needs-improvement {
   border-color: #ffbc66;
@@ -5240,13 +5246,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.circle-icon--small.action-required,
-.circle-icon--small.orange {
+.circle-icon--small.action-required {
   border-color: #e1814c;
 }
-.circle-icon--small.action-required.color-text:before,
-.circle-icon--small.orange.color-text:before {
+.circle-icon--small.action-required.color-text:before {
   color: #de7136;
+}
+.circle-icon--small.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .circle-icon--small.needs-improvement {
   border-color: #ffbc66;
@@ -5355,13 +5364,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.circle-icon--medium.action-required,
-.circle-icon--medium.orange {
+.circle-icon--medium.action-required {
   border-color: #e1814c;
 }
-.circle-icon--medium.action-required.color-text:before,
-.circle-icon--medium.orange.color-text:before {
+.circle-icon--medium.action-required.color-text:before {
   color: #de7136;
+}
+.circle-icon--medium.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .circle-icon--medium.needs-improvement {
   border-color: #ffbc66;
@@ -5448,13 +5460,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.circle-icon--score.action-required,
-.circle-icon--score.orange {
+.circle-icon--score.action-required {
   border-color: #e1814c;
 }
-.circle-icon--score.action-required.color-text:before,
-.circle-icon--score.orange.color-text:before {
+.circle-icon--score.action-required.color-text:before {
   color: #de7136;
+}
+.circle-icon--score.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .circle-icon--score.needs-improvement {
   border-color: #ffbc66;
@@ -5540,13 +5555,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.circle-icon--medium.action-required,
-.circle-icon--medium.orange {
+.circle-icon--medium.action-required {
   border-color: #e1814c;
 }
-.circle-icon--medium.action-required.color-text:before,
-.circle-icon--medium.orange.color-text:before {
+.circle-icon--medium.action-required.color-text:before {
   color: #de7136;
+}
+.circle-icon--medium.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .circle-icon--medium.needs-improvement {
   border-color: #ffbc66;
@@ -5847,13 +5865,16 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   line-height: 40px;
 }
-.comment-card-icon.action-required,
-.comment-card-icon.orange {
+.comment-card-icon.action-required {
   border-color: #e1814c;
 }
-.comment-card-icon.action-required.color-text:before,
-.comment-card-icon.orange.color-text:before {
+.comment-card-icon.action-required.color-text:before {
   color: #de7136;
+}
+.comment-card-icon.orange {
+  border-color: #e1814c;
+  background: #E59062;
+  color: white;
 }
 .comment-card-icon.needs-improvement {
   border-color: #ffbc66;
@@ -13607,6 +13628,68 @@ fieldset[disabled] .btn {
   margin-left: 10px;
   color: #EA6153;
   font-weight: 500;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.btn-huge {
+  border: 2px solid rgba(102, 102, 102, 0.2);
+  border-radius: 3px;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge__icon {
+  padding: 30px;
+}
+.btn-huge__icon:before {
+  color: #bbb;
+  font-size: 28px;
+  line-height: 28px;
+}
+.btn-huge__content {
+  flex-grow: 1;
+  padding: 20px 20px 20px 0;
+}
+.btn-huge__title {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 5px 0;
+  text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+}
+.btn-huge__title:after {
+  content: " ";
+  position: relative;
+  display: block;
+  z-index: -1;
+  margin-top: -2px;
+  height: 2px;
+  width: 100%;
+  background: #1FAF84;
+  transition: all 0.2s ease-in-out;
+}
+.btn-huge:hover {
+  border: 2px solid rgba(0, 125, 160, 0.8) !important;
+}
+.btn-huge:hover .btn-huge__title:after {
+  background: #007DA0;
+}
+.btn-huge__description {
+  display: block;
+  margin: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
