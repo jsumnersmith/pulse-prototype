@@ -1,0 +1,43 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.btn-huge {
+  border: 2px solid fadeout(@gray-dark, 80%);
+  border-radius: 3px;
+  background: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  &__icon {
+    padding: 30px;
+    &:before {
+      color: @gray-medium;
+      font-size: 28px;
+      line-height: 28px;
+    }
+  }
+
+  &__content { flex-grow: 1; padding: 20px 20px 20px 0; }
+  &__title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin: 5px 0;
+    text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white ;
+    &:after {
+      content: " ";
+      position: relative;
+      display: block;
+      z-index: -1;
+      margin-top: -2px;
+      height: 2px;
+      width: 100%;
+      background: @green;
+      transition: all .2s ease-in-out;
+    }
+  }
+  &:hover { border: 2px solid fadeout(@pulse-blue, 20%) !important; }
+  &:hover &__title:after{ background: @pulse-blue }
+  &__description { display: block; margin: 0;}
+}
+
