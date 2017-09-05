@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {NameCreator} from 'pulse-ui';
+import BigButton from './components/BigButton';
 import _ from 'lodash';
 
+
 const options = [
-  'Name',
-  'Email',
   'School',
   'Grade',
   'Subject',
@@ -49,22 +49,38 @@ export default class NameCreatorWrapper extends Component {
           <div className="section-header" style={{marginBottom: 20}}>
             <h3><strong><div className="circle-icon orange bg-orange" style={{display: "inline-block", marginRight: 10}}>5</div>Anonymize Report</strong></h3>
           </div>
-          <NameCreator
-            attributes={options}
-            activeOptions={this.state.activeOptions}
-            onAdd={this.onAdd}
-            onRemove={this.onRemove}
-          />
-          <hr className="dark"/>
-          <fieldset>
-            <label>Apply anonymization to</label>
-            <select className="form-control">
-              <option>Everyone</option>
-              <option>Respondent: anyone who submitted a response</option>
-              <option>Referent: anyone who a response is about</option>
-
-            </select>
-          </fieldset>
+          <div className="row">
+            <div className="col-md-6">
+              <BigButton
+                iconClass="fa-circle-o"
+                title="Configure for who Response is About"
+                description={<span>Setup an anonymization scheme to hide the identity people about whom responses were submitted.</span>}
+              />
+              <div style={{padding: 10}}>
+                <NameCreator
+                  attributes={options}
+                  activeOptions={this.state.activeOptions}
+                  onAdd={this.onAdd}
+                  onRemove={this.onRemove}
+                />
+              </div>
+            </div>
+            <div className="col-md-6">
+            <BigButton
+              iconClass="fa-circle-o"
+              title="Configure for who Response is Submitted By"
+              description={<span>Setup an anonymization scheme to hide the identity people who submitted responses.</span>}
+            />
+            <div style={{padding: 10}}>
+              <NameCreator
+                attributes={options}
+                activeOptions={this.state.activeOptions}
+                onAdd={this.onAdd}
+                onRemove={this.onRemove}
+              />
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     )
