@@ -4,7 +4,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import EventCard from './EventCard';
-import {colors, SearchWithFilters as SearchInput } from 'pulse-ui';
+import {colors, SearchWithFilters as SearchInput } from 'pulse-ui/src/deprecated';
 
 import './dayPicker.less';
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import sampleEvents from './sampleEvents';
 import { QuickCard } from './EventCard';
-import { colors } from 'pulse-ui';
+import { colors } from 'pulse-ui/src/deprecated';
 
 class EventSummaryList extends Component {
   isAttending(attendees) {

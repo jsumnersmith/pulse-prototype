@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NameCreator} from 'pulse-ui';
+import {NameCreator} from 'pulse-ui/src/deprecated';
 import BigButton from './components/BigButton';
 import _ from 'lodash';
 

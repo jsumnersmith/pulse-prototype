@@ -47,6 +47,8 @@ module.exports = {
   appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
+  // Hardcoded because pulse-ui is typically a directory up
+  pulseUiDep: resolveApp('../pulse-ui/src/deprecated'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
