@@ -30,7 +30,7 @@ export default class Header extends Component {
     //console.log(lastScroll, e.currentTarget.scrollTop)
     if (currentScroll < 72) {
       this.setFixed(currentScroll);
-    } else if (lastScroll > currentScroll) {
+    } else if (lastScroll > (currentScroll + 400)) {
       this.setFixed(currentScroll);
     } else if (lastScroll < currentScroll){
       this.setUnfixed(currentScroll);
