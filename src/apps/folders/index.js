@@ -1,7 +1,7 @@
 import React,  { Component } from 'react';
 import SurveyIcon from '../../images/survey-icon.svg';
 
-import  { Tag } from 'pulse-ui';
+import  { Tag } from 'pulse-ui/src/deprecated';
 
 import './folders.less';
 

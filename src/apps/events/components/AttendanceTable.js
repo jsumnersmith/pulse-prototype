@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Table, Column, Cell } from 'fixed-data-table';
-import { Search } from 'pulse-ui';
+import { Search } from 'pulse-ui/src/deprecated';
 
 class AttendanceTable extends Component {
   constructor(props) {
