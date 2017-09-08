@@ -4,14 +4,14 @@ import _ from 'lodash';
 import chroma from 'chroma-js';
 
 const scale = chroma.scale(['#E59062', '#FFD299', '#F3F9C5', '#82CCB2', '#1FAF84']);
+const scaleFour = chroma.scale(['#E59062', '#FFD299', '#82CCB2', '#1FAF84']);
 
 export default class RubricColors extends Component {
-
-
   getBlocks(count){
     const fakeArray = new Array(count);
     const itemsArray = [];
-    const colorsArray = scale.colors(count);
+    const colorsArray = count === 4 ? scaleFour.colors(count) : scale.colors(count);
+
     _.map(fakeArray, (val, index) => {
       console.log(count, index);
       itemsArray.push(<div className="rubric-color" style={{background: colorsArray[index]}}>{index + 1}</div>);
