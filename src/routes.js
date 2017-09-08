@@ -27,7 +27,7 @@ import QuestionEditors from './apps/formBuilder/QuestionEditors';
 import MultireferentForm from './apps/multireferentForm';
 import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
-import Folders from './apps/folders';
+import Collections from './apps/collections';
 
 // Components
 import LoadingStates from './components/loadingStates';
@@ -80,10 +80,10 @@ export default [
     exact: true
   },
   {
-    component: Folders,
-    linkName: "Folders",
+    component: Collections,
+    linkName: "Collections",
     parent: 'Apps',
-    path: '/folders/',
+    path: '/collections/',
     exact: true
   },
   {
