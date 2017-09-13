@@ -2,7 +2,7 @@ const events = [
   {
     id: 1,
     name: 'Blended Learning Workshop',
-    date: '2017-09-11T14:30:00',
+    date: '2017-12-11T14:30:00',
     startTime: '2:30 PM',
     endTime: '4:00 PM',
     hours: 1.5,
@@ -31,7 +31,7 @@ const events = [
   {
     id: 2,
     name: 'Blended Learning Coaching',
-    date: '2017-09-12T13:30:00',
+    date: '2017-10-12T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -60,7 +60,7 @@ const events = [
   {
     id: 3,
     name: '1 to 1 Coaching',
-    date: '2017-09-12T13:30:00',
+    date: '2017-10-12T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -84,7 +84,7 @@ const events = [
   {
     id: 4,
     name: '1 to 1 Workshop',
-    date: '2017-05-24T13:30:00',
+    date: '2017-12-24T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -117,7 +117,7 @@ const events = [
   {
     id: 5,
     name: 'Sensory Learning Workshop',
-    date: '2017-01-24T13:30:00',
+    date: '2017-12-24T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -150,12 +150,13 @@ const events = [
   {
     id: 6,
     name: 'Tech Integration Coaching',
-    date: '2017-03-26T13:30:00',
+    date: '2018-03-26T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
     location: 'Room 213',
     leaders: 'Reggie Kinzig-Palmer',
+    external: true,
     description: "In modern times moanful kales show us how beefs can be watchmakers. Those trowels are nothing more than guitars. In modern times the horn of a macaroni becomes a mesarch factory. It's an undeniable fact, really; some posit the chairborne diamond to be less than healthful.",
     meta: [
       {
