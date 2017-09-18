@@ -22,6 +22,7 @@ class EventCard extends Component {
           </div>
           <div className=" event-card-content">
             <div className="event-card-header">
+              {sampleEvent.external && <h5 className="meta meta-soft"><i className="fa fa-external-link"/> Linked Event</h5> }
               <h4 className="event-card-title"><strong>{sampleEvent.name}</strong></h4>
               <h5 className="event-card-time">
                 <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
@@ -37,13 +38,28 @@ class EventCard extends Component {
         </div>
         <div className="col-md-4">
           <div className="event-card-actions">
-            { showAction ? (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) : null }
+            { showAction ?
+              (sampleEvent.external ? <ExternalControls /> :
+              (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) )
+            : null }
           </div>
         </div>
       </div>
     );
   }
 }
+
+const ExternalControls = () => (
+  <div className="event-teacher-control">
+    <a className="btn btn-primary" style={{marginLeft: 0}}><i className="fa fa-external-link"/> Go Register for Event</a>
+    <div className="btn-group btn-block">
+      <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> Attendance Tracked</a>
+      <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+      <ExternalDropdown />
+    </div>
+    <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="fa fa-clipboard" /> Add Your Feedback</a>
+  </div>
+)
 
 class AdminControls extends Component {
   constructor(props) {
@@ -114,6 +130,12 @@ const UserDropdown = () => (
   <ul className="dropdown-menu dropdown-menu-right" role="menu">
     <li><a><i className="fa fa-calendar-times-o"/> Unregister</a></li>
     <li><a><i className="fa fa-envelope"/> Request Confirmation</a></li>
+  </ul>
+);
+
+const ExternalDropdown = () => (
+  <ul className="dropdown-menu dropdown-menu-right" role="menu">
+    <li><a><i className="fa fa-calendar-times-o"/> Untrack My Attendance</a></li>
   </ul>
 );
 
