@@ -23,10 +23,18 @@ export default () => (
           <label>Leaders</label>
           <input className="form-control" value="Bella Smith"/>
         </fieldset>
+        <hr/>
+        <fieldset className="form-group">
+          <label>Does this event require external registration?</label>
+          <div style={{padding: "5px 0"}}>
+            <a className="btn btn-sm btn-success"><i className="fa fa-check"/> Yes, this is an externally linked event</a> <a className="btn btn-sm btn-default btn-trans"><i className="fa fa-times"/> No, this event is just in KickUp</a>
+          </div>
+          <input className="form-control" value="https://myeventsregistrationurl.com"/>
+        </fieldset>
         <fieldset className="form-group">
           <label>Allow users to confirm their own attendance (with confirmation code)?</label>
           <div style={{padding: "5px 0"}}>
-            <a className="btn btn-sm btn-success"><i className="fa fa-check"/> Yes, allow user confirmation</a> <a className="btn btn-sm btn-default btn-trans"><i className="fa fa-times"/> No, I'll manage confirmation</a>
+            <a className="btn btn-sm btn-default"><i className="fa fa-check"/> Yes, allow user confirmation</a> <a className="btn btn-sm btn-success"><i className="fa fa-times"/> No, I'll manage confirmation</a>
           </div>
         </fieldset>
         <hr/>
