@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { Table, Column, Cell } from 'fixed-data-table';
 import _ from 'lodash';
 
+
+import MultiSelectField from './MultiSelectField';
+
 function getTeachers(events) {
   return _.chain(events)
     .flatMap('attendees')
@@ -49,11 +52,29 @@ class AttendanceSummaryTable extends Component {
     });
   }
 
+  onMultiSelectChange(val){
+    console.log(val);
+  }
+
   render() {
     const { events } = this.props;
     const teachers = getTeachers(events);
     return (
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
+        <MultiSelectField
+          label="Break down hours by"
+          name="hoursBreakDown"
+          onChange={this.onMultiSelectChange}
+          options={[
+            { name: "In/Out District", id: 1 },
+            { name: "Event Type", id: 2 },
+            { name: "P.D. Category", id: 3 }
+          ]}
+          showActions={false}
+          options={[
+            { name: "In/Out District", id: 1 }
+          ]}
+        />
         <Table
           rowHeight={55}
           rowsCount={teachers.length}
