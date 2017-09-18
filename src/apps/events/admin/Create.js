@@ -23,20 +23,6 @@ export default () => (
           <input className="form-control" placeholder="Event Leaders"/>
         </fieldset>
         <hr/>
-        <fieldset className="form-group">
-          <label>Does this event require external registration?</label>
-          <div style={{padding: "5px 0"}}>
-            <a className="btn btn-sm btn-success"><i className="fa fa-check"/> Yes, this is an externally linked event</a> <a className="btn btn-sm btn-default btn-trans"><i className="fa fa-times"/> No, this event is just in KickUp</a>
-          </div>
-          <input className="form-control" placeholder="Enter the URL for the event's registration page"/>
-        </fieldset>
-         <fieldset className="form-group">
-          <label>Allow users to confirm their own attendance (with confirmation code)?</label>
-          <div style={{padding: "5px 0"}}>
-            <a className="btn btn-sm btn-default"><i className="fa fa-check"/> Yes, allow user confirmation</a> <a className="btn btn-sm btn-success"><i className="fa fa-times"/> No, I'll manage confirmation</a>
-          </div>
-        </fieldset>
-        <hr/>
         <h3><i className="fa fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
         <fieldset className="form-group">
           <label>Date</label>
@@ -61,6 +47,12 @@ export default () => (
           <input className="form-control" placeholder="Event Location"/>
         </fieldset>
         <hr/>
+        <h3><i className="fa fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
+        <fieldset className="form-group">
+          <label>Feedback Form URL</label>
+          <input className="form-control"/>
+        </fieldset>
+        <hr/>
         <h3><i className="fa fa-info circle-icon red"></i> <strong>Meta Data</strong></h3>
         <fieldset className="form-group">
           <span>LIST TABLE</span>
@@ -68,11 +60,28 @@ export default () => (
         <fieldset className="form-group">
           <span>LIST TABLE</span>
         </fieldset>
-        <h3><i className="fa fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
-        <fieldset className="form-group">
-          <label>Feedback Form URL</label>
-          <input className="form-control"/>
+        <hr/>
+        <h3 ><i className="fa fa-gear circle-icon green"></i> <strong> Advanced Settings</strong></h3>
+         <fieldset className="form-group">
+          <label>Allow users to confirm their own attendance (with confirmation code)?</label>
+          <div style={{padding: "5px 0"}}>
+            <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, I'll manage confirmation</a>
+          </div>
         </fieldset>
+        <fieldset className="form-group">
+          <label>Should all users see this event?</label>
+          <div style={{padding: "5px 0"}}>
+            <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, only show to registered users</a>
+          </div>
+        </fieldset>
+        <fieldset className="form-group">
+          <label>Does this event require external registration?</label>
+          <div style={{padding: "5px 0"}}>
+            <a className="btn btn-sm btn-default"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-primary"><i className="fa fa-times"/> No, this event is just in KickUp</a>
+          </div>
+          <input className="form-control" placeholder="Enter the URL for the event's registration page" style={{display: "none"}}/>
+        </fieldset>
+        <hr/>
         <fieldset className="text-center form-group">
           <a href="#submitted" className="btn btn-success"><i className="fa fa-check"></i> Save and Publish Event</a>
           <a href="#invited" className="btn btn-primary"><i className="fa fa-envelope"></i> Invite People</a>
