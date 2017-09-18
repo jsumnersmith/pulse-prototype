@@ -31,9 +31,10 @@ class EventCard extends Component {
             <div>
               { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
             </div>
-            <h6 style={{marginTop: 0}} className="col-md-4"><i className="fa fa-map-marker circle-icon--medium"></i> <strong>{sampleEvent.location}</strong></h6>
-            <h6 style={{marginTop: 0}} className="col-md-4"><i className="fa fa-user circle-icon--medium"></i> <strong>{sampleEvent.leaders}</strong></h6>
-            <h6 style={{marginTop: 0}} className="col-md-4"><i className="fa fa-check circle-icon--medium"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6>
+            <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
+            <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
+            { isAdmin && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
+            { isAdmin && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
           </div>
         </div>
         <div className="col-md-4">
