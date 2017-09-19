@@ -19,9 +19,12 @@ class AttendanceSummaryTable extends Component {
     this.setWidth = this.setWidth.bind(this);
     this.setHeight = this.setHeight.bind(this);
     this.setHeightAndWidth = this.setHeightAndWidth.bind(this);
+    this.isBreakdownActive = this.isBreakdownActive.bind(this);
+    this.onMultiSelectChange = this.onMultiSelectChange.bind(this);
     this.state = {
       width: 0,
       height: 0,
+      currentBreakdown: ["1"]
     };
   }
   componentDidMount() {
@@ -52,8 +55,13 @@ class AttendanceSummaryTable extends Component {
     });
   }
 
-  onMultiSelectChange(val){
-    console.log(val);
+  onMultiSelectChange(currentBreakdown){
+    console.log(currentBreakdown);
+    this.setState({currentBreakdown})
+  }
+
+  isBreakdownActive(val){
+    return _.includes(this.state.currentBreakdown, val.toString());
   }
 
   render() {
@@ -61,20 +69,28 @@ class AttendanceSummaryTable extends Component {
     const teachers = getTeachers(events);
     return (
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
-        <MultiSelectField
-          label="Break down hours by"
-          name="hoursBreakDown"
-          onChange={this.onMultiSelectChange}
-          options={[
-            { name: "In/Out District", id: 1 },
-            { name: "Event Type", id: 2 },
-            { name: "P.D. Category", id: 3 }
-          ]}
-          showActions={false}
-          options={[
-            { name: "In/Out District", id: 1 }
-          ]}
-        />
+        <h5 className="event-list-title" style={{background: "#8B698E"}}>
+          <div style={{display:"inline-block", width: "calc(100% - 400px)"}}>
+            <i className="fa fa-check circle-icon--medium purple color-text"></i>
+            <strong>Attendance Log</strong>
+          </div>
+          <span style={{display: "inline-block", width: 400}}>
+            <label style={{display: "inline-block", color: "white"}}>Breakdown hours by</label>
+            <span style={{display: "inline-block", width: 240, marginLeft: 10}}>
+              <MultiSelectField
+                label=""
+                name="hoursBreakDown"
+                onChange={this.onMultiSelectChange}
+                options={[
+                  { name: "In/Out District", id: "1" },
+                  { name: "Event Type", id: "2" },
+                ]}
+                showActions={false}
+                value={[ "1" ]}
+              />
+            </span>
+          </span>
+        </h5>
         <Table
           rowHeight={55}
           rowsCount={teachers.length}
@@ -126,30 +142,76 @@ class AttendanceSummaryTable extends Component {
               )}
             width={150}
           />
-          <Column
-            header={<Cell>In Organization</Cell>}
-            allowCellsRecycling
-            cell={({ rowIndex, ...props }) => (
-              <Cell {...props}>
-                <div className="text-center">
-                  <strong>{teachers[rowIndex].name.length}</strong>
-                </div>
-              </Cell>
-              )}
-            width={100}
-          />
-          <Column
-            header={<Cell>Out of Organization</Cell>}
-            allowCellsRecycling
-            cell={({ rowIndex, ...props }) => (
-              <Cell {...props}>
-                <div className="text-center">
-                  <strong>{teachers[rowIndex].name.length + 10}</strong>
-                </div>
-              </Cell>
-              )}
-            width={100}
-          />
+          { this.isBreakdownActive(1) &&
+            <Column
+              header={<Cell>In Organization</Cell>}
+              allowCellsRecycling
+              cell={({ rowIndex, ...props }) => (
+                <Cell {...props}>
+                  <div className="text-center">
+                    <strong>{teachers[rowIndex].name.length}</strong>
+                  </div>
+                </Cell>
+                )}
+              width={100}
+            />
+          }
+          { this.isBreakdownActive(1) &&
+            <Column
+              header={<Cell>Out of Organization</Cell>}
+              allowCellsRecycling
+              cell={({ rowIndex, ...props }) => (
+                <Cell {...props}>
+                  <div className="text-center">
+                    <strong>{teachers[rowIndex].name.length + 10}</strong>
+                  </div>
+                </Cell>
+                )}
+              width={100}
+            />
+          }
+          { this.isBreakdownActive(2) &&
+            <Column
+              header={<Cell>PLC</Cell>}
+              allowCellsRecycling
+              cell={({ rowIndex, ...props }) => (
+                <Cell {...props}>
+                  <div className="text-center">
+                    <strong>{teachers[rowIndex].name.length}</strong>
+                  </div>
+                </Cell>
+                )}
+              width={100}
+            />
+          }
+          { this.isBreakdownActive(2) &&
+            <Column
+              header={<Cell>Workshop</Cell>}
+              allowCellsRecycling
+              cell={({ rowIndex, ...props }) => (
+                <Cell {...props}>
+                  <div className="text-center">
+                    <strong>{teachers[rowIndex].name.length + 3}</strong>
+                  </div>
+                </Cell>
+                )}
+              width={100}
+            />
+          }
+          { this.isBreakdownActive(2) &&
+            <Column
+              header={<Cell>Coaching</Cell>}
+              allowCellsRecycling
+              cell={({ rowIndex, ...props }) => (
+                <Cell {...props}>
+                  <div className="text-center">
+                    <strong>{teachers[rowIndex].name.length + 2}</strong>
+                  </div>
+                </Cell>
+                )}
+              width={100}
+            />
+          }
           <Column
             header={<Cell>Total Hours</Cell>}
             allowCellsRecycling

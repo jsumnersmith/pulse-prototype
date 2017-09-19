@@ -46,7 +46,7 @@ class MultiSelectField extends Component {
 
     return (
       <fieldset>
-        <label htmlFor={id} className="vertical-centered-label text-right">{label} </label>
+        {label.length > 0 ? <label htmlFor={id} className="vertical-centered-label text-right">{label} </label> : null}
         <div className="form-wrapper row" style={{ marginTop: 0 }}>
           <select data-multiselect id={id} name={name} ref={name} multiple className="col-md-12" data-type="goals" data-actions-box={showActions}>
             {options.map(el => <option key={`multi-select-option-${el.id}`} value={el.id}>{el.name}</option>)}

@@ -41,7 +41,6 @@ const ApprovalTableWrapper = () => (
 
 const AttendanceTableWrapper = () => (
   <div className="col-md-12">
-    <h5 className="event-list-title" style={{background: "#8B698E"}}><i className="fa fa-check circle-icon--medium purple color-text"></i> <strong>Attendance Log</strong></h5>
     <AttendanceSummaryTable
       events={sampleEvents}
     />
