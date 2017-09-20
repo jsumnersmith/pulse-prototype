@@ -47,10 +47,14 @@ class AttendanceTable extends Component {
     <div>
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
         <label style={{ marginTop: 10 }}>Add Attendees</label>
-        <a href="" style={{float: "right"}} data-toggle="modal" data-target="#bulk-modal"><label>Bulk Register</label></a>
         <Search placeholder={'Begin typing to add a person to the attendance list.'} />
-        <div style={{marginTop: 5, marginBottom: 10}} className="text-right">
-          <label>1 user has not received a registration email notification.</label><button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
+        <div style={{marginTop: 5, marginBottom: 10, position: 'relative'}} className="text-right">
+          <label>1 user has not received a registration email notification.</label>
+          <button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
+          <button className="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Bulk Actions <i className="fa fa-caret-down" /></button>
+          <ul className="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a data-toggle="modal" data-target="#bulk-modal">Bulk Register Users</a></li>
+          </ul>
         </div>
         <Table
           rowHeight={55}
