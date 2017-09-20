@@ -72,7 +72,17 @@ export default class CreateForm extends Component {
             </fieldset>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="fa fa-info circle-icon red"></i> <strong>Meta Data</strong> <i className={`fa fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={
+                <h3 style={{cursor: "pointer"}}>
+                  <i className="fa fa-info circle-icon red"></i>
+                  <div style={{display: "inline-flex", alignItems: "center", flexWrap: "wrap", height: 46, verticalAlign: "top", marginLeft: 10}}>
+                    <strong style={{width: "100%", boxSizing: "border-box", flexGrow: 1}}> Meta Data</strong>
+                    <span style={{width: "100%", boxSizing: "border-box", fontSize: 12, fontWeight: 500, flexGrow: 1}}>Add meta data to help categorize and analyze your event.</span>
+                  </div>
+                  <i className={`fa fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
+
+                </h3>
+              }
               onOpen={this.toggleMeta}
               onClose={this.toggleMeta}
             >
@@ -85,7 +95,17 @@ export default class CreateForm extends Component {
             </Collapsible>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="fa fa-gear circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`fa fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={
+                <h3 style={{cursor: "pointer"}}>
+                  <i className="fa fa-gear circle-icon green"></i>
+                  <div style={{display: "inline-flex", alignItems: "center", flexWrap: "wrap", height: 46, verticalAlign: "top", marginLeft: 10}}>
+                    <strong style={{width: "100%"}}> Advanced Settings</strong>
+                    <span style={{width: "100%", fontSize: 12, fontWeight: 500}}>Configure your event's confirmation workflow, visibility, and more.</span>
+                  </div>
+                  <i className={`fa fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
+
+                </h3>
+              }
               onOpen={this.toggleAdvanced}
               onClose={this.toggleAdvanced}
             >
