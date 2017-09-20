@@ -47,6 +47,7 @@ class AttendanceTable extends Component {
     <div>
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
         <label style={{ marginTop: 10 }}>Add Attendees</label>
+        <a href="" style={{float: "right"}} data-toggle="modal" data-target="#bulk-modal"><label>Bulk Register</label></a>
         <Search placeholder={'Begin typing to add a person to the attendance list.'} />
         <div style={{marginTop: 5, marginBottom: 10}} className="text-right">
           <label>1 user has not received a registration email notification.</label><button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
@@ -148,7 +149,7 @@ class AttendanceTable extends Component {
           />
         </Table>
       </div>
-      <div className="modal modal-background colored-header success fade in" id="attendance-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
+      <div className="modal modal-background colored-header primary fade in" id="attendance-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header text-center">
@@ -176,6 +177,28 @@ class AttendanceTable extends Component {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-success btn-flat md-close btn-block" data-dismiss="modal">Send Registration Notifications</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="modal modal-background colored-header primary fade in" id="bulk-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header text-center">
+              <h3 className="text-center">Bulk Register Attendees</h3>
+              <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+            </div>
+            <div className="modal-body text-left">
+              <div>
+                <label>Add attendees' emails separated by commas</label>
+                <textarea className="form-control"></textarea>
+                <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="fa fa-warning" /> The following emails were not added: email@adress.com, other@address.com</p>
+                <p className="green"><i className="fa fa-check-circle" /> Successfully added 3,456 emails.</p>
+              </div>
+            </div>
+            <div className="modal-footer text-right">
+            <button type="button" className="btn btn-default btn-trans btn-flat md-close" data-dismiss="modal">Cancel</button>
+              <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Add Attendees</button>
             </div>
           </div>
         </div>
