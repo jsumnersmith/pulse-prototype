@@ -25,7 +25,7 @@ export default class ApprovalTable extends Component {
                     <td>{submittedEvent.attendees[0].name}</td>
                     <td>{submittedEvent.name}</td>
                     <td className="text-center">
-                      <a className="btn btn-trans btn-primary btn-sm" data-toggle="modal" data-trigger="#details-modal"><i className="fa fa-info"></i> See Details</a>
+                      <a className="btn btn-trans btn-primary btn-sm" data-toggle="modal" data-target="#details-modal"><i className="fa fa-info"></i> See Details</a>
                       <a className="btn btn-trans btn-success btn-sm"><i className="fa fa-check"></i> Approve</a>
                     </td>
                   </tr>
@@ -43,7 +43,6 @@ export default class ApprovalTable extends Component {
               </div>
               <div className="modal-body text-left">
                 <div>
-                  <p>The following <span className="underline--green">1</span> user hasn't received a registration email notification.</p>
                   <table className="no-border">
                     <tbody className="no-border-y">
                       <tr>
@@ -104,7 +103,7 @@ export default class ApprovalTable extends Component {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-trans btn-default btn-flat md-close" data-dismiss="modal">Edit Event</button>
-                <button type="button" className="btn btn-warning btn-flat md-close" data-dismiss="modal">Reject Event</button>
+                <button type="button" className="btn btn-danger btn-flat md-close" data-dismiss="modal">Reject Event</button>
                 <button type="button" className="btn btn-success btn-flat md-close" data-dismiss="modal">Approve</button>
               </div>
             </div>
