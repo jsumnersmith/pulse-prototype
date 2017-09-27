@@ -12,12 +12,12 @@ import '../../../base/subnav.less';
 export default ({ match }) => (
   <div className="wrapper">
     <SubHeader activeName="manage" admin={true}/>
+    <ul className="ku-subnav">
+      <li className="ku-subnav__nav-item"><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
+      <li className="ku-subnav__nav-item"><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
+      <li className="ku-subnav__nav-item"><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
+    </ul>
     <div className="row" style={{marginTop: 0}}>
-      <ul className="ku-subnav">
-        <li className="ku-subnav__nav-item"><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
-        <li className="ku-subnav__nav-item"><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
-        <li className="ku-subnav__nav-item"><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
-      </ul>
       <Router>
         <div>
           <Route component={ApprovalTableWrapper} path={`${match.url}/approval`}/>
