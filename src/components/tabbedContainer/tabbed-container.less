@@ -1,0 +1,35 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.tabbed-block {
+  padding: 0;
+  border-left: fadeout(@gray-medium, 50%) 2px solid;
+  border-right: fadeout(@gray-medium, 50%) 2px solid;
+  border-bottom: fadeout(@gray-medium, 50%) 2px solid;
+  box-shadow: none;
+}
+
+.flex-tabs {
+  background: transparent;;
+  display: flex;
+  justify-content: space-around;
+  & > li {
+    display: flex;
+    flex-grow: 1;
+    background: darken(@gray-light, 1%);
+    margin-right: 0;
+    border-bottom: lighten(@gray-medium, 5%) 1px solid;
+    &.active { border-bottom: none; }
+    & + li {
+      border-left: lighten(@gray-medium, 5%) 1px solid;
+    }
+    > a {
+      width: 100%;
+      font-weight: 700;
+      border: none !important;
+    }
+  }
+}
+.tab-content {
+  margin-bottom: 0;
+  border: none;
+}
