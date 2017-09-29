@@ -36,6 +36,7 @@ import NameCreator from './components/nameCreator';
 import PermissionButtons from './components/permissionButtons';
 import RubricColors from './components/rubricColors';
 import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
+import TabbedContainer from './components/tabbedContainer'
 
 export default [
   {
@@ -144,6 +145,13 @@ export default [
     linkName: "Multiple Choice Groupings",
     parent: 'Components',
     path: '/multichoice/',
+    exact: true
+  },
+  {
+    component: TabbedContainer,
+    linkName: "Tabbed Container",
+    parent: 'Components',
+    path: '/tabbed-container/',
     exact: true
   },
   {
