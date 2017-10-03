@@ -22,7 +22,7 @@ const events = [
         confirmed: false,
       },
     ],
-    approved: false,
+    status: 'approved',
   },
   {
     id: 12,
@@ -47,7 +47,7 @@ const events = [
         confirmed: true,
       },
     ],
-    approved: true,
+    status: 'approved',
   },
 ];
 

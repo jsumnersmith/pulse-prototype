@@ -22,6 +22,60 @@
   a:hover { text-decoration: none; }
 }
 
+.event-card-avatar {
+  display: inline-flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+  overflow: hidden;
+  margin-right: 5px;
+  img { width: 100%; height: auto; }
+}
+
+.event-card-submission-title {
+  display: flex;
+  align-items: center;
+  color: white;
+  * { display: inline-flex;}
+}
+
+.event-card-submission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px -20px 20px;
+  padding: 1px 20px;
+  background: @gray-dark;
+  border-bottom: 3px solid fadeout(black, 90%);
+  width: ~"calc(100% + 40px)";
+  // &.pending,
+  // &.approved {
+  //   background: @gray-dark;
+  // }
+  // &.confirmed {
+  //   background: @green;
+  // }
+  // &.denied {
+  //   background: @red;
+  // }
+}
+
+// .event-card-submission-status {
+//   padding: 10px;
+//   margin: 0px -20px 20px;
+//   background: @gray-medium;
+// }
+
+.event-card-file-table {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: @gray-light 2px solid;
+  font-weight: 700;
+  thead { background: @gray-light; }
+  tbody tr {border: @gray-light 2px solid; background: white !important;}
+}
+
 .event-card-date {
   .meta;
   display: inline-block;
