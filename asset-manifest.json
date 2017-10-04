@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.8b6d5a5e.css",
   "main.css.map": "static/css/main.8b6d5a5e.css.map",
-  "main.js": "static/js/main.bb684b80.js",
-  "main.js.map": "static/js/main.bb684b80.js.map",
+  "main.js": "static/js/main.1e8c5723.js",
+  "main.js.map": "static/js/main.1e8c5723.js.map",
   "static/media/adding-table.less": "static/media/adding-table.b2328beb.less",
   "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
   "static/media/attributeEditor.less": "static/media/attributeEditor.b2328beb.less",
@@ -36,6 +36,7 @@
   "static/media/subnav.less": "static/media/subnav.b2328beb.less",
   "static/media/success-and-needs-icon.svg": "static/media/success-and-needs-icon.a7d5c2b5.svg",
   "static/media/survey-icon.svg": "static/media/survey-icon.45499f82.svg",
+  "static/media/tabbed-container.less": "static/media/tabbed-container.b2328beb.less",
   "static/media/tags.less": "static/media/tags.b2328beb.less",
   "static/media/underline.less": "static/media/underline.b2328beb.less"
 }

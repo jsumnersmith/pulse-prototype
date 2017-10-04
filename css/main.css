@@ -5151,13 +5151,18 @@ fieldset[disabled] .btn-primary.active {
   text-align: center;
   background: #eee;
   border: 3px solid #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
+.circle-icon.white-text:before {
+  color: white !important;
+}
 .circle-icon i:before {
   font-size: 18px;
-  line-height: 40px;
 }
 .circle-icon.action-required {
   border-color: #e1814c;
@@ -5236,15 +5241,22 @@ fieldset[disabled] .btn-primary.active {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  height: 15px;
-  width: 15px;
-  line-height: 15px;
-  font-size: 10px;
+  box-sizing: border-box;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+  font-size: 9px;
   border: 2px solid #bbb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+}
+.circle-icon--small.white-text:before {
+  color: white !important;
 }
 .circle-icon--small i:before {
   font-size: 18px;
-  line-height: 40px;
 }
 .circle-icon--small.action-required {
   border-color: #e1814c;
@@ -5313,11 +5325,10 @@ fieldset[disabled] .btn-primary.active {
   color: #e43726;
 }
 .circle-icon--small:before {
-  font-size: 10px;
-  line-height: 15px;
+  font-size: 9px;
   color: #bbb;
 }
-.circle-icon--small:not(.color-text):before {
+.circle-icon--small:not(.color-text):not(.white-text):before {
   color: #bbb !important;
 }
 .circle-icon--colored {
@@ -5354,15 +5365,22 @@ fieldset[disabled] .btn-primary.active {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  box-sizing: border-box;
   height: 25px;
   width: 25px;
   line-height: 25px;
-  font-size: 18px;
+  font-size: 16px;
   border: 2.5px solid #bbb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.circle-icon--medium.white-text:before {
+  color: white !important;
 }
 .circle-icon--medium i:before {
   font-size: 18px;
-  line-height: 40px;
 }
 .circle-icon--medium.action-required {
   border-color: #e1814c;
@@ -5431,11 +5449,10 @@ fieldset[disabled] .btn-primary.active {
   color: #e43726;
 }
 .circle-icon--medium:before {
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 16px;
   color: #bbb;
 }
-.circle-icon--medium:not(.color-text):before {
+.circle-icon--medium:not(.color-text):not(.color-white):before {
   color: #bbb;
 }
 .circle-icon--score {
@@ -5449,16 +5466,22 @@ fieldset[disabled] .btn-primary.active {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  height: 15px;
-  width: 15px;
-  line-height: 15px;
-  font-size: 10px;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+  font-size: 9px;
   border: 2px solid #bbb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
   box-sizing: border-box;
+}
+.circle-icon--score.white-text:before {
+  color: white !important;
 }
 .circle-icon--score i:before {
   font-size: 18px;
-  line-height: 40px;
 }
 .circle-icon--score.action-required {
   border-color: #e1814c;
@@ -5527,107 +5550,11 @@ fieldset[disabled] .btn-primary.active {
   color: #e43726;
 }
 .circle-icon--score:before {
-  font-size: 10px;
-  line-height: 15px;
+  font-size: 9px;
   color: #bbb;
 }
-.circle-icon--score:not(.color-text):before {
+.circle-icon--score:not(.color-text):not(.white-text):before {
   color: #bbb !important;
-}
-.circle-icon--medium {
-  box-sizing: content-box;
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
-  text-align: center;
-  background: #eee;
-  border: 3px solid #666;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  line-height: 25px;
-  font-size: 18px;
-  border: 2.5px solid #bbb;
-}
-.circle-icon--medium i:before {
-  font-size: 18px;
-  line-height: 40px;
-}
-.circle-icon--medium.action-required {
-  border-color: #e1814c;
-}
-.circle-icon--medium.action-required.color-text:before {
-  color: #de7136;
-}
-.circle-icon--medium.orange {
-  border-color: #e1814c;
-  background: #E59062;
-  color: white;
-}
-.circle-icon--medium.needs-improvement {
-  border-color: #ffbc66;
-}
-.circle-icon--medium.middling {
-  border-color: #e5f280;
-}
-.circle-icon--medium.acceptable {
-  border-color: #5ebd9c;
-}
-.circle-icon--medium.meeting-goals {
-  border-color: #1b9974;
-  color: white;
-}
-.circle-icon--medium.meeting-goals.color-text:before {
-  color: #1b9974;
-}
-.circle-icon--medium.pulse-blue {
-  border-color: #00556d;
-  background: #007DA0;
-  color: white;
-}
-.circle-icon--medium.purple {
-  border-color: #6e5371;
-  background: #8B698E;
-  color: white;
-}
-.circle-icon--medium.yellow {
-  border-color: #fec139;
-  background: #FED16C;
-  color: white;
-}
-.circle-icon--medium.yellow.color-text:before {
-  color: #fdb920;
-}
-.circle-icon--medium.green {
-  border-color: #178463;
-  background: #1FAF84;
-  color: white;
-}
-.circle-icon--medium.gray {
-  border-color: #a2a2a2;
-  background: #bbb;
-  color: white;
-}
-.circle-icon--medium.gray.color-text:before {
-  color: white;
-}
-.circle-icon--medium.red {
-  border-color: #e43726;
-  color: white;
-  background: #EA6153;
-}
-.circle-icon--medium.red.color-text:before {
-  color: #e43726;
-}
-.circle-icon--medium:before {
-  font-size: 18px;
-  line-height: 24px;
-  color: #bbb;
-}
-.circle-icon--medium:not(.color-text):before {
-  color: #bbb;
 }
 /*Circle*/
 .i-circle {
@@ -5857,13 +5784,18 @@ fieldset[disabled] .btn-primary.active {
   text-align: center;
   background: #eee;
   border: 3px solid #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
+.comment-card-icon.white-text:before {
+  color: white !important;
+}
 .comment-card-icon i:before {
   font-size: 18px;
-  line-height: 40px;
 }
 .comment-card-icon.action-required {
   border-color: #e1814c;
@@ -12576,6 +12508,50 @@ body {
 .event-card a:hover {
   text-decoration: none;
 }
+.event-card-avatar {
+  display: inline-flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+  overflow: hidden;
+  margin-right: 5px;
+}
+.event-card-avatar img {
+  width: 100%;
+  height: auto;
+}
+.event-card-submission-title {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.event-card-submission-title * {
+  display: inline-flex;
+}
+.event-card-submission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px -20px 20px;
+  padding: 1px 20px;
+  background: #666;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  width: calc(100% + 40px);
+}
+.event-card-file-table {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: #eee 2px solid;
+  font-weight: 700;
+}
+.event-card-file-table thead {
+  background: #eee;
+}
+.event-card-file-table tbody tr {
+  border: #eee 2px solid;
+  background: white !important;
+}
 .event-card-date {
   text-transform: uppercase;
   display: inline-block;
@@ -13800,6 +13776,53 @@ fieldset[disabled] .btn {
 }
 .rubric-color + .rubric-color {
   margin-left: 5px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.tabbed-block {
+  padding: 0;
+  border-left: rgba(187, 187, 187, 0.5) 2px solid;
+  border-right: rgba(187, 187, 187, 0.5) 2px solid;
+  border-bottom: rgba(187, 187, 187, 0.5) 2px solid;
+  box-shadow: none;
+}
+.flex-tabs {
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+}
+.flex-tabs > li {
+  display: flex;
+  flex-grow: 1;
+  background: #ebebeb;
+  margin-right: 0;
+  border-bottom: #c8c8c8 1px solid;
+}
+.flex-tabs > li.active {
+  border-bottom: none;
+}
+.flex-tabs > li + li {
+  border-left: #c8c8c8 1px solid;
+}
+.flex-tabs > li > a {
+  width: 100%;
+  font-weight: 700;
+  border: none !important;
+}
+.tab-content {
+  margin-bottom: 0;
+  border: none;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
