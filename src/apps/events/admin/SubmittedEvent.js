@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {Link} from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import EventCard from '../components/EventCard';
+import EventHistoryStream from '../components/EventHistoryStream';
 import sampleEvents from '../components/sampleSubmittedEvents';
 import '../events.less';
 
@@ -30,6 +31,7 @@ export default class EventPage extends Component {
           isAdmin={true}
           isSubmission={true}
           />
+          <EventHistoryStream />
       </div>
     )
   }

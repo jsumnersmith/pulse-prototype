@@ -19,10 +19,12 @@ class EventCard extends Component {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
       <div className="event-card">
-        <div className={`event-card-submission-header ${this.props.isSubmission && this.state.status}`}>
-          {this.props.isSubmission && <h5 className="event-card-submission-title"><span className="event-card-avatar"><img src={coffee} /></span> <strong>Joel Smith submitted</strong></h5>}
-          {this.props.isSubmission && <DisplayStatus status={this.state.status}/>}
-        </div>
+        {this.props.isSubmission &&
+          <div className={`event-card-submission-header ${this.props.isSubmission && this.state.status}`}>
+            <h5 className="event-card-submission-title"><span className="event-card-avatar"><img src={coffee} /></span> <strong>Joel Smith submitted</strong></h5>
+            <DisplayStatus status={this.state.status}/>
+          </div>
+        }
         <div className="row">
           <div className="col-md-8">
             <div className="event-card-date">
