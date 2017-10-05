@@ -12617,7 +12617,6 @@ body {
 }
 .event-card-actions {
   vertical-align: top;
-  max-width: 250px;
 }
 .event-attendance-code {
   padding: 10px;
@@ -12852,6 +12851,100 @@ body {
   width: 0%;
   background: #ddd;
   transition: width 0.1s ease-in-out;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.event-history-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
+}
+.event-history-item:after {
+  content: " ";
+  z-index: 0;
+  position: absolute;
+  left: 91px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #bbb;
+}
+.event-history-item:last-child:after {
+  display: none;
+}
+.event-history-item__icon {
+  position: relative;
+  z-index: 1;
+}
+.event-history-item__date {
+  padding-top: 8px;
+  margin-right: 10px;
+  font-weight: 700;
+  width: 65px;
+}
+.event-history-item__content {
+  padding-top: 8px;
+  position: relative;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+.event-history-item__file {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #eee;
+  border: 3px solid #e1e1e1;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.event-history-item__file span {
+  margin-left: 5px;
+}
+.event-history-item__file i {
+  margin-right: 5px;
+}
+.event-history-item__blockquote {
+  position: relative;
+  border: 3px solid #eee;
+  border-radius: 3px;
+  padding: 10px;
+}
+.event-history-item__blockquote:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  height: 10px;
+  width: 10px;
+  border-left: transparent 10px solid;
+  border-right: transparent 10px solid;
+  border-bottom: #eee 10px solid;
+}
+.event-history-item__blockquote:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: -6px;
+  bottom: 0;
+  height: 10px;
+  width: 10px;
+  border-left: transparent 10px solid;
+  border-right: transparent 10px solid;
+  border-bottom: white 10px solid;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
