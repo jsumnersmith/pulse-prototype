@@ -1,5 +1,6 @@
 import sampleSubmittedEvents from './sampleSubmittedEvents.js';
 import moment from 'moment';
+import {Link} from 'react-router-dom';
 
 import React, { Component } from 'react';
 
@@ -13,7 +14,8 @@ export default class ApprovalTable extends Component {
               <th><strong>Date Submitted</strong></th>
               <th><strong>Submitted By</strong></th>
               <th><strong>Event Title</strong></th>
-              <th className="text-center"><strong>Action</strong></th>
+              <th className="text-center"><strong>Details</strong></th>
+              <th className="text-center"><strong>Update Status</strong></th>
             </tr>
           </thead>
           <tbody className="no-border-y">
@@ -22,11 +24,18 @@ export default class ApprovalTable extends Component {
                 return (
                   <tr>
                     <td>{moment(submittedEvent.date).format('MMMM Do, YYYY')}</td>
-                    <td>{submittedEvent.attendees[0].name}</td>
-                    <td>{submittedEvent.name}</td>
+                    <td><strong>{submittedEvent.attendees[0].name}</strong></td>
+                    <td><strong>{submittedEvent.name}</strong></td>
                     <td className="text-center">
-                      <a className="btn btn-trans btn-primary btn-sm" data-toggle="modal" data-target="#details-modal"><i className="fa fa-info"></i> See Details</a>
-                      <a className="btn btn-trans btn-success btn-sm"><i className="fa fa-check"></i> Approve</a>
+                      <Link to={`/events/admin/submissions/${submittedEvent.id}`} className="btn btn-trans btn-primary btn-sm" ><i className="fa fa-info"></i> See Details</Link>
+                    </td>
+                    <td>
+                      <select className="form-control">
+                        <option>Submission Pending</option>
+                        <option>Submission Denied</option>
+                        <option>Submission Approved</option>
+                        <option>Attendance Confirmed</option>
+                      </select>
                     </td>
                   </tr>
                 )

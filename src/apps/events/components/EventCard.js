@@ -3,46 +3,62 @@ import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import moment from 'moment';
 import ellipsis from 'text-ellipsis';
+import coffee from '../../../images/new_coffee.png';
 
 class EventCard extends Component {
+  state = {
+    status: 'pending'
+  }
   getAttendance() {
     return _.filter(this.props.sampleEvent.attendees, attendee => attendee.confirmed).length || false;
+  }
+  changeStatus(val){
+    this.setState({status: 'pending'})
   }
   render() {
     const { sampleEvent, showAction, actionLink, actionTitle, isAttending, isAdmin, isList } = this.props;
     return (
-      <div className="event-card row">
-        <div className="col-md-8">
-          <div className="event-card-date">
-            <div className="event-card-date-month">
-              {moment(sampleEvent.date).format('MMM')}
-            </div>
-            <div className="event-card-date-day">{moment(sampleEvent.date).format('DD')}</div>
-            <div className="event-card-date-year">{moment(sampleEvent.date).format('YYYY')}</div>
+      <div className="event-card">
+        {this.props.isSubmission &&
+          <div className={`event-card-submission-header ${this.props.isSubmission && this.state.status}`}>
+            <h5 className="event-card-submission-title"><span className="event-card-avatar"><img src={coffee} /></span> <strong>Joel Smith submitted</strong></h5>
+            <DisplayStatus status={this.state.status}/>
           </div>
-          <div className=" event-card-content">
-            <div className="event-card-header">
-              {sampleEvent.external && <h5 className="meta meta-soft"><i className="fa fa-external-link"/> Linked Event</h5> }
-              <h4 className="event-card-title"><strong>{sampleEvent.name}</strong></h4>
-              <h5 className="event-card-time">
-                <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
-              </h5>
+        }
+        <div className="row">
+          <div className="col-md-8">
+            <div className="event-card-date">
+              <div className="event-card-date-month">
+                {moment(sampleEvent.date).format('MMM')}
+              </div>
+              <div className="event-card-date-day">{moment(sampleEvent.date).format('DD')}</div>
+              <div className="event-card-date-year">{moment(sampleEvent.date).format('YYYY')}</div>
             </div>
-            <div>
-              { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
+            <div className=" event-card-content">
+              <div className="event-card-header">
+                {sampleEvent.external && <h5 className="meta meta-soft"><i className="fa fa-external-link"/> Linked Event</h5> }
+                <h4 className="event-card-title"><strong>{sampleEvent.name}</strong></h4>
+                <h5 className="event-card-time">
+                  <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
+                </h5>
+              </div>
+              <div>
+                { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
+              </div>
+              <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
+              <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
+              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
+              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
             </div>
-            <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
-            <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
-            { isAdmin && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
-            { isAdmin && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
           </div>
-        </div>
-        <div className="col-md-4">
-          <div className="event-card-actions">
-            { showAction ?
-              (sampleEvent.external ? <ExternalControls /> :
-              (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) )
-            : null }
+          <div className="col-md-4">
+            <div className="event-card-actions">
+              { showAction ?
+                (this.props.isSubmission ? ( isAdmin ? <SubmittedAdminControls updateStatus={(status) => this.setState({status})}/> : <SubmittedUserControls /> ) :
+                (sampleEvent.external ? <ExternalControls /> :
+                (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) ) )
+              : null }
+            </div>
           </div>
         </div>
       </div>
@@ -139,6 +155,77 @@ const ExternalDropdown = () => (
     <li><a><i className="fa fa-calendar-times-o"/> Untrack My Attendance</a></li>
   </ul>
 );
+
+const SubmittedUserControls = () => (
+  <div>
+    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="fa fa-pencil"/> Edit Submission</Link>
+    <Link to={"/"} className="btn btn-danger btn-trans btn-block btn-sm" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-times"/> Close Submission</Link>
+    <UploadTable />
+  </div>
+)
+
+const ExtraStatus = () =>(
+  <div>
+    <h5><strong><i className="fa fa-thumbs-up circle-icon--small "/> Submission Approved</strong></h5>
+    <h5><strong><i className="fa fa-times red circle-icon--small "/> Submission Denied</strong></h5>
+    <h5><strong><i className="fa fa-check green circle-icon--small "/> Attendance Confirmed</strong></h5>
+  </div>
+)
+
+const DisplayStatus = ({status}) =>(
+  <div>
+    {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="fa fa-hourglass orange circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
+    {status === 'approved' && <h5 style={{color: 'white'}}><strong><i className="fa fa-thumbs-up pulse-blue circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
+    {status === 'denied' && <h5 style={{color: 'white'}}><strong><i className="fa fa-times red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
+    {status === 'confirmed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-check green circle-icon--medium white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
+    {status === 'closed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-minus red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
+  </div>
+)
+
+class SubmittedAdminControls extends Component {
+  constructor(props){
+    super(props);
+  }
+  state = {
+    status: 'pending'
+  }
+  updateStatus = (e) => {
+    console.log(e.target.value);
+    this.props.updateStatus(e.target.value)
+  }
+
+  render(){
+    return(
+      <div>
+        <label>Change Status</label>
+        <select className="form-control" style={{width:"calc(100% - 120px)", marginLeft: 10, display: "inline-block"}} onChange={this.updateStatus}>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="denied">Denied</option>
+          <option value="closed">Closed</option>
+        </select>
+        <hr />
+        <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-pencil"/> Update Submission</Link>
+        <UploadTable />
+      </div>
+    )
+  }
+}
+
+const UploadTable = () => (
+  <div>
+  <table className="event-card-file-table">
+      <thead style={{background: "#eee"}}>
+        <tr><th><strong>Uploaded Files</strong></th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="google.com"><i className="fa fa-file"/> File Name</a></td></tr>
+        <tr><td><a href="google.com"><i className="fa fa-file"/> Other File Name</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+)
 
 export const QuickCard = ({ sampleEvent, isAttending, showAction = false, actionLink = '#actionLink', actionTitle = '', eventLink = '#' }) => (
 

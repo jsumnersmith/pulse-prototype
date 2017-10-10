@@ -12,6 +12,8 @@ import AdminManageEvents from './apps/events/admin/Manage';
 import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
+import AdminSubmittedEvent from './apps/events/admin/SubmittedEvent';
+
 
 //Events - Normal User
 import UserEvents from './apps/events/user';
@@ -19,6 +21,7 @@ import UserBrowseEvents from './apps/events/user/Browse';
 import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
+import UserSubmittedEvent from './apps/events/user/SubmittedEvent';
 
 import FormBuilder from './apps/formBuilder';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
@@ -183,6 +186,10 @@ export default [
     path: '/events/admin/edit'
   },
   {
+    component: AdminSubmittedEvent,
+    path: '/events/admin/submissions/:id'
+  },
+  {
     component: UserBrowseEvents,
     path: '/events/browse'
   },
@@ -197,5 +204,9 @@ export default [
   {
     component: UserSubmit,
     path: '/events/submit'
+  },
+  {
+    component: UserSubmittedEvent,
+    path: '/events/submissions/:id'
   },
 ]
