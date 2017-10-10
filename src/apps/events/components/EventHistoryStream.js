@@ -37,10 +37,10 @@ export default () => (
           <div className="event-history-item__blockquote">OK, I think 've got it all buttoned-up. Let me know if any more changes need to be made.</div>
         </EventHistoryItem>
         <EventHistoryItem
-          icon="fa-thumbs-up green white-text"
+          icon="fa-thumbs-up pulse-blue white-text"
           date="04/02/17"
         >
-          <strong>Bella Smith</strong> updated the status to <span className="underline--green">Approved</span>.
+          <strong>Bella Smith</strong> updated the status to <span className="underline--pulse-blue">Approved</span>.
         </EventHistoryItem>
         <EventHistoryItem
           icon="fa-comment"

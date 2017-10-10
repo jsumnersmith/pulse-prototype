@@ -158,9 +158,9 @@ const ExternalDropdown = () => (
 
 const SubmittedUserControls = () => (
   <div>
-    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-pencil"/> Edit Submission</Link>
+    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="fa fa-pencil"/> Edit Submission</Link>
+    <Link to={"/"} className="btn btn-danger btn-trans btn-block btn-sm" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-times"/> Close Submission</Link>
     <UploadTable />
-    <button className="btn btn-block btn-sm btn-primary btn-trans" style={{marginLeft: 0, marginTop: 3}}><i className="fa fa-upload" /> Upload File</button>
   </div>
 )
 
@@ -174,10 +174,11 @@ const ExtraStatus = () =>(
 
 const DisplayStatus = ({status}) =>(
   <div>
-    {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="fa fa-hourglass circle-icon--medium" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
-    {status === 'approved' && <h5 style={{color: 'white'}}><strong><i className="fa fa-thumbs-up green circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
+    {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="fa fa-hourglass orange circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
+    {status === 'approved' && <h5 style={{color: 'white'}}><strong><i className="fa fa-thumbs-up pulse-blue circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
     {status === 'denied' && <h5 style={{color: 'white'}}><strong><i className="fa fa-times red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
     {status === 'confirmed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-check green circle-icon--medium white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
+    {status === 'closed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-minus red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
   </div>
 )
 
@@ -199,9 +200,10 @@ class SubmittedAdminControls extends Component {
         <label>Change Status</label>
         <select className="form-control" style={{width:"calc(100% - 120px)", marginLeft: 10, display: "inline-block"}} onChange={this.updateStatus}>
           <option value="pending">Pending</option>
-          <option value="denied">Denied</option>
           <option value="approved">Approved</option>
           <option value="confirmed">Confirmed</option>
+          <option value="denied">Denied</option>
+          <option value="closed">Closed</option>
         </select>
         <hr />
         <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-pencil"/> Update Submission</Link>
