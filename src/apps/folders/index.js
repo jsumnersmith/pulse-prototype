@@ -5,6 +5,7 @@ import  { Tag } from 'pulse-ui/src/deprecated';
 
 import './folders.less';
 
+// Let's make this a TABLE so it can have headers.
 export default () => (
   <div className="wrapper">
     <div className="block-flat">
@@ -12,47 +13,65 @@ export default () => (
       <Collections />
     </div>
 
-    <div className="block-flat">
-      <div className="header" style={{marginBottom: 20}}><h3>Tag Model</h3></div>
-      <TagsView />
-    </div>
-
-    <div className="block-flat">
-      <div className="header" style={{marginBottom: 20}}><h3>Folder Model</h3></div>
-      <Folders />
-    </div>
   </div>
 );
 
 const ReportList = ({count, showTags}) => (
-  <div className="report-list">
-    { Array.apply(null, Array(count)).map((item, index)=> <ReportItem index={index} showTags={showTags}/>) }
-  </div>
+  <table className="report-list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Subsmissions</th>
+        <th>Shared with</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      { Array.apply(null, Array(count)).map((item, index)=> <ReportItem index={index} showTags={showTags}/>) }
+    </tbody>
+  </table>
 );
 
 const ReportItem = ({index, showTags}) => (
-  <div className="report-item">
-    <div className="report-item__icon">
-      <img src={SurveyIcon} alt="Report Icon"/>
-    </div>
-    <div className={`report-item__content ${showTags ? "report-item__content-tags" :""}`}>
-      <h4 className="report-item__title"><strong>Report {index + 1}</strong></h4>
-      <p className="meta"><span className="orange">{Math.floor(Math.random() * 400) + 1 }</span> responses</p>
-    </div>
-    {
-      showTags ?
-      <div className="report-item__tags">
-        { index < 3 ? <Tag name="Tag 1" /> : null}
-        { index < 2 ? <Tag name="Tag 2" /> : null}
-        { index < 1 ? <Tag name="Tag 3" /> : null}
+  <tr className="report-item">
+    <td style={{width: 30}}>
+      <div className="report-item__icon">
+        <img src={SurveyIcon} alt="Report Icon"/>
       </div>
-      : null
-    }
-    <div className="report-item__action">
-      <button className="btn btn-primary">View Report</button>
-    </div>
-  </div>
+    </td>
+    <td className={`report-item__content ${showTags ? "report-item__content-tags" :""}`}>
+      <h4 className="report-item__title"><strong>Report {index + 1}</strong></h4>
+    </td>
+    <td>
+      <p className="meta"><span className="orange">{Math.floor(Math.random() * 400) + 1 }</span> submissions</p>
+    </td>
+    <td><SharingStats /></td>
+    <td className="report-item__action">
+      <div className="btn-group">
+        <button className="btn btn-primary">View Report</button>
+        <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <i className="fa fa-caret-down" />
+          <span className="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul className="dropdown-menu" role="menu">
+          <li><a><i className="fa fa-pencil"/> &nbsp; Edit Report</a></li>
+          <li><a><i className="fa fa-share"/> &nbsp; Share Report</a></li>
+          <li><a><i className="fa fa-clone"/> &nbsp; Copy Report</a></li>
+          <li className="divider"></li>
+          <li><a><i className="fa fa-eye-slash"/> &nbsp; Hide Report</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
 )
+
+const SharingStats = () => (
+  <div className="report-item__sharing">
+    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="user@email.com, other@email.com, others@my.email.com"><i className="fa fa-user circle-icon--small" /> <strong>{Math.floor(Math.random() * 10) + 1}</strong> users</a></span>
+    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="Admins, Principals, Teachers, Coaches"><i className="fa fa-users circle-icon--small" /> <strong>{Math.floor(Math.random() * 3) + 1}</strong> groups</a></span>
+  </div>
+);
 
 class Collections extends Component {
   state = {
