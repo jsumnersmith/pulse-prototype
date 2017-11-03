@@ -40,6 +40,7 @@ import PermissionButtons from './components/permissionButtons';
 import RubricColors from './components/rubricColors';
 import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
 import TabbedContainer from './components/tabbedContainer'
+import StackedBarChart from './components/stackedBarChart'
 
 export default [
   {
@@ -155,6 +156,13 @@ export default [
     linkName: "Tabbed Container",
     parent: 'Components',
     path: '/tabbed-container/',
+    exact: true
+  },
+  {
+    component: StackedBarChart,
+    linkName: "Stacked Bar Chart",
+    parent: 'Components',
+    path: '/stacked-bar-chart/',
     exact: true
   },
   {
