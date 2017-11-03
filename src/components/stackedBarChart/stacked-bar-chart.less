@@ -36,6 +36,9 @@
       &.blue { background: @pulse-blue; }
       &.red { background: @red; }
       &.purple { background: @purple; }
+      &.yellow { background: @yellow; }
+      &.green { background: @green; }
+      &.orange { background: @orange; }
     }
   }
   &__row {
@@ -56,9 +59,24 @@
   }
   &__bar {
     display: inline-flex;
-
-    height: 20px;
+    justify-content: center;
+    height: 30px;
     border: 3px solid fadeout(@gray-dark, 50%);
+    color: white;
+    &-segment {
+      display: inline-flex;
+      background: -moz-linear-gradient(left, rgba(102,102,102,0) 0%, rgba(102,102,102,0.1) 38%, rgba(102,102,102,0.1) 39%, rgba(102,102,102,0.1) 61%, rgba(102,102,102,0.1) 62%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(102,102,102,0) 0%,rgba(102,102,102,0.1) 38%,rgba(102,102,102,0.1) 39%,rgba(102,102,102,0.1) 61%,rgba(102,102,102,0.1) 62%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(102,102,102,0) 0%,rgba(102,102,102,0.1) 38%,rgba(102,102,102,0.1) 39%,rgba(102,102,102,0.1) 61%,rgba(102,102,102,0.1) 62%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00666666', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+
+      //border-radius: 50%;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      justify-content: center;
+      align-items: center;
+    }
     &.blue, .blue { background: @pulse-blue; }
     &.purple, .purple { background: @purple; }
     &.red, .red { background: @red; }
