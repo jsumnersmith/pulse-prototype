@@ -14023,6 +14023,7 @@ fieldset[disabled] .btn {
   height: 15px;
   width: 15px;
   margin-right: 5px;
+  border-radius: 50%;
   border: 2px solid rgba(102, 102, 102, 0.5);
 }
 .stacked-bar-chart__key-color.blue {
