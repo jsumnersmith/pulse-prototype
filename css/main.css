@@ -12016,6 +12016,11 @@ pre[class*="language-"] {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+/*Flat palette*/
+/* Pulse GrayScale */
+body {
+  background: #eee;
+}
 body {
   margin: 0;
   padding: 72px 0 0;
@@ -12724,6 +12729,15 @@ body {
 }
 .event-quick-link-title {
   width: calc(100% - 33px);
+}
+.events-table-actions {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 0;
+  background: white;
+}
+.events-table-actions > * {
+  margin-right: 10px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -13484,32 +13498,74 @@ th.empty {
   width: 100%;
   height: auto;
 }
-.report-item {
-  display: flex;
-  align-items: center;
-  padding: 15px;
+.report-list * {
+  border: none;
 }
-.report-item + .report-item {
-  border-top: 1px solid #eee;
+.report-list thead th {
+  background: #eee;
+  border-bottom: 2px solid #e1e1e1;
+  font-weight: 700;
+}
+.report-list thead th:last-child {
+  text-align: center;
+  border-right: none;
+}
+.report-list tr {
+  background: transparent !important;
+  border-bottom: none;
+}
+.report-list td:first-child {
+  vertical-align: top;
+}
+.report-list td:last-child {
+  border-right: none;
+}
+.report-item {
+  align-items: center;
+  padding: 10px;
+  border-top: 2px solid #eee;
+  vertical-align: center;
 }
 .report-item__content {
   flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
 }
 .report-item__tags {
   width: 250px;
 }
 .report-item__icon {
-  width: 50px;
-  margin-right: 20px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+  background: #eee;
+  align-items: center;
+  justify-content: center;
 }
 .report-item__icon img {
-  width: 100%;
+  width: 90%;
+}
+.report-item__sharing {
+  display: flex;
+  align-items: center;
+}
+.report-item__sharing > * {
+  margin-right: 10px;
 }
 .report-item__title {
-  margin-top: 5px;
+  margin: 0px;
+}
+.report-item__action {
+  width: 200px;
 }
 .report-item__action .btn {
   margin-bottom: 0 !important;
+}
+.report-item p {
+  margin: 0;
 }
 .block-flat .content {
   padding-top: 0;
@@ -13916,6 +13972,124 @@ fieldset[disabled] .btn {
 .tab-content {
   margin-bottom: 0;
   border: none;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.stacked-bar-chart__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.stacked-bar-chart__controls label {
+  display: inline-block;
+  margin-right: 5px;
+}
+.stacked-bar-chart__controls select {
+  width: 200px;
+}
+.stacked-bar-chart__controls-item {
+  display: flex;
+  align-items: center;
+}
+.stacked-bar-chart__controls-item + .stacked-bar-chart__controls-item {
+  margin-left: 10px;
+}
+.stacked-bar-chart__key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.stacked-bar-chart__key-item {
+  display: flex;
+  align-items: center;
+}
+.stacked-bar-chart__key-item + .stacked-bar-chart__key-item {
+  margin-left: 10px;
+}
+.stacked-bar-chart__key-color {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  border: 2px solid rgba(102, 102, 102, 0.5);
+}
+.stacked-bar-chart__key-color.blue {
+  background: #007DA0;
+}
+.stacked-bar-chart__key-color.red {
+  background: #EA6153;
+}
+.stacked-bar-chart__key-color.purple {
+  background: #8B698E;
+}
+.stacked-bar-chart__row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.stacked-bar-chart__label {
+  width: 200px;
+  font-weight: 700;
+}
+.stacked-bar-chart__bar-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  font-weight: 700;
+}
+.stacked-bar-chart__bar {
+  display: inline-flex;
+  height: 20px;
+  border: 3px solid rgba(102, 102, 102, 0.5);
+}
+.stacked-bar-chart__bar.blue,
+.stacked-bar-chart__bar .blue {
+  background: #007DA0;
+}
+.stacked-bar-chart__bar.purple,
+.stacked-bar-chart__bar .purple {
+  background: #8B698E;
+}
+.stacked-bar-chart__bar.red,
+.stacked-bar-chart__bar .red {
+  background: #EA6153;
+}
+.stacked-bar-chart__bar.yellow,
+.stacked-bar-chart__bar .yellow {
+  background: #FED16C;
+}
+.stacked-bar-chart__bar.green,
+.stacked-bar-chart__bar .green {
+  background: #1FAF84;
+}
+.stacked-bar-chart__bar.orange,
+.stacked-bar-chart__bar .orange {
+  background: #E59062;
+}
+.stacked-bar-chart__bar:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.stacked-bar-chart__bar:nth-last-child(2) {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.stacked-bar-chart__count {
+  display: inline-flex;
+  margin-left: 10px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
