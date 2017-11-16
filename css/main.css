@@ -13758,6 +13758,13 @@ fieldset[disabled] .btn {
   color: #EA6153;
   font-weight: 500;
 }
+.btn .active-icon {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  height: 10px;
+  width: 10px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
