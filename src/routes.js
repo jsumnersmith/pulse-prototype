@@ -35,6 +35,7 @@ import Folders from './apps/folders';
 // Components
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
+import ReportManageButtons from './components/buttons/ReportManage';
 import NameCreator from './components/nameCreator';
 import PermissionButtons from './components/permissionButtons';
 import RubricColors from './components/rubricColors';
@@ -99,6 +100,13 @@ export default [
     linkName: "Saving Buttons",
     parent: 'Components',
     path: '/buttons/saving/',
+    exact: true
+  },
+  {
+    component: ReportManageButtons,
+    linkName: "Report Manage Button",
+    parent: 'Components',
+    path: '/buttons/reports/',
     exact: true
   },
   {
