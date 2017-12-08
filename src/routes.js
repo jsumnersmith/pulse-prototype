@@ -33,6 +33,7 @@ import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 import Folders from './apps/folders';
 
 // Components
+import Visualizations from './components/visualizations';
 import LoadingStates from './components/loadingStates';
 import SaveButtons from './components/buttons/Save';
 import ReportManageButtons from './components/buttons/ReportManage';
@@ -128,6 +129,13 @@ export default [
     linkName: "Attributes",
     parent: 'Apps',
     path: '/attributes/',
+    exact: true
+  },
+  {
+    component: Visualizations,
+    linkName: "Visualizations",
+    parent: 'Components',
+    path: '/visualizations/',
     exact: true
   },
   {
