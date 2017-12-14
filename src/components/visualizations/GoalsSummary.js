@@ -123,7 +123,7 @@ class Histogram extends Component {
 
 const HistogramBar = ({index, datum, total, colorArr, active, rubricText}) => (
   <div className="summary-histogram__item">
-    <div className="summary-histogram__range">{truncate(rubricText, 40) }</div>
+    <div className="summary-histogram__range">{truncate(rubricText, 50) }</div>
     <div className="summary-histogram__bar-wrapper"><div className={`summary-histogram__bar ${active && 'active'}`} style={{width: `${(datum.count / total) * 100}%`, background: colorArr[index]}}></div></div>
     <div className="summary-histogram__count meta">{datum.count} <span style={{opacity: .5}}>({`${Math.round((datum.count / total) * 100)}%`})</span></div>
   </div>
