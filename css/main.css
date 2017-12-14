@@ -13318,6 +13318,7 @@ th.empty {
 }
 .form-builder__editable-item-menu-link i {
   font-size: 16px;
+  color: #666;
 }
 .form-builder__editable-item-menu-toggle {
   opacity: 0;
