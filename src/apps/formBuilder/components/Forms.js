@@ -46,13 +46,11 @@ export class AddingTableButton extends Component {
   addEmptyValue(){
     const values = _.cloneDeep(this.state.values);
     values.push("");
-    console.log("I've added . . . ", values);
     this.setState({values});
   }
 
   render(){
     const { values } = this.state;
-    console.log("One render. . . .", values);
     return (
       <div>
         <AddingTable
@@ -100,7 +98,6 @@ export class AddingTableScale extends Component {
 
   render(){
     const { values } = this.state;
-    console.log("One render. . . .", values);
     return (
       <div>
         <AddingTable
@@ -158,7 +155,6 @@ export class AddingTableRubric extends Component {
 
   render(){
     const { values } = this.state;
-    console.log("One render. . . .", values);
     return (
       <div>
         <AddingTable
@@ -200,6 +196,10 @@ export const multipleChoiceForm = (
       <label>Prompt</label>
       <input className="form-control" value="How are you feeling today?"/>
     </fieldset>
+    <fieldset>
+      <label>Help Text</label>
+      <textarea className="form-control" placeholder="Add some help text here"/>
+    </fieldset>
     <hr className="dark" />
     <AddingTableButton />
   </div>
@@ -211,7 +211,10 @@ export const openResponseForm = (
       <label>Prompt</label>
       <input className="form-control" value="What are some general other comments?"/>
     </fieldset>
-
+    <fieldset>
+      <label>Help Text</label>
+      <textarea className="form-control" placeholder="Add some help text here"/>
+    </fieldset>
     <fieldset>
       <label>Short Desription</label>
       <input className="form-control"/>
@@ -224,6 +227,10 @@ export const scaledMatrixForm = (
     <fieldset>
       <label>Prompt</label>
       <input className="form-control" value="Fill out the following based on what you see in the classroom."/>
+    </fieldset>
+    <fieldset>
+      <label>Help Text</label>
+      <textarea className="form-control" placeholder="Add some help text here"/>
     </fieldset>
     <fieldset>
       <label>Rubric</label>
@@ -245,6 +252,10 @@ export const interestsForm = (
      <fieldset>
       <label>Prompt</label>
       <input className="form-control"/>
+    </fieldset>
+    <fieldset>
+      <label>Help Text</label>
+      <textarea className="form-control" placeholder="Add some help text here"/>
     </fieldset>
     <hr />
     <fieldset>

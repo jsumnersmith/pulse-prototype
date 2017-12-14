@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import EditableList from './components/EditableList';
+import formIcon from '../../images/form-icon.svg';
 import {
     multipleChoiceForm,
     scaledMatrixForm,
@@ -12,105 +13,73 @@ import {
   } from './components/Previews';
 
 import './form-builder.less';
+import './inline-tabs.less';
 
 export default class FormBuilder extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: 'Cool Form'
+    }
+    this.changeName = this.changeName.bind(this);
+  }
+  changeName(e) {
+    const name = e.target.value;
+    this.setState({name})
+  }
   render(){
     return (
       <div className="wrapper" style={{paddingTop: 20}}>
-        <h2><strong>Create New Form</strong></h2>
-        <div className="block-flat form-builder">
+        <h2 className="header-title"><img src={formIcon} alt="Form Icon" className="header-icon"/><strong>Edit {this.state.name}</strong></h2>
+        <div className="block-flat form-builder" style={{marginBottom: 3, boxShadow: 'none', borderBottom: 'none'}}>
           <div className="form-builder__section">
-            <div className="form-builder__header">
+            {/* <div className="form-builder__header">
               <div className="circle-icon pulse-blue form-builder__header-icon">1</div>
               <div className="form-builder__header-text">
                 <h3 className="form-builder__header-title">Form Details</h3>
                 <div className="form-builder__header-subtitle">Enter a name for your form to continue.</div>
               </div>
-            </div>
+            </div> */}
+
             <div className="form-builder__section-content">
               <fieldset>
                 <label>Form Name</label>
-                <input className="form-control" />
+                <input className="form-control" value={this.state.name} onChange={this.changeName}/>
               </fieldset>
-              <div className="text-center form-builder__section-action"><button className="btn btn-primary">Continue</button></div>
             </div>
           </div>
-          <div className="form-builder__section">
-            <div className="form-builder__header">
-              <div className="circle-icon purple form-builder__header-icon">2</div>
-              <div className="form-builder__header-text">
-                <h3 className="form-builder__header-title">Form Content</h3>
-                <div className="form-builder__header-subtitle">Add and configure questions</div>
-              </div>
-            </div>
-            <div className="form-builder__section-content">
+          </div>
+          <div className="inline-tabs">
+            <a className="inline-tab meta active"><i className="fa fa-align-justify"/> Layout </a>
+            <a className="inline-tab meta"><i className="fa fa-paint-brush"/> Styles</a>
+            <a className="inline-tab meta"><i className="fa fa-gear"/> Advanced Settings</a>
+            <a className="inline-tab meta"><i className="fa fa-users"/> Sharing</a>
+          </div>
+            <div className="form-builder__section">
               <div className="row">
-                <div className="col-md-9">
-                  <div className="form-builder__editable-content">
-                    <div className="form-builder__editable-section block-flat">
-                      <div className="actions">
-                        <a className="minimize">
-                          <i className="fa fa-chevron-down" />
-                        </a>
-                        <a className="close-down">
-                          <i className="fa fa-times" />
-                        </a>
-                      </div>
-                      <div className="form-builder__editable-section-content">
-                        <EditableList
-                          items={widgets}
-                        />
-                      </div>
+                <div className="col-md-12">
+                  <div className="form-builder__editable-section block-flat">
+                    <div className="form-builder__editable-section-header">
+                      <label>Section Title</label>
+                      <input className="form-control" placeholder="Add a Section Title"/>
                     </div>
-                    <div className="form-builder__editable-section-adder text-center">
-                      <i className="fa fa-plus circle-icon--small pulse-blue form-builder__adder-icon" />
+
+                    <div className="form-builder__editable-section-content">
+                      <EditableList
+                        items={widgets}
+                      />
                     </div>
-                    <div className="form-builder__editable-section block-flat">
-                      <div className="actions">
-                        <a className="minimize">
-                          <i className="fa fa-chevron-down" />
-                        </a>
-                        <a className="close-down">
-                          <i className="fa fa-times" />
-                        </a>
-                      </div>
-                      <div className="form-builder__editable-section-content">
-                        <EditableList
-                          items={widgets.slice(0,2)}
-                        />
-                      </div>
+                  </div>
+                  <div className="form-builder__editable-section block-flat">
+                    <div className="form-builder__editable-section-content">
+                      <EditableList
+                        items={widgets.slice(0,2)}
+                      />
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
-                  <SideBarItem
-                    title="New Form Section"
-                    iconClass="section"
-                  />
-                  <hr />
-                  <SideBarItem
-                    title="Text"
-                    iconClass="text"
-                  />
-                  <SideBarItem
-                    title="Scaled Questions Matrix"
-                    iconClass="heatmap"
-                  />
-                  <SideBarItem
-                    title="Multiple Choice Question"
-                    iconClass="multiple-choice"
-                  />
-                  <SideBarItem
-                    title="Open Response Question"
-                    iconClass="open-responses"
-                  />
-                </div>
               </div>
             </div>
-          </div>
-          <hr className="dark" />
-
-        </div>
       </div>
     );
   }
