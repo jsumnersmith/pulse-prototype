@@ -1,0 +1,42 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.cohort {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cohort__score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 50px;
+  .meta {color: #000;}
+  font-size: 15px;
+  border: 3px solid rgba(0,0,0, .3);
+  &-green { background: @green; }
+  &-green-yellow { background: @acceptable; }
+  &-yellow { background: @yellow; }
+  &-yellow-orange { background: @needs-improvement; }
+  &-orange { background: @orange; }
+}
+
+.cohort__details {
+  flex-grow: 1;
+  padding: 0 20px;
+  &-title { margin: 5px 0 5px; }
+  &-subtitle {
+    strong { display: flex; align-items: center; }
+    // Shame
+    i { margin: 0 3px; }
+    span { margin-right: 3px; }
+    margin: 0;
+    color: @gray-dark;
+  }
+}
+
+.cohort__content {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
