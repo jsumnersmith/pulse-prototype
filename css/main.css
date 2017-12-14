@@ -13113,6 +13113,27 @@ th.empty {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.header-title {
+  display: flex;
+  align-items: center;
+}
+.header-icon {
+  max-height: 50px;
+  margin-right: 10px;
+  width: auto;
+}
+.modal.full-width .modal-dialog,
+.modal.full-width .modal-content {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+}
+.modal.full-width .modal-content > * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .form-builder__header {
   padding: 10px 0;
   margin-bottom: 10px;
@@ -13251,37 +13272,52 @@ th.empty {
 }
 .form-builder__editable-item {
   position: relative;
+  z-index: 2;
   background: white;
-  padding: 15px;
   border: 0.5px solid #eee;
+  transition: border 0.1s ease-in-out;
+}
+.form-builder__editable-item-inner {
+  min-height: 160px;
+  padding: 15px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transition: border 0.1s ease-in-out;
 }
 .form-builder__editable-item + .form-builder__editable-item {
   margin-top: -1px;
 }
 .form-builder__editable-item.active {
-  position: fixed;
-  z-index: 99999;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  transition: all 1s ease-in-out;
-  background: rgba(102, 102, 102, 0.8);
+  z-index: 3;
 }
 .form-builder__editable-item.active .form-builder__editable-item-inner {
-  padding: 30px;
-  background: white;
-  position: absolute;
-  width: 90vw;
-  min-height: 90vh;
-  margin: auto;
-  top: 5vh;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  box-shadow: -1px 10px 20px rgba(187, 187, 187, 0.4), -1px -1px 5px rgba(187, 187, 187, 0.4);
 }
-.form-builder__editable-item.active .form-builder__editable-preview {
-  display: none;
+.form-builder__editable-item.active + .form-builder__editable-item-menu {
+  transform: translateX(0);
+}
+.form-builder__editable-item-menu {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 100%;
+  transform: translateX(40px);
+  transition: all 0.1s ease-in-out;
+}
+.form-builder__editable-item-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 1px solid #eee;
+}
+.form-builder__editable-item-menu-link:hover {
+  text-decoration: none;
+}
+.form-builder__editable-item-menu-link i {
+  font-size: 16px;
 }
 .form-builder__editable-item-menu-toggle {
   opacity: 0;
@@ -13366,6 +13402,58 @@ th.empty {
 }
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.inline-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.inline-tab {
+  font-size: 11px;
+  display: flex;
+  min-height: 40px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  transition: border 0.1s ease-in-out;
+}
+.inline-tab:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.inline-tab:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.inline-tab + .inline-tab {
+  margin-left: 3px;
+}
+.inline-tab:hover {
+  text-decoration: none;
+  border-bottom-color: #bbb;
+}
+.inline-tab.active {
+  border-bottom-color: #E59062;
+}
+.inline-tab i {
+  margin-right: 5px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -13655,6 +13743,7 @@ th.empty {
   border-radius: 3px;
   border: 1px solid rgba(238, 238, 238, 0.9);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
 }
 .goal-summary__title {
   border-bottom: 1px solid #eee;
@@ -13693,7 +13782,7 @@ th.empty {
 }
 .summary-histogram__range {
   width: 25%;
-  font-weight: bold;
+  font-size: 12px;
   padding-right: 3px;
 }
 .summary-histogram__bar-wrapper {
