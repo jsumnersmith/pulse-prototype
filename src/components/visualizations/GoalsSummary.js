@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import chroma from 'chroma-js';
 import truncate from 'truncate';
+import Chart from 'chart.js';
 
 import './goals-summary.less'
 
@@ -73,14 +74,33 @@ const getTotal = (data) => {
 }
 
 class GoalSummary extends Component {
+  componentDidMount() {
+    const percent = getSlicePercentage(this.props.data, this.props.targetDataSlice);
+    const ctx = this.refs.goalSummaryChart.getContext('2d');
+    return new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [percent, 100 - percent],
+          backgroundColor: ['rgb(31, 175, 132)', '#bbb']
+        }],
+        labels: ['', '']
+      },
+      options: {cutoutPercentage: 70, animation: false, showTooltips: false }
+    });
+  }
   render(){
     const { columnClass, data, borderColor } = this.props;
     const total = getTotal(data)
+    const percentage = getSlicePercentage(data, this.props.targetDataSlice);
     return (
       <div className={`${columnClass}`}>
         <div className="goal-summary">
           <div className="goal-summary__title">
-            <h3 className="goal-summary__percentage" style={{borderColor: (borderColor ? borderColor : '')}}><strong>{getSlicePercentage(data, this.props.targetDataSlice)}%</strong></h3>
+            <div className="goal-summary__chart">
+              <canvas ref="goalSummaryChart" width="80" height="80"></canvas>
+            </div>
+            <h3 className="goal-summary__percentage" style={{background: `#bbb linear-gradient(to right, #bbb 50%, @c2 50%)`}}><strong>{percentage}%</strong></h3>
             <h4><strong>{this.props.text}</strong></h4>
           </div>
           <div className="goal-summary__content">
