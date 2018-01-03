@@ -1,28 +1,30 @@
 import React, {Component} from 'react';
 import chroma from 'chroma-js';
-import truncate from 'truncate';
-import Chart from 'chart.js';
 
 import './goals-summary.less'
 
 const sampleData = [
   [
-    { score: 5, count: 23 },
-    { score: 4, count: 4 },
-    { score: 3, count: 12 },
-    { score: 2, count: 7 },
-    { score: 1, count: 14 }
+    { score: 4, count: 43 },
+    { score: 3, count: 36 },
+    { score: 2, count: 9},
+    { score: 1, count: 5 }
   ],
   [
-    { score: 5, count: 56 },
-    { score: 4, count: 34 },
-    { score: 3, count: 12 },
-    { score: 2, count: 21 },
-    { score: 1, count: 6 }
+    { score: 4, count: 53 },
+    { score: 3, count: 29 },
+    { score: 2, count: 8},
+    { score: 1, count: 3 }
   ]
 ];
 
 const rubricText = {
+  reading: [
+    "At or above grade level",
+    "1 Level below",
+    "2 Levels below",
+    "More than 2 Levels below"
+  ],
   short: [
     "Highly Effective",
     "Effective",
@@ -46,16 +48,16 @@ export default () => (
     <GoalSummary
       columnClass="col-md-6"
       data={sampleData[0]}
-      targetDataSlice={[4,5]}
-      rubricSize="short"
-      text="of our community members expressed a strong interest in this amazing topic."
+      targetDataSlice={[4]}
+      rubricSize="reading"
+      text="of 2nd grade students were at or above grade level at the beginning of the year."
     />
     <GoalSummary
       columnClass="col-md-6"
       data={sampleData[1]}
-      targetDataSlice={[1,2,3]}
-      rubricSize="long"
-      text="of our community members expressed a less than appropriate level of admiration for our beloved leader."
+      targetDataSlice={[4]}
+      rubricSize="reading"
+      text="of 2nd grade students are at or above grade level at the end of the year."
       borderColor="rgb(229, 144, 98)"
     />
   </div>
@@ -63,7 +65,6 @@ export default () => (
 
 const getSlicePercentage = (data = [], scoresForSlice = []) => {
   const filteredData =  data.filter(datum => scoresForSlice.includes(datum.score));
-  console.log(filteredData);
   return Math.round((getTotal(filteredData) / getTotal(data)) * 100);
 };
 
@@ -74,33 +75,15 @@ const getTotal = (data) => {
 }
 
 class GoalSummary extends Component {
-  componentDidMount() {
-    const percent = getSlicePercentage(this.props.data, this.props.targetDataSlice);
-    const ctx = this.refs.goalSummaryChart.getContext('2d');
-    return new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [percent, 100 - percent],
-          backgroundColor: ['rgb(31, 175, 132)', '#bbb']
-        }],
-        labels: ['', '']
-      },
-      options: {cutoutPercentage: 70, animation: false, showTooltips: false }
-    });
-  }
   render(){
-    const { columnClass, data, borderColor } = this.props;
+    const { columnClass, data } = this.props;
     const total = getTotal(data)
     const percentage = getSlicePercentage(data, this.props.targetDataSlice);
     return (
       <div className={`${columnClass}`}>
         <div className="goal-summary">
           <div className="goal-summary__title">
-            <div className="goal-summary__chart">
-              <canvas ref="goalSummaryChart" width="80" height="80"></canvas>
-            </div>
-            <h3 className="goal-summary__percentage" style={{background: `#bbb linear-gradient(to right, #bbb 50%, @c2 50%)`}}><strong>{percentage}%</strong></h3>
+            <DonutChartWrapper value={percentage}/>
             <h4><strong>{this.props.text}</strong></h4>
           </div>
           <div className="goal-summary__content">
@@ -135,16 +118,60 @@ class Histogram extends Component {
                 rubricText={this.props.rubricText[index]}
               />)
         }
-        <div className="text-center meta"><span style={{opacity: .5}}>Total</span> {total}</div>
+        <div className="text-center meta" style={{marginTop: 5}}><span style={{opacity: .5}}>Total</span> {total}</div>
       </div>
     )
   }
 };
 
+const setColorAlpha = (color, alpha) => {
+  return chroma(color).alpha(alpha).css();
+}
+
 const HistogramBar = ({index, datum, total, colorArr, active, rubricText}) => (
-  <div className="summary-histogram__item">
-    <div className="summary-histogram__range">{truncate(rubricText, 50) }</div>
-    <div className="summary-histogram__bar-wrapper"><div className={`summary-histogram__bar ${active && 'active'}`} style={{width: `${(datum.count / total) * 100}%`, background: colorArr[index]}}></div></div>
-    <div className="summary-histogram__count meta">{datum.count} <span style={{opacity: .5}}>({`${Math.round((datum.count / total) * 100)}%`})</span></div>
+  <div className={`summary-histogram__item ${active && 'active'}`}>
+    <div className="summary-histogram__bar-wrapper">
+      <div className={`summary-histogram__bar ${datum.count === 0 && "empty"}` } style={{width: `${(datum.count / total) * 100}%`, background: colorArr[index]}}></div>
+      <div className={`summary-histogram__bar` } style={{width: `${100 - ((datum.count / total) * 100) }%`, background: '#efefef', textAlign: 'right'}}></div>
+      <div  className="summary-histogram__numbers">
+        <div className="summary-histogram__count meta">{datum.count}<span className="summary-histogram__numbers-divider"></span> </div>
+        <div className="summary-histogram__percent meta" >{`${Math.round((datum.count / total) * 100)}%`}</div>
+      </div>
+    </div>
+    <div className="summary-histogram__range">{rubricText}</div>
   </div>
 );
+
+const DonutChartWrapper = ({value}) =>(
+  <div className="donutchart-wrapper">
+    <DonutChart value={value} />
+    <h3 className="goal-summary__percentage"><strong>{value}%</strong></h3>
+  </div>
+)
+
+class DonutChart extends Component{
+  render() {
+    const halfsize = (this.props.size * 0.5);
+    const radius = halfsize - (this.props.strokewidth * 0.5);
+    const circumference = 2 * Math.PI * radius;
+    const strokeval = ((this.props.value * circumference) / 100);
+    const dashval = (strokeval + ' ' + circumference);
+
+    const trackstyle = {strokeWidth: this.props.strokewidth};
+    const indicatorstyle = {strokeWidth: this.props.strokewidth, strokeDasharray: dashval}
+    const rotateval = 'rotate(-90 '+halfsize+','+halfsize+')';
+
+    return (
+      <svg width={this.props.size} height={this.props.size} className="donutchart">
+        <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={trackstyle} className="donutchart-track"/>
+        <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={indicatorstyle} className="donutchart-indicator"/>
+      </svg>
+    );
+  }
+};
+
+DonutChart.defaultProps = {
+  value:0,
+  size:80,
+  strokewidth:5
+}
