@@ -6,15 +6,15 @@ import './goals-summary.less'
 const sampleData = [
   [
     { score: 4, count: 43 },
-    { score: 3, count: 36 },
-    { score: 2, count: 9},
-    { score: 1, count: 5 }
+    { score: 3, count: 28 },
+    { score: 2, count: 60},
+    { score: 1, count: 21 }
   ],
   [
-    { score: 4, count: 53 },
-    { score: 3, count: 29 },
-    { score: 2, count: 8},
-    { score: 1, count: 3 }
+    { score: 4, count: 49 },
+    { score: 3, count: 30 },
+    { score: 2, count: 59},
+    { score: 1, count: 14 }
   ]
 ];
 
@@ -48,16 +48,16 @@ export default () => (
     <GoalSummary
       columnClass="col-md-6"
       data={sampleData[0]}
-      targetDataSlice={[4]}
+      targetDataSlice={[3,4]}
       rubricSize="reading"
-      text="of 2nd grade students were at or above grade level at the beginning of the year."
+      text="of 2nd grade students were within 1 level of grade level target."
     />
     <GoalSummary
       columnClass="col-md-6"
       data={sampleData[1]}
-      targetDataSlice={[4]}
+      targetDataSlice={[3,4]}
       rubricSize="reading"
-      text="of 2nd grade students are at or above grade level at the end of the year."
+      text="of 2nd grade students are within 1 level of grade level target."
       borderColor="rgb(229, 144, 98)"
     />
   </div>
