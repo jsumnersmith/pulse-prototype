@@ -50,14 +50,14 @@ export default () => (
       data={sampleData[0]}
       targetDataSlice={[3,4]}
       rubricSize="reading"
-      text="of 2nd grade students were within 1 level of grade level target."
+      text="of 2nd grade students were within 1 level of grade level target at the beginning of the year."
     />
     <GoalSummary
       columnClass="col-md-6"
       data={sampleData[1]}
       targetDataSlice={[3,4]}
       rubricSize="reading"
-      text="of 2nd grade students are within 1 level of grade level target."
+      text="of 2nd grade students are within 1 level of grade level target at the end of the year."
       borderColor="rgb(229, 144, 98)"
     />
   </div>
