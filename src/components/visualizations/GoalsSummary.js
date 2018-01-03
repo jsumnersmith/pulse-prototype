@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import chroma from 'chroma-js';
-import _ from 'lodash';
 
 import './goals-summary.less'
 
@@ -65,7 +64,7 @@ export default () => (
 )
 
 const getSlicePercentage = (data = [], scoresForSlice = []) => {
-  const filteredData =  _.filter(data, datum => _.includes(scoresForSlice, datum.score));
+  const filteredData =  data.filter(datum => scoresForSlice.includes(datum.score));
   return Math.round((getTotal(filteredData) / getTotal(data)) * 100);
 };
 
