@@ -31,7 +31,6 @@ export default class SortableComponent extends Component {
     });
   };
   render() {
-    console.log("And now the rows are . . .", this.props.rows)
 
     return (<div className="adding-table">
       <div className="adding-table__header adding-table__row">
