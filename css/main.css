@@ -13367,18 +13367,6 @@ th.empty {
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
 }
-.data-source-table-filters {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-}
-.data-source-table-filters * + * {
-  margin-left: 10px;
-}
-.data-source-table-filters select {
-  max-width: 200px;
-}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
