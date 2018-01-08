@@ -84,9 +84,13 @@ export default () => (
     </div>
     <div className="modal modal-background full-width fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
       <div className="modal-dialog">
+
         <div className="modal-content">
-          <div style={{padding: 20}}>
-            <h3 style={{marginBottom: 15, display: 'block'}}><i className="fa fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
+          <div className="modal-header text-left">
+            <h3><i className="fa fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
+            <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+          </div>
+          <div className="modal-body" style={{padding: 20}}>
             <div>
               <label>Run imports</label>
               <select className="form-control">
