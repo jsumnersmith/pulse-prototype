@@ -85,21 +85,22 @@ export default () => (
     <div className="modal modal-background full-width fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
       <div className="modal-dialog">
         <div className="modal-content">
-          <div className="modal-header text-center">
-            <h3 className="text-center">Bulk Register Attendees</h3>
-            <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
-          </div>
-          <div className="modal-body text-left">
+          <div style={{padding: 20}}>
+            <h3 style={{marginBottom: 15, display: 'block'}}><i className="fa fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
             <div>
-              <label>Add attendees' emails separated by commas</label>
-              <textarea className="form-control"></textarea>
-              <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="fa fa-warning" /> The following emails were not added: email@adress.com, other@address.com</p>
-              <p className="green"><i className="fa fa-check-circle" /> Successfully added 3,456 emails.</p>
+              <label>Run imports</label>
+              <select className="form-control">
+                <option>Regularly </option>
+                <option>Nightly</option>
+                <option>Never</option>
+              </select>
+              <label>Expiration Date for Configuration</label>
+              <input className="form-control"/>
             </div>
           </div>
-          <div className="modal-footer text-right">
+          <div className="text-right">
           <button type="button" className="btn btn-default btn-trans btn-flat md-close" data-dismiss="modal">Cancel</button>
-            <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Add Attendees</button>
+            <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
