@@ -12,3 +12,8 @@ body {
   max-width: 90%;
   width: 1240px;
 }
+
+@media print {
+  header, nav { display: none !important; }
+  @page { size: auto;  margin: 0mm; }
+}

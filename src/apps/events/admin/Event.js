@@ -16,6 +16,8 @@ export default class EventPage extends Component {
     return _.find(sampleEvents, e => e.id === Number(this.props.match.params.id));
   }
   render(){
+    const {match} = this.props;
+    console.log(match);
     return (
       <div className="wrapper">
         <SubHeader activeName="browse" admin={true}/>
@@ -31,7 +33,7 @@ export default class EventPage extends Component {
           <h5 className="event-list-title" style={{background: "rgb(31, 175, 132)", marginTop: 30}}><i class="fa fa-calendar-check-o circle-icon--medium green color-text"></i> <strong>Event Attendance</strong></h5>
           <div className="block-flat">
             <div className="content">
-              <AttendanceTable sampleEvent={this.getEvent()}/>
+              <AttendanceTable sampleEvent={this.getEvent()} match={match}/>
             </div>
           </div>
       </div>

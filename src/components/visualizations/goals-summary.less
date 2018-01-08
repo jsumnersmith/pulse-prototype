@@ -18,7 +18,6 @@
    &__percentage {
      border-radius: 50%;
      border: 5px solid @gray-medium;
-    //  background: @gray-light;
      width: 80px;
      height: 80px;
      padding: 10px;
@@ -27,27 +26,128 @@
      justify-content: center;
    }
    &__content {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
 .summary-histogram {
   &__item {
+    background: white;
+    position: relative;
     display: flex;
     align-items: center;
-    & + & { border-top: 1px solid @gray-light; margin-top: 3px; padding-top: 3px; }
+    padding: 5px 10px;
+    flex-flow: row wrap;
+    & + & { margin-top: 5px;}
+    &.active {
+      padding: 7.5px;
+      border: 5px solid fadeout(@pulse-blue, 50%);
+    }
+    &.active + &.active {
+      border-top: none;
+      margin-top: -10px;
+    }
+
   }
-  &__range { width: 25%; font-size: 12px; padding-right: 3px;}
-  &__bar-wrapper { flex-grow: 1; }
-  &__bar {
-    border: 3px solid fadeout(@gray-dark, 50%);
+  &__icon {
+    margin-left: -10px;
+    margin-top: -15px;
+  }
+  &__range {
+    display: flex;
+    flex: 100%;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 5px 0px 5px;
+    background: white;
+  }
+  &__bar-wrapper {
+    // flex-grow: 1
+    position:relative;
+    display: flex;
+    flex: 100%;
+    width: 100%;
     height: 25px;
-    border-radius: 2px;
+  }
+  &__bar {
+    position: relative;
+    z-index: 1;
+    border: 2px solid fadeout(@gray-dark, 50%);
+    height: 100%;
+    //border-radius: 2px;
     margin-bottom: 3px;
-    opacity: .3;
-    &.active { opacity: 1; }
+    opacity: 1;
+    &.empty { border: 0; }
+    & + & { border-left: none; z-index: 1;}
+    &.empty + & {
+      border-left: 2px solid fadeout(@gray-dark, 50%);
+    }
+  }
+  &__numbers{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    right: 0px;
+    top: 0px;
+    padding-right: 5px;
+    height: 25px;
+    &-divider {
+      display: inline-flex;
+      vertical-align: middle;
+      width: 2px;
+      height: 10px;
+      background: @gray-medium;
+      margin-left: 5px;
+      margin-right: 5px;
+
+    }
   }
   &__count {
-    width: 65px;
+    display: inline-flex;
+    align-items: center;
+    width: 35px;
+    justify-content: flex-end;
   }
+  &__percent {
+    display: inline-flex;
+    align-items: center;
+    width: 35px;
+    justify-content: flex-start;
+  }
+
+}
+
+.donutchart-track{
+  fill: transparent;
+  stroke: #efefef;
+  stroke-width: 8;
+}
+.donutchart-indicator {
+  fill: transparent;
+  stroke: #007DA0;
+  stroke-width: 8;
+  stroke-dasharray: 0 10000;
+  transition: stroke-dasharray .3s ease;
+}
+
+.donutchart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+}
+
+.donutchart {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.donutchart-text{
+  font-family: 'museo-sans', 'Open Sans', sans-serif;
+  font-size: 24px;
 }

@@ -1,5 +1,29 @@
 @import '~pulse-ui/src/css/globals.less';
 
+.header-title {
+   display: flex;
+   align-items: center;
+}
+.header-icon {
+  max-height: 50px;
+  margin-right: 10px;
+  width: auto;
+}
+
+.modal.full-width .modal-dialog,
+.modal.full-width .modal-content,{
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+}
+.modal.full-width .modal-content > * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .form-builder {
   &__header {
      padding: 10px 0;
@@ -127,29 +151,44 @@
   }
   &__editable-item {
     position: relative;
+    z-index: 2;
     background: white;
-    padding: 15px;
     border: .5px solid @gray-light;
+    transition: border .1s ease-in-out;
+    &-inner {
+      min-height: 160px;
+      padding: 15px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      transition: border .1s ease-in-out;
+    }
     & + & { margin-top: -1px; }
     &.active {
-      position: fixed;
-      z-index: 99999;
-      height: 100vh;
-      width: 100vw;
-      top: 0;
-      left: 0;
-      transition: all 1s ease-in-out;
-      background: fadeout(@gray-dark, 20%);
+      z-index: 3;
       .form-builder__editable-item-inner {
-        padding: 30px;
+        box-shadow: -1px 10px 20px fadeout(@gray-medium, 60%), -1px -1px 5px fadeout(@gray-medium, 60%);
+       }
+      & + .form-builder__editable-item-menu {  transform: translateX(0); }
+
+    }
+    &-menu {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 100%;
+      transform: translateX(40px);
+      transition: all .1s ease-in-out;
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
         background: white;
-        position: absolute;
-        width: 90vw;
-        min-height: 90vh;
-        margin: auto;
-        top: 5vh; bottom: 0; left: 0; right: 0;
+        border: 1px solid @gray-light;
+        &:hover { text-decoration: none; }
+        i { font-size: 16px; color: @gray-dark; }
       }
-      .form-builder__editable-preview { display: none; }
     }
     &-menu-toggle {
       opacity: 0;

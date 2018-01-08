@@ -13,7 +13,7 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 import AdminSubmittedEvent from './apps/events/admin/SubmittedEvent';
-
+import AdminSignupSheet from './apps/events/admin/SignupSheet'
 
 //Events - Normal User
 import UserEvents from './apps/events/user';
@@ -200,7 +200,12 @@ export default [
   },
   {
     component: AdminEvent,
-    path: '/events/admin/view/:id'
+    path: '/events/admin/view/:id',
+    exact: true
+  },
+  {
+    component: AdminSignupSheet,
+    path: '/events/admin/view/:id/sheet'
   },
   {
     component: AdminCreate,
