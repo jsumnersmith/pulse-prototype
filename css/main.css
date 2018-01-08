@@ -12030,6 +12030,16 @@ body {
   max-width: 90%;
   width: 1240px;
 }
+@media print {
+  header,
+  nav {
+    display: none !important;
+  }
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -13113,27 +13123,6 @@ th.empty {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
-.header-title {
-  display: flex;
-  align-items: center;
-}
-.header-icon {
-  max-height: 50px;
-  margin-right: 10px;
-  width: auto;
-}
-.modal.full-width .modal-dialog,
-.modal.full-width .modal-content {
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  border-radius: 0;
-}
-.modal.full-width .modal-content > * {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .form-builder__header {
   padding: 10px 0;
   margin-bottom: 10px;
@@ -13272,53 +13261,37 @@ th.empty {
 }
 .form-builder__editable-item {
   position: relative;
-  z-index: 2;
   background: white;
-  border: 0.5px solid #eee;
-  transition: border 0.1s ease-in-out;
-}
-.form-builder__editable-item-inner {
-  min-height: 160px;
   padding: 15px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  transition: border 0.1s ease-in-out;
+  border: 0.5px solid #eee;
 }
 .form-builder__editable-item + .form-builder__editable-item {
   margin-top: -1px;
 }
 .form-builder__editable-item.active {
-  z-index: 3;
+  position: fixed;
+  z-index: 99999;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transition: all 1s ease-in-out;
+  background: rgba(102, 102, 102, 0.8);
 }
 .form-builder__editable-item.active .form-builder__editable-item-inner {
-  box-shadow: -1px 10px 20px rgba(187, 187, 187, 0.4), -1px -1px 5px rgba(187, 187, 187, 0.4);
-}
-.form-builder__editable-item.active + .form-builder__editable-item-menu {
-  transform: translateX(0);
-}
-.form-builder__editable-item-menu {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 100%;
-  transform: translateX(40px);
-  transition: all 0.1s ease-in-out;
-}
-.form-builder__editable-item-menu-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+  padding: 30px;
   background: white;
-  border: 1px solid #eee;
+  position: absolute;
+  width: 90vw;
+  min-height: 90vh;
+  margin: auto;
+  top: 5vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.form-builder__editable-item-menu-link:hover {
-  text-decoration: none;
-}
-.form-builder__editable-item-menu-link i {
-  font-size: 16px;
-  color: #666;
+.form-builder__editable-item.active .form-builder__editable-preview {
+  display: none;
 }
 .form-builder__editable-item-menu-toggle {
   opacity: 0;
@@ -13403,58 +13376,6 @@ th.empty {
 }
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
-.inline-tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.inline-tab {
-  font-size: 11px;
-  display: flex;
-  min-height: 40px;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border-bottom: 3px solid transparent;
-  border-top: 3px solid transparent;
-  transition: border 0.1s ease-in-out;
-}
-.inline-tab:first-child {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.inline-tab:last-child {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-.inline-tab + .inline-tab {
-  margin-left: 3px;
-}
-.inline-tab:hover {
-  text-decoration: none;
-  border-bottom-color: #bbb;
-}
-.inline-tab.active {
-  border-bottom-color: #E59062;
-}
-.inline-tab i {
-  margin-right: 5px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -13770,124 +13691,37 @@ th.empty {
   justify-content: center;
 }
 .goal-summary__content {
-  padding: 10px;
+  padding: 20px;
 }
 .summary-histogram__item {
-  background: white;
-  position: relative;
   display: flex;
   align-items: center;
-  padding: 5px 10px;
-  flex-flow: row wrap;
 }
 .summary-histogram__item + .summary-histogram__item {
-  margin-top: 5px;
-}
-.summary-histogram__item.active {
-  padding: 7.5px;
-  border: 5px solid rgba(0, 125, 160, 0.5);
-}
-.summary-histogram__item.active + .summary-histogram__item.active {
-  border-top: none;
-  margin-top: -10px;
-}
-.summary-histogram__icon {
-  margin-left: -10px;
-  margin-top: -15px;
+  border-top: 1px solid #eee;
+  margin-top: 3px;
+  padding-top: 3px;
 }
 .summary-histogram__range {
-  display: flex;
-  flex: 100%;
-  width: 100%;
+  width: 25%;
   font-size: 12px;
-  font-weight: 500;
-  padding: 5px 5px 0px 5px;
-  background: white;
+  padding-right: 3px;
 }
 .summary-histogram__bar-wrapper {
-  position: relative;
-  display: flex;
-  flex: 100%;
-  width: 100%;
-  height: 25px;
+  flex-grow: 1;
 }
 .summary-histogram__bar {
-  position: relative;
-  z-index: 1;
-  border: 2px solid rgba(102, 102, 102, 0.5);
-  height: 100%;
+  border: 3px solid rgba(102, 102, 102, 0.5);
+  height: 25px;
+  border-radius: 2px;
   margin-bottom: 3px;
+  opacity: .3;
+}
+.summary-histogram__bar.active {
   opacity: 1;
 }
-.summary-histogram__bar.empty {
-  border: 0;
-}
-.summary-histogram__bar + .summary-histogram__bar {
-  border-left: none;
-  z-index: 1;
-}
-.summary-histogram__bar.empty + .summary-histogram__bar {
-  border-left: 2px solid rgba(102, 102, 102, 0.5);
-}
-.summary-histogram__numbers {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  z-index: 3;
-  right: 0px;
-  top: 0px;
-  padding-right: 5px;
-  height: 25px;
-}
-.summary-histogram__numbers-divider {
-  display: inline-flex;
-  vertical-align: middle;
-  width: 2px;
-  height: 10px;
-  background: #bbb;
-  margin-left: 5px;
-  margin-right: 5px;
-}
 .summary-histogram__count {
-  display: inline-flex;
-  align-items: center;
-  width: 35px;
-  justify-content: flex-end;
-}
-.summary-histogram__percent {
-  display: inline-flex;
-  align-items: center;
-  width: 35px;
-  justify-content: flex-start;
-}
-.donutchart-track {
-  fill: transparent;
-  stroke: #efefef;
-  stroke-width: 8;
-}
-.donutchart-indicator {
-  fill: transparent;
-  stroke: #007DA0;
-  stroke-width: 8;
-  stroke-dasharray: 0 10000;
-  transition: stroke-dasharray 0.3s ease;
-}
-.donutchart-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  width: 80px;
-}
-.donutchart {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.donutchart-text {
-  font-family: 'museo-sans', 'Open Sans', sans-serif;
-  font-size: 24px;
+  width: 65px;
 }
 .block-flat .content {
   padding-top: 0;
