@@ -1,7 +1,16 @@
 import React from 'react';
+import sampleEvents from '../components/sampleEvents';
 
-export default () => (
+const getEvent = (id) => {
+  console.log(sampleEvents.length);
+  const sample = sampleEvents.find(e => e.id == id);
+  console.log(sample);
+  return sample;
+}
+
+export default ({match}) => (
   <div className="wrapper">
+    <h2 className="text-center" style={{marginBottom: 20}}><strong>{getEvent(match.params.id).name}</strong></h2>
     <table>
       <thead>
         <tr>
