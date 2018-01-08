@@ -27,6 +27,8 @@ import FormBuilder from './apps/formBuilder';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
 import QuestionEditors from './apps/formBuilder/QuestionEditors';
 
+import ManageDataSources from './apps/manageDataSources';
+
 import MultireferentForm from './apps/multireferentForm';
 import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
@@ -90,6 +92,13 @@ export default [
     linkName: "Folders",
     parent: 'Apps',
     path: '/folders/',
+    exact: true
+  },
+  {
+    component: ManageDataSources,
+    linkName: "Manage Data Sources",
+    parent: 'Apps',
+    path: '/manage/data-sources/',
     exact: true
   },
   {
