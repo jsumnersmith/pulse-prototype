@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Table, Column, Cell } from 'fixed-data-table';
 import { Search } from 'pulse-ui/src/deprecated';
@@ -42,7 +43,7 @@ class AttendanceTable extends Component {
     });
   }
   render() {
-    const { sampleEvent } = this.props;
+    const { sampleEvent, match } = this.props;
     return (
     <div>
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
@@ -51,9 +52,10 @@ class AttendanceTable extends Component {
         <div style={{marginTop: 5, marginBottom: 10, position: 'relative'}} className="text-right">
           <label>1 user has not received a registration email notification.</label>
           <button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
-          <button className="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Bulk Actions <i className="fa fa-caret-down" /></button>
+          <button className="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Options <i className="fa fa-caret-down" /></button>
           <ul className="dropdown-menu dropdown-menu-right" role="menu">
             <li><a data-toggle="modal" data-target="#bulk-modal">Bulk Register Users</a></li>
+            <li><Link to={match.url + '/sheet'}>Printable Sign-in Sheet</Link></li>
           </ul>
         </div>
         <Table
