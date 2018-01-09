@@ -1,3 +1,5 @@
+@import '~pulse-ui/src/css/globals.less';
+
 .data-source-table-filters {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -5,4 +7,41 @@
   align-items: center;
   * + * { margin-left: 10px; }
   select { max-width: 200px; }
+}
+
+.data-source-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-source-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  * + * { margin-left: 25px; }
+  a:not(.btn) {
+    display: inline-flex;
+    text-decoration: none;
+    position:relative;
+    &:after {
+      position:absolute;
+      content: "";
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: -5px;
+      left: 0; right: 0;
+      height: 3px;
+      width: 0%;
+      background: #ddd;
+      transition: width 0.1s ease-in-out;
+    }
+    &:hover:after {
+      width: 90%;
+    }
+    &.active:after {
+      background: @orange !important;
+      width: 90%;
+    }
+  }
 }

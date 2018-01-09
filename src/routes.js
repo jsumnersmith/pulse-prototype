@@ -28,6 +28,7 @@ import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
 import QuestionEditors from './apps/formBuilder/QuestionEditors';
 
 import ManageDataSources from './apps/manageDataSources';
+import ManageDataSourcesQueue from './apps/manageDataSources/Queue';
 
 import MultireferentForm from './apps/multireferentForm';
 import MultireferentFormAdd from './apps/multireferentForm/AddForm';
@@ -100,6 +101,10 @@ export default [
     parent: 'Apps',
     path: '/manage/data-sources/',
     exact: true
+  },
+  {
+    component: ManageDataSourcesQueue,
+    path: '/manage/data-sources/queue',
   },
   {
     component: MultireferentFormAdd,

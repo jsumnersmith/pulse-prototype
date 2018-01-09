@@ -1,16 +1,22 @@
 import React from 'react';
 import {SearchWithFilters as SearchInput } from 'pulse-ui/src/deprecated';
-
+import {Link} from 'react-router-dom';
 import spreadsheetIcon from '../../images/spreadsheet-icon.svg';
 
 import './manage-data-sources.less';
 
-export default () => (
+export default ({match}) => (
   <div className="wrapper">
-    <h2 style={{marginBottom: 20}}>
-      <img src={spreadsheetIcon} style={{height: 45, width: 'auto', marginRight: 10}}/>
-      <strong>Manage Data Sources</strong>
-    </h2>
+    <div className="data-source-header">
+      <h2 style={{marginBottom: 20}}>
+        <img src={spreadsheetIcon} style={{height: 45, width: 'auto', marginRight: 10}}/>
+        <strong>Manage Data Sources</strong>
+      </h2>
+      <nav className="data-source-nav">
+        <Link className="meta" to={match.url + 'queue'}>View Queue</Link>
+        <a className="btn btn-primary"><i className="fa fa-plus"/>Add Data Source</a>
+      </nav>
+    </div>
     <div className="block-flat">
       <div className="content">
         <div className="row">
@@ -82,7 +88,7 @@ export default () => (
         </div>
       </div>
     </div>
-    <div className="modal modal-background full-width fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
+    <div className="modal modal-background fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
       <div className="modal-dialog">
 
         <div className="modal-content">
@@ -102,7 +108,7 @@ export default () => (
               <input className="form-control"/>
             </div>
           </div>
-          <div className="text-right">
+          <div className="modal-footer text-right">
           <button type="button" className="btn btn-default btn-trans btn-flat md-close" data-dismiss="modal">Cancel</button>
             <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save</button>
           </div>
