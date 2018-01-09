@@ -13466,6 +13466,19 @@ th.empty {
 .inline-tab i {
   margin-right: 5px;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .data-source-table-filters {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -13477,6 +13490,86 @@ th.empty {
 }
 .data-source-table-filters select {
   max-width: 200px;
+}
+.data-source-header {
+  display: flex;
+  justify-content: space-between;
+}
+.data-source-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.data-source-nav * + * {
+  margin-left: 25px;
+}
+.data-source-nav a:not(.btn) {
+  display: inline-flex;
+  text-decoration: none;
+  position: relative;
+}
+.data-source-nav a:not(.btn):after {
+  position: absolute;
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 0%;
+  background: #ddd;
+  transition: width 0.1s ease-in-out;
+}
+.data-source-nav a:not(.btn):hover:after {
+  width: 90%;
+}
+.data-source-nav a:not(.btn).active:after {
+  background: #E59062 !important;
+  width: 90%;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.import-queue__title {
+  margin: 0;
+  padding: 10px;
+  background: #007DA0;
+  border-bottom: 3px solid #006987;
+  color: white;
+  font-weight: 700;
+}
+.import-queue__wrapper {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.import-queue__item {
+  padding: 10px;
+}
+.import-queue__item + .import-queue__item {
+  border-top: 1px solid #eee;
+}
+.import-queue__item-header {
+  display: flex;
+  align-items: center;
+}
+.import-queue__item-header h5 {
+  margin-left: 10px;
+}
+.import-queue__count {
+  margin-left: auto !important;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
