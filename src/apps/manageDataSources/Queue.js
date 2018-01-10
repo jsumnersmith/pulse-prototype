@@ -20,20 +20,43 @@ export default () => (
       <div className="content">
         <h4 className="import-queue__title">Import Queue</h4>
         <div className="import-queue__wrapper">
-          {
-            sampleImportQueue.map((item, index) => (
-              <div className="import-queue__item">
-                <div className="import-queue__item-header">
-                  <span className={`meta circle-icon--small ${index === 0 && 'meeting-goals text-white'}`}><strong>{index + 1}</strong></span>
-                  <h5><strong>{item.name}</strong> - {item.district}</h5>
-                  {index === 0 && <h5 className="green">Currently Running</h5> }
-                  <h5 className="import-queue__count">
-                    <code>{index === 0 ? 34 : 0 }/{item.submissionCount}</code>
-                  </h5>
-                </div>
-              </div>
-            ))
-          }
+          <table className="no-border">
+            <thead className="no-border">
+              <tr>
+                <th><strong>Queue Item</strong></th>
+                <th><strong>Active</strong></th>
+                <th><strong>Last Runtime</strong></th>
+                <th><strong>Last Runtime Duration</strong></th>
+                <th><strong>Progress</strong></th>
+              </tr>
+            </thead>
+            <tbody className="no-border-y">
+              {
+                sampleImportQueue.map((item, index) => (
+                  <tr>
+                    <td>
+                      <div className="import-queue__item-header">
+                        <span className={`meta circle-icon--small ${index === 0 && 'meeting-goals text-white'}`}><strong>{index + 1}</strong></span>
+                        <h5><strong>{item.name}</strong> - {item.district}</h5>
+                      </div>
+                    </td>
+                    <td>
+                      {index === 0 && <i className="fa fa-check green"/> }
+                    </td>
+                    <td>
+                      {item.lastImport}
+                    </td>
+                    <td>
+                      {item.lastImportDuration}
+                    </td>
+                    <td>
+                      <code>{index === 0 ? 34 : 0 }/{item.submissionCount}</code>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -46,18 +69,24 @@ const sampleImportQueue = [
     district: 'Irving ISD',
     submissionCount: 218,
     importConfiguration: 'Regular',
+    lastImport: '2017-12-11T14:30:00',
+    lastImportDuration: '2 min',
     importConfigurationExpiration:' 2018-2-16T14:30:00'
   },
   {
     name: 'PD Feedback Surveys',
     district: 'Irving ISD',
     submissionCount: 114,
+    lastImport: '2017-12-11T04:30:00',
+    lastImportDuration: '15 sec',
     importConfiguration: 'Nightly'
   },
   {
     name: 'Teacher Feedback Surveys',
     district: 'Irving ISD',
     submissionCount: 452,
+    lastImport: '2017-12-07T11:30:00',
+    lastImportDuration: '4 minutes',
     importConfiguration: 'Nightly'
   }
 ]
