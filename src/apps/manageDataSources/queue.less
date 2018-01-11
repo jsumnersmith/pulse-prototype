@@ -1,0 +1,29 @@
+@import '~pulse-ui/src/css/globals.less';
+
+.import-queue {
+  &__title {
+    margin: 0 !important;
+    padding: 10px;
+    background: @pulse-blue;
+    border-bottom: 3px solid darken(@pulse-blue, 5%);
+    color: white;
+    font-weight: 700;
+  }
+  &__wrapper {
+    border-left: 1px solid @gray-light;
+    border-right: 1px solid @gray-light;
+    border-bottom: 1px solid @gray-light;
+  }
+  &__item {
+    padding: 10px;
+    & + & { border-top: 1px solid @gray-light; }
+    &-header {
+      display: flex;
+      align-items: center;
+      h5 { margin-left: 10px;}
+    }
+  }
+  &__count {
+    margin-left: auto !important;
+  }
+}
