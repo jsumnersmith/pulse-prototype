@@ -1,8 +1,6 @@
 import sampleSubmittedEvents from './sampleSubmittedEvents.js';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
-import MultiSelectField from './MultiSelectField';
-
 
 import React, { Component } from 'react';
 

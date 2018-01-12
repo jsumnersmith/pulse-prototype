@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Table, Column, Cell } from 'fixed-data-table';
-import { Search } from 'pulse-ui/src/deprecated';
+import { Search } from '@kickup/pulse-ui/src/deprecated';
 
 class AttendanceTable extends Component {
   constructor(props) {

@@ -124,10 +124,6 @@ class Histogram extends Component {
   }
 };
 
-const setColorAlpha = (color, alpha) => {
-  return chroma(color).alpha(alpha).css();
-}
-
 const HistogramBar = ({index, datum, total, colorArr, active, rubricText}) => (
   <div className={`summary-histogram__item ${active && 'active'}`}>
     <div className="summary-histogram__bar-wrapper">

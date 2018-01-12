@@ -1,6 +1,5 @@
 import React from 'react';
 
-import CohortAnalysis from './CohortAnalysis';
 import GoalsSummary from './GoalsSummary';
 
 export default () => (
