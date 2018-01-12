@@ -21,7 +21,7 @@ class EventCard extends Component {
       <div className="event-card">
         {this.props.isSubmission &&
           <div className={`event-card-submission-header ${this.props.isSubmission && this.state.status}`}>
-            <h5 className="event-card-submission-title"><span className="event-card-avatar"><img src={coffee} /></span> <strong>Joel Smith submitted</strong></h5>
+            <h5 className="event-card-submission-title"><span className="event-card-avatar"><img src={coffee} alt="avatar"/></span> <strong>Joel Smith submitted</strong></h5>
             <DisplayStatus status={this.state.status}/>
           </div>
         }
@@ -164,14 +164,6 @@ const SubmittedUserControls = () => (
   </div>
 )
 
-const ExtraStatus = () =>(
-  <div>
-    <h5><strong><i className="fa fa-thumbs-up circle-icon--small "/> Submission Approved</strong></h5>
-    <h5><strong><i className="fa fa-times red circle-icon--small "/> Submission Denied</strong></h5>
-    <h5><strong><i className="fa fa-check green circle-icon--small "/> Attendance Confirmed</strong></h5>
-  </div>
-)
-
 const DisplayStatus = ({status}) =>(
   <div>
     {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="fa fa-hourglass orange circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
@@ -183,9 +175,6 @@ const DisplayStatus = ({status}) =>(
 )
 
 class SubmittedAdminControls extends Component {
-  constructor(props){
-    super(props);
-  }
   state = {
     status: 'pending'
   }

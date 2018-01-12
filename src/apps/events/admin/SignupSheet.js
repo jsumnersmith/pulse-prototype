@@ -3,7 +3,7 @@ import sampleEvents from '../components/sampleEvents';
 
 const getEvent = (id) => {
   console.log(sampleEvents.length);
-  const sample = sampleEvents.find(e => e.id == id);
+  const sample = sampleEvents.find(e => Number(e.id) === Number(id));
   console.log(sample);
   return sample;
 }

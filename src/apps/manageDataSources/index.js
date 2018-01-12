@@ -1,5 +1,5 @@
 import React from 'react';
-import {SearchWithFilters as SearchInput } from 'pulse-ui/src/deprecated';
+import {SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
 import {Link} from 'react-router-dom';
 import spreadsheetIcon from '../../images/spreadsheet-icon.svg';
 
@@ -9,7 +9,7 @@ export default ({match}) => (
   <div className="wrapper">
     <div className="data-source-header">
       <h2 style={{marginBottom: 20}}>
-        <img src={spreadsheetIcon} style={{height: 45, width: 'auto', marginRight: 10}}/>
+        <img src={spreadsheetIcon} style={{height: 45, width: 'auto', marginRight: 10}} alt="Spreadsheet Icon"/>
         <strong>Manage Data Sources</strong>
       </h2>
       <nav className="data-source-nav">

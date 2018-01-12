@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { DateUtils } from 'react-day-picker';
 
-import { Search } from 'pulse-ui/src/deprecated';
+import { Search } from '@kickup/pulse-ui/src/deprecated';
 import { QuickCard } from './EventCard';
 
 const filterSearch = (query, events) => (

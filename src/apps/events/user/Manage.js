@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import EventTable from '../components/EventTable';
 import sampleEvents from '../components/sampleEvents';

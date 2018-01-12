@@ -85,12 +85,6 @@ export default class FormBuilder extends Component {
   }
 }
 
-const SideBarItem = ({title, iconClass}) => (
-  <div className="form-builder__sidebar-item" draggable="true">
-    <span className={`form-builder__sidebar-item-icon ${iconClass}`}/><strong className="form-builder__sidebar-item-title">{title}</strong>
-  </div>
-)
-
 const widgets = [
   {
     name: "Multiple Choice",
