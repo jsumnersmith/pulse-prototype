@@ -35,6 +35,10 @@ import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
 import Folders from './apps/folders';
 
+import Directory from './apps/directory';
+import DirectoryGroups from './apps/directory/Groups.js'
+import DirectoryEdit from './apps/directory/Edit.js'
+
 // Components
 import Visualizations from './components/visualizations';
 import LoadingStates from './components/loadingStates';
@@ -144,6 +148,22 @@ export default [
     parent: 'Apps',
     path: '/attributes/',
     exact: true
+  },
+  {
+    component: Directory,
+    linkName: "Directory",
+    parent: 'Apps',
+    path: '/directory/',
+    exact: true
+  },
+  {
+    component: DirectoryGroups,
+    path: '/directory/groups',
+    exact: true
+  },
+  {
+    component: DirectoryEdit,
+    path: '/directory/edit/:id',
   },
   {
     component: Visualizations,
