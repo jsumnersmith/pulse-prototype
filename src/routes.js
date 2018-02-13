@@ -52,6 +52,9 @@ import RubricColors from './components/rubricColors';
 import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
 import TabbedContainer from './components/tabbedContainer'
 
+//Styles
+import Grid from './styles/grid'
+
 export default [
   {
     component: Home,
@@ -276,4 +279,10 @@ export default [
     component: UserSubmittedEvent,
     path: '/events/submissions/:id'
   },
+  {
+    component: Grid,
+    path: '/styles/grid',
+    linkName: "Grid",
+    parent: 'Styles',
+  }
 ]

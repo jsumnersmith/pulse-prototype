@@ -17,6 +17,8 @@ const iconLookup = (name) => {
     return 'fa-dashboard';
   } else if (name === 'Components') {
     return 'fa-cog';
+  } else if (name === 'Styles') {
+    return 'fa-paint-brush';
   } else {
     return 'fa-home';
   }
