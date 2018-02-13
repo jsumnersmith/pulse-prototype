@@ -28,5 +28,28 @@ export default [
     school: 'Crocket Middle School',
     role: 'English',
     grade: '6',
-    groups: ['Teachers', 'English', 'Crocket Middle School']
+    groups: []
   }]
+
+  export const groups = [
+    {
+      id: 0,
+      name: 'Teachers'
+    },
+    {
+      id: 2,
+      name: 'English'
+    },
+    {
+      id: 3,
+      name: 'MacArthur High School'
+    },
+    {
+      id: 4,
+      name: 'Nimitz High School'
+    },
+    {
+      id: 5,
+      name: 'Crocket Middle School'
+    }
+  ]

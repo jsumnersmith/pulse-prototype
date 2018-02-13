@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DirectoryHeader from './DirectoryHeader';
+import { Tag } from '@kickup/pulse-ui/src/deprecated';
 import sampleUsers from './users.js';
 import BigButton from '../../components/permissionButtons/components/BigButton.js';
 import ListTable from '../../components/listTable';
@@ -26,7 +27,46 @@ export default class Edit extends Component {
                 <label>Email</label>
                 <input value={user.email} className="form-control" />
                 <hr />
-                <h3><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong></h3>
+                <BigButton
+                  iconclassName="fa-lock"
+                  title="Can Log In"
+                  description="This will allow this user to log in to KickUp."
+                />
+                <hr />
+                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
+                  <div className="">
+                    <h3><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong></h3>
+                  </div>
+                  <div className="text-right">
+                      <Link to={`/directory/edit/${user.id}/attributes`} className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}}><i className="fa fa-pencil" /> Edit Attributes</Link>
+                    </div>
+                </div>
+                <div className="col-md-12">
+
+                  <table className="no-border">
+                    <thead className="no-border">
+                      <tr>
+                        <th><strong>Attribute</strong></th>
+                        <th><strong>Value</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody className="no-border-y">
+                      <tr>
+                        <td><strong>School</strong></td>
+                        <td>{user.school && <Tag name={user.school} iconName="building-o"/> }</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Grade</strong></td>
+                        <td>{user.grade && <Tag name={user.grade} iconName="users"/> }</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Role</strong></td>
+                        <td>{user.role && <Tag name={user.role} iconName="book"/> }</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
               </div>
               <div className="col-md-6">
                 <h3><i className="fa fa-unlock-alt circle-icon green" /> <strong>Permissions</strong></h3>
@@ -50,6 +90,10 @@ export default class Edit extends Component {
                   title="View History Pages"
                   description="User will be able to view a historical record of all survey responses for all other users."
                 />
+              </div>
+              <hr />
+              <div className="col-md-12">
+
               </div>
               <hr />
               <div className="col-md-12">
