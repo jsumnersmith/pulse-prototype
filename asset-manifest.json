@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.8b6d5a5e.css",
   "main.css.map": "static/css/main.8b6d5a5e.css.map",
-  "main.js": "static/js/main.bbadc76f.js",
-  "main.js.map": "static/js/main.bbadc76f.js.map",
+  "main.js": "static/js/main.26b8a7cf.js",
+  "main.js.map": "static/js/main.26b8a7cf.js.map",
   "static/media/adding-table.less": "static/media/adding-table.b2328beb.less",
   "static/media/address-book-icon.svg": "static/media/address-book-icon.7ae8ff7e.svg",
   "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
@@ -20,6 +20,7 @@
   "static/media/form-builder.less": "static/media/form-builder.b2328beb.less",
   "static/media/form-icon.svg": "static/media/form-icon.85ef761a.svg",
   "static/media/goals-summary.less": "static/media/goals-summary.b2328beb.less",
+  "static/media/grid.less": "static/media/grid.b2328beb.less",
   "static/media/header.less": "static/media/header.b2328beb.less",
   "static/media/home.less": "static/media/home.b2328beb.less",
   "static/media/index.less": "static/media/index.b2328beb.less",

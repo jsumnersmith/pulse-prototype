@@ -1,4 +1,4 @@
-/*LESS CSS pre-processor*/
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);/*LESS CSS pre-processor*/
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -14493,6 +14493,62 @@ fieldset[disabled] .btn {
 .tab-content {
   margin-bottom: 0;
   border: none;
+}
+.grid {
+  display: grid;
+}
+.grid.twelve {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  background: transparent;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.grid [class^="col-"] {
+  background: lightcoral;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: "Source Code Pro", monospace;
+}
+.grid .col-1 {
+  grid-column: span 1;
+}
+.grid .col-2 {
+  grid-column: span 2;
+}
+.grid .col-3 {
+  grid-column: span 3;
+}
+.grid .col-4 {
+  grid-column: span 4;
+}
+.grid .col-5 {
+  grid-column: span 5;
+}
+.grid .col-6 {
+  grid-column: span 6;
+}
+.grid .col-7 {
+  grid-column: span 7;
+}
+.grid .col-8 {
+  grid-column: span 8;
+}
+.grid .col-9 {
+  grid-column: span 9;
+}
+.grid .col-10 {
+  grid-column: span 10;
+}
+.grid .col-11 {
+  grid-column: span 11;
+}
+.grid .col-12 {
+  grid-column: span 12;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
