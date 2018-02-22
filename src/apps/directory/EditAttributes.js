@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DirectoryHeader from './DirectoryHeader';
 import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
-import sampleUsers from './users.js';
+import sampleUsers, {nonPeople} from './users.js';
 import './directory.less';
 
 export default class Edit extends Component {
   render() {
+    const allPeople = sampleUsers.concat(nonPeople);
     const id = this.props.match.params.id;
-    const user = sampleUsers.find(user => String(user.id) === String(id));
+    const user = allPeople.find(user => String(user.id) === String(id));
     return (
       <div className="wrapper">
         <DirectoryHeader/>
@@ -63,6 +64,19 @@ export default class Edit extends Component {
                     <td>Irving ISD Roster Data Source</td>
                     <td><i className="fa fa-check green"/> Active</td>
                   </tr>
+                }
+                {
+                  user.attributes &&
+                    user.attributes.map(attribute =>
+                      <tr>
+                        <td>{attribute.type}</td>
+                        <td>{attribute.value}</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>Sample Survey Import</td>
+                        <td><i className="fa fa-check green"/> Active</td>
+                      </tr>
+                    )
                 }
               </tbody>
             </table>
