@@ -13893,6 +13893,35 @@ th.empty {
 .directory-type-filter {
   margin-top: 10px;
 }
+.directory-toggles {
+  display: flex;
+  justify-content: space-between;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.list-table-wrapper {
+  margin-top: 10px;
+}
+.list-table {
+  border: 3px solid #eee;
+}
+.list-table-header {
+  background: #eee;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 5px 10px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -13977,31 +14006,6 @@ th.empty {
   margin: 0;
   color: #007DA0;
   font-size: 9px;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
-.list-table-wrapper {
-  margin-top: 10px;
-}
-.list-table {
-  border: 3px solid #eee;
-}
-.list-table-header {
-  background: #eee;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 5px 10px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
