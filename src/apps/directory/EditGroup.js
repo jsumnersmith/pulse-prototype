@@ -49,6 +49,12 @@ export default class Edit extends Component {
                     }
                   </tbody>
                 </table>
+                <hr />
+                <div className="text-center col-md-12">
+                  <button className="btn btn-primary">Save</button>
+                  <button className="btn btn-primary btn-trans">Save and Continue Editing</button>
+                  <button className="btn btn-danger btn-trans">Cancel Changes</button>
+                </div>
               </div>
             </div>
           </div>
