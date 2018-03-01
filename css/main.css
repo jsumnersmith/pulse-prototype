@@ -12094,6 +12094,7 @@ pre[class*="language-"] {
 body {
   margin: 0;
   padding: 72px 0 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 .wrapper {
   margin: 40px auto 0;
@@ -12109,6 +12110,32 @@ body {
     size: auto;
     margin: 0mm;
   }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+}
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: 800;
+}
+strong {
+  font-weight: 700;
+}
+.meta,
+.btn,
+.tag,
+.tag:not(.token) {
+  font-family: 'Nunito Sans', sans-serif;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
