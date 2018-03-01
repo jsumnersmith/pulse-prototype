@@ -256,7 +256,7 @@ const OtherList = () => (
       <tbody className="no-border-y">
         { nonPeople.map(item =>
           <tr>
-            <td><Link to={`/directory/edit/entity/a${item.id}`}><strong>{item.name}</strong></Link></td>
+            <td><Link to={`/directory/edit/entity/${item.id}`}><strong>{item.name}</strong></Link></td>
             <td>{item.attributes.map(attribute => <Tag name={`${attribute.type}: ${attribute.value}`} iconName="tag"/>)}</td>
           </tr>
         )}
