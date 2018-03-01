@@ -22,6 +22,7 @@ import UserManageEvents from './apps/events/user/Manage';
 import UserEvent from './apps/events/user/Event';
 import UserSubmit from './apps/events/user/Submit';
 import UserSubmittedEvent from './apps/events/user/SubmittedEvent';
+import UserSuccess from './apps/events/user/Success';
 
 import FormBuilder from './apps/formBuilder';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
@@ -280,6 +281,10 @@ export default [
   {
     component: UserSubmit,
     path: '/events/submit'
+  },
+  {
+    component: UserSuccess,
+    path: '/events/success'
   },
   {
     component: UserSubmittedEvent,
