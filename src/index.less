@@ -2,9 +2,12 @@
 @import '~@kickup/pulse-ui/src/css/globals.less';
 // @import '~pulse-styles/styles/index.less';
 
+@font-family: 'Nunito Sans', sans-serif;
+
 body {
   margin: 0;
   padding: 72px 0 0;
+  font-family: @font-family;
 }
 
 .wrapper {
@@ -17,3 +20,13 @@ body {
   header, nav { display: none !important; }
   @page { size: auto;  margin: 0mm; }
 }
+
+h1,h2,h3,h4,h5,h6, {
+  font-family: @font-family;
+  font-weight: 700;
+  strong { font-weight: 800; }
+}
+
+strong {font-weight: 700; }
+
+.meta, .btn, .tag, .tag:not(.token) { font-family: @font-family; }
