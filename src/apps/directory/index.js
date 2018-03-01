@@ -186,7 +186,7 @@ class PeopleList extends Component {
           </thead>
           <tbody className="no-border-y">
             {
-              sampleUsers.map(user => <tr>
+              sampleUsers.slice(0,10).map(user => <tr>
                 { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }
                 { this.isColumnActive('canLogin') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
