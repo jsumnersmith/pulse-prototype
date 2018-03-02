@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import _ from 'lodash';
 import DirectoryHeader from './DirectoryHeader'
 import { SearchWithFilters as SearchInput, Tag } from '@kickup/pulse-ui/src/deprecated';
 import './directory.less';
@@ -88,13 +89,17 @@ class PeopleList extends Component {
     let columns = (getItem('directoryData') && getItem('directoryData').columns) || initialColumns;
     this.state = {
       showColumns: columns,
-      showFilterModal: false
+      showFilterModal: false,
+      users: sampleUsers
     }
     this.toggleColumn = this.toggleColumn.bind(this);
     this.isColumnActive = this.isColumnActive.bind(this);
     this.checkPermission = this.checkPermission.bind(this);
     this.getColSpan = this.getColSpan.bind(this);
-
+    this.sortUsers = this.sortUsers.bind(this);
+    this.sortUsersByGroups = this.sortUsersByGroups.bind(this);
+    this.sortUsersByPermission = this.sortUsersByPermission.bind(this);
+    this.filterUsers = this.filterUsers.bind(this);
   }
   toggleColumn(name){
     let {showColumns} = this.state;
@@ -139,13 +144,36 @@ class PeopleList extends Component {
   getPermsColWidth(){
     return (this.state.showColumns.filter(col => ['email','name', 'canLogin'].find(col)).length() + 1);
   }
+  sortUsers(prop, dir){
+    let {users} = this.state;
+    users = _.orderBy(users, [prop], [dir]);
+    this.setState({users});
+  }
+  sortUsersByGroups(){
+    let {users} = this.state;
+    users = _.orderBy(users, ['groups'], ['desc']);
+    this.setState({users});
+  }
+  sortUsersByPermission(permission){
+    let {users} = this.state;
+    users = _.orderBy(users, user => user.permissions.includes(permission), 'desc');
+    this.setState({users});
+  }
+  filterUsers(e){
+    let search = e.target.value;
+    let users = sampleUsers.filter(user => JSON.stringify(user).match(search));
+    console.log(users.length, search)
+    this.setState({users});
+  }
   render(){
     const {view} = this.props;
     return (
       <div>
         <div className="directory-search" style={{marginTop: 10}}>
           <div className="directory-search__input" style={{marginRight: 5}}>
-            <SearchInput />
+            <SearchInput
+              onChange={this.filterUsers}
+            />
           </div>
           <div className="directory-search__filters">
             <div className="btn-group">
@@ -218,25 +246,25 @@ class PeopleList extends Component {
             </tr>
             <tr>
               <th><input type="checkbox"/></th>
-              { this.isColumnActive('email') && <th><strong>Email</strong></th> }
-              { this.isColumnActive('name') && <th style={{minWidth: 100}}><strong>Name</strong></th>}
-              { this.isColumnActive('canLogin') && <th><strong>User</strong></th>}
-              { this.isColumnActive('groups') && <th style={{minWidth: 200}}><strong>Groups</strong></th>}
-              { this.isColumnActive('permissions') && <th><strong>Reports</strong></th>}
-              { this.isColumnActive('permissions') && <th><strong>Events</strong></th>}
-              { this.isColumnActive('permissions') && <th><strong>Users</strong></th>}
-              { this.isColumnActive('permissions') && <th style={{minWidth: 94}}><strong>Shared Links</strong></th>}
-              { this.isColumnActive('permissions') && <th style={{minWidth: 100}}><strong>History Pages</strong></th>}
-              { this.isColumnActive('restrictions') && <th><strong>Restrictions</strong></th>}
-              { this.isColumnActive('school') && <th style={{minWidth: 94}}><strong>School</strong></th>}
-              { this.isColumnActive('role') && <th style={{minWidth: 94}}><strong>Role</strong></th>}
-              { this.isColumnActive('grade') && <th style={{minWidth: 94}}><strong>Grades</strong></th>}
-              { this.isColumnActive('other') && <th style={{minWidth: 120}}><strong>Other Attribute</strong></th>}
+              { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email</strong></th> }
+              { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name</strong></th>}
+              { this.isColumnActive('canLogin') && <th onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>User</strong></th>}
+              { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups</strong></th>}
+              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Reports')} className="clickable"><strong>Reports</strong></th>}
+              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Events')} className="clickable"><strong>Events</strong></th>}
+              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Users')} className="clickable"><strong>Users</strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 94}} onClick={() => this.sortUsersByPermission('Manage Shared Links')} className="clickable"><strong>Shared Links</strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 100}} onClick={() => this.sortUsersByPermission('View History Pages')} className="clickable"><strong>History Pages</strong></th>}
+              { this.isColumnActive('restrictions') && <th onClick={this.sortUsersByRestrictions} className="clickable"><strong>Restrictions</strong></th>}
+              { this.isColumnActive('school') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('school', 'asc')} className="clickable"><strong>School</strong></th>}
+              { this.isColumnActive('role') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('role', 'asc')} className="clickable"><strong>Role</strong></th>}
+              { this.isColumnActive('grade') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('grade', 'asc')} className="clickable"><strong>Grades</strong></th>}
+              { this.isColumnActive('other') && <th style={{minWidth: 120}} onClick={() => this.sortUsers('other', 'asc')} className="clickable"><strong>Other Attribute</strong></th>}
             </tr>
           </thead>
           <tbody className="no-border-y">
             {
-              sampleUsers.slice(0,10).map(user => <tr>
+              this.state.users.slice(0,10).map(user => <tr>
                 <td><input type="checkbox"/></td>
                 { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }

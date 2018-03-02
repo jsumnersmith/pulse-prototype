@@ -48,11 +48,13 @@
   width: 100%;
   border-left: 2px solid @gray-light;
   border-right: 2px solid @gray-light;
+  border-bottom: 2px solid @gray-light;
 }
 
 .directory-table-header {
   tr {
     background: none !important;
+    .clickable { cursor: pointer; }
     &:first-child th {
       background: @gray-light;
       border: 2px solid white;
