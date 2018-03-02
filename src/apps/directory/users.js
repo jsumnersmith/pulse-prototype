@@ -8,7 +8,7 @@ export default [
     role: 'English',
     grade: '12',
     groups: ['Teachers', 'English', 'MacArthur High School'],
-    permissions: ['View Reports', 'Edit Reports'],
+    permissions: ['Manage Reports', 'Manage Events', 'Manage Users', 'Manage Shared Links', 'View History Pages'],
     restrictions: []
   },
   {
@@ -20,7 +20,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Nimitz High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -45,7 +45,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Crocket Middle School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -58,7 +58,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Nimitz High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -71,7 +71,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Nimitz High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -84,7 +84,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Crocket Middle School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -97,7 +97,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'MacArthur High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -110,7 +110,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Crocket Middle School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -123,7 +123,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Nimitz High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -136,7 +136,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'Crocket Middle School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
@@ -149,7 +149,7 @@ export default [
     role: 'English',
     grade: '10',
     groups: ['Teachers', 'English', 'MacArthur High School'],
-    permissions: ['View Reports', 'Edit Events'],
+    permissions: ['Manage Reports'],
     restrictions: []
 
   },
