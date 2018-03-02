@@ -5,6 +5,7 @@ import './directory.less';
 import { Link } from 'react-router-dom';
 import sampleUsers, {groups, nonPeople} from './users.js';
 import ListTable from '../../components/listTable';
+import { getItem, setItem } from 'timedstorage';
 
 const isLast = (index, arr) => {
   if (index !== arr.length - 1) {
@@ -83,21 +84,28 @@ const CheckBox = ({label, checked, onClick}) => (
 class PeopleList extends Component {
   constructor(props){
     super(props);
+    console.log('columns', getItem('directoryData'));
+    let columns = (getItem('directoryData') && getItem('directoryData').columns) || initialColumns;
     this.state = {
-      showColumns: initialColumns,
+      showColumns: columns,
       showFilterModal: false
     }
     this.toggleColumn = this.toggleColumn.bind(this);
     this.isColumnActive = this.isColumnActive.bind(this);
     this.checkPermission = this.checkPermission.bind(this);
+    this.getColSpan = this.getColSpan.bind(this);
+
   }
   toggleColumn(name){
     let {showColumns} = this.state;
     if (showColumns.includes(name)){
-      this.setState({showColumns: showColumns.filter(column => column !== name)});
+      showColumns = showColumns.filter(column => column !== name);
     } else {
-      this.setState({showColumns: showColumns.concat([name])});
+      showColumns = showColumns.concat([name]);
     }
+    const item = setItem('directoryData', {columns: showColumns}, 3600000);
+    console.log(item);
+    this.setState({showColumns});
   }
   checkPermission(user, permission){
     return user.permissions && user.permissions.includes(permission);
@@ -105,6 +113,31 @@ class PeopleList extends Component {
   isColumnActive(name){
     let {showColumns} = this.state;
     return showColumns.includes(name);
+  }
+  getColSpan(kind){
+    let expectedCols = [];
+    if (kind === 'user'){
+      expectedCols = ['email','name', 'canLogin']
+    } else if (kind === 'permissions') {
+      return this.state.showColumns.includes('permissions') ? 5 : 0;
+    } else if (kind === 'attributes') {
+      expectedCols = ["school", "grade", "role", "other"];
+    }
+    return (this.state.showColumns.filter(col => expectedCols.includes(col)).length + 1);
+  }
+  showCols(kind){
+    if (kind === 'user'){
+      return ['email','name', 'canLogin'].filter(col => this.state.showColumns.includes(col)).length > 0;
+    } else if (kind === 'permissions') {
+      return this.state.showColumns.includes('permissions');
+    } else if (kind === 'attributes') {
+      return ["school", "grade", "role", "other"].filter(col => this.state.showColumns.includes(col)).length > 0;
+    } else if (kind === 'restrictions') {
+      return this.state.showColumns.includes('restrictions');
+    }
+  }
+  getPermsColWidth(){
+    return (this.state.showColumns.filter(col => ['email','name', 'canLogin'].find(col)).length() + 1);
   }
   render(){
     const {view} = this.props;
@@ -178,9 +211,10 @@ class PeopleList extends Component {
           <thead className="no-border directory-table-header">
             <tr>
               <th colSpan="1"><i className="fa fa-check circle-icon--small"/></th>
-              <th colSpan="4"><i className="fa fa-user circle-icon--small"/> User</th>
-              <th colSpan="6"><i className="fa fa-unlock circle-icon--small"/> Permissions</th>
-              <th colSpan="4"><i className="fa fa-tags circle-icon--small"/> Attributes</th>
+              { this.showCols('user') && <th colSpan={this.getColSpan('user')}><i className="fa fa-user circle-icon--small"/> User</th>}
+              { this.showCols('permissions') && <th colSpan={this.getColSpan('permissions')}><i className="fa fa-unlock circle-icon--small"/> Permissions</th>}
+              { this.showCols('restrictions') && <th colSpan="1"><i className="fa fa-lock circle-icon--small"/></th> }
+              { this.showCols('attributes') && <th colSpan={this.getColSpan('attributes')}><i className="fa fa-tags circle-icon--small"/> Attributes</th>}
             </tr>
             <tr>
               <th><input type="checkbox"/></th>
@@ -194,10 +228,10 @@ class PeopleList extends Component {
               { this.isColumnActive('permissions') && <th style={{minWidth: 94}}><strong>Shared Links</strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 100}}><strong>History Pages</strong></th>}
               { this.isColumnActive('restrictions') && <th><strong>Restrictions</strong></th>}
-              { this.isColumnActive('school') && <th><strong>School</strong></th>}
-              { this.isColumnActive('role') && <th><strong>Role</strong></th>}
-              { this.isColumnActive('grade') && <th><strong>Grades</strong></th>}
-              { this.isColumnActive('other') && <th><strong>Other Attribute</strong></th>}
+              { this.isColumnActive('school') && <th style={{minWidth: 94}}><strong>School</strong></th>}
+              { this.isColumnActive('role') && <th style={{minWidth: 94}}><strong>Role</strong></th>}
+              { this.isColumnActive('grade') && <th style={{minWidth: 94}}><strong>Grades</strong></th>}
+              { this.isColumnActive('other') && <th style={{minWidth: 120}}><strong>Other Attribute</strong></th>}
             </tr>
           </thead>
           <tbody className="no-border-y">
