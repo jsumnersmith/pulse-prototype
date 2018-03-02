@@ -35,7 +35,125 @@ export default [
     groups: [],
     permissions: [],
     restrictions: []
-  }]
+  },
+  {
+    id: 4,
+    name: 'John Smith',
+    email: 'john@kickup.lol',
+    canLogin: true,
+    school: 'Crocket Middle School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Crocket Middle School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 5,
+    name: 'Bill Smith',
+    email: 'bill@kickup.lol',
+    canLogin: true,
+    school: 'Nimitz High School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Nimitz High School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 6,
+    name: 'Steve Smith',
+    email: 'steve@kickup.lol',
+    canLogin: true,
+    school: 'Nimitz High School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Nimitz High School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 7,
+    name: 'Emmit Smith',
+    email: 'emmit@kickup.lol',
+    canLogin: true,
+    school: 'Crocket Middle School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Crocket Middle School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 12,
+    name: 'Judy Smith',
+    email: 'judy@kickup.lol',
+    canLogin: true,
+    school: 'MacArthur High School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'MacArthur High School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 8,
+    name: 'June Smith',
+    email: 'june@kickup.lol',
+    canLogin: true,
+    school: 'Crocket Middle School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Crocket Middle School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 9,
+    name: 'Mae Smith',
+    email: 'mae@kickup.lol',
+    canLogin: true,
+    school: 'Nimitz High School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Nimitz High School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 10,
+    name: 'Michone Smith',
+    email: 'michone@kickup.lol',
+    canLogin: true,
+    school: 'Crocket Middle School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'Crocket Middle School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+  {
+    id: 11,
+    name: 'Debbie Smith',
+    email: 'debbie@kickup.lol',
+    canLogin: true,
+    school: 'MacArthur High School',
+    role: 'English',
+    grade: '10',
+    groups: ['Teachers', 'English', 'MacArthur High School'],
+    permissions: ['View Reports', 'Edit Events'],
+    restrictions: []
+
+  },
+]
 
   export const groups = [
     {
