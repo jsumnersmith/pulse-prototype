@@ -89,6 +89,7 @@ class PeopleList extends Component {
     }
     this.toggleColumn = this.toggleColumn.bind(this);
     this.isColumnActive = this.isColumnActive.bind(this);
+    this.checkPermission = this.checkPermission.bind(this);
   }
   toggleColumn(name){
     let {showColumns} = this.state;
@@ -98,6 +99,9 @@ class PeopleList extends Component {
       this.setState({showColumns: showColumns.concat([name])});
     }
   }
+  checkPermission(user, permission){
+    return user.permissions && user.permissions.includes(permission);
+  };
   isColumnActive(name){
     let {showColumns} = this.state;
     return showColumns.includes(name);
@@ -169,15 +173,27 @@ class PeopleList extends Component {
             <button className="btn btn-default" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-tags"/> Filter</button>
           </div>
         </div>
+        <div className="directory-table-wrapper">
         <table className="no-border">
-          <thead className="no-border">
+          <thead className="no-border directory-table-header">
             <tr>
+              <th colSpan="1"><i className="fa fa-check circle-icon--small"/></th>
+              <th colSpan="4"><i className="fa fa-user circle-icon--small"/> User</th>
+              <th colSpan="6"><i className="fa fa-unlock circle-icon--small"/> Permissions</th>
+              <th colSpan="4"><i className="fa fa-tags circle-icon--small"/> Attributes</th>
+            </tr>
+            <tr>
+              <th><input type="checkbox"/></th>
               { this.isColumnActive('email') && <th><strong>Email</strong></th> }
-              { this.isColumnActive('name') && <th><strong>Name</strong></th>}
-              { this.isColumnActive('canLogin') && <th><strong>Can Login</strong></th>}
-              { this.isColumnActive('groups') && <th><strong>Groups</strong></th>}
-              { this.isColumnActive('permissions') && <th><strong>Permissions</strong></th>}
-              { this.isColumnActive('restrictions') && <th><strong>Data Restrictions</strong></th>}
+              { this.isColumnActive('name') && <th style={{minWidth: 100}}><strong>Name</strong></th>}
+              { this.isColumnActive('canLogin') && <th><strong>User</strong></th>}
+              { this.isColumnActive('groups') && <th style={{minWidth: 200}}><strong>Groups</strong></th>}
+              { this.isColumnActive('permissions') && <th><strong>Reports</strong></th>}
+              { this.isColumnActive('permissions') && <th><strong>Events</strong></th>}
+              { this.isColumnActive('permissions') && <th><strong>Users</strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 94}}><strong>Shared Links</strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 100}}><strong>History Pages</strong></th>}
+              { this.isColumnActive('restrictions') && <th><strong>Restrictions</strong></th>}
               { this.isColumnActive('school') && <th><strong>School</strong></th>}
               { this.isColumnActive('role') && <th><strong>Role</strong></th>}
               { this.isColumnActive('grade') && <th><strong>Grades</strong></th>}
@@ -187,18 +203,16 @@ class PeopleList extends Component {
           <tbody className="no-border-y">
             {
               sampleUsers.slice(0,10).map(user => <tr>
+                <td><input type="checkbox"/></td>
                 { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }
                 { this.isColumnActive('canLogin') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
                 { this.isColumnActive('groups') && <td>{user.groups.map((group, index) => <Link to={`/directory/groups/edit/${getGroupId(group)}`}>{group}{!isLast(index, user.groups) && ', ' }</Link>)}</td>}
-                { this.isColumnActive('permissions') && <td className={view === 'compact' && "text-center" }>
-                  <Countable
-                    kind="permissions"
-                    user={user}
-                    view={view}
-                    icon={'unlock'}
-                  />
-                </td>}
+                { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Reports') && <i className="fa fa-check green" />}</td>}
+                { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Events') && <i className="fa fa-check green" />}</td>}
+                { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Users') && <i className="fa fa-check green" />}</td>}
+                { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Shared Links') && <i className="fa fa-check green" />}</td>}
+                { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'View History Pages') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('restrictions') && <td className={view === 'compact' && "text-center"}>
                   <Countable
                     kind="restrictions"
@@ -210,12 +224,13 @@ class PeopleList extends Component {
                 { this.isColumnActive('school') && <td><Tag name={`${user.school}`} iconName="building-o"/></td>}
                 { this.isColumnActive('role') && <td><Tag name={`${user.role}`} iconName="book"/></td>}
                 { this.isColumnActive('grade') && <td><Tag name={`${user.grade}`} iconName="users"/></td>}
-                { this.isColumnActive('other') && <td>N/A</td>}
+                { this.isColumnActive('other') && <td></td>}
               </tr>
               )
             }
           </tbody>
         </table>
+        </div>
         <div className="modal full-width modal-background fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{dispaly: 'none'}}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -276,7 +291,7 @@ const Countable = ({user, kind, view, icon = 'unlock'}) => (
             {user[kind].map(item => <Tag name={item} iconName={icon}/>)}
           </div>
       :
-        <span>N/A</span>
+        <span></span>
     }
   </div>
 )
