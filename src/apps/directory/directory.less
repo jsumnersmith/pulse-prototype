@@ -42,3 +42,23 @@
   display: flex;
   justify-content: space-between;
 }
+.directory-table-wrapper {
+  margin-top: 20px;
+  overflow-x: scroll;
+  width: 100%;
+  border-left: 2px solid @gray-light;
+  border-right: 2px solid @gray-light;
+}
+
+.directory-table-header {
+  tr {
+    background: none !important;
+    &:first-child th {
+      background: @gray-light;
+      border: 2px solid white;
+      border-top: none;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
