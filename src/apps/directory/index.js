@@ -207,9 +207,9 @@ class PeopleList extends Component {
                     icon={'lock'}
                   />
                 </td> }
-                { this.isColumnActive('school') && <td>{user.school}</td>}
-                { this.isColumnActive('role') && <td>{user.role}</td>}
-                { this.isColumnActive('grade') && <td>{user.grade}</td>}
+                { this.isColumnActive('school') && <td><Tag name={`${user.school}`} iconName="building-o"/></td>}
+                { this.isColumnActive('role') && <td><Tag name={`${user.role}`} iconName="book"/></td>}
+                { this.isColumnActive('grade') && <td><Tag name={`${user.grade}`} iconName="users"/></td>}
                 { this.isColumnActive('other') && <td>N/A</td>}
               </tr>
               )
