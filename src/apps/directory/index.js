@@ -239,20 +239,20 @@ class PeopleList extends Component {
             </tr>
             <tr>
               <th><input type="checkbox"/></th>
-              { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email</strong></th> }
-              { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name</strong></th>}
-              { this.isColumnActive('canLogin') && <th onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>User</strong></th>}
-              { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups</strong></th>}
-              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Reports')} className="clickable"><strong>Reports</strong></th>}
-              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Events')} className="clickable"><strong>Events</strong></th>}
-              { this.isColumnActive('permissions') && <th onClick={() => this.sortUsersByPermission('Manage Users')} className="clickable"><strong>Users</strong></th>}
-              { this.isColumnActive('permissions') && <th style={{minWidth: 94}} onClick={() => this.sortUsersByPermission('Manage Shared Links')} className="clickable"><strong>Shared Links</strong></th>}
-              { this.isColumnActive('permissions') && <th style={{minWidth: 100}} onClick={() => this.sortUsersByPermission('View History Pages')} className="clickable"><strong>History Pages</strong></th>}
-              { this.isColumnActive('restrictions') && <th onClick={this.sortUsersByRestrictions} className="clickable"><strong>Restrictions</strong></th>}
-              { this.isColumnActive('school') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('school', 'asc')} className="clickable"><strong>School</strong></th>}
-              { this.isColumnActive('role') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('role', 'asc')} className="clickable"><strong>Role</strong></th>}
-              { this.isColumnActive('grade') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('grade', 'asc')} className="clickable"><strong>Grades</strong></th>}
-              { this.isColumnActive('other') && <th style={{minWidth: 120}} onClick={() => this.sortUsers('other', 'asc')} className="clickable"><strong>Other Attribute</strong></th>}
+              { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email <i className="fa fa-sort"/></strong></th> }
+              { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('canLogin') && <th style={{minWidth: 61}} onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>User <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 78}} onClick={() => this.sortUsersByPermission('Manage Reports')} className="clickable"><strong>Reports <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 70}} onClick={() => this.sortUsersByPermission('Manage Events')} className="clickable"><strong>Events <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 64}} onClick={() => this.sortUsersByPermission('Manage Users')} className="clickable"><strong>Users <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 117}} onClick={() => this.sortUsersByPermission('Manage Shared Links')} className="clickable"><strong>Shared Links <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('permissions') && <th style={{minWidth: 123}} onClick={() => this.sortUsersByPermission('View History Pages')} className="clickable"><strong>History Pages <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('restrictions') && <th style={{minWidth: 114}} onClick={this.sortUsersByRestrictions} className="clickable"><strong>Restrictions <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('school') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('school', 'asc')} className="clickable"><strong>School <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('role') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('role', 'asc')} className="clickable"><strong>Role <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('grade') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('grade', 'asc')} className="clickable"><strong>Grades <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('other') && <th style={{minWidth: 123}} onClick={() => this.sortUsers('other', 'asc')} className="clickable"><strong>Other Attribute <i className="fa fa-sort"/></strong></th>}
             </tr>
           </thead>
           <tbody className="no-border-y">
