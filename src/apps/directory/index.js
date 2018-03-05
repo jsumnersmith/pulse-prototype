@@ -53,15 +53,8 @@ export default class Directory extends Component {
               <div>
                 <label>Browse</label>
                 <div className="directory-type-toggle btn-group" style={{marginLeft: 5}}>
-                  <button className={`btn ${this.setListTypeButtonClass('people')}`} onClick={()=> this.updateListType('people')}><i className="fa fa-users" /> People</button>
-                  <button className={`btn ${this.setListTypeButtonClass('other')}`} onClick={()=> this.updateListType('other')}><i className="fa fa-list" /> Other</button>
-                </div>
-              </div>
-              <div>
-                <label>View</label>
-                <div className="directory-view-toggle btn-group" style={{marginLeft: 5}}>
-                  <button className={`btn btn-sm ${this.setViewButtonClass('compact')}`} onClick={()=> this.updateView('compact')}><i className="fa fa-compress"/> Compact</button>
-                  <button className={`btn btn-sm ${this.setViewButtonClass('full')}`} onClick={()=> this.updateView('full')}><i className="fa fa-expand"/> Full</button>
+                  <button className={`btn btn-sm ${this.setListTypeButtonClass('people')}`} onClick={()=> this.updateListType('people')}><i className="fa fa-users" /> People</button>
+                  <button className={`btn btn-sm ${this.setListTypeButtonClass('other')}`} onClick={()=> this.updateListType('other')}><i className="fa fa-list" /> Other</button>
                 </div>
               </div>
             </div>
