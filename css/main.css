@@ -13924,6 +13924,30 @@ th.empty {
   display: flex;
   justify-content: space-between;
 }
+.directory-table-wrapper {
+  margin-top: 20px;
+  overflow-x: scroll;
+  width: 100%;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+.directory-table-wrapper td a {
+  text-decoration: underline;
+}
+.directory-table-header tr {
+  background: none !important;
+}
+.directory-table-header tr .clickable {
+  cursor: pointer;
+}
+.directory-table-header tr:first-child th {
+  background: #eee;
+  border: 2px solid white;
+  border-top: none;
+  text-align: center;
+  font-weight: 700;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
