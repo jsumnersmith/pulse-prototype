@@ -17,6 +17,7 @@ class EventList extends Component {
     this.toggleUpcoming = this.toggleUpcoming.bind(this);
     this.setUpcoming = this.setUpcoming.bind(this);
     this.getModifiers = this.getModifiers.bind(this);
+    this.matchesFilters = this.matchesFilters.bind(this);
     this.state = {
       searchQuery: '',
       selectedDay: new Date(),
@@ -56,7 +57,7 @@ class EventList extends Component {
         return DateUtils.isDayBefore(day1, day2);
       }
     }
-    if (this.state.filters.length && _.intersection(this.state.filters, eventItem.meta).length !== this.state.filters.length){
+    if (this.state.filters.length > 0 && !this.matchesFilters(eventItem, this.state.filters)){
       return false;
     }
     if (this.state.selectedDay && !(DateUtils.isSameDay(this.state.selectedDay, new Date(eventItem.date)) || sortMethod(new Date(eventItem.date), this.state.selectedDay))) {
@@ -65,6 +66,25 @@ class EventList extends Component {
       return new RegExp(this.state.searchQuery, 'ig').test(JSON.stringify(eventItem));
     }
     return true;
+  }
+
+  matchesFilters(sampleEvent, filters){
+    const filterGroupCount = _(filters).groupBy('type').keys().value().length;
+    const matches =  _(filters)
+      .groupBy('type')
+      .map((values, name) => {
+        if (name === 'Workshop Type') {
+          return [true];
+        } else {
+          return values.map(value => sampleEvent.meta.includes(value))
+        }
+      })
+      .flatten()
+      .filter(item => item !== false)
+      .value()
+    console.log(matches, filterGroupCount, sampleEvent.meta)
+    return matches.length === filterGroupCount;
+
   }
 
   toggleUpcoming(){
