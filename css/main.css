@@ -12672,6 +12672,7 @@ strong {
   width: 60px;
   margin-right: 10px;
   vertical-align: top;
+  font-weight: 800;
 }
 .event-card-date-month {
   background: #eee;
@@ -13940,6 +13941,14 @@ th.empty {
 }
 .directory-table-header tr .clickable {
   cursor: pointer;
+}
+.directory-table-header tr .fa-sort {
+  margin-left: 2px;
+  opacity: .5;
+  transition: all 0.2s ease-in-out;
+}
+.directory-table-header tr th:hover .fa-sort {
+  opacity: 0.9;
 }
 .directory-table-header tr:first-child th {
   background: #eee;
