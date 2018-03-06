@@ -205,7 +205,7 @@ class Filters extends Component {
           _.map(filters, (filterSet, filterName) => <div className="col-md-4">
               <label>{filterName}</label>
               <ul style={{padding: '5px 0px', margin: 0}}>
-                {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0}}>
+                {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
                     {this.isActive(filter) ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}
                   </li>)}
               </ul>
