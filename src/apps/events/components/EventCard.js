@@ -60,7 +60,7 @@ class EventCard extends Component {
               { showAction ?
                 (this.props.isSubmission ? ( isAdmin ? <SubmittedAdminControls updateStatus={(status) => this.setState({status})}/> : <SubmittedUserControls /> ) :
                 (sampleEvent.external ? <ExternalControls /> :
-                (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} isCollection={sampleEvent.isCollection}/>) ) )
+                (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle} isCollection={sampleEvent.isCollection}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} isCollection={sampleEvent.isCollection}/>) ) )
               : null }
             </div>
           </div>
@@ -93,10 +93,14 @@ class AdminControls extends Component {
     this.setState({ showCode: true });
   }
   render() {
-    const {isList, actionLink, actionTitle } = this.props;
+    const {isList, actionLink, actionTitle, isCollection } = this.props;
     return (
       <div className="event-admin-control text-center">
-        { isList ?
+        {
+          isCollection ?
+          <Link to={actionLink} className="btn btn-default btn-block"><i className="fa fa-clone"/> View Events</Link>
+          :
+          isList ?
           <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
           :
             <span>
