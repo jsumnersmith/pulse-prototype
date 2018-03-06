@@ -20,7 +20,8 @@ class EventList extends Component {
     this.state = {
       searchQuery: '',
       selectedDay: new Date(),
-      upcoming: true
+      upcoming: true,
+      filters: []
     };
   }
 
@@ -55,6 +56,9 @@ class EventList extends Component {
         return DateUtils.isDayBefore(day1, day2);
       }
     }
+    if (this.state.filters.length && _.intersection(this.state.filters, eventItem.meta).length !== this.state.filters.length){
+      return false;
+    }
     if (this.state.selectedDay && !(DateUtils.isSameDay(this.state.selectedDay, new Date(eventItem.date)) || sortMethod(new Date(eventItem.date), this.state.selectedDay))) {
       return false;
     } else if (this.state.searchQuery) {
@@ -78,8 +82,13 @@ class EventList extends Component {
     return { inRange: modifier }
   }
 
+  getFilteredEventsByMeta(){
+    return this.props.events;
+  }
+
   render() {
-    const eventsByDay = this.getEventsByDate(this.props.events);
+    const filteredEvent = this.props.events;
+    const eventsByDay = this.getEventsByDate(filteredEvent);
     const colorsArr = this.props.colors || colors(5);
     const urlPrefix = this.props.urlPrefix || '/events/';
     const isAdmin = this.props.isAdmin;
@@ -91,16 +100,13 @@ class EventList extends Component {
           <div className="block-flat">
             <div className="content">
               <div className="row" style={{ marginTop: 0 }}>
-                <div className="col-md-10">
+                <div className="col-md-12">
                   <SearchInput onChange={this.onSearch} />
                 </div>
-                <div className="col-md-2">
-                  <div className="text-center"><a className="btn btn-default btn-block" data-toggle="collapse" data-target="#filtersDropdown">Advanced <i className="fa fa-caret-down" /></a></div>
-                </div>
                 <div className="col-md-12" style={{ position: 'relative', marginTop: 10 }}>
-                  <div className="collapse" style={{ position: 'relative' }} id="filtersDropdown">
-                    <div className="col-md-8">Filters</div>
-                  </div>
+                    <div>
+                      <Filters events={this.props.events} onChange={(filters) => this.setState({filters})} />
+                    </div>
                 </div>
               </div>
             </div>
@@ -141,6 +147,54 @@ class EventList extends Component {
 }
 
 const stubIsAttending = id => id === 1;
+
+class Filters extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      activeFilters: []
+    }
+    this.getFilters = this.getFilters.bind(this);
+    this.toggleFilter = this.toggleFilter.bind(this);
+    this.isActive = this.isActive.bind(this);
+  }
+  toggleFilter(filter){
+    let {activeFilters} = this.state;
+    if (activeFilters.includes(filter)){
+      this.setState({activeFilters: _.without(activeFilters, filter)}, () => this.props.onChange(this.state.activeFilters));
+    } else {
+      this.setState({activeFilters: activeFilters.concat([filter])}, () => this.props.onChange(this.state.activeFilters));
+    }
+  }
+  getFilters(){
+    return _(this.props.events)
+      .map('meta')
+      .flatten()
+      .uniqWith(_.isEqual)
+      .groupBy('type')
+      .value()
+  }
+  isActive(filter) {
+    return this.state.activeFilters.includes(filter);
+  }
+  render(){
+    const filters = this.getFilters();
+    return (
+      <div>
+        {
+          _.map(filters, (filterSet, filterName) => <div className="col-md-4">
+              <label>{filterName}</label>
+              <ul style={{padding: '5px 0px', margin: 0}}>
+                {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0}}>
+                    {this.isActive(filter) ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}
+                  </li>)}
+              </ul>
+            </div>)
+        }
+      </div>
+    )
+  }
+}
 
 class DayOfEvents extends Component {
   render() {

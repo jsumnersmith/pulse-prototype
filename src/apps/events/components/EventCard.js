@@ -37,14 +37,18 @@ class EventCard extends Component {
             <div className=" event-card-content">
               <div className="event-card-header">
                 {sampleEvent.external && <h5 className="meta meta-soft"><i className="fa fa-external-link"/> Linked Event</h5> }
-                <h4 className="event-card-title"><strong>{sampleEvent.name}</strong></h4>
-                <h5 className="event-card-time">
-                  <strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong>
-                </h5>
-              </div>
+                <h4 className="event-card-title">{sampleEvent.isCollection && <i className="fa fa-clone circle-icon--small purple white-text" />} <strong>{sampleEvent.name}</strong></h4>
+
+                  {
+                    (sampleEvent.isCollection && sampleEvent.subEvents) ?
+                    <h5>{sampleEvent.subEvents} events in this collection</h5>
+                    : <h5 className="event-card-time"><strong>{moment(sampleEvent.date).format('MMMM Do, YYYY')} {sampleEvent.startTime} - {sampleEvent.endTime}</strong></h5>
+                  }
+                </div>
               <div>
                 { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
               </div>
+              {isAttending &&  <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong></h6>}
               <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
               <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
               { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
@@ -56,7 +60,7 @@ class EventCard extends Component {
               { showAction ?
                 (this.props.isSubmission ? ( isAdmin ? <SubmittedAdminControls updateStatus={(status) => this.setState({status})}/> : <SubmittedUserControls /> ) :
                 (sampleEvent.external ? <ExternalControls /> :
-                (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} />) ) )
+                (isAdmin ? <AdminControls isList={isList} actionLink={actionLink} actionTitle={actionTitle}/> : <TeacherControls isList={isList} isAttending={isAttending} actionLink={actionLink} actionTitle={actionTitle} isCollection={sampleEvent.isCollection}/>) ) )
               : null }
             </div>
           </div>
@@ -109,17 +113,18 @@ class AdminControls extends Component {
   }
 }
 
-const TeacherControls = ({ isAttending, isList, actionLink, actionTitle }) => (
+const TeacherControls = ({ isAttending, isList, actionLink, actionTitle, isCollection}) => (
   <div className="event-teacher-control">
     {
       isAttending ?
         <div>
-
-          { isList
+          { isCollection?
+            <Link to={actionLink} className="btn btn-default btn-block"><i className="fa fa-clone"/> View Events</Link>
+          :
+          isList
             ? <div>
                 <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
                 <div className="event-card-status text-right">
-                  <i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong>
                 </div>
               </div>
             : <span>

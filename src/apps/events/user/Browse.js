@@ -1,7 +1,7 @@
 import React from 'react';
 import SubHeader from '../components/SubHeader';
 import EventList from '../components/EventList';
-import sampleEvents from '../components/sampleEvents';
+import sampleEvents from '../components/cpmEvents';
 
 import '../events.less';
 
