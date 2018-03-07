@@ -220,7 +220,7 @@ class Filters extends Component {
               </div>
             )
         }
-        <div>{activeFilters.map(filter => <Tag name={filter.name} handleClose={() => this.toggleFilter(filter)}/>)}</div>
+        <div>{activeFilters.map(filter => <Tag name={`${filter.type}: ${filter.name}`} handleClose={() => this.toggleFilter(filter)}/>)}</div>
       </div>
     )
   }
