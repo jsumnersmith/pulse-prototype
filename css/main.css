@@ -12137,6 +12137,10 @@ strong {
 .tag:not(.token) {
   font-family: 'Nunito Sans', sans-serif;
 }
+.tag,
+.tag:not(.token) {
+  font-size: 10px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
