@@ -195,6 +195,10 @@ class Filters extends Component {
   isActive(filter) {
     return this.state.activeFilters.includes(filter);
   }
+  getCategoryCount(name){
+    let {activeFilters} = this.state;
+    return activeFilters.filter(filter => filter.type === name).length;
+  }
   render(){
     const filters = this.getFilters();
     const { activeFilters } = this.state;
@@ -205,7 +209,7 @@ class Filters extends Component {
           _.map(filters, (filterSet, filterName) =>
               <div className="btn-group">
                 <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                  {filterName} <i className="fa fa-caret-down" />
+                  {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="fa fa-caret-down" />
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
