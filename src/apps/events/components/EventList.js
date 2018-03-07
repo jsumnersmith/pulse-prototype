@@ -4,7 +4,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import EventCard from './EventCard';
-import {colors, SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
+import {colors, SearchWithFilters as SearchInput, Tag } from '@kickup/pulse-ui/src/deprecated';
 
 import './dayPicker.less';
 
@@ -107,8 +107,7 @@ class EventList extends Component {
   }
 
   render() {
-    const filteredEvent = this.props.events;
-    const eventsByDay = this.getEventsByDate(filteredEvent);
+    const eventsByDay = this.getEventsByDate(this.props.events);
     const colorsArr = this.props.colors || colors(5);
     const urlPrefix = this.props.urlPrefix || '/events/';
     const isAdmin = this.props.isAdmin;
@@ -124,14 +123,13 @@ class EventList extends Component {
                   <SearchInput onChange={this.onSearch} />
                 </div>
                 <div className="col-md-12" style={{ position: 'relative', marginTop: 10 }}>
-                    <div>
-                      <Filters events={this.props.events} onChange={(filters) => this.setState({filters})} />
-                    </div>
+                  <Filters events={this.props.events} onChange={(filters) => this.setState({filters})} />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="col-md-9">
           <h4 style={{marginBottom: 30}}><strong>Showing events <span className="underline underline--pulse-blue">{`${this.state.upcoming ? 'after' : 'before'}`}</span> {moment(this.state.selectedDay).format('MMMM Do YYYY')}.</strong> <i style={{color: '#aaa'}} className={`fa ${this.state.upcoming ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc'}`}/></h4>
           {
@@ -199,18 +197,26 @@ class Filters extends Component {
   }
   render(){
     const filters = this.getFilters();
+    const { activeFilters } = this.state;
     return (
       <div>
+        <label style={{marginRight: 10}}>Filter</label>
         {
-          _.map(filters, (filterSet, filterName) => <div className="col-md-4">
-              <label>{filterName}</label>
-              <ul style={{padding: '5px 0px', margin: 0}}>
-                {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-                    {this.isActive(filter) ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}
-                  </li>)}
-              </ul>
-            </div>)
+          _.map(filters, (filterSet, filterName) =>
+              <div className="btn-group">
+                <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  {filterName} <i className="fa fa-caret-down" />
+                </button>
+                <ul className="dropdown-menu">
+                  {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
+                      <a>{this.isActive(filter) ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
+                    </li>)
+                  }
+                </ul>
+              </div>
+            )
         }
+        <div>{activeFilters.map(filter => <Tag name={filter.name} handleClose={() => this.toggleFilter(filter)}/>)}</div>
       </div>
     )
   }
