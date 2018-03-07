@@ -201,7 +201,7 @@ class Filters extends Component {
   }
   render(){
     const filters = this.getFilters();
-    const { activeFilters } = this.state;
+    const activeFilters = _.groupBy(this.state.activeFilters, 'type');
     return (
       <div>
         <label style={{marginRight: 10}}>Filter</label>
@@ -220,8 +220,14 @@ class Filters extends Component {
               </div>
             )
         }
-        <div>{activeFilters.map(filter => <Tag name={`${filter.type}: ${filter.name}`} handleClose={() => this.toggleFilter(filter)}/>)}</div>
+        <div>{_.map(activeFilters, (filterSet, filterName) =>
+          <span style={{display: 'inline-flex', alignItems: 'center', margin: 3, padding: "3px 0 3px 3px", background: '#eee', borderRadius: 2}}>
+            <label style={{marginRight: 3}}>{filterName}</label>
+              {filterSet.map(filter => <Tag name={`${filter.name}`} handleClose={() => this.toggleFilter(filter)}/>)}
+          </span>
+        )}
       </div>
+    </div>
     )
   }
 }
