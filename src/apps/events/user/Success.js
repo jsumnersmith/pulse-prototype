@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SubHeader from '../components/SubHeader';
 import '../events.less';
 
 
