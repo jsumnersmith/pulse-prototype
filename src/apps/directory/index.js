@@ -83,7 +83,8 @@ class PeopleList extends Component {
     this.state = {
       showColumns: columns,
       showFilterModal: false,
-      users: sampleUsers
+      users: sampleUsers,
+      checked: []
     }
     this.toggleColumn = this.toggleColumn.bind(this);
     this.isColumnActive = this.isColumnActive.bind(this);
@@ -93,6 +94,10 @@ class PeopleList extends Component {
     this.sortUsersByGroups = this.sortUsersByGroups.bind(this);
     this.sortUsersByPermission = this.sortUsersByPermission.bind(this);
     this.filterUsers = this.filterUsers.bind(this);
+    this.isChecked = this.isChecked.bind(this);
+    this.toggleAllChecked = this.toggleAllChecked.bind(this);
+    this.setChecked = this.setChecked.bind(this);
+    this.areAllChecked = this.areAllChecked.bind(this);
   }
   toggleColumn(name){
     let {showColumns} = this.state;
@@ -157,6 +162,32 @@ class PeopleList extends Component {
     let users = sampleUsers.filter(user => JSON.stringify(user).match(search));
     console.log(users.length, search)
     this.setState({users});
+  }
+  setChecked(id){
+    let {checked} = this.state;
+    console.log(checked, sampleUsers);
+    if(checked.length === sampleUsers.length){
+      this.setState({checked: [id]})
+    } else if (checked.includes(id)){
+      this.setState({checked: checked.map(item => item !== id)});
+    } else {
+      this.setState({checked: checked.concat([id])})
+    }
+  }
+  toggleAllChecked(){
+    if(this.state.checked.length === sampleUsers.length){
+      this.setState({checked: []})
+    } else {
+      this.setState({checked: sampleUsers.map(user => user.id)});
+    }
+  }
+  isChecked(id){
+    let {checked} = this.state;
+    console.log("Checked", checked);
+    return checked.includes(id);
+  }
+  areAllChecked(){
+    return this.state.checked.length === sampleUsers.length;
   }
   render(){
     const {view} = this.props;
@@ -238,7 +269,7 @@ class PeopleList extends Component {
               { this.showCols('attributes') && <th colSpan={this.getColSpan('attributes')}><i className="fa fa-tags circle-icon--small"/> Attributes</th>}
             </tr>
             <tr>
-              <th><input type="checkbox"/></th>
+              <th><input type="checkbox" onChange={this.toggleAllChecked} checked={this.areAllChecked()}/></th>
               { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email <i className="fa fa-sort"/></strong></th> }
               { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('canLogin') && <th style={{minWidth: 61}} onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>User <i className="fa fa-sort"/></strong></th>}
@@ -258,7 +289,7 @@ class PeopleList extends Component {
           <tbody className="no-border-y">
             {
               this.state.users.slice(0,10).map(user => <tr>
-                <td><input type="checkbox"/></td>
+                <td><input type="checkbox" checked={this.isChecked(user.id)} onChange={() => this.setChecked(user.id)}/></td>
                 { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }
                 { this.isColumnActive('canLogin') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
