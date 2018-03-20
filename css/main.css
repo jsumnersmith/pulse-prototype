@@ -12164,7 +12164,7 @@ strong {
   transition: all 0.2s ease-in-out;
 }
 .btn-huge__icon {
-  padding: 30px;
+  padding: 10px;
 }
 .btn-huge__icon:before {
   color: #bbb;
@@ -12173,7 +12173,7 @@ strong {
 }
 .btn-huge__content {
   flex-grow: 1;
-  padding: 10px 20px 10px 0;
+  padding: 5px 10px 5px 0;
 }
 .btn-huge__title {
   position: relative;
@@ -14014,7 +14014,7 @@ th.empty {
   margin-top: 1px;
 }
 .btn-huge__icon {
-  padding: 10px 20px;
+  padding: 10px;
 }
 .btn-huge__icon:before {
   color: #bbb;
@@ -14070,6 +14070,50 @@ th.empty {
   margin: 0;
   color: #007DA0;
   font-size: 9px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.group-selector__item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 2px solid rgba(102, 102, 102, 0.2);
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+.group-selector__title {
+  flex-grow: 1;
+}
+.group-selector__header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-grow: 1;
+}
+.group-selector__header > * {
+  margin-right: 5px;
+}
+.group-selector__options {
+  width: 100%;
+}
+.group-selector__icon {
+  font-size: 20px;
+  line-height: 20px;
+}
+.group-selector__icon:not(.green) {
+  color: #bbb;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
