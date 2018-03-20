@@ -218,7 +218,7 @@ class Filters extends Component {
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-                      <a>{this.isActive(filter) ? <i className="fa fa-check-circle green"/> : <i className="fa fa-circle-thin" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="fa fa-check-square-o "/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>
