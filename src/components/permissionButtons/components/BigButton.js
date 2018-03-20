@@ -5,7 +5,7 @@ export default class BigButton extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isActive: false,
+      isActive: this.props.isActive || false,
       isConfused: this.props.isConfused
     }
     this.toggleActive = this.toggleActive.bind(this);
