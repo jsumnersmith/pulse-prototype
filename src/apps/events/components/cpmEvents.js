@@ -2,7 +2,7 @@ const events = [
   {
     id: 1,
     name: 'Phase 2 Workshop',
-    date: '2018-03-07T14:30:00',
+    date: '2019-03-07T14:30:00',
     startTime: '2:30 PM',
     endTime: '4:00 PM',
     hours: 1.5,
@@ -41,7 +41,7 @@ const events = [
   {
     id: 2,
     name: 'Algebra 2 Connections First Year Implementation (Royersford, PA)',
-    date: '2018-03-12T13:30:00',
+    date: '2019-03-12T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -80,7 +80,7 @@ const events = [
   {
     id: 3,
     name: 'Core Connections Algebra First Year Implementation (Anoka, MN)',
-    date: '2018-03-12T15:30:00',
+    date: '2019-03-12T15:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -114,7 +114,7 @@ const events = [
   {
     id: 4,
     name: 'Calculus First Year Implementation (Oconomowoc, WI)',
-    date: '2018-03-16T13:30:00',
+    date: '2019-03-16T13:30:00',
     startTime: '1:30 PM',
     endTime: '2:00 PM',
     hours: 0.5,
@@ -134,6 +134,221 @@ const events = [
       {
         type: 'State',
         name: 'Wisonsin'
+      }
+    ],
+    attendees: [
+      {
+        id: 1,
+        name: 'Joel Smith',
+        confirmed: false,
+      },
+      {
+        id: 2,
+        name: 'Reggie Kinzig-Palmer',
+        confirmed: true,
+      },
+      {
+        id: 4,
+        name: 'Marcy Krupski',
+        confirmed: true,
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Calculus First Year Implementation (Oconomowoc, WI)',
+    date: '2019-03-16T13:30:00',
+    startTime: '1:30 PM',
+    endTime: '2:00 PM',
+    hours: 0.5,
+    location: 'Oconomowoc High School, 641 E. Forest St. Oconomowoc, WI 53066',
+    leaders: 'Bruce Brusoe',
+    isCollection: true,
+    subEvents: 8,
+    meta: [
+      {
+        type: 'Workshop Type',
+        name: 'CPM First Year Implementation Workshops',
+      },
+      {
+        type: 'Course Name',
+        name: 'Calculus (CALC)'
+      },
+      {
+        type: 'State',
+        name: 'New York'
+      }
+    ],
+    attendees: [
+      {
+        id: 1,
+        name: 'Joel Smith',
+        confirmed: false,
+      },
+      {
+        id: 2,
+        name: 'Reggie Kinzig-Palmer',
+        confirmed: true,
+      },
+      {
+        id: 4,
+        name: 'Marcy Krupski',
+        confirmed: true,
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Calculus First Year Implementation (Oconomowoc, WI)',
+    date: '2019-03-16T13:30:00',
+    startTime: '1:30 PM',
+    endTime: '2:00 PM',
+    hours: 0.5,
+    location: 'Oconomowoc High School, 641 E. Forest St. Oconomowoc, WI 53066',
+    leaders: 'Bruce Brusoe',
+    isCollection: true,
+    subEvents: 8,
+    meta: [
+      {
+        type: 'Workshop Type',
+        name: 'CPM First Year Implementation Workshops',
+      },
+      {
+        type: 'Course Name',
+        name: 'Calculus (CALC)'
+      },
+      {
+        type: 'State',
+        name: 'New Mexico'
+      }
+    ],
+    attendees: [
+      {
+        id: 1,
+        name: 'Joel Smith',
+        confirmed: false,
+      },
+      {
+        id: 2,
+        name: 'Reggie Kinzig-Palmer',
+        confirmed: true,
+      },
+      {
+        id: 4,
+        name: 'Marcy Krupski',
+        confirmed: true,
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: 'Calculus First Year Implementation (Oconomowoc, WI)',
+    date: '2019-03-16T13:30:00',
+    startTime: '1:30 PM',
+    endTime: '2:00 PM',
+    hours: 0.5,
+    location: 'Oconomowoc High School, 641 E. Forest St. Oconomowoc, WI 53066',
+    leaders: 'Bruce Brusoe',
+    isCollection: true,
+    subEvents: 8,
+    meta: [
+      {
+        type: 'Workshop Type',
+        name: 'CPM First Year Implementation Workshops',
+      },
+      {
+        type: 'Course Name',
+        name: 'Calculus (CALC)'
+      },
+      {
+        type: 'State',
+        name: 'North Carolina'
+      }
+    ],
+    attendees: [
+      {
+        id: 1,
+        name: 'Joel Smith',
+        confirmed: false,
+      },
+      {
+        id: 2,
+        name: 'Reggie Kinzig-Palmer',
+        confirmed: true,
+      },
+      {
+        id: 4,
+        name: 'Marcy Krupski',
+        confirmed: true,
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Calculus First Year Implementation (Oconomowoc, WI)',
+    date: '2019-03-16T13:30:00',
+    startTime: '1:30 PM',
+    endTime: '2:00 PM',
+    hours: 0.5,
+    location: 'Oconomowoc High School, 641 E. Forest St. Oconomowoc, WI 53066',
+    leaders: 'Bruce Brusoe',
+    isCollection: true,
+    subEvents: 8,
+    meta: [
+      {
+        type: 'Workshop Type',
+        name: 'CPM First Year Implementation Workshops',
+      },
+      {
+        type: 'Course Name',
+        name: 'Calculus (CALC)'
+      },
+      {
+        type: 'State',
+        name: 'California - Northern'
+      }
+    ],
+    attendees: [
+      {
+        id: 1,
+        name: 'Joel Smith',
+        confirmed: false,
+      },
+      {
+        id: 2,
+        name: 'Reggie Kinzig-Palmer',
+        confirmed: true,
+      },
+      {
+        id: 4,
+        name: 'Marcy Krupski',
+        confirmed: true,
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: 'Calculus First Year Implementation (Oconomowoc, WI)',
+    date: '2019-03-16T13:30:00',
+    startTime: '1:30 PM',
+    endTime: '2:00 PM',
+    hours: 0.5,
+    location: 'Oconomowoc High School, 641 E. Forest St. Oconomowoc, WI 53066',
+    leaders: 'Bruce Brusoe',
+    isCollection: true,
+    subEvents: 8,
+    meta: [
+      {
+        type: 'Workshop Type',
+        name: 'CPM First Year Implementation Workshops',
+      },
+      {
+        type: 'Course Name',
+        name: 'Calculus (CALC)'
+      },
+      {
+        type: 'State',
+        name: 'Connecticut'
       }
     ],
     attendees: [
