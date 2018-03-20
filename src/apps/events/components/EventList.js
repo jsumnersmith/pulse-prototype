@@ -176,6 +176,7 @@ class Filters extends Component {
     this.getFilters = this.getFilters.bind(this);
     this.toggleFilter = this.toggleFilter.bind(this);
     this.isActive = this.isActive.bind(this);
+    this.clearFilters = this.clearFilters.bind(this);
   }
   toggleFilter(filter){
     let {activeFilters} = this.state;
@@ -184,6 +185,9 @@ class Filters extends Component {
     } else {
       this.setState({activeFilters: activeFilters.concat([filter])}, () => this.props.onChange(this.state.activeFilters));
     }
+  }
+  clearFilters(){
+    this.setState({activeFilters: []})
   }
   getFilters(){
     return _(this.props.events)
@@ -214,14 +218,15 @@ class Filters extends Component {
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-                      <a>{this.isActive(filter) ? <i className="fa fa-check-circle green"/> : <i className="fa fa-circle-thin" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="fa fa-check-square-o "/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>
               </div>
             )
         }
-        <div>{_.map(activeFilters, (filterSet, filterName) =>
+        { this.state.activeFilters.length > 0 && <button className="btn btn-xs btn-danger btn-trans" onClick={this.clearFilters}>Clear Filters</button>}
+        <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>{_.map(activeFilters, (filterSet, filterName) =>
           <span style={{display: 'inline-flex', flexWrap: 'wrap', alignItems: 'center', margin: "3px 0"}}>
             <label style={{marginRight: 10}}>{filterName}</label>
               {filterSet.map(filter => <span style={{marginBottom: 3}}><Tag name={`${filter.name}`} handleClose={() => this.toggleFilter(filter)} /></span>)}
