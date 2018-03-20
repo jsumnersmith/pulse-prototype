@@ -1,0 +1,29 @@
+@import '~@kickup/pulse-ui/src/css/globals.less';
+
+.group-selector {
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: 2px solid fadeout(@gray-dark, 80%);
+    border-radius: 2px;
+    padding: 5px 10px;
+  }
+  &__title { flex-grow: 1;}
+  &__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+    > * { margin-right: 5px;}
+  }
+  &__options {
+    width: 100%;
+  }
+  &__icon {
+    font-size: 20px;
+    line-height: 20px;
+    &:not(.green) {color: #bbb;}
+  }
+}
