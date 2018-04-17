@@ -12141,6 +12141,11 @@ strong {
 .tag:not(.token) {
   font-size: 10px;
 }
+.circle-icon.white-text:before,
+.circle-icon--medium.white-text:before,
+.circle-icon--small.white-text:before {
+  color: white !important;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -13960,6 +13965,15 @@ th.empty {
   border-top: none;
   text-align: center;
   font-weight: 700;
+}
+.directory-section-subheader {
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #1FAF84;
+}
+.directory-toggle {
+  display: flex;
+  align-content: center;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
