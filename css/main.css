@@ -14098,6 +14098,51 @@ th.empty {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.permission-table-row {
+  border: 2px solid transparent;
+}
+.permission-table-row:first-child td {
+  border-top: 2px solid #eee;
+}
+.permission-table-row td {
+  border: 2px solid transparent;
+}
+.permission-table-row td:first-child {
+  border-left: 2px solid transparent;
+}
+.permission-table-row td.td-button .td-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+.permission-table-row td.td-button:hover {
+  animation-name: borderChange;
+  animation-duration: .3s;
+  border: 2px solid #007DA0;
+}
+.permission-table-row td.td-button:hover .btn-huge__title:after {
+  background: #007DA0;
+}
+@keyframes borderChange {
+  from {
+    border: 2px solid transparent;
+  }
+  to {
+    border: 2px solid #0091ba;
+  }
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .goal-summary {
   background: white;
   border-radius: 3px;
