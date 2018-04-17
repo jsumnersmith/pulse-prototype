@@ -20,7 +20,11 @@ export default class Edit extends Component {
                 <h3><i className="fa fa-user circle-icon pulse-blue" /> <strong>Edit Details</strong></h3>
                 <label>Name</label>
                 <input value={item.name} className="form-control" />
+                <label>Unique Identifier</label>
+                <input value={item.id} className="form-control" />
+
               </div>
+
               <div className="col-md-6">
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
                   <div className="">
