@@ -6,7 +6,7 @@ import sampleUsers from './users.js';
 import _ from 'lodash';
 import BigButton from '../../components/permissionButtons/components/BigButton.js';
 import ListTable from '../../components/listTable';
-import GroupsSelector from './GroupSelector';
+import PermissionsTable from './PermissionTable';
 
 import './directory.less';
 
@@ -151,29 +151,27 @@ export default class Edit extends Component {
                   </div>
                   <h4 className="directory-section-subheader"><strong><i className="fa fa-users circle-icon--small green white-text"/> Management Permissions</strong></h4>
                   <p>These permissions will grant a user specific permissions to manage content and may be constrained down to content related to specific groups.</p>
-                  <div className="col-md-6">
-                    <BigButton
-                      isActive={user.permissions.includes('Manage Users')}
-                      iconclassName="fa-user-circle"
-                      title="Manage Users"
-                      description="User will be able to create, edit, and view all users and groups."
-                    />
-                    <BigButton
-                      isActive={user.permissions.includes('Manage Event Requests')}
-                      title="Manage Event Requests"
-                      description="User will be able to view a historical record of all survey responses for all other users."
-                    />
-                    <BigButton
-                      isActive={user.permissions.includes('View History Pages')}
-                      iconclassName="fa-history"
-                      title="View History Pages"
-                      description="User will be able to view a historical record of all survey responses for all other users."
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <div style={{background: '#ddd', width: '100%', height: 300, display: 'flex', alignItems:'center', justifyContent: 'center'}}>
-                      <strong>Specific Group part of each permissions goes here.</strong>
-                    </div>
+                  <div className="col-md-12">
+                    <PermissionsTable permissions={[
+                      {
+                        isActive: user.permissions.includes('Manage Users'),
+                        iconclassName:"fa-user-circle",
+                        title:"Manage Users",
+                        description: "User will be able to create, edit, and view all users and groups."
+                      },
+                      {
+                        isActive: user.permissions.includes('Manage Event Requests'),
+                        iconclassName:"fa-user-circle",
+                        title:"Manage Event Requests",
+                        description: "User will be able to review and approve out of district event requests."
+                      },
+                      {
+                        isActive: user.permissions.includes('View History Pages'),
+                        iconclassName:"fa-user-circle",
+                        title:"View History Pages",
+                        description: "User will be able to view a historical record of all survey responses for all other users."
+                      }
+                    ]} />
                   </div>
                 </div>
               }
@@ -188,6 +186,7 @@ export default class Edit extends Component {
 
                 <div>
                   <h4 className="directory-section-subheader"><strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
+                  { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
                   {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                     return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
                   }).value()}
