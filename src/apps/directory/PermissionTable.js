@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {groups} from './users.js';
 
+import './permission-table.less';
+
 export default ({permissions}) => (
   <table className="no-border">
     <thead className="no-border">
       <tr>
-        <th></th>
         <th><strong>Permission</strong></th>
         <th><strong>Applies To</strong></th>
       </tr>
@@ -47,10 +48,14 @@ class PermissionRow extends Component {
   }
   render(){
     return (
-      <tr>
-        <td onClick={this.toggleActive} style={{cursor: 'pointer'}}><i className={`fa ${this.getIconClassName()}`} style={{fontSize: 30, padding: 20, width: 50}}/></td>
-        <td><PermissionTitle {...this.props} /></td>
-        <td style={{width: 400,}}><div style={{ display: this.state.isActive ? 'block' : 'none'}}><PermissionDropdown /></div></td>
+      <tr className="permission-table-row">
+        <td onClick={this.toggleActive} style={{cursor: 'pointer'}} className="td-button">
+          <div className="td-button-wrapper">
+            <i className={`fa ${this.getIconClassName()}`} style={{fontSize: 30, width: 50}}/>
+            <PermissionTitle {...this.props} />
+          </div>
+        </td>
+        <td style={{width: 400,}}><div style={{ opacity: this.state.isActive ? '1' : '.5', pointerEvents: this.state.isActive ? 'initial' : 'none'}}><PermissionDropdown /></div></td>
       </tr>
     )
   }
