@@ -46,7 +46,7 @@ export default [
     grade: '10',
     groups: ['Teachers', 'English', 'Crocket Middle School'],
     permissions: ['Manage Reports'],
-    restrictions: []
+    restrictions: [{type: 'Role', value: 'English'}]
 
   },
   {
