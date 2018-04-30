@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {groups} from './users.js';
+import BigButton from '../../components/permissionButtons/components/BigButton.js';
 
 import './permission-table.less';
 
@@ -50,23 +51,18 @@ class PermissionRow extends Component {
     return (
       <tr className="permission-table-row">
         <td onClick={this.toggleActive} style={{cursor: 'pointer'}} className="td-button">
-          <div className="td-button-wrapper">
-            <i className={`fa ${this.getIconClassName()}`} style={{fontSize: 30, width: 50}}/>
-            <PermissionTitle {...this.props} />
-          </div>
+          <BigButton
+            isActive={this.state.isActive}
+            iconclassName="fa-calendar"
+            title={this.props.title}
+            description={this.props.description}
+          />
         </td>
         <td style={{width: 400,}}><div style={{ opacity: this.state.isActive ? '1' : '.5', pointerEvents: this.state.isActive ? 'initial' : 'none'}}><PermissionDropdown /></div></td>
       </tr>
     )
   }
 };
-
-const PermissionTitle = ({title, description}) => (
-  <div>
-    <h4 className="btn-huge__title"><strong>{title}</strong></h4>
-    <p className="btn-huge__description">{description}</p>
-  </div>
-);
 
 class PermissionDropdown extends Component {
   constructor(props){

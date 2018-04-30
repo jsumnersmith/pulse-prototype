@@ -8,22 +8,8 @@
     &:first-child { border-left: 2px solid transparent;}
   }
   td.td-button{
-    .td-button-wrapper {
-      display: flex;
-      align-items: center;
-    }
-    &:hover  {
-      animation-name: borderChange;
-      animation-duration: .3s;
-      border: 2px solid @pulse-blue;
-      .btn-huge__title:after {
-        background: @pulse-blue;
-      }
+    .btn-huge {
+      border-color: transparent;
     }
   }
-}
-
-@keyframes borderChange {
-  from { border: 2px solid transparent; }
-  to { border: 2px solid lighten(@pulse-blue, 5%); }
 }
