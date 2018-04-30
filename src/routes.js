@@ -52,10 +52,11 @@ import NameCreator from './components/nameCreator';
 import PermissionButtons from './components/permissionButtons';
 import RubricColors from './components/rubricColors';
 import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
-import TabbedContainer from './components/tabbedContainer'
+import TabbedContainer from './components/tabbedContainer';
+import Sharing from './components/sharing';
 
 //Styles
-import Grid from './styles/grid'
+import Grid from './styles/grid';
 
 export default [
   {
@@ -289,6 +290,12 @@ export default [
   {
     component: UserSubmittedEvent,
     path: '/events/submissions/:id'
+  },
+  {
+    component: Sharing,
+    linkName: "Sharing",
+    parent: 'Components',
+    path: '/sharing'
   },
   {
     component: Grid,
