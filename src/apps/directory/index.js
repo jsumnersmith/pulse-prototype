@@ -5,7 +5,6 @@ import { SearchWithFilters as SearchInput, Tag } from '@kickup/pulse-ui/src/depr
 import './directory.less';
 import { Link } from 'react-router-dom';
 import sampleUsers, {groups, nonPeople} from './users.js';
-import ListTable from '../../components/listTable';
 import Filters from './DirectoryFilters';
 import { getItem, setItem } from 'timedstorage';
 
@@ -182,10 +181,10 @@ class PeopleList extends Component {
       });
     }
     function metaArray(metaTypes = []){
-      metaTypes.map(metaType => {
-        if(user[metaType]){
-          user[metaType].map(item => {
-            meta.push({type: metaType, name: item})
+      metaTypes.map((metaType) => {
+         if (user[metaType]){
+          user[metaType].map((item) => {
+            return meta.push({type: metaType, name: item})
           })
         }
       });
@@ -211,7 +210,7 @@ class PeopleList extends Component {
         return item !== false
       })
       .value()
-    // console.log(filters, filterGroupCount, matches);
+    console.log(filters, filterGroupCount, matches);
     //return matches.length === filterGroupCount;
     // Couldn't make it work. :( -J
     return true;
@@ -313,6 +312,21 @@ class PeopleList extends Component {
         </div>
         <div style={{marginTop: 10}}>
           <Filters onChange={(filters) => {this.filterUsers(filters)}}/>
+        </div>
+        <div>
+          {this.state.checked && this.state.checked.length > 1 &&
+            <div style={{marginTop: 10}}>
+              <label style={{display: 'inline-block', marginRight: 5}}>Bulk Actions</label>
+              <select className="form-control" style={{display: 'inline-block', width: 200}}>
+                <option>Select an Action</option>
+                <option>Update Permissions</option>
+                <option>Update Groups</option>
+                <option>Delete Users</option>
+              </select>
+              <label style={{display: 'inline-block', marginLeft: 5}}>for {this.state.checked.length} of {this.state.users.length} people</label>
+
+            </div>
+          }
         </div>
         <div className="directory-table-wrapper">
         <table className="no-border">
