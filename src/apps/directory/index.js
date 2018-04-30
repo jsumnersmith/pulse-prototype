@@ -380,6 +380,11 @@ class PeopleList extends Component {
 
 const OtherList = () => (
   <div>
+    <div>
+      <p>
+        <i className="orange fa fa-info-circle" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
+      </p>
+    </div>
     <div className="directory-search">
       <div className="directory-search__input">
         <SearchInput />
