@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.8b6d5a5e.css",
   "main.css.map": "static/css/main.8b6d5a5e.css.map",
-  "main.js": "static/js/main.a24d794a.js",
-  "main.js.map": "static/js/main.a24d794a.js.map",
+  "main.js": "static/js/main.480d438f.js",
+  "main.js.map": "static/js/main.480d438f.js.map",
   "static/media/adding-table.less": "static/media/adding-table.b2328beb.less",
   "static/media/address-book-icon.svg": "static/media/address-book-icon.7ae8ff7e.svg",
   "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
@@ -42,6 +42,7 @@
   "static/media/rubricColors.less": "static/media/rubricColors.b2328beb.less",
   "static/media/scales.less": "static/media/scales.b2328beb.less",
   "static/media/section-icon.svg": "static/media/section-icon.a9549215.svg",
+  "static/media/sharing.less": "static/media/sharing.b2328beb.less",
   "static/media/spreadsheet-icon.svg": "static/media/spreadsheet-icon.318b3efb.svg",
   "static/media/style.less": "static/media/style.3438eb9e.less",
   "static/media/submenu.less": "static/media/submenu.b2328beb.less",

@@ -14621,6 +14621,37 @@ fieldset[disabled] .btn {
   margin-bottom: 0;
   border: none;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.sharing-header--title {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #eee;
+}
+.sharing-user-list--avatar {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(102, 102, 102, 0.25);
+}
+.sharing-item--remove {
+  font-size: 24px;
+  color: #bbb;
+  cursor: pointer;
+}
+select.sharing-control {
+  height: 28px;
+}
 .grid {
   display: grid;
 }
