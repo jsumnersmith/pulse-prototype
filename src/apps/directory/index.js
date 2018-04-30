@@ -373,24 +373,6 @@ class PeopleList extends Component {
           </tbody>
         </table>
         </div>
-        <div className="modal full-width modal-background fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{dispaly: 'none'}}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
-                <h3><i className="fa fa-tags circle-icon green" style={{marginRight: 5}}/> <strong>Filter Directory</strong></h3>
-                <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
-              </div>
-              <div className="modal-body" style={{padding: 20}}>
-                <div>
-                  <FiltersView />
-                </div>
-              </div>
-              <div className="text-center">
-                <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Apply Filters</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     )
   }
@@ -435,78 +417,5 @@ const Countable = ({user, kind, view, icon = 'unlock'}) => (
       :
         <span></span>
     }
-  </div>
-)
-
-const FiltersView = () => (
-  <div>
-  <div className="row">
-    <div className="col-md-4">
-      <ListTable
-        list={{
-            title: 'Groups',
-            items: [
-              { name: 'English' },
-              { name: 'Crocket Middle School' },
-              { name: 'Nimitz High School' },
-              { name: 'MacArthur High School' }
-            ]
-          }
-        }
-      />
-    </div>
-    <div className="col-md-4">
-      <ListTable
-        list={{
-            title: 'Permissions',
-            items: [
-              { name: 'Edit Reports' },
-              { name: 'View Reports' },
-              { name: 'Edit Events' },
-            ]
-          }
-        }
-      />
-    </div>
-    <div className="col-md-4">
-      <ListTable
-        list={{
-            title: 'School',
-            items: [
-              { name: 'Crocket Middle School' },
-              { name: 'Nimitz High School' },
-              { name: 'MacArthur High School' }
-            ]
-          }
-        }
-      />
-    </div>
-  </div>
-  <div className="row">
-    <div className="col-md-4">
-      <ListTable
-        list={{
-            title: 'Role',
-            items: [
-              { name: 'English' }
-            ]
-          }
-        }
-      />
-    </div>
-    <div className="col-md-4">
-      <ListTable
-        list={{
-            title: 'Grade',
-            items: [
-              { name: '12' },
-              { name: '10' },
-              { name: '6' }
-            ]
-          }
-        }
-      />
-    </div>
-  </div>
   </div>
 )
