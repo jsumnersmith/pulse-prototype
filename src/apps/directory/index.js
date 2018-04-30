@@ -6,6 +6,7 @@ import './directory.less';
 import { Link } from 'react-router-dom';
 import sampleUsers, {groups, nonPeople} from './users.js';
 import ListTable from '../../components/listTable';
+import Filters from './DirectoryFilters';
 import { getItem, setItem } from 'timedstorage';
 
 const isLast = (index, arr) => {
@@ -93,11 +94,14 @@ class PeopleList extends Component {
     this.sortUsers = this.sortUsers.bind(this);
     this.sortUsersByGroups = this.sortUsersByGroups.bind(this);
     this.sortUsersByPermission = this.sortUsersByPermission.bind(this);
+    this.searchUsers = this.searchUsers.bind(this);
     this.filterUsers = this.filterUsers.bind(this);
     this.isChecked = this.isChecked.bind(this);
     this.toggleAllChecked = this.toggleAllChecked.bind(this);
     this.setChecked = this.setChecked.bind(this);
     this.areAllChecked = this.areAllChecked.bind(this);
+    this.getUserMeta = this.getUserMeta.bind(this);
+    this.isMatch = this.isMatch.bind(this);
   }
   toggleColumn(name){
     let {showColumns} = this.state;
@@ -157,12 +161,62 @@ class PeopleList extends Component {
     users = _.orderBy(users, user => user.permissions.includes(permission), 'desc');
     this.setState({users});
   }
-  filterUsers(e){
+  searchUsers(e){
     let search = e.target.value;
     let users = sampleUsers.filter(user => JSON.stringify(user).match(search));
     console.log(users.length, search)
     this.setState({users});
   }
+  filterUsers(filters){
+    let {users} = this.state;
+    users = users.filter(user =>this.isMatch(user, filters));
+    this.setState({users});
+  }
+  getUserMeta(user){
+    let meta = [];
+    function metaString(metaTypes = []){
+      metaTypes.map(metaType => {
+        if(user[metaType]){
+          meta.push({type: metaType, name: user[metaType]})
+        }
+      });
+    }
+    function metaArray(metaTypes = []){
+      metaTypes.map(metaType => {
+        if(user[metaType]){
+          user[metaType].map(item => {
+            meta.push({type: metaType, name: item})
+          })
+        }
+      });
+    }
+    metaString(['school', 'grade', 'role']);
+    metaArray(['permssions', 'groups']);
+    return meta;
+  }
+  isMatch(user, filters){
+    const filterGroupCount = _(filters).groupBy('type').keys().value().length;
+    const userMeta = this.getUserMeta(user);
+    console.log(userMeta);
+    const matches =  _(filters)
+      .groupBy('type')
+      .map((values, name) => {
+        let matchedValues = values.map(value => _.includes(userMeta, value))
+        console.log("Matched Values", values, userMeta, matchedValues);
+        return matchedValues;
+      })
+      .flatten()
+      .filter(item => {
+        console.log(item);
+        return item !== false
+      })
+      .value()
+    // console.log(filters, filterGroupCount, matches);
+    //return matches.length === filterGroupCount;
+    // Couldn't make it work. :( -J
+    return true;
+  }
+
   setChecked(id){
     let {checked} = this.state;
     console.log(checked, sampleUsers);
@@ -196,7 +250,7 @@ class PeopleList extends Component {
         <div className="directory-search" style={{marginTop: 10}}>
           <div className="directory-search__input" style={{marginRight: 5}}>
             <SearchInput
-              onChange={this.filterUsers}
+              onChange={this.searchUsers}
             />
           </div>
           <div className="directory-search__filters">
@@ -255,8 +309,10 @@ class PeopleList extends Component {
                 /></a></li>
               </ul>
             </div>
-            <button className="btn btn-default" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-tags"/> Filter</button>
           </div>
+        </div>
+        <div style={{marginTop: 10}}>
+          <Filters onChange={(filters) => {this.filterUsers(filters)}}/>
         </div>
         <div className="directory-table-wrapper">
         <table className="no-border">
