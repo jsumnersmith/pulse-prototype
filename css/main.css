@@ -12195,8 +12195,15 @@ strong {
   margin-top: -2px;
   height: 2px;
   width: 100%;
-  background: #1FAF84;
+  background: rgba(102, 102, 102, 0.2);
   transition: all 0.2s ease-in-out;
+}
+.btn-huge__active {
+  border: 2px solid #1FAF84;
+  z-index: 2;
+}
+.btn-huge__active .btn-huge__title:after {
+  background: #1FAF84;
 }
 .btn-huge:hover {
   border: 2px solid rgba(0, 125, 160, 0.8) !important;
@@ -14057,12 +14064,15 @@ th.empty {
   margin-top: -2px;
   height: 2px;
   width: 100%;
-  background: #1FAF84;
+  background: rgba(102, 102, 102, 0.2);
   transition: all 0.2s ease-in-out;
 }
 .btn-huge__active {
   border: 2px solid #1FAF84;
   z-index: 2;
+}
+.btn-huge__active .btn-huge__title:after {
+  background: #1FAF84;
 }
 .btn-huge:hover {
   border: 2px solid rgba(102, 102, 102, 0.4);
@@ -14110,25 +14120,8 @@ th.empty {
 .permission-table-row td:first-child {
   border-left: 2px solid transparent;
 }
-.permission-table-row td.td-button .td-button-wrapper {
-  display: flex;
-  align-items: center;
-}
-.permission-table-row td.td-button:hover {
-  animation-name: borderChange;
-  animation-duration: .3s;
-  border: 2px solid #007DA0;
-}
-.permission-table-row td.td-button:hover .btn-huge__title:after {
-  background: #007DA0;
-}
-@keyframes borderChange {
-  from {
-    border: 2px solid transparent;
-  }
-  to {
-    border: 2px solid #0091ba;
-  }
+.permission-table-row td.td-button .btn-huge {
+  border-color: transparent;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -14540,8 +14533,15 @@ fieldset[disabled] .btn {
   margin-top: -2px;
   height: 2px;
   width: 100%;
-  background: #1FAF84;
+  background: rgba(102, 102, 102, 0.2);
   transition: all 0.2s ease-in-out;
+}
+.btn-huge__active {
+  border: 2px solid #1FAF84;
+  z-index: 2;
+}
+.btn-huge__active .btn-huge__title:after {
+  background: #1FAF84;
 }
 .btn-huge:hover {
   border: 2px solid rgba(0, 125, 160, 0.8) !important;
