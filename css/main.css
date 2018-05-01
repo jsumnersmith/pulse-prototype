@@ -12146,6 +12146,9 @@ strong {
 .circle-icon--small.white-text:before {
   color: white !important;
 }
+.circle-icon--no-border {
+  border-color: transparent !important;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -13981,6 +13984,18 @@ th.empty {
 .directory-toggle {
   display: flex;
   align-content: center;
+}
+.directory-email-table tr,
+.directory-attribute-table tr,
+.directory-email-table th,
+.directory-attribute-table th,
+.directory-email-table thead,
+.directory-attribute-table thead,
+.directory-email-table tbody,
+.directory-attribute-table tbody,
+.directory-email-table td,
+.directory-attribute-table td {
+  border-color: #eee !important;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
