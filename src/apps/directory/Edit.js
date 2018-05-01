@@ -212,7 +212,7 @@ export default class Edit extends Component {
                   </div>
                   { this.state.viewRestrictions &&
                     <div>
-                      <h4 className="directory-section-subheader"><strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
+                      <h4 className="directory-section-subheader"><i className="fa fa-lock circle-icon--small green white-text" /> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
                       { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
                       {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                         return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
