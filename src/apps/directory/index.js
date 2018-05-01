@@ -49,21 +49,7 @@ export default class Directory extends Component {
         <DirectoryHeader />
         <div className="block-flat">
           <div className="content">
-            <div className="directory-toggles">
-              <div>
-                <label>Browse</label>
-                <div className="directory-type-toggle btn-group" style={{marginLeft: 5}}>
-                  <button className={`btn btn-sm ${this.setListTypeButtonClass('people')}`} onClick={()=> this.updateListType('people')}><i className="fa fa-users" /> People</button>
-                  <button className={`btn btn-sm ${this.setListTypeButtonClass('other')}`} onClick={()=> this.updateListType('other')}><i className="fa fa-list" /> Other</button>
-                </div>
-              </div>
-            </div>
-            {
-              this.state.listType === 'people' ?
-                <PeopleList view={this.state.view} columnCallback={this.toggleColumn}/>
-              :
-                <OtherList view={this.state.view}/>
-            }
+            <PeopleList view={this.state.view} columnCallback={this.toggleColumn}/>
           </div>
         </div>
       </div>
@@ -246,7 +232,7 @@ class PeopleList extends Component {
     const {view} = this.props;
     return (
       <div>
-        <div className="directory-search" style={{marginTop: 10}}>
+        <div className="directory-search">
           <div className="directory-search__input" style={{marginRight: 5}}>
             <SearchInput
               onChange={this.searchUsers}
@@ -311,9 +297,11 @@ class PeopleList extends Component {
             <div className="btn-group">
               <button className={`btn btn-default ${this.state.checked && this.state.checked.length > 1 && 'btn-disabled'}`} data-toggle="dropdown" title={this.state.checked && this.state.checked.length < 2 ? 'Select some users to perform bulk actions' : ''} disabled={this.state.checked && this.state.checked.length < 2}><i className="fa fa-bolt"/> Bulk Actions <i className="fa fa-caret-down"/></button>
               <ul className="dropdown-menu">
-                <li><a><i className="fa fa-lock circle-icon--small"/> Update Permissions</a></li>
-                <li><a><i className="fa fa-group circle-icon--small"/> Update Groups</a></li>
-                <li><a><i className="fa fa-times circle-icon--small"/> Delete Users</a></li>
+                <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs"> onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
+                <li className="divider"></li>
+                <li><a><i className="fa fa-lock circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Permissions</strong></a></li>
+                <li><a><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Groups</strong></a></li>
+                <li><a><i className="fa fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Delete Users</strong></a></li>
               </ul>
             </div>
           </div>
@@ -387,37 +375,6 @@ class PeopleList extends Component {
     )
   }
 }
-
-const OtherList = () => (
-  <div>
-    <div>
-      <p>
-        <i className="orange fa fa-info-circle" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
-      </p>
-    </div>
-    <div className="directory-search">
-      <div className="directory-search__input">
-        <SearchInput />
-      </div>
-    </div>
-    <table className="no-border">
-      <thead className="no-border">
-        <tr>
-          <th><strong>Name</strong></th>
-          <th><strong>Attributes</strong></th>
-        </tr>
-      </thead>
-      <tbody className="no-border-y">
-        { nonPeople.map(item =>
-          <tr>
-            <td><Link to={`/directory/edit/entity/${item.id}`}><strong>{item.name}</strong></Link></td>
-            <td>{item.attributes.map(attribute => <Tag name={`${attribute.type}: ${attribute.value}`} iconName="tag"/>)}</td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-  </div>
-)
 
 const Countable = ({user, kind, view, icon = 'unlock'}) => (
   <div>

@@ -38,6 +38,7 @@ import Folders from './apps/folders';
 
 import Directory from './apps/directory';
 import DirectoryGroups from './apps/directory/Groups.js'
+import DirectoryEntities from './apps/directory/Entities.js'
 import DirectoryEdit from './apps/directory/Edit.js'
 import DirectoryEntityEdit from './apps/directory/EditEntity.js'
 import DirectoryAttributesEdit from './apps/directory/EditAttributes.js'
@@ -167,6 +168,11 @@ export default [
   {
     component: DirectoryGroups,
     path: '/directory/groups',
+    exact: true
+  },
+  {
+    component: DirectoryEntities,
+    path: '/directory/entities',
     exact: true
   },
   {

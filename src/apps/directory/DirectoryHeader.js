@@ -9,6 +9,7 @@ export default () => (
     </h2>
     <nav className="directory-header__nav">
       <Link className="directory-header__link meta" to={'/directory/'}>Directory</Link>
+      <Link className="directory-header__link meta" to={`/directory/entities`}><i className="fa fa-lock" /> Entities</Link>
       <Link className="directory-header__link meta" to={`/directory/groups`}>Groups</Link>
       <button className="btn btn-primary btn-flat directory-header__link">Add Person</button>
     </nav>
