@@ -7,6 +7,7 @@ import _ from 'lodash';
 import BigButton from '../../components/permissionButtons/components/BigButton.js';
 import ListTable from '../../components/listTable';
 import PermissionsTable from './PermissionTable';
+import EditAttributes from './EditAttributes';
 
 import './directory.less';
 
@@ -90,8 +91,8 @@ export default class Edit extends Component {
                   </h3>
                 </div>
                 <div className="text-right">
-                    <Link to={`/directory/edit/${user.id}/attributes`} className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}}><i className="fa fa-pencil" /> Edit Attributes</Link>
-                  </div>
+                  <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit Attributes</button>
+                </div>
               </div>
               <div style={{padding: '0px 0 0 20px'}}>
                 <label>This user currently has the following attributes:</label>
@@ -248,6 +249,27 @@ export default class Edit extends Component {
             </div>
           </div>
         </div>
+        <div className="modal full-width modal-background fade in" id="attribute-modal" tabIndex="-1" role="dialog" style={{dispaly: 'none'}}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
+                <h3><i className="fa fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Edit Attributes for {user.name}</strong></h3>
+                <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+              </div>
+              <div className="modal-body" style={{padding: 20}}>
+                <div>
+                  <EditAttributes user={user} />
+                </div>
+              </div>
+              <div className="text-center">
+                <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save Changes</button>
+                <button type="button" className="btn btn-danger btn-trans btn-flat md-close" data-dismiss="modal">Cancel Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     </div>
     )
   }
