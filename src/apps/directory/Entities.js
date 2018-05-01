@@ -12,7 +12,7 @@ export default () => (
         <div>
           <div>
             <p>
-              <i className="orange fa fa-info-circle" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
+              <i className="fa fa-lock circle-icon--small orange circle-icon--no-border white-text" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
             </p>
           </div>
           <div className="directory-search">
@@ -31,7 +31,7 @@ export default () => (
               { nonPeople.map(item =>
                 <tr>
                   <td><Link to={`/directory/edit/entity/${item.id}`}><strong>{item.name}</strong></Link></td>
-                  <td>{item.attributes.map(attribute => <Tag name={`${attribute.type}: ${attribute.value}`} iconName="tag"/>)}</td>
+                  <td>{item.attributes.map(attribute => <Tag name={`${attribute.type}: ${attribute.value}`}/>)}</td>
                 </tr>
               )}
             </tbody>

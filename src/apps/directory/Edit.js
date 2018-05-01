@@ -11,10 +11,24 @@ import PermissionsTable from './PermissionTable';
 import './directory.less';
 
 export default class Edit extends Component {
+  constructor(props){
+    super(props);
+    let user = sampleUsers.find(user => String(user.id) === String(props.match.params.id));
+    this.state = {
+      viewPermissions: user.canLogin,
+      viewRestrictions: user.restrictions.length > 0
+    }
+    this.togglePermissions = this.togglePermissions.bind(this);
+  }
+  togglePermissions(value){
+    this.setState({viewPermissions: value})
+  }
+  toggleRestrictions(value){
+    this.setState({viewRestrictions: value})
+  }
   render() {
     const id = this.props.match.params.id;
     const user = sampleUsers.find(user => String(user.id) === String(id));
-    console.log(id, user);
     return (
       <div className="wrapper">
         <DirectoryHeader/>
@@ -134,14 +148,14 @@ export default class Edit extends Component {
                 <div className="directory-toggle">
                   <label>Can this person log in?</label>
                   <span>
-                    <button className={`btn btn-xs ${user.canLogin && 'btn-success'}`}>Yes</button>
-                    <button className={`btn btn-xs ${!user.canLogin && 'btn-success'}`}>No</button>
+                    <button className={`btn btn-xs ${this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(true)}>Yes</button>
+                    <button className={`btn btn-xs ${!this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(false)}>No</button>
                   </span>
                 </div>
               </div>
               {
-                user.canLogin &&
-
+                this.state.viewPermissions &&
+                <div>
                 <div className="col-md-12">
                   <h4 className="directory-section-subheader"><strong><i className="fa fa-user circle-icon--small green white-text"/> Administrative Permissions</strong></h4>
                   <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
@@ -186,27 +200,29 @@ export default class Edit extends Component {
                     ]} />
                   </div>
                 </div>
-              }
-              <div className="col-md-12" style={{marginTop: 30}}>
-                <div className="directory-toggle">
-                  <label>Do you want to restrict what data this user can see in reports that are shared with them?</label>
-                  <span>
-                    <button className={`btn btn-xs ${user.canLogin && 'btn-success'}`}>Yes</button>
-                    <button className={`btn btn-xs ${!user.canLogin && 'btn-success'}`}>No</button>
-                  </span>
-                </div>
 
-                <div>
-                  <h4 className="directory-section-subheader"><strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
-                  { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
-                  {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
-                    return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
-                  }).value()}
-                </div>
-                <div style={{padding: 30, textAlign: 'center'}}>
+                <div className="col-md-12" style={{marginTop: 30}}>
+                  <div className="directory-toggle">
+                    <label>Do you want to restrict what data this user can see in reports that are shared with them?</label>
+                    <span>
+                      <button className={`btn btn-xs ${this.state.viewRestrictions && 'btn-success'}`} onClick={()=> this.toggleRestrictions(true)}>Yes</button>
+                      <button className={`btn btn-xs ${!this.state.viewRestrictions && 'btn-success'}`} onClick={()=> this.toggleRestrictions(false)}>No</button>
+                    </span>
+                  </div>
+                  { this.state.viewRestrictions &&
+                    <div>
+                      <h4 className="directory-section-subheader"><strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
+                      { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
+                      {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
+                        return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
+                      }).value()}
+                    </div>
+                  }
                 </div>
               </div>
-            <div className="text-center col-md-12">
+              }
+            <hr className="col-md-12" style={{marginTop: 40}}/>
+            <div className="text-center col-md-12" >
               <button className="btn btn-primary">Save</button>
               <button className="btn btn-primary btn-trans">Save and Continue Editing</button>
               <button className="btn btn-danger btn-trans">Cancel Changes</button>
