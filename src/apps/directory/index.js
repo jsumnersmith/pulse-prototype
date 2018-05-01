@@ -308,25 +308,21 @@ class PeopleList extends Component {
                 /></a></li>
               </ul>
             </div>
+            <div className="btn-group">
+              <button className={`btn btn-default ${this.state.checked && this.state.checked.length > 1 && 'btn-disabled'}`} data-toggle="dropdown" title={this.state.checked && this.state.checked.length < 2 ? 'Select some users to perform bulk actions' : ''} disabled={this.state.checked && this.state.checked.length < 2}><i className="fa fa-bolt"/> Bulk Actions <i className="fa fa-caret-down"/></button>
+              <ul className="dropdown-menu">
+                <li><a><i className="fa fa-lock circle-icon--small"/> Update Permissions</a></li>
+                <li><a><i className="fa fa-group circle-icon--small"/> Update Groups</a></li>
+                <li><a><i className="fa fa-times circle-icon--small"/> Delete Users</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div style={{marginTop: 10}}>
           <Filters onChange={(filters) => {this.filterUsers(filters)}}/>
         </div>
         <div>
-          {this.state.checked && this.state.checked.length > 1 &&
-            <div style={{marginTop: 10}}>
-              <label style={{display: 'inline-block', marginRight: 5}}>Bulk Actions</label>
-              <select className="form-control" style={{display: 'inline-block', width: 200}}>
-                <option>Select an Action</option>
-                <option>Update Permissions</option>
-                <option>Update Groups</option>
-                <option>Delete Users</option>
-              </select>
-              <label style={{display: 'inline-block', marginLeft: 5}}>for {this.state.checked.length} of {this.state.users.length} people</label>
 
-            </div>
-          }
         </div>
         <div className="directory-table-wrapper">
         <table className="no-border">

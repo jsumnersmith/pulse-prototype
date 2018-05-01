@@ -24,56 +24,65 @@ export default class Edit extends Component {
             <div className="col-md-12">
               <h3 style={{marginTop: 0}}><i className="fa fa-user circle-icon pulse-blue" /> <strong>Basic Information</strong></h3>
             </div>
-            <div className="col-md-6">
-              <fieldset className="fieldset" style={{marginBottom: 10}}>
-                <label>First Name</label>
-                <input value={user.name.split(' ')[0]} className="form-control" />
-              </fieldset>
-            </div>
-            <div className="col-md-6">
-              <fieldset className="fieldset">
-                <label>Last Name</label>
-                <input value={user.name.split(' ')[1]} className="form-control" />
-              </fieldset>
-            </div>
-            <div className="col-md-12">
-              <table className="no-border" style={{marginBottom: 10}}>
-                <thead className="no-border">
-                  <tr>
-                    <th><strong>Email Address</strong></th>
-                    <th><strong>Verified</strong></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody className="no-border-y">
-                  <tr>
-                    <td>{user.email}</td>
-                    <td><i className="fa fa-check circle-icon--small white-text green"/></td>
-                    <td><button className="btn btn-sm btn-trans btn-primary">Actions <i className="fa fa-caret-down" /></button></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div style={{display: 'flex', alignContent: 'center'}} >
-                <input placeholder="Enter a unique email address" className="form-control" />
-                <button className="btn btn-primary" style={{marginTop: '5px'}}>Add</button>
+            <div style={{padding: '20px 0 0 20px'}}>
+              <div className="col-md-6">
+                <fieldset className="fieldset" style={{marginBottom: 10}}>
+                  <label>First Name</label>
+                  <input value={user.name.split(' ')[0]} className="form-control" />
+                </fieldset>
+              </div>
+              <div className="col-md-6">
+                <fieldset className="fieldset">
+                  <label>Last Name</label>
+                  <input value={user.name.split(' ')[1]} className="form-control" />
+                </fieldset>
+              </div>
+              <div className="col-md-12">
+                <table className="no-border directory-email-table" style={{marginBottom: 10, border: "2px solid #eee"}}>
+                  <thead className="no-border" style={{background: '#eee'}}>
+                    <tr>
+                      <th><strong>Email Address</strong></th>
+                      <th><strong>Verified</strong></th>
+                      <th style={{width: 100}}></th>
+                    </tr>
+                  </thead>
+                  <tbody className="no-border-y">
+                    <tr>
+                      <td>{user.email}</td>
+                      <td><i className="fa fa-check circle-icon--small white-text green"/></td>
+                      <td><button className="btn btn-sm btn-trans btn-primary">Actions <i className="fa fa-caret-down" /></button></td>
+                    </tr>
+                    <tr>
+                      <td colSpan="3">
+                        <div style={{display: 'flex', alignContent: 'center'}} >
+                          <input placeholder="Enter another email address" className="form-control" />
+                          <button className="btn btn-primary"><i className="fa fa-plus" />Add</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
               </div>
             </div>
             <div className="col-md-12">
               <hr style={{marginTop: 40, marginBottom: 30}} />
             </div>
             <div className="col-md-6">
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
-                  <div className="">
-                    <h3><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
-                      <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are attributes?" data-content="Attributes are basic demographic facts that are known about a user. Typically, this data is used for data analysis in analytics reporting. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
-                    </h3>
-                  </div>
-                  <div className="text-right">
-                      <Link to={`/directory/edit/${user.id}/attributes`} className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}}><i className="fa fa-pencil" /> Edit Attributes</Link>
-                    </div>
+              <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
+                <div className="">
+                  <h3><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
+                    <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are attributes?" data-content="Attributes are basic demographic facts that are known about a user. Typically, this data is used for data analysis in analytics reporting. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
+                  </h3>
                 </div>
-                <table className="no-border">
-                  <thead className="no-border">
+                <div className="text-right">
+                    <Link to={`/directory/edit/${user.id}/attributes`} className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}}><i className="fa fa-pencil" /> Edit Attributes</Link>
+                  </div>
+              </div>
+              <div style={{padding: '0px 0 0 20px'}}>
+                <label>This user currently has the following attributes:</label>
+                <table className="no-border directory-attribute-table" style={{border: '3px solid #eee', marginTop: 10}}>
+                  <thead className="no-border" style={{background: '#eee'}}>
                     <tr>
                       <th><strong>Attribute</strong></th>
                       <th><strong>Value</strong></th>
@@ -95,11 +104,13 @@ export default class Edit extends Component {
                   </tbody>
                 </table>
               </div>
-              <div className="col-md-6">
-                <h3>
-                  <i className="fa fa-users circle-icon red" /> <strong>Groups</strong> &nbsp;
-                  <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
-                </h3>
+            </div>
+            <div className="col-md-6">
+              <h3>
+                <i className="fa fa-users circle-icon red" /> <strong>Groups</strong> &nbsp;
+                <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
+              </h3>
+              <div style={{padding: '0px 0 0 20px'}}>
                 <label>This user is a member of the following groups:</label>
                   <ListTable
                     list={{
@@ -114,6 +125,7 @@ export default class Edit extends Component {
                     }
                   />
               </div>
+            </div>
             <div className="col-md-12">
               <hr />
               <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-unlock-alt circle-icon green" /> <strong>Permissions & Restrictions</strong></h3>
