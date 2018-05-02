@@ -167,28 +167,28 @@ export default class Edit extends Component {
                 <div className="col-md-12">
                   <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small green white-text"/> Administrative Permissions</strong></h4>
                   <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <BigButton
-                        isActive={user.permissions.includes('Manage Reports')}
-                        iconclassName="fa-file-text-o"
-                        title="Manage Reports"
-                        description="User will be able to create, edit, and view all reports"
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <BigButton
-                        isActive={user.permissions.includes('Manage Events')}
-                        iconclassName="fa-calendar"
-                        title="Manage Events"
-                        description="User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
-                      />
-                    </div>
-                  </div>
+                  <PermissionsTable
+                    appliesTo={false}
+                    permissions={[
+                      {
+                        isActive: user.permissions.includes('Manage Reports'),
+                        iconclassName: "fa-file-text-o",
+                        title: "Manage Reports",
+                        description: "User will be able to create, edit, and view all reports"
+                      },
+                      {
+                        isActive: user.permissions.includes('Manage Events'),
+                        iconclassName: "fa-calendar",
+                        title: "Manage Events",
+                        description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
+                      }
+                    ]} />
                   <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-users circle-icon--small green white-text"/> Management Permissions</strong></h4>
                   <p>These permissions will grant a user specific permissions to manage content and may be constrained down to content related to specific groups.</p>
                   <div className="col-md-12">
-                    <PermissionsTable permissions={[
+                    <PermissionsTable
+                      appliesTo={true}
+                      permissions={[
                       {
                         isActive: user.permissions.includes('Manage Users'),
                         iconclassName:"fa-user-circle",

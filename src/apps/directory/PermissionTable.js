@@ -4,18 +4,18 @@ import BigButton from '../../components/permissionButtons/components/BigButton.j
 
 import './permission-table.less';
 
-export default ({permissions}) => (
+export default ({permissions, appliesTo}) => (
   <table className="no-border">
     <thead className="no-border">
       <tr>
         <th><strong>Permission</strong></th>
-        <th><strong>Applies To</strong></th>
+        {appliesTo && <th><strong>Applies To</strong></th>}
       </tr>
     </thead>
     <tbody className="no-border-y no-border-x">
       {
         permissions.map(permission => {
-          return <PermissionRow {...permission}/>
+          return <PermissionRow {...permission} appliesTo={appliesTo}/>
         })
       }
     </tbody>
@@ -58,7 +58,7 @@ class PermissionRow extends Component {
             description={this.props.description}
           />
         </td>
-        <td style={{width: 400,}}><div style={{ opacity: this.state.isActive ? '1' : '.5', pointerEvents: this.state.isActive ? 'initial' : 'none'}}><PermissionDropdown /></div></td>
+        {this.props.appliesTo && <td style={{width: 400,}}><div style={{ opacity: this.state.isActive ? '1' : '.5', pointerEvents: this.state.isActive ? 'initial' : 'none'}}><PermissionDropdown /></div></td>}
       </tr>
     )
   }
