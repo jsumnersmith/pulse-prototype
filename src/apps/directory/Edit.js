@@ -146,37 +146,46 @@ export default class Edit extends Component {
               <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-unlock-alt circle-icon green" /> <strong>Permissions & Restrictions</strong></h3>
 
               <div className="col-md-12">
-                <div className="directory-toggle">
+                <div className="directory-toggle" style={{display: "none"}}>
                   <label>Can this person log in?</label>
                   <span>
                     <button className={`btn btn-xs ${this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(true)}>Yes</button>
                     <button className={`btn btn-xs ${!this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(false)}>No</button>
                   </span>
                 </div>
+                <span onClick={()=>this.togglePermissions(!this.state.viewPermissions)}>
+                  <BigButton
+                    isActive={this.state.viewPermissions}
+                    title="Can this person login?"
+                    description="User will be able to login to KickUp and access reports and events that are shared with them."
+                  />
+                </span>
               </div>
               {
                 this.state.viewPermissions &&
-                <div>
+                <div style={{paddingLeft: 20, paddingRight: 20}}>
                 <div className="col-md-12">
-                  <h4 className="directory-section-subheader"><strong><i className="fa fa-user circle-icon--small green white-text"/> Administrative Permissions</strong></h4>
+                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small green white-text"/> Administrative Permissions</strong></h4>
                   <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
-                  <div className="col-md-6">
-                    <BigButton
-                      isActive={user.permissions.includes('Manage Reports')}
-                      iconclassName="fa-file-text-o"
-                      title="Manage Reports"
-                      description="User will be able to create, edit, and view all reports"
-                    />
+                  <div className="row">
+                    <div className="col-md-6">
+                      <BigButton
+                        isActive={user.permissions.includes('Manage Reports')}
+                        iconclassName="fa-file-text-o"
+                        title="Manage Reports"
+                        description="User will be able to create, edit, and view all reports"
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <BigButton
+                        isActive={user.permissions.includes('Manage Events')}
+                        iconclassName="fa-calendar"
+                        title="Manage Events"
+                        description="User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
+                      />
+                    </div>
                   </div>
-                  <div className="col-md-6">
-                    <BigButton
-                      isActive={user.permissions.includes('Manage Events')}
-                      iconclassName="fa-calendar"
-                      title="Manage Events"
-                      description="User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
-                    />
-                  </div>
-                  <h4 className="directory-section-subheader"><strong><i className="fa fa-users circle-icon--small green white-text"/> Management Permissions</strong></h4>
+                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-users circle-icon--small green white-text"/> Management Permissions</strong></h4>
                   <p>These permissions will grant a user specific permissions to manage content and may be constrained down to content related to specific groups.</p>
                   <div className="col-md-12">
                     <PermissionsTable permissions={[
@@ -203,15 +212,22 @@ export default class Edit extends Component {
                 </div>
 
                 <div className="col-md-12" style={{marginTop: 30}}>
-                  <div className="directory-toggle">
+                  <div>
                     <label>Do you want to restrict what data this user can see in reports that are shared with them?</label>
-                    <span>
+                    <span style={{display: 'none'}}>
                       <button className={`btn btn-xs ${this.state.viewRestrictions && 'btn-success'}`} onClick={()=> this.toggleRestrictions(true)}>Yes</button>
                       <button className={`btn btn-xs ${!this.state.viewRestrictions && 'btn-success'}`} onClick={()=> this.toggleRestrictions(false)}>No</button>
                     </span>
+                    <div onClick={()=>this.toggleRestrictions(!this.state.viewRestrictions)}>
+                      <BigButton
+                        isActive={this.state.viewRestrictions}
+                        title="Add restrictions for this user"
+                        description="User will only see report data associated with the filters that you set."
+                      />
+                    </div>
                   </div>
                   { this.state.viewRestrictions &&
-                    <div>
+                    <div style={{padding: '0 20px'}}>
                       <h4 className="directory-section-subheader"><i className="fa fa-lock circle-icon--small green white-text" /> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
                       { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
                       {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
