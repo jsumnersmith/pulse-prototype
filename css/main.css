@@ -14137,6 +14137,7 @@ th.empty {
 }
 .permission-table-row td.td-button .btn-huge {
   border-color: transparent;
+  background: transparent;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
