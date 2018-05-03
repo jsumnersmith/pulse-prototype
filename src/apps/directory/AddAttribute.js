@@ -5,7 +5,7 @@ import './attribute-form.less';
 export default class Edit extends Component {
   render() {
     return (
-      <form>
+      <form className="attribute-form">
         <fieldset>
           <label>Attribute Type</label>
           <select className="form-control">
@@ -19,35 +19,46 @@ export default class Edit extends Component {
           <label>Attribute Value</label>
           <input className="form-control" placeholder="This will be typeahead to connect with existing values or add a new one."/>
         </fieldset>
-        <fieldset>
+        <fieldset className="attribute-form__dates">
           <label>Start Date</label>
-          <select className="form-control">
-            <option>Month</option>
-          </select>
-          <select className="form-control">
-            <option>Day</option>
-          </select>
-          <select className="form-control">
-            <option>Year</option>
-          </select>
+          <div className="row">
+            <div className="col-md-4">
+              <select className="form-control ">
+                <option>Month</option>
+              </select>
+            </div>
+            <div className="col-md-4">
+              <select className="form-control col-md-4">
+                <option>Day</option>
+              </select>
+            </div>
+            <div className="col-md-4">
+              <select className="form-control col-md-4">
+                <option>Year</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
-        <fieldset>
+        <fieldset className="attribute-form__dates">
           <label>End Date</label>
-          <select>
-            <option>Month</option>
-          </select>
-          <select>
-            <option>Day</option>
-          </select>
-          <select>
-            <option>Year</option>
-          </select>
+          <div className="row">
+            <div className="col-md-4">
+              <select className="form-control ">
+                <option>Month</option>
+              </select>
+            </div>
+            <div className="col-md-4">
+              <select className="form-control col-md-4">
+                <option>Day</option>
+              </select>
+            </div>
+            <div className="col-md-4">
+              <select className="form-control col-md-4">
+                <option>Year</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
-        <div className="text-center" >
-          <button className="btn btn-primary">Save</button>
-          <button className="btn btn-primary btn-trans">Save and Add Another</button>
-          <button className="btn btn-danger btn-trans">Cancel Changes</button>
-        </div>
       </form>
 
 

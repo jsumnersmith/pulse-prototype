@@ -7,7 +7,7 @@ export default class Edit extends Component {
     return (
      <div>
         <p><i className="fa fa-info-circle orange"/> The following attribute facts are everything that KickUp has learned about this person or entity from any uploads, imports, or editing that has happened in our system.</p>
-        <table className="no-border">
+        <table className="no-border edit-attributes-table">
           <thead className="no-border">
             <tr>
               <th><strong>Type</strong></th>
@@ -29,7 +29,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -41,7 +41,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -53,7 +53,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -66,7 +66,7 @@ export default class Edit extends Component {
                     <td>--</td>
                     <td>Sample Survey Import</td>
                     <td><i className="fa fa-check green"/> Active</td>
-                    <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
+                    <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit</button></td>
                   </tr>
                 )
             }

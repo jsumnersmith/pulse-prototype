@@ -261,9 +261,10 @@ export default class Edit extends Component {
                   <AddAttribute user={user} />
                 </div>
               </div>
-              <div className="text-center">
-                <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save Changes</button>
-                <button type="button" className="btn btn-danger btn-trans btn-flat md-close" data-dismiss="modal">Cancel Changes</button>
+              <div className="text-center" >
+                <button className="btn btn-primary" data-dismiss="modal">Save</button>
+                <button className="btn btn-primary btn-trans" data-dismiss="modal">Save and Add Another</button>
+                <button className="btn btn-danger btn-trans" data-dismiss="modal">Cancel Changes</button>
               </div>
             </div>
           </div>
