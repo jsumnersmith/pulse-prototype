@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
 import './directory.less';
 
 export default class Edit extends Component {
@@ -8,9 +7,6 @@ export default class Edit extends Component {
     return (
      <div>
         <p><i className="fa fa-info-circle orange"/> The following attribute facts are everything that KickUp has learned about this person or entity from any uploads, imports, or editing that has happened in our system.</p>
-        <div className="directory-search__input">
-          <SearchInput />
-        </div>
         <table className="no-border">
           <thead className="no-border">
             <tr>
@@ -20,6 +16,7 @@ export default class Edit extends Component {
               <th><strong>End Date</strong></th>
               <th><strong>Source</strong></th>
               <th><strong>Status</strong></th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="no-border-y">
@@ -28,10 +25,11 @@ export default class Edit extends Component {
               <tr>
                 <td>School</td>
                 <td>{user.school}</td>
-                <td>--</td>
+                <td>09/01/2017</td>
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
+                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -39,10 +37,11 @@ export default class Edit extends Component {
               <tr>
                 <td>Grade</td>
                 <td>{user.grade}</td>
-                <td>--</td>
+                <td>09/01/2017</td>
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
+                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -50,10 +49,11 @@ export default class Edit extends Component {
               <tr>
                 <td>Role</td>
                 <td>{user.role}</td>
-                <td>--</td>
+                <td>09/01/2017</td>
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="fa fa-check green"/> Active</td>
+                <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
               </tr>
             }
             {
@@ -62,18 +62,16 @@ export default class Edit extends Component {
                   <tr>
                     <td>{attribute.type}</td>
                     <td>{attribute.value}</td>
-                    <td>--</td>
+                    <td>09/01/2017</td>
                     <td>--</td>
                     <td>Sample Survey Import</td>
                     <td><i className="fa fa-check green"/> Active</td>
+                    <td><button className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" /> Edit</button></td>
                   </tr>
                 )
             }
           </tbody>
         </table>
-        <div style={{marginTop: 20}}>
-          <button className="btn btn-primary"><i className="fa fa-plus"/> Add New Attribute Fact</button>
-        </div>
       </div>
     )
   }

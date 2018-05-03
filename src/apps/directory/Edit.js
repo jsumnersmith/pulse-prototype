@@ -8,6 +8,7 @@ import BigButton from '../../components/permissionButtons/components/BigButton.j
 import ListTable from '../../components/listTable';
 import PermissionsTable from './PermissionTable';
 import EditAttributes from './EditAttributes';
+import AddAttribute from './AddAttribute';
 
 import './directory.less';
 
@@ -96,28 +97,9 @@ export default class Edit extends Component {
               </div>
               <div style={{padding: '0px 0 0 20px'}}>
                 <EditAttributes user={user} />
-                <table className="no-border directory-attribute-table" style={{border: '3px solid #eee', marginTop: 10, display: 'none'}}>
-                  <thead className="no-border" style={{background: '#eee'}}>
-                    <tr>
-                      <th><strong>Attribute</strong></th>
-                      <th><strong>Value</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody className="no-border-y">
-                    <tr>
-                      <td><strong>School</strong></td>
-                      <td>{user.school && <Tag name={user.school} iconName="building-o"/> }</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Grade</strong></td>
-                      <td>{user.grade && <Tag name={user.grade} iconName="users"/> }</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Role</strong></td>
-                      <td>{user.role && <Tag name={user.role} iconName="book"/> }</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="text-right">
+                  <button className="btn btn-primary" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-plus" /> Add Attribute</button>
+                </div>
               </div>
             </div>
 
@@ -271,12 +253,12 @@ export default class Edit extends Component {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
-                <h3><i className="fa fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Edit Attributes for {user.name}</strong></h3>
+                <h3><i className="fa fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Add Attribute for {user.name}</strong></h3>
                 <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
               </div>
               <div className="modal-body" style={{padding: 20}}>
                 <div>
-                  <EditAttributes user={user} />
+                  <AddAttribute user={user} />
                 </div>
               </div>
               <div className="text-center">
