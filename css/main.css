@@ -13979,7 +13979,7 @@ th.empty {
 .directory-section-subheader {
   margin-top: 30px;
   padding-bottom: 5px;
-  border-bottom: 3px solid #1FAF84;
+  border-bottom: 3px solid #007DA0;
 }
 .directory-toggle {
   display: flex;
@@ -14130,6 +14130,7 @@ th.empty {
   border-top: 2px solid #eee;
 }
 .permission-table-row td {
+  padding: 0;
   border: 2px solid transparent;
 }
 .permission-table-row td:first-child {
@@ -14138,6 +14139,13 @@ th.empty {
 .permission-table-row td.td-button .btn-huge {
   border-color: transparent;
   background: transparent;
+}
+.permission-table-row td.td-button .btn-huge__icon {
+  padding: 15px;
+  width: 50px;
+}
+.permission-table-row td.td-button .btn-huge__content {
+  padding: 10px 10px 10px 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
