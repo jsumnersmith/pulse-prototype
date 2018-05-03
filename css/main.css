@@ -13985,17 +13985,41 @@ th.empty {
   display: flex;
   align-content: center;
 }
+.edit-attributes-table,
+.directory-email-table,
+.directory-attribute-table {
+  border: 2px solid #eee;
+}
+.edit-attributes-table thead,
+.directory-email-table thead,
+.directory-attribute-table thead {
+  background: #eee;
+}
+.edit-attributes-table thead th,
+.directory-email-table thead th,
+.directory-attribute-table thead th {
+  font-size: 16px;
+}
+.edit-attributes-table tr,
 .directory-email-table tr,
 .directory-attribute-table tr,
+.edit-attributes-table th,
 .directory-email-table th,
 .directory-attribute-table th,
+.edit-attributes-table thead,
 .directory-email-table thead,
 .directory-attribute-table thead,
+.edit-attributes-table tbody,
 .directory-email-table tbody,
 .directory-attribute-table tbody,
+.edit-attributes-table td,
 .directory-email-table td,
 .directory-attribute-table td {
   border-color: #eee !important;
+}
+.directory-email-table tr:last-child {
+  border-color: transparent !important;
+  background: transparent !important;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -14146,6 +14170,22 @@ th.empty {
 }
 .permission-table-row td.td-button .btn-huge__content {
   padding: 10px 10px 10px 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.attribute-form fieldset + fieldset {
+  margin-top: 20px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
