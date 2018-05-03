@@ -37,7 +37,7 @@ export default class Edit extends Component {
         <div className="block-flat" style={{marginTop: 10}}>
           <div className="row">
             <div className="col-md-12">
-              <h3 style={{marginTop: 0}}><i className="fa fa-user circle-icon pulse-blue" /> <strong>Basic Information</strong></h3>
+              <h3 style={{marginTop: 0}}><i className="fa fa-user circle-icon green" /> <strong>Basic Information</strong></h3>
             </div>
             <div style={{padding: '20px 0 0 20px'}}>
               <div className="col-md-6">
@@ -81,22 +81,22 @@ export default class Edit extends Component {
               </div>
             </div>
             <div className="col-md-12">
-              <hr style={{marginTop: 40, marginBottom: 30}} />
+              <hr />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
                 <div className="">
-                  <h3><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
+                  <h3 style={{marginTop: 0}}><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
                     <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are attributes?" data-content="Attributes are basic demographic facts that are known about a user. Typically, this data is used for data analysis in analytics reporting. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
                   </h3>
                 </div>
-                <div className="text-right">
+                <div className="text-right" style={{display: 'none'}}>
                   <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit Attributes</button>
                 </div>
               </div>
               <div style={{padding: '0px 0 0 20px'}}>
-                <label>This user currently has the following attributes:</label>
-                <table className="no-border directory-attribute-table" style={{border: '3px solid #eee', marginTop: 10}}>
+                <EditAttributes user={user} />
+                <table className="no-border directory-attribute-table" style={{border: '3px solid #eee', marginTop: 10, display: 'none'}}>
                   <thead className="no-border" style={{background: '#eee'}}>
                     <tr>
                       <th><strong>Attribute</strong></th>
@@ -120,30 +120,9 @@ export default class Edit extends Component {
                 </table>
               </div>
             </div>
-            <div className="col-md-6">
-              <h3>
-                <i className="fa fa-users circle-icon red" /> <strong>Groups</strong> &nbsp;
-                <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
-              </h3>
-              <div style={{padding: '0px 0 0 20px'}}>
-                <label>This user is a member of the following groups:</label>
-                  <ListTable
-                    list={{
-                        title: 'Groups',
-                        items: [
-                          { name: 'English' },
-                          { name: 'Crocket Middle School' },
-                          { name: 'Nimitz High School' },
-                          { name: 'MacArthur High School' }
-                        ]
-                      }
-                    }
-                  />
-              </div>
-            </div>
+
             <div className="col-md-12">
               <hr />
-              <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-unlock-alt circle-icon green" /> <strong>Permissions & Restrictions</strong></h3>
 
               <div className="col-md-12">
                 <div className="directory-toggle" style={{display: "none"}}>
@@ -153,10 +132,10 @@ export default class Edit extends Component {
                     <button className={`btn btn-xs ${!this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(false)}>No</button>
                   </span>
                 </div>
-                <span onClick={()=>this.togglePermissions(!this.state.viewPermissions)}>
+                <span className="directory-big-toggle" onClick={()=>this.togglePermissions(!this.state.viewPermissions)}>
                   <BigButton
                     isActive={this.state.viewPermissions}
-                    title="Can this person login?"
+                    title="Allow this person to login"
                     description="User will be able to login to KickUp and access reports and events that are shared with them."
                   />
                 </span>
@@ -164,8 +143,30 @@ export default class Edit extends Component {
               {
                 this.state.viewPermissions &&
                 <div style={{paddingLeft: 20, paddingRight: 20}}>
+                  <div className="col-md-12" style={{marginBottom: 30}}>
+                    <h3>
+                      <i className="fa fa-users circle-icon red" /> <strong>Groups</strong> &nbsp;
+                      <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
+                    </h3>
+                    <div style={{padding: '0px 0 0 20px'}}>
+                      <label>This user is a member of the following groups:</label>
+                      <ListTable
+                        list={{
+                            title: 'Groups',
+                            items: [
+                              { name: 'English' },
+                              { name: 'Crocket Middle School' },
+                              { name: 'Nimitz High School' },
+                              { name: 'MacArthur High School' }
+                            ]
+                          }
+                        }
+                      />
+                    </div>
+                </div>
                 <div className="col-md-12">
-                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small green white-text"/> Administrative Permissions</strong></h4>
+                  <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-unlock-alt circle-icon pulse-blue" /> <strong>Permissions</strong></h3>
+                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small pulse-blue white-text"/> Administrative Permissions</strong></h4>
                   <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
                   <PermissionsTable
                     appliesTo={false}
@@ -183,7 +184,7 @@ export default class Edit extends Component {
                         description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
                       }
                     ]} />
-                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-users circle-icon--small green white-text"/> Management Permissions</strong></h4>
+                  <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-users circle-icon--small pulse-blue white-text"/> Management Permissions</strong></h4>
                   <p>These permissions will grant a user specific permissions to manage content and may be constrained down to content related to specific groups.</p>
                   <div className="col-md-12">
                     <PermissionsTable
@@ -212,6 +213,7 @@ export default class Edit extends Component {
                 </div>
 
                 <div className="col-md-12" style={{marginTop: 30}}>
+                  <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-list-alt circle-icon purple" /> <strong>Restrictions</strong></h3>
                   <div>
                     <label>Do you want to restrict what data this user can see in reports that are shared with them?</label>
                     <span style={{display: 'none'}}>
@@ -228,7 +230,7 @@ export default class Edit extends Component {
                   </div>
                   { this.state.viewRestrictions &&
                     <div style={{padding: '0 20px'}}>
-                      <h4 className="directory-section-subheader"><i className="fa fa-lock circle-icon--small green white-text" /> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
+                      <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="fa fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
                       { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
                       {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                         return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
@@ -285,8 +287,7 @@ export default class Edit extends Component {
           </div>
         </div>
 
-
-    </div>
+      </div>
     )
   }
 };
