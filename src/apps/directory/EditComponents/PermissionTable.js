@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {groups} from './users.js';
-import BigButton from '../../components/permissionButtons/components/BigButton.js';
+import {groups} from '../users.js';
+import BigButton from '../../../components/permissionButtons/components/BigButton.js';
 
 import './permission-table.less';
 

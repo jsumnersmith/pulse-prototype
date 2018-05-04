@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './directory.less';
 import './attribute-form.less';
 
 export default class Edit extends Component {
