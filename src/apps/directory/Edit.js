@@ -32,7 +32,7 @@ export default class Edit extends Component {
     const id = this.props.match.params.id;
     const user = sampleUsers.find(user => String(user.id) === String(id));
     return (
-        <div className="wrapper">
+        <div className="wrapper directory">
           <DirectoryHeader/>
           <Link className="btn btn-back btn-default" to={'/directory'} >Back to Directory</Link>
           <div className="block-flat" style={{marginTop: 10}}>
@@ -123,8 +123,8 @@ export default class Edit extends Component {
                 </div>
                   <div style={{paddingLeft: 20, paddingRight: 20}}>
                     <div className="col-md-12" style={{marginBottom: 30}}>
-                      <h3>
-                        <i className="fa fa-users circle-icon red" /> <strong>Groups</strong> &nbsp;
+                      <h3 className={`${!this.state.viewPermissions && 'inactive'}`}>
+                        <i className={`fa fa-users circle-icon red ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Groups</strong> &nbsp;
                         <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
                       </h3>
                       {
@@ -149,7 +149,7 @@ export default class Edit extends Component {
                       }
                   </div>
                   <div className="col-md-12">
-                    <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-unlock-alt circle-icon pulse-blue" /> <strong>Permissions</strong></h3>
+                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-unlock-alt circle-icon pulse-blue ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Permissions</strong></h3>
                     {
                         this.state.viewPermissions ?
                         <div>
@@ -203,7 +203,7 @@ export default class Edit extends Component {
                         }
                   </div>
                   <div className="col-md-12" style={{marginTop: 30}}>
-                    <h3 style={{marginTop: 0, marginBottom: 20}}><i className="fa fa-list-alt circle-icon purple" /> <strong>Restrictions</strong></h3>
+                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-list-alt circle-icon purple ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Restrictions</strong></h3>
                     {
                         this.state.viewPermissions ?
                         <div>
@@ -220,8 +220,8 @@ export default class Edit extends Component {
                             />
                           </div>
                         </div>
-                      : 
-                      <p><i className="fa fa-info-circle orange" /> This person must be able to login to be given data restrictions.</p>  
+                      :
+                      <p><i className="fa fa-info-circle orange" /> This person must be able to login to be given data restrictions.</p>
                 }
 
                 { this.state.viewRestrictions &&
