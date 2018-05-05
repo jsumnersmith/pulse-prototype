@@ -3,6 +3,7 @@ import { SearchWithFilters as SearchInput, Tag } from '@kickup/pulse-ui/src/depr
 import { Link } from 'react-router-dom';
 import { nonPeople } from './users.js';
 import DirectoryHeader from './DirectoryHeader';
+import './directory.less';
 
 export default () => (
   <div className="wrapper">
@@ -20,8 +21,8 @@ export default () => (
               <SearchInput />
             </div>
           </div>
-          <table className="no-border">
-            <thead className="no-border">
+          <table className="no-border directory-entity-table" style={{border: '2px solid #eee', marginTop: 20}}>
+            <thead className="no-border" style={{background: '#eee'}}>
               <tr>
                 <th><strong>Name</strong></th>
                 <th><strong>Attributes</strong></th>

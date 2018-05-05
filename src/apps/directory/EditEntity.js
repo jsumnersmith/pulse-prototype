@@ -14,7 +14,7 @@ export default class Edit extends Component {
     return (
       <div className="wrapper">
         <DirectoryHeader/>
-          <Link className="btn btn-back btn-default" to={'/directory'} >Back to Directory</Link>
+          <Link className="btn btn-back btn-default" to={'/directory/entities'} >Back to All</Link>
           <div className="block-flat" style={{marginTop: 10}}>
             <div className="row">
               <div className="col-md-12">
