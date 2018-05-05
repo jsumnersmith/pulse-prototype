@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import sampleUsers, {groups, nonPeople} from './users.js';
 import Filters from './DirectoryFilters';
 import { getItem, setItem } from 'timedstorage';
+import Pager from './Pager.js';
 
 const isLast = (index, arr) => {
   if (index !== arr.length - 1) {
@@ -64,12 +65,12 @@ const CheckBox = ({label, checked, onClick}) => (
 class PeopleList extends Component {
   constructor(props){
     super(props);
-    console.log('columns', getItem('directoryData'));
     let columns = (getItem('directoryData') && getItem('directoryData').columns) || initialColumns;
     this.state = {
       showColumns: columns,
       showFilterModal: false,
       users: sampleUsers,
+      currentPage: 0,
       checked: []
     }
     this.toggleColumn = this.toggleColumn.bind(this);
@@ -87,6 +88,8 @@ class PeopleList extends Component {
     this.areAllChecked = this.areAllChecked.bind(this);
     this.getUserMeta = this.getUserMeta.bind(this);
     this.isMatch = this.isMatch.bind(this);
+    this.changePage = this.changePage.bind(this);
+    this.getUsers = this.getUsers.bind(this);
   }
   toggleColumn(name){
     let {showColumns} = this.state;
@@ -96,7 +99,6 @@ class PeopleList extends Component {
       showColumns = showColumns.concat([name]);
     }
     const item = setItem('directoryData', {columns: showColumns}, 3600000);
-    console.log(item);
     this.setState({showColumns});
   }
   checkPermission(user, permission){
@@ -149,7 +151,6 @@ class PeopleList extends Component {
   searchUsers(e){
     let search = e.target.value;
     let users = sampleUsers.filter(user => JSON.stringify(user).match(search));
-    console.log(users.length, search)
     this.setState({users});
   }
   filterUsers(filters){
@@ -182,21 +183,17 @@ class PeopleList extends Component {
   isMatch(user, filters){
     const filterGroupCount = _(filters).groupBy('type').keys().value().length;
     const userMeta = this.getUserMeta(user);
-    console.log(userMeta);
     const matches =  _(filters)
       .groupBy('type')
       .map((values, name) => {
         let matchedValues = values.map(value => _.includes(userMeta, value))
-        console.log("Matched Values", values, userMeta, matchedValues);
         return matchedValues;
       })
       .flatten()
       .filter(item => {
-        console.log(item);
         return item !== false
       })
       .value()
-    console.log(filters, filterGroupCount, matches);
     //return matches.length === filterGroupCount;
     // Couldn't make it work. :( -J
     return true;
@@ -204,7 +201,6 @@ class PeopleList extends Component {
 
   setChecked(id){
     let {checked} = this.state;
-    console.log(checked, sampleUsers);
     if(checked.length === sampleUsers.length){
       this.setState({checked: [id]})
     } else if (checked.includes(id)){
@@ -222,11 +218,19 @@ class PeopleList extends Component {
   }
   isChecked(id){
     let {checked} = this.state;
-    console.log("Checked", checked);
     return checked.includes(id);
   }
   areAllChecked(){
     return this.state.checked.length === sampleUsers.length;
+  }
+  changePage(page){
+    this.setState({currentPage: page})
+  }
+  getUsers(){
+    console.log("Getting Users. Page is ", this.state.currentPage)
+    let start = this.state.currentPage * 10;
+    let end = start + 10;
+    return this.state.users.slice(start, end);
   }
   render(){
     const {view} = this.props;
@@ -337,7 +341,7 @@ class PeopleList extends Component {
           </thead>
           <tbody className="no-border-y">
             {
-              this.state.users.slice(0,10).map(user => <tr>
+              this.getUsers().map(user => <tr>
                 <td><input type="checkbox" checked={this.isChecked(user.id)} onChange={() => this.setChecked(user.id)}/></td>
                 { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }
@@ -366,6 +370,11 @@ class PeopleList extends Component {
           </tbody>
         </table>
         </div>
+        <Pager
+          pages={[0,1]}
+          currentPage={this.state.currentPage}
+          changePage={this.changePage}
+        />
       </div>
     )
   }
@@ -386,3 +395,5 @@ const Countable = ({user, kind, view, icon = 'unlock'}) => (
     }
   </div>
 )
+
+
