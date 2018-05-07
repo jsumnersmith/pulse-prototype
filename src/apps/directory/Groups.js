@@ -22,24 +22,26 @@ export default class Groups extends Component {
                 <SearchInput />
               </div>
             </div>
-            <table className="no-border">
-              <thead className="no-border">
-                <tr>
-                  <th><strong>Group Name</strong></th>
-                  <th className="text-center"><strong>Members</strong></th>
-                </tr>
-              </thead>
-              <tbody className="no-border-y">
-                {
-                  groups.map(group =>
-                    <tr>
-                      <td><strong><Link to={`/directory/groups/edit/${group.id}`}>{group.name}</Link></strong></td>
-                      <td className="text-center">{this.getUserCount(group.name)}</td>
-                    </tr>
-                  )
-                }
-              </tbody>
-            </table>
+            <div className="directory-table-wrapper">
+              <table className="no-border directory-groups-table">
+                <thead className="no-border">
+                  <tr>
+                    <th><strong>Group Name</strong></th>
+                    <th className="text-center"><strong>Members</strong></th>
+                  </tr>
+                </thead>
+                <tbody className="no-border-y">
+                  {
+                    groups.map(group =>
+                      <tr>
+                        <td><strong><Link to={`/directory/groups/edit/${group.id}`} className="clickable">{group.name}</Link></strong></td>
+                        <td className="text-center">{this.getUserCount(group.name)}</td>
+                      </tr>
+                    )
+                  }
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
     </div>
