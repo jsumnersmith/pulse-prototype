@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import FullSharing from './FullSharing';
 import EventGroupSharing from './EventGroupSharing';

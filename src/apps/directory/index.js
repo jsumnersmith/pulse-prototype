@@ -4,7 +4,7 @@ import DirectoryHeader from './DirectoryHeader'
 import { SearchWithFilters as SearchInput, Tag } from '@kickup/pulse-ui/src/deprecated';
 import './directory.less';
 import { Link } from 'react-router-dom';
-import sampleUsers, {groups, nonPeople} from './users.js';
+import sampleUsers, {groups} from './users.js';
 import Filters from './DirectoryFilters';
 import { getItem, setItem } from 'timedstorage';
 import Pager from './Pager.js';
@@ -98,7 +98,7 @@ class PeopleList extends Component {
     } else {
       showColumns = showColumns.concat([name]);
     }
-    const item = setItem('directoryData', {columns: showColumns}, 3600000);
+    setItem('directoryData', {columns: showColumns}, 3600000);
     this.setState({showColumns});
   }
   checkPermission(user, permission){
@@ -161,10 +161,11 @@ class PeopleList extends Component {
   getUserMeta(user){
     let meta = [];
     function metaString(metaTypes = []){
-      metaTypes.map(metaType => {
-        if(user[metaType]){
-          meta.push({type: metaType, name: user[metaType]})
+      metaTypes.map(metaItem => {
+        if(user[metaItem]){
+          meta.push({type: metaItem, name: user[metaItem]})
         }
+        return null;
       });
     }
     function metaArray(metaTypes = []){
@@ -174,6 +175,7 @@ class PeopleList extends Component {
             return meta.push({type: metaType, name: item})
           })
         }
+        return null;
       });
     }
     metaString(['school', 'grade', 'role']);
@@ -181,20 +183,21 @@ class PeopleList extends Component {
     return meta;
   }
   isMatch(user, filters){
-    const filterGroupCount = _(filters).groupBy('type').keys().value().length;
-    const userMeta = this.getUserMeta(user);
-    const matches =  _(filters)
-      .groupBy('type')
-      .map((values, name) => {
-        let matchedValues = values.map(value => _.includes(userMeta, value))
-        return matchedValues;
-      })
-      .flatten()
-      .filter(item => {
-        return item !== false
-      })
-      .value()
-    //return matches.length === filterGroupCount;
+    // const filterGroupCount = _(filters).groupBy('type').keys().value().length;
+    // const userMeta = this.getUserMeta(user);
+    // const matches =  _(filters)
+    //   .groupBy('type')
+    //   .map((values, name) => {
+    //     let matchedValues = values.map(value => _.includes(userMeta, value))
+    //     return matchedValues;
+    //   })
+    //   .flatten()
+    //   .filter(item => {
+    //     return item !== false
+    //   })
+    //   .value()
+    // return matches.length === filterGroupCount;
+
     // Couldn't make it work. :( -J
     return true;
   }
@@ -373,21 +376,6 @@ class PeopleList extends Component {
   }
 }
 
-const Countable = ({user, kind, view, icon = 'unlock'}) => (
-  <div>
-    {
-      user.canLogin ?
-        view === 'compact' ?
-          <div className="circle-icon--small" style={{display: 'inline-block'}}><strong>{user[kind].length}</strong></div>
-        :
-          <div>
-            {user[kind].map(item => <Tag name={item} iconName={icon}/>)}
-          </div>
-      :
-        <span></span>
-    }
-  </div>
-)
 
 const Restrictions = ({user}) => (
   <div>
@@ -397,10 +385,4 @@ const Restrictions = ({user}) => (
   </div>
 )
 
-const RestrictionList = ({user}) => (
-  <div>
-    Text
-
-  </div>
-)
 

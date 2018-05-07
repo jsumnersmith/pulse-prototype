@@ -80,7 +80,7 @@ class PermissionDropdown extends Component {
     if (value === 'Global' || appliesTo[0] === 'Global') {
       appliesTo = [value];
     } else if (appliesTo.includes(value)) {
-      appliesTo = appliesTo.filter(item => item != value);
+      appliesTo = appliesTo.filter(item => item !== value);
     } else {
       appliesTo.push(value);
     }
