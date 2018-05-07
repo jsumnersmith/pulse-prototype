@@ -236,9 +236,9 @@ export default class Edit extends Component {
                   </div>
               <hr className="col-md-12" style={{marginTop: 40}}/>
               <div className="text-center col-md-12" >
-                <button className="btn btn-primary">Save</button>
+                <Link className="btn btn-primary" to={'/directory'} >Save</Link>
                 <button className="btn btn-primary btn-trans">Save and Continue Editing</button>
-                <button className="btn btn-danger btn-trans">Cancel Changes</button>
+                <Link className="btn btn-danger btn-trans" to={'/directory'} >Cancel Changes</Link>
               </div>
             </div>
           </div>

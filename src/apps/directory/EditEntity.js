@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import DirectoryHeader from './DirectoryHeader';
 import {nonPeople} from './users.js';
 import EditAttributes from './EditComponents/EditAttributes';
-
+import AddAttribute from './EditComponents/AddAttribute';
 
 import './directory.less';
 
@@ -55,14 +55,37 @@ export default class Edit extends Component {
                 </div>
                 <div className="col-md-12">
                   <EditAttributes user={item} />
+                  <div className="text-right">
+                    <button className="btn btn-primary" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-plus" /> Add Attribute</button>
+                  </div>
                 </div>
                 <div className="col-md-12">
                   <hr />
                   <div className="text-center">
-                    <button className="btn btn-primary" data-dismiss="modal">Save</button>
+                    <Link className="btn btn-primary" to={'/directory/entities'} >Save</Link>
                     <button className="btn btn-primary btn-trans" data-dismiss="modal">Save and Add Another</button>
-                    <button className="btn btn-danger btn-trans" data-dismiss="modal">Cancel Changes</button>
+                    <Link className="btn btn-danger btn-trans" to={'/directory/entities'} >Cancel Changes</Link>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modal full-width modal-background fade in" id="attribute-modal" tabIndex="-1" role="dialog" style={{dispaly: 'none'}}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
+                  <h3><i className="fa fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Add Attribute for {item.name}</strong></h3>
+                  <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+                </div>
+                <div className="modal-body" style={{padding: 20}}>
+                  <div>
+                    <AddAttribute user={item} />
+                  </div>
+                </div>
+                <div className="text-center" >
+                  <button className="btn btn-primary" data-dismiss="modal">Save</button>
+                  <button className="btn btn-primary btn-trans" data-dismiss="modal">Save and Add Another</button>
+                  <button className="btn btn-danger btn-trans" data-dismiss="modal">Cancel Changes</button>
                 </div>
               </div>
             </div>
