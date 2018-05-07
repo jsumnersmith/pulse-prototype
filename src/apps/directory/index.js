@@ -352,14 +352,7 @@ class PeopleList extends Component {
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Users') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Shared Links') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'View History Pages') && <i className="fa fa-check green" />}</td>}
-                { this.isColumnActive('restrictions') && <td className={view === 'compact' && "text-center"}>
-                  <Countable
-                    kind="restrictions"
-                    user={user}
-                    view={view}
-                    icon={'lock'}
-                  />
-                </td> }
+                { this.isColumnActive('restrictions') && <td className={view === 'compact' && "text-center"}><Restrictions user={user} /></td> }
                 { this.isColumnActive('school') && <td><Tag name={`${user.school}`}/></td>}
                 { this.isColumnActive('role') && <td><Tag name={`${user.role}`}/></td>}
                 { this.isColumnActive('grade') && <td><Tag name={`${user.grade}`}/></td>}
@@ -396,4 +389,18 @@ const Countable = ({user, kind, view, icon = 'unlock'}) => (
   </div>
 )
 
+const Restrictions = ({user}) => (
+  <div>
+    {user.restrictions.length > 0 &&
+      <i className="fa fa-lock circle-icon--small circle-icon--no-border orange white-text" data-placement="top" data-toggle="popover" data-trigger="hover" title={`Restrictions for ${user.name}`} data-content={`This user has been restricted to just see report data related to: ${user.restrictions.map((restriction, index) => restriction.value + (index !== user.restrictions.length - 1 ? ', ' : ''))}. Visit the edit page for this user to edit these restrictions.`}/>
+    }
+  </div>
+)
+
+const RestrictionList = ({user}) => (
+  <div>
+    Text
+
+  </div>
+)
 

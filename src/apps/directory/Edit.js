@@ -152,7 +152,7 @@ export default class Edit extends Component {
                     <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-unlock-alt circle-icon pulse-blue ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Permissions</strong></h3>
                     {
                         this.state.viewPermissions ?
-                        <div>
+                        <div style={{paddingLeft: 20, paddingRight: 20}}>
                           <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small pulse-blue white-text"/> Administrative Permissions</strong></h4>
                           <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
                           <PermissionsTable
@@ -206,7 +206,7 @@ export default class Edit extends Component {
                     <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-list-alt circle-icon purple ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Restrictions</strong></h3>
                     {
                         this.state.viewPermissions ?
-                        <div>
+                        <div style={{padding: '0 20px'}}>
                           <label>Do you want to restrict what data this user can see in reports that are shared with them?</label>
                           <span style={{display: 'none'}}>
                             <button className={`btn btn-xs ${this.state.viewRestrictions && 'btn-success'}`} onClick={()=> this.toggleRestrictions(true)}>Yes</button>
@@ -227,7 +227,7 @@ export default class Edit extends Component {
                 { this.state.viewRestrictions &&
                   <div style={{padding: '0 20px'}}>
                     <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="fa fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
-                    { user.restrictions.length < 1 && <p>This user currently has no restrictions</p>}
+                    { user.restrictions.length < 1 && <p><i className="fa fa-info-circle orange"/> This user can currently see any data in reports that are shared with them.</p>}
                     {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                       return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
                     }).value()}
