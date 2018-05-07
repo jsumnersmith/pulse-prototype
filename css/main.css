@@ -13981,45 +13981,104 @@ th.empty {
   padding-bottom: 5px;
   border-bottom: 3px solid #007DA0;
 }
+.directory h3.inactive {
+  opacity: .5;
+}
 .directory-toggle {
   display: flex;
   align-content: center;
 }
 .edit-attributes-table,
 .directory-email-table,
+.directory-entity-table,
 .directory-attribute-table {
   border: 2px solid #eee;
 }
 .edit-attributes-table thead,
 .directory-email-table thead,
+.directory-entity-table thead,
 .directory-attribute-table thead {
   background: #eee;
 }
 .edit-attributes-table thead th,
 .directory-email-table thead th,
+.directory-entity-table thead th,
 .directory-attribute-table thead th {
   font-size: 16px;
 }
 .edit-attributes-table tr,
 .directory-email-table tr,
+.directory-entity-table tr,
 .directory-attribute-table tr,
 .edit-attributes-table th,
 .directory-email-table th,
+.directory-entity-table th,
 .directory-attribute-table th,
 .edit-attributes-table thead,
 .directory-email-table thead,
+.directory-entity-table thead,
 .directory-attribute-table thead,
 .edit-attributes-table tbody,
 .directory-email-table tbody,
+.directory-entity-table tbody,
 .directory-attribute-table tbody,
 .edit-attributes-table td,
 .directory-email-table td,
+.directory-entity-table td,
 .directory-attribute-table td {
   border-color: #eee !important;
 }
 .directory-email-table tr:last-child {
   border-color: transparent !important;
   background: transparent !important;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.directory-pager {
+  display: flex;
+  padding: 20px 10px;
+}
+.directory-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  min-height: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  list-style: none;
+  color: #666;
+  cursor: pointer;
+}
+.directory-page.active {
+  pointer-events: none;
+  background: #E59062;
+  color: white;
+  border-radius: 50%;
+}
+.directory-page.disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+.directory-page + .directory-page {
+  margin-left: 10px;
+}
+.directory-page.directory-page-total {
+  margin-left: 25px;
+}
+.directory-page p {
+  margin-bottom: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
