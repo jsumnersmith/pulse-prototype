@@ -13988,40 +13988,48 @@ th.empty {
   display: flex;
   align-content: center;
 }
+.directory-groups-table,
 .edit-attributes-table,
 .directory-email-table,
 .directory-entity-table,
 .directory-attribute-table {
   border: 2px solid #eee;
 }
+.directory-groups-table thead,
 .edit-attributes-table thead,
 .directory-email-table thead,
 .directory-entity-table thead,
 .directory-attribute-table thead {
   background: #eee;
 }
+.directory-groups-table thead th,
 .edit-attributes-table thead th,
 .directory-email-table thead th,
 .directory-entity-table thead th,
 .directory-attribute-table thead th {
   font-size: 16px;
 }
+.directory-groups-table tr,
 .edit-attributes-table tr,
 .directory-email-table tr,
 .directory-entity-table tr,
 .directory-attribute-table tr,
+.directory-groups-table th,
 .edit-attributes-table th,
 .directory-email-table th,
 .directory-entity-table th,
 .directory-attribute-table th,
+.directory-groups-table thead,
 .edit-attributes-table thead,
 .directory-email-table thead,
 .directory-entity-table thead,
 .directory-attribute-table thead,
+.directory-groups-table tbody,
 .edit-attributes-table tbody,
 .directory-email-table tbody,
 .directory-entity-table tbody,
 .directory-attribute-table tbody,
+.directory-groups-table td,
 .edit-attributes-table td,
 .directory-email-table td,
 .directory-entity-table td,
