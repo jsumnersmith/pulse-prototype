@@ -270,11 +270,6 @@ class PeopleList extends Component {
                   onClick={() => this.toggleColumn('permissions')}
                 /></a></li>
                 <li><a><CheckBox
-                  label="Data Restrictions"
-                  checked={this.isColumnActive('restrictions')}
-                  onClick={() => this.toggleColumn('restrictions')}
-                /></a></li>
-                <li><a><CheckBox
                   label="School"
                   checked={this.isColumnActive('school')}
                   onClick={() => this.toggleColumn('school')}
@@ -293,6 +288,11 @@ class PeopleList extends Component {
                   label="Other Attribute"
                   checked={this.isColumnActive('other')}
                   onClick={() => this.toggleColumn('other')}
+                /></a></li>
+                <li><a><CheckBox
+                  label="Data Restrictions"
+                  checked={this.isColumnActive('restrictions')}
+                  onClick={() => this.toggleColumn('restrictions')}
                 /></a></li>
               </ul>
             </div>
@@ -321,8 +321,8 @@ class PeopleList extends Component {
               <th colSpan="1"><i className="fa fa-check circle-icon--small"/></th>
               { this.showCols('user') && <th colSpan={this.getColSpan('user')}><i className="fa fa-user circle-icon--small"/> User</th>}
               { this.showCols('permissions') && <th colSpan={this.getColSpan('permissions')}><i className="fa fa-unlock circle-icon--small"/> Permissions</th>}
-              { this.showCols('restrictions') && <th colSpan="1"><i className="fa fa-lock circle-icon--small"/></th> }
               { this.showCols('attributes') && <th colSpan={this.getColSpan('attributes')}><i className="fa fa-tags circle-icon--small"/> Attributes</th>}
+              { this.showCols('restrictions') && <th colSpan="1"><i className="fa fa-lock circle-icon--small"/></th> }
             </tr>
             <tr>
               <th><input type="checkbox" onChange={this.toggleAllChecked} checked={this.areAllChecked()}/></th>
@@ -335,11 +335,11 @@ class PeopleList extends Component {
               { this.isColumnActive('permissions') && <th style={{minWidth: 64}} onClick={() => this.sortUsersByPermission('Manage Users')} className="clickable"><strong>Users <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 117}} onClick={() => this.sortUsersByPermission('Manage Shared Links')} className="clickable"><strong>Shared Links <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 123}} onClick={() => this.sortUsersByPermission('View History Pages')} className="clickable"><strong>History Pages <i className="fa fa-sort"/></strong></th>}
-              { this.isColumnActive('restrictions') && <th style={{minWidth: 114}} onClick={this.sortUsersByRestrictions} className="clickable"><strong>Restrictions <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('school') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('school', 'asc')} className="clickable"><strong>School <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('role') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('role', 'asc')} className="clickable"><strong>Role <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('grade') && <th style={{minWidth: 94}} onClick={() => this.sortUsers('grade', 'asc')} className="clickable"><strong>Grades <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('other') && <th style={{minWidth: 123}} onClick={() => this.sortUsers('other', 'asc')} className="clickable"><strong>Other Attribute <i className="fa fa-sort"/></strong></th>}
+              { this.isColumnActive('restrictions') && <th style={{minWidth: 114}} onClick={this.sortUsersByRestrictions} className="clickable"><strong>Restrictions <i className="fa fa-sort"/></strong></th>}
             </tr>
           </thead>
           <tbody className="no-border-y">
@@ -355,11 +355,11 @@ class PeopleList extends Component {
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Users') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Shared Links') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'View History Pages') && <i className="fa fa-check green" />}</td>}
-                { this.isColumnActive('restrictions') && <td className={view === 'compact' && "text-center"}><Restrictions user={user} /></td> }
                 { this.isColumnActive('school') && <td><Tag name={`${user.school}`}/></td>}
                 { this.isColumnActive('role') && <td><Tag name={`${user.role}`}/></td>}
                 { this.isColumnActive('grade') && <td><Tag name={`${user.grade}`}/></td>}
                 { this.isColumnActive('other') && <td></td>}
+                { this.isColumnActive('restrictions') && <td className={view === 'compact' && "text-center"}><Restrictions user={user} /></td> }
               </tr>
               )
             }
@@ -384,5 +384,3 @@ const Restrictions = ({user}) => (
     }
   </div>
 )
-
-
