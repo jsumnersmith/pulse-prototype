@@ -111,7 +111,7 @@ class PeopleList extends Component {
   getColSpan(kind){
     let expectedCols = [];
     if (kind === 'user'){
-      expectedCols = ['email','name']
+      expectedCols = ['email','name', 'actions']
     } else if (kind === 'permissions') {
       return this.state.showColumns.includes('permissions') ? 6 : 0;
     } else if (kind === 'attributes') {
@@ -328,6 +328,7 @@ class PeopleList extends Component {
               <th><input type="checkbox" onChange={this.toggleAllChecked} checked={this.areAllChecked()}/></th>
               { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email <i className="fa fa-sort"/></strong></th> }
               { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name <i className="fa fa-sort"/></strong></th>}
+              <th>Actions</th>
               { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 68}} onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>Login <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 78}} onClick={() => this.sortUsersByPermission('Manage Reports')} className="clickable"><strong>Reports <i className="fa fa-sort"/></strong></th>}
@@ -346,8 +347,9 @@ class PeopleList extends Component {
             {
               this.getUsers().map(user => <tr>
                 <td><input type="checkbox" checked={this.isChecked(user.id)} onChange={() => this.setChecked(user.id)}/></td>
-                { this.isColumnActive('email') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></strong></td>}
-                { this.isColumnActive('name') && <td><strong><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></strong></td> }
+                { this.isColumnActive('email') && <td><strong><Link to={`/directory/profile/${user.id}`}>{user.email}</Link></strong></td>}
+                { this.isColumnActive('name') && <td><strong><Link to={`/directory/profile/${user.id}`}>{user.name}</Link></strong></td> }
+                <td><Link to={`/directory/edit/${user.id}`} className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" />Edit</Link></td>
                 { this.isColumnActive('groups') && <td>{user.groups.map((group, index) => <Link to={`/directory/groups/edit/${getGroupId(group)}`}>{group}{!isLast(index, user.groups) && ', ' }</Link>)}</td>}
                 { this.isColumnActive('permissions') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Reports') && <i className="fa fa-check green" />}</td>}
