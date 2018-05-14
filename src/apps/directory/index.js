@@ -328,7 +328,7 @@ class PeopleList extends Component {
               <th><input type="checkbox" onChange={this.toggleAllChecked} checked={this.areAllChecked()}/></th>
               { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email <i className="fa fa-sort"/></strong></th> }
               { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name <i className="fa fa-sort"/></strong></th>}
-              <th>Actions</th>
+              <th></th>
               { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 68}} onClick={() => this.sortUsers('canLogin', 'desc')} className="clickable"><strong>Login <i className="fa fa-sort"/></strong></th>}
               { this.isColumnActive('permissions') && <th style={{minWidth: 78}} onClick={() => this.sortUsersByPermission('Manage Reports')} className="clickable"><strong>Reports <i className="fa fa-sort"/></strong></th>}
