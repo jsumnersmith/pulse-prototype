@@ -14267,6 +14267,182 @@ th.empty {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.directory-header {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.directory-header__title {
+  flex-grow: 1;
+}
+.directory-header__link + .directory-header__link {
+  margin-left: 20px;
+}
+.directory-header__link:not(.btn) {
+  position: relative;
+  text-decoration: none;
+}
+.directory-header__link:not(.btn):after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  background: #bbb;
+  height: 3px;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: width 0.1s ease-in-out;
+}
+.directory-header__link:not(.btn):hover:after {
+  width: 75%;
+}
+.directory-search {
+  display: flex;
+}
+.directory-search__input {
+  flex-grow: 1;
+}
+.directory-type-filter {
+  margin-top: 10px;
+}
+.directory-toggles {
+  display: flex;
+  justify-content: space-between;
+}
+.directory-table-wrapper {
+  margin-top: 20px;
+  overflow-x: scroll;
+  width: 100%;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+.directory-table-wrapper td a {
+  text-decoration: underline;
+}
+.directory-table-header tr {
+  background: none !important;
+}
+.directory-table-header tr .clickable {
+  cursor: pointer;
+}
+.directory-table-header tr .fa-sort {
+  margin-left: 2px;
+  opacity: .5;
+  transition: all 0.2s ease-in-out;
+}
+.directory-table-header tr th:hover .fa-sort {
+  opacity: 0.9;
+}
+.directory-table-header tr:first-child th {
+  background: #eee;
+  border: 2px solid white;
+  border-top: none;
+  text-align: center;
+  font-weight: 700;
+}
+.directory-section-subheader {
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #007DA0;
+}
+.directory h3.inactive {
+  opacity: .5;
+}
+.directory-toggle {
+  display: flex;
+  align-content: center;
+}
+.directory-groups-table,
+.edit-attributes-table,
+.directory-email-table,
+.directory-entity-table,
+.directory-attribute-table {
+  border: 2px solid #eee;
+}
+.directory-groups-table thead,
+.edit-attributes-table thead,
+.directory-email-table thead,
+.directory-entity-table thead,
+.directory-attribute-table thead {
+  background: #eee;
+}
+.directory-groups-table thead th,
+.edit-attributes-table thead th,
+.directory-email-table thead th,
+.directory-entity-table thead th,
+.directory-attribute-table thead th {
+  font-size: 16px;
+}
+.directory-groups-table tr,
+.edit-attributes-table tr,
+.directory-email-table tr,
+.directory-entity-table tr,
+.directory-attribute-table tr,
+.directory-groups-table th,
+.edit-attributes-table th,
+.directory-email-table th,
+.directory-entity-table th,
+.directory-attribute-table th,
+.directory-groups-table thead,
+.edit-attributes-table thead,
+.directory-email-table thead,
+.directory-entity-table thead,
+.directory-attribute-table thead,
+.directory-groups-table tbody,
+.edit-attributes-table tbody,
+.directory-email-table tbody,
+.directory-entity-table tbody,
+.directory-attribute-table tbody,
+.directory-groups-table td,
+.edit-attributes-table td,
+.directory-email-table td,
+.directory-entity-table td,
+.directory-attribute-table td {
+  border-color: #eee !important;
+}
+.directory-email-table tr:last-child {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+.profile__avatar {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.profile__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+.profile__title {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.profile__tags {
+  border-top: 2px rgba(0, 125, 160, 0.1) solid;
+  background: rgba(0, 125, 160, 0.05);
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px 20px 20px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .goal-summary {
   background: white;
   border-radius: 3px;
