@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
 import DirectoryHeader from './DirectoryHeader';
-import users, { groups } from './users.js';
+import users, { groups, emptyGroup } from './users.js';
 
 
 import './directory.less';
@@ -12,6 +12,7 @@ export default class Edit extends Component {
 
   render() {
     const id = this.props.match.params.id;
+    groups.push(emptyGroup);
     const group = groups.find(group => String(group.id) === String(id));
     console.log(id, group);
     return (

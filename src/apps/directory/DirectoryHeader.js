@@ -12,11 +12,11 @@ export default () => (
       <Link className="directory-header__link meta" to={`/directory/entities`}>Other</Link>
       <Link className="directory-header__link meta" to={`/directory/groups`}>Groups</Link>
       <div className="btn-group" style={{marginLeft: 15}}>
-        <button className="btn btn-primary btn-flat directory-header__link" data-toggle="dropdown">Add People <i className="fa fa-caret-down" /></button>
+        <button className="btn btn-primary btn-flat directory-header__link" data-toggle="dropdown">Add <i className="fa fa-caret-down" /></button>
         <ul className="dropdown-menu">
-          <li><a><i className="fa fa-user circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Person</strong></a></li>
-          <li><a><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Group</strong></a></li>
-          <li><a><i className="fa fa-upload circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Upload CSV</strong></a></li>
+          <li><Link to={'/directory/edit/0'}><i className="fa fa-user circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Person</strong></Link></li>
+          <li><Link to={'/directory/groups/edit/0'}><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Group</strong></Link></li>
+          <li><Link to={'/directory/upload'}><i className="fa fa-upload circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Upload CSV</strong></Link></li>
         </ul>
       </div>
     </nav>

@@ -16,6 +16,7 @@
   list-style: none;
   color: @gray-dark;
   cursor: pointer;
+  transition: border .1s ease-in-out;
 
   &.active {
     pointer-events: none;
@@ -23,13 +24,20 @@
     color: white;
     border-radius: 50%;
   }
+  &.inactive:hover {
+    border: 2px solid @orange;
+    border-radius: 50%;
+  }
   &.disabled {
     pointer-events: none;
     opacity: .5;
   }
+  &-direction { border-bottom: 2px solid transparent; }
+  &-direction:hover { border-bottom: 2px solid @orange; }
   & + & { margin-left: 10px; }
   &.directory-page-total {
     margin-left: 25px;
+    font-weight: initial;
   }
   p { margin-bottom: 0;}
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DirectoryHeader from './DirectoryHeader';
 import { Tag } from '@kickup/pulse-ui/src/deprecated';
-import sampleUsers from './users.js';
+import sampleUsers, { emptyUser } from './users.js';
 import _ from 'lodash';
 import BigButton from '../../components/permissionButtons/components/BigButton.js';
 import ListTable from '../../components/listTable';
@@ -15,6 +15,7 @@ import './directory.less';
 export default class Edit extends Component {
   constructor(props){
     super(props);
+    sampleUsers.push(emptyUser);
     let user = sampleUsers.find(user => String(user.id) === String(props.match.params.id));
     this.state = {
       viewPermissions: user.canLogin,
@@ -30,7 +31,9 @@ export default class Edit extends Component {
   }
   render() {
     const id = this.props.match.params.id;
+    sampleUsers.push(emptyUser);
     const user = sampleUsers.find(user => String(user.id) === String(id));
+
     return (
         <div className="wrapper directory">
           <DirectoryHeader/>

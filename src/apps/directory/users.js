@@ -157,7 +157,7 @@ export default [
 
   export const groups = [
     {
-      id: 0,
+      id: 1,
       name: 'Teachers'
     },
     {
@@ -177,6 +177,23 @@ export default [
       name: 'Crocket Middle School'
     }
   ]
+export const emptyGroup = {
+  id: 0,
+  name: 'New Group'
+}
+
+export const emptyUser = {
+  id: 0,
+  name: '',
+  email: '',
+  canLogin: false,
+  school: '',
+  role: '',
+  grade: '',
+  groups: [],
+  permissions: [],
+  restrictions: []
+};
 
 export const nonPeople = [
   {

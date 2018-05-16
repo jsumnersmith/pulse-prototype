@@ -111,7 +111,7 @@ class PeopleList extends Component {
   getColSpan(kind){
     let expectedCols = [];
     if (kind === 'user'){
-      expectedCols = ['email','name', 'actions']
+      expectedCols = ['email','name', 'actions', 'groups']
     } else if (kind === 'permissions') {
       return this.state.showColumns.includes('permissions') ? 6 : 0;
     } else if (kind === 'attributes') {
