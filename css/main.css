@@ -14068,6 +14068,7 @@ th.empty {
   list-style: none;
   color: #666;
   cursor: pointer;
+  transition: border 0.1s ease-in-out;
 }
 .directory-page.active {
   pointer-events: none;
@@ -14075,15 +14076,26 @@ th.empty {
   color: white;
   border-radius: 50%;
 }
+.directory-page.inactive:hover {
+  border: 2px solid #E59062;
+  border-radius: 50%;
+}
 .directory-page.disabled {
   pointer-events: none;
   opacity: .5;
+}
+.directory-page-direction {
+  border-bottom: 2px solid transparent;
+}
+.directory-page-direction:hover {
+  border-bottom: 2px solid #E59062;
 }
 .directory-page + .directory-page {
   margin-left: 10px;
 }
 .directory-page.directory-page-total {
   margin-left: 25px;
+  font-weight: initial;
 }
 .directory-page p {
   margin-bottom: 0;
