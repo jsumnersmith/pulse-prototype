@@ -34,6 +34,17 @@ const ResultsTable = ({successes, failures, total}) => (
   </div>
 );
 
+const ResultsError = ({errorMessage}) => (
+  <div className="upload-results">
+    <div className="upload-results__header">
+      <i className="fa fa-exclamation circle-icon--medium red upload-results__icon" />
+      <div className="upload-results__title">
+        <code>{errorMessage}</code>
+      </div>
+    </div>
+  </div>
+)
+
 export default () => (
   <div className="wrapper">
     <div className="block-flat">
@@ -52,6 +63,8 @@ export default () => (
         successes={0}
         total={539}
       />
+      <ResultsError errorMessage={"Error. Results are malformed and discontent."} />
+      <h5 style={{marginTop: 30}}>Then the results table would go here.</h5>
     </div>
   </div>
 );
