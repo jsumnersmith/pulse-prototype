@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
 import DirectoryHeader from './DirectoryHeader';
-import users, { groups } from './users.js';
+import users, { groups, emptyGroup } from './users.js';
 
 
 import './directory.less';
@@ -12,6 +12,7 @@ export default class Edit extends Component {
 
   render() {
     const id = this.props.match.params.id;
+    groups.push(emptyGroup);
     const group = groups.find(group => String(group.id) === String(id));
     console.log(id, group);
     return (
@@ -31,24 +32,26 @@ export default class Edit extends Component {
                     <SearchInput />
                   </div>
                 </div>
-                <table className="no-border">
-                  <thead className="no-border">
-                    <tr>
-                      <th><strong>Email</strong></th>
-                      <th><strong>Name</strong></th>
-                      <th style={{width: "100px", textAlign: 'center'}}><strong>Action</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody className="no-border-y">
-                    {
-                      this.getUsers(group.name).map(user => <tr>
-                        <td>{user.email}</td>
-                        <td>{user.name}</td>
-                        <td><button className="btn-sm btn btn-danger btn-trans"><i className="fa fa-times"/> Remove</button></td>
-                      </tr>)
-                    }
-                  </tbody>
-                </table>
+                <div className="directory-table-wrapper">
+                  <table className="no-border directory-groups-table">
+                    <thead className="no-border">
+                      <tr>
+                        <th><strong>Email</strong></th>
+                        <th><strong>Name</strong></th>
+                        <th style={{width: "100px", textAlign: 'center'}}><strong>Action</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody className="no-border-y">
+                      {
+                        this.getUsers(group.name).map(user => <tr>
+                          <td><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></td>
+                          <td><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></td>
+                          <td><button className="btn-sm btn btn-danger btn-trans"><i className="fa fa-times"/> Remove</button></td>
+                        </tr>)
+                      }
+                    </tbody>
+                  </table>
+                </div>
                 <hr />
                 <div className="text-center col-md-12">
                   <button className="btn btn-primary">Save</button>

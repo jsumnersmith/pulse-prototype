@@ -38,10 +38,12 @@ import Folders from './apps/folders';
 
 import Directory from './apps/directory';
 import DirectoryGroups from './apps/directory/Groups.js'
+import DirectoryEntities from './apps/directory/Entities.js'
 import DirectoryEdit from './apps/directory/Edit.js'
-import DirectoryEntityEdit from './apps/directory/EditEntity.js'
-import DirectoryAttributesEdit from './apps/directory/EditAttributes.js'
+import DirectoryProfile from './apps/directory/Profile.js'
+import DirectoryEditEntity from './apps/directory/EditEntity.js'
 import DirectoryGroupEdit from './apps/directory/EditGroup.js'
+import DirectoryUpload from './apps/directory/Upload.js'
 
 // Components
 import Visualizations from './components/visualizations';
@@ -170,12 +172,22 @@ export default [
     exact: true
   },
   {
+    component: DirectoryEntities,
+    path: '/directory/entities',
+    exact: true
+  },
+  {
     component: DirectoryEdit,
     path: '/directory/edit/:id',
     exact: true
   },
   {
-    component: DirectoryEntityEdit,
+    component: DirectoryProfile,
+    path: '/directory/profile/:id',
+    exact: true
+  },
+  {
+    component: DirectoryEditEntity,
     path: '/directory/edit/entity/:id',
     exact: true
   },
@@ -184,9 +196,8 @@ export default [
     path: '/directory/groups/edit/:id'
   },
   {
-    component: DirectoryAttributesEdit,
-    path: '/directory/edit/:id/attributes',
-    exact: true
+    component: DirectoryUpload,
+    path: '/directory/upload'
   },
   {
     component: Visualizations,

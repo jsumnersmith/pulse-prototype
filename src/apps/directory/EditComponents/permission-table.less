@@ -1,0 +1,24 @@
+@import '~@kickup/pulse-ui/src/css/globals.less';
+
+.permission-table-row {
+  border: 2px solid transparent;
+  &:first-child { td { border-top: 2px solid @gray-light;} }
+  td {
+    padding: 0;
+    border: 2px solid transparent;
+    &:first-child { border-left: 2px solid transparent;}
+  }
+  td.td-button{
+    .btn-huge {
+      border-color: transparent;
+      background: transparent;
+    }
+    .btn-huge__icon {
+      padding: 15px;
+      width: 50px;
+    }
+    .btn-huge__content {
+      padding: 10px 10px 10px 0;
+    }
+  }
+}

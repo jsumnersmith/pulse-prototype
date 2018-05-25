@@ -72,10 +72,29 @@
 .directory-section-subheader {
   margin-top: 30px;
   padding-bottom: 5px;
-  border-bottom: 3px solid @green;
+  border-bottom: 3px solid @pulse-blue;
+}
+
+.directory h3.inactive {
+  opacity: .5;
 }
 
 .directory-toggle {
   display: flex;
   align-content: center;
+}
+
+.directory-groups-table,
+.edit-attributes-table,
+.directory-email-table,
+.directory-entity-table,
+.directory-attribute-table {
+  border: 2px solid @gray-light;
+  thead { background: @gray-light; th { font-size: 16px; } }
+  tr, th, thead, tbody, td { border-color: @gray-light !important;}
+}
+
+.directory-email-table tr:last-child {
+  border-color: transparent !important;
+  background: transparent !important;
 }
