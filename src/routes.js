@@ -56,6 +56,7 @@ import RubricColors from './components/rubricColors';
 import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
 import TabbedContainer from './components/tabbedContainer';
 import Sharing from './components/sharing';
+import UploadResults from './components/uploadResults';
 
 //Styles
 import Grid from './styles/grid';
@@ -302,11 +303,18 @@ export default [
     component: UserSubmittedEvent,
     path: '/events/submissions/:id'
   },
+
   {
     component: Sharing,
     linkName: "Sharing",
     parent: 'Components',
     path: '/sharing'
+  },
+  {
+    component: UploadResults,
+    linkName: "Upload Results",
+    parent: 'Components',
+    path: '/upload-results'
   },
   {
     component: Grid,
