@@ -34,43 +34,47 @@ export default class Uploader extends Component {
           />
           <div className="invite-basic-info">
             <h3><i className="fa fa-user circle-icon pulse-blue" /> <strong>Add {addMultiple ? "People" : "Person"}</strong></h3>
-            <div className="row" style={{marginBottom: 10}}>
-              <div className="col-md-12">
-                <input className="form-control" placeholder={`${addMultiple ? "Add emails separated by a comma" : "Add email"}`}/>
-              </div>
-            </div>
-            {
-              !addMultiple &&
-                <div className="row">
-                  <div className="col-md-6">
-                    <fieldset className="fieldset" style={{marginBottom: 10}}>
-                      <label>First Name</label>
-                      <input className="form-control" />
-                    </fieldset>
-                  </div>
-                  <div className="col-md-6">
-                    <fieldset className="fieldset">
-                      <label>Last Name</label>
-                      <input className="form-control" />
-                    </fieldset>
-                  </div>
+            <div style={{paddingLeft: 20, paddingRight: 20}}>
+              <div className="row" style={{marginBottom: 10}}>
+                <div className="col-md-12">
+                  <input className="form-control" placeholder={`${addMultiple ? "Add emails separated by a comma" : "Add email"}`}/>
                 </div>
-            }
+              </div>
+              {
+                !addMultiple &&
+                  <div className="row">
+                    <div className="col-md-6">
+                      <fieldset className="fieldset" style={{marginBottom: 10}}>
+                        <label>First Name</label>
+                        <input className="form-control" />
+                      </fieldset>
+                    </div>
+                    <div className="col-md-6">
+                      <fieldset className="fieldset">
+                        <label>Last Name</label>
+                        <input className="form-control" />
+                      </fieldset>
+                    </div>
+                  </div>
+              }
+            </div>
           </div>
           <div className="invite-groups">
             <h3><i className="fa fa-users circle-icon red" /> <strong>Add to Group</strong></h3>
-            <ListTable
-              list={{
-                  title: 'Groups',
-                  items: [
-                    { name: 'English' },
-                    { name: 'Crocket Middle School' },
-                    { name: 'Nimitz High School' },
-                    { name: 'MacArthur High School' }
-                  ]
-                }
-              }
-            />
+              <div style={{paddingLeft: 20, paddingRight: 20}}>
+                <ListTable
+                  list={{
+                      title: 'Groups',
+                      items: [
+                        { name: 'English' },
+                        { name: 'Crocket Middle School' },
+                        { name: 'Nimitz High School' },
+                        { name: 'MacArthur High School' }
+                      ]
+                    }
+                  }
+                />
+              </div>
           </div>
           <div className="invite-permissions row">
             <div className="col-md-12">

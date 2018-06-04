@@ -6,14 +6,14 @@ export default ({addMultiple, toggleMultiple}) => (
       <Button
         isActive={!addMultiple}
         title="Invite a single user"
-        description="Invite a single user and add more details about them."
+        description="Invite a single user and add more details about them including first and last name."
       />
     </div>
     <div className="col-md-6" onClick={()=> toggleMultiple(true)}>
       <Button
         isActive={addMultiple}
         title="Invite multiple users"
-        description="Invite a list of users from a comma-separated list of emails"
+        description="Invite a list of users from a comma-separated list of emails. These users will all share any group, permissions, or restrictions settings."
       />
     </div>
   </div>
