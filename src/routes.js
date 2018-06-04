@@ -46,6 +46,7 @@ import DirectoryProfile from './apps/directory/Profile.js'
 import DirectoryEditEntity from './apps/directory/EditEntity.js'
 import DirectoryGroupEdit from './apps/directory/EditGroup.js'
 import DirectoryUpload from './apps/directory/Upload.js'
+import DirectoryInvite from './apps/directory/Invite.js'
 
 // Components
 import Visualizations from './components/visualizations';
@@ -208,6 +209,10 @@ export default [
   {
     component: DirectoryUpload,
     path: '/directory/upload'
+  },
+  {
+    component: DirectoryInvite,
+    path: '/directory/invite'
   },
   {
     component: Visualizations,
