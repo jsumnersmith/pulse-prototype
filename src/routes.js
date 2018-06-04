@@ -36,6 +36,8 @@ import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
 import Folders from './apps/folders';
 
+import Importer from './apps/importer';
+
 import Directory from './apps/directory';
 import DirectoryGroups from './apps/directory/Groups.js'
 import DirectoryEntities from './apps/directory/Entities.js'
@@ -108,6 +110,13 @@ export default [
     linkName: "Folders",
     parent: 'Apps',
     path: '/folders/',
+    exact: true
+  },
+  {
+    component: Importer,
+    linkName: "Importer",
+    parent: 'Apps',
+    path: '/importer/',
     exact: true
   },
   {
