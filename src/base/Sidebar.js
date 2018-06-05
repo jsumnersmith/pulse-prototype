@@ -36,7 +36,7 @@ export default ({open, toggle = () => {}}) => (
         {
           _.map(nestedLinks, (nestedItems, name) => {
             return (
-              <li className="ku-navigation__menu-item">
+              <li className="ku-navigation__menu-item" key={`nested-${name}`}>
                 <Collapsible transitionTime={200} trigger={<a><i className={`fa ${iconLookup(name)}`}/> {name} <i className="fa fa-chevron-down ku-navigation__menu-toggle" /></a>}>
                   <div className="ku-navigation__submenu">
                     <Subnav navItems={nestedItems} toggle={toggle}/>
@@ -52,11 +52,11 @@ export default ({open, toggle = () => {}}) => (
 )
 
 const Subnav = ({navItems, toggle}) => (
-  <div>
+  <ul>
     {
       navItems.map(route => {
         return <li onClick={toggle} key={route.linkName} className="ku-navigation__submenu-item"><Link to={route.path} >{route.linkName}</Link></li>
       })
     }
-  </div>
+  </ul>
 )

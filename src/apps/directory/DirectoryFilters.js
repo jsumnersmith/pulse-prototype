@@ -45,12 +45,12 @@ export default class Filters extends Component {
         <label style={{marginRight: 10}}>Filter</label>
         {
           _.map(filters, (filterSet, filterName) =>
-              <div className="btn-group">
+              <div className="btn-group" key={`${filterName}`}>
                 <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
                   {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="fa fa-caret-down" />
                 </button>
                 <ul className="dropdown-menu">
-                  {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
+                  {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}} key={`checklist-${filterName}-${filter.name}`}>
                       <a>{this.isActive(filter) ? <i className="fa fa-check-square-o "/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
@@ -62,7 +62,7 @@ export default class Filters extends Component {
         <div style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>{_.map(activeFilters, (filterSet, filterName) =>
           <span style={{display: 'inline-flex', flexWrap: 'wrap', alignItems: 'center', margin: "3px 0"}}>
             <label style={{marginRight: 10}}>{filterName}</label>
-              {filterSet.map(filter => <span style={{marginBottom: 3}}><Tag name={`${filter.name}`} handleClose={() => this.toggleFilter(filter)} /></span>)}
+              {filterSet.map(filter => <span style={{marginBottom: 3}} key={`tag-${filterName}-${filter.name}`}><Tag name={`${filter.name}`} handleClose={() => this.toggleFilter(filter)} /></span>)}
           </span>
         )}
       </div>
