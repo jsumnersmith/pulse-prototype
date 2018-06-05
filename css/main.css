@@ -14113,6 +14113,19 @@ th.empty {
   border-color: transparent !important;
   background: transparent !important;
 }
+.directory-banner {
+  padding: 15px;
+  background: rgba(0, 125, 160, 0.15);
+  margin: -20px -20px 20px -20px;
+}
+.directory-banner__header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.directory-banner__header strong {
+  margin-right: 20px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -14490,6 +14503,19 @@ th.empty {
 .directory-email-table tr:last-child {
   border-color: transparent !important;
   background: transparent !important;
+}
+.directory-banner {
+  padding: 15px;
+  background: rgba(0, 125, 160, 0.15);
+  margin: -20px -20px 20px -20px;
+}
+.directory-banner__header {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.directory-banner__header strong {
+  margin-right: 20px;
 }
 .profile__avatar {
   max-width: 100px;
