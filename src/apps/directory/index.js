@@ -351,7 +351,7 @@ class PeopleList extends Component {
                 { this.isColumnActive('name') && <td><strong><Link to={`/directory/profile/${user.id}`}>{user.name}</Link></strong></td> }
                 <td><Link to={`/directory/edit/${user.id}`} className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" />Edit</Link></td>
                 { this.isColumnActive('groups') && <td>{user.groups.map((group, index) => <Link to={`/directory/groups/edit/${getGroupId(group)}`}>{group}{!isLast(index, user.groups) && ', ' }</Link>)}</td>}
-                { this.isColumnActive('permissions') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
+                { this.isColumnActive('permissions') && <td className="text-center">{user.invitePending ? <i className="fa fa-envelope-open orange"/>: user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Reports') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Events') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Users') && <i className="fa fa-check green" />}</td>}
