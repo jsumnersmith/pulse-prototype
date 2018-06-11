@@ -1,0 +1,70 @@
+@import '~@kickup/pulse-ui/src/css/globals.less';
+
+.importer-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -20px -20px 30px;
+  padding: 15px 20px;
+  background: fadeout(@pulse-blue, 85%);
+  border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+}
+
+.importer-file-name {
+  margin: -30px -20px 30px;
+  background: fadeout(@gray-medium, 65%);
+  padding: 10px 20px;
+}
+.importer-header {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  &__title { flex-grow: 1; }
+}
+
+.importer-file-upload-input__input {
+  text-align:center;
+  background: fadeout(@pulse-blue, 85%);
+  border: 3px dashed @pulse-blue;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.importer-column {
+  border: 1px solid @gray-light;
+  margin-bottom: 20px;
+  &__number {
+    padding: 10px;
+    background: fadeout(@pulse-blue, 85%);
+    text-align: center;
+    border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+  }
+  &__title { padding: 10px 20px; }
+  &__configuration { padding: 20px; }
+  &__table {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('../../images/wave.svg');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      left: 0;
+      bottom: 0px;
+      height: 60px;
+      width: 100%;
+    }
+    table tr:nth-child(2n) { background: fadeout(@pulse-blue, 85%); }
+  }
+}
+
+.kickup-icon {
+  min-width: 84px;
+  background-image: url(../../images/kickup-icon-gray.svg);
+  background-size: 60% 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
