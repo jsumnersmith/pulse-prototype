@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.8b6d5a5e.css",
   "main.css.map": "static/css/main.8b6d5a5e.css.map",
-  "main.js": "static/js/main.d17d2938.js",
-  "main.js.map": "static/js/main.d17d2938.js.map",
+  "main.js": "static/js/main.65cca9b2.js",
+  "main.js.map": "static/js/main.65cca9b2.js.map",
   "static/media/adding-table.less": "static/media/adding-table.b2328beb.less",
   "static/media/address-book-icon.svg": "static/media/address-book-icon.7ae8ff7e.svg",
   "static/media/all-table-icon.svg": "static/media/all-table-icon.cdd68bfd.svg",
@@ -24,9 +24,11 @@
   "static/media/grid.less": "static/media/grid.b2328beb.less",
   "static/media/header.less": "static/media/header.b2328beb.less",
   "static/media/home.less": "static/media/home.b2328beb.less",
+  "static/media/importer.less": "static/media/importer.b2328beb.less",
   "static/media/index.less": "static/media/index.b2328beb.less",
   "static/media/inline-tabs.less": "static/media/inline-tabs.5523d888.less",
   "static/media/interests-icon.svg": "static/media/interests-icon.5249c32e.svg",
+  "static/media/kickup-icon-gray.svg": "static/media/kickup-icon-gray.287f7142.svg",
   "static/media/list-table.less": "static/media/list-table.b2328beb.less",
   "static/media/loading.less": "static/media/loading.b2328beb.less",
   "static/media/manage-data-sources.less": "static/media/manage-data-sources.b2328beb.less",
@@ -46,7 +48,7 @@
   "static/media/scales.less": "static/media/scales.b2328beb.less",
   "static/media/section-icon.svg": "static/media/section-icon.a9549215.svg",
   "static/media/sharing.less": "static/media/sharing.b2328beb.less",
-  "static/media/spreadsheet-icon.svg": "static/media/spreadsheet-icon.318b3efb.svg",
+  "static/media/spreadsheet-icon.svg": "static/media/spreadsheet-icon.3e1e332b.svg",
   "static/media/style.less": "static/media/style.3438eb9e.less",
   "static/media/submenu.less": "static/media/submenu.b2328beb.less",
   "static/media/subnav.less": "static/media/subnav.b2328beb.less",
@@ -55,5 +57,6 @@
   "static/media/tabbed-container.less": "static/media/tabbed-container.b2328beb.less",
   "static/media/tags.less": "static/media/tags.b2328beb.less",
   "static/media/underline.less": "static/media/underline.b2328beb.less",
-  "static/media/upload-results.less": "static/media/upload-results.b2328beb.less"
+  "static/media/upload-results.less": "static/media/upload-results.b2328beb.less",
+  "static/media/wave.svg": "static/media/wave.27000173.svg"
 }

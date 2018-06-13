@@ -13974,6 +13974,91 @@ th.empty {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+.importer-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -20px -20px 30px;
+  padding: 15px 20px;
+  background: rgba(0, 125, 160, 0.15);
+  border-bottom: 3px solid rgba(0, 125, 160, 0.25);
+}
+.importer-file-name {
+  margin: -30px -20px 30px;
+  background: rgba(187, 187, 187, 0.35);
+  padding: 10px 20px;
+}
+.importer-header {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.importer-header__title {
+  flex-grow: 1;
+}
+.importer-file-upload-input__input {
+  text-align: center;
+  background: rgba(0, 125, 160, 0.15);
+  border: 3px dashed #007DA0;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.importer-column {
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.importer-column__number {
+  padding: 10px;
+  background: rgba(0, 125, 160, 0.15);
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 125, 160, 0.25);
+}
+.importer-column__title {
+  padding: 10px 20px;
+}
+.importer-column__configuration {
+  padding: 20px;
+}
+.importer-column__table {
+  position: relative;
+}
+.importer-column__table::before {
+  content: '';
+  position: absolute;
+  background: url(./static/media/wave.27000173.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  left: 0;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+}
+.importer-column__table table tr:nth-child(2n) {
+  background: rgba(0, 125, 160, 0.15);
+}
+.kickup-icon {
+  min-width: 84px;
+  background-image: url(./static/media/kickup-icon-gray.287f7142.svg);
+  background-size: 60% 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
 .directory-header {
   display: flex;
   margin-bottom: 10px;
