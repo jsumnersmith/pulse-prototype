@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { isEmpty } from 'lodash';
-import Dropzone from 'react-dropzone';
+import FileUploader from './FileUploader';
 import Papa from 'papaparse';
 import ImporterHeader from './ImporterHeader';
 import ConfigSelector from './ConfigSelector';
@@ -55,8 +55,6 @@ export default class Importer extends Component {
     e.stopPropagation();
 
     const files = [addFiles[0]];
-    console.log(files)
-    // If the result array has a valid value, do the thing...
     if (!isEmpty(files.filter(Boolean))) {
       Papa.parse(files.filter(Boolean)[0], {complete: (results)=>{
         this.setState({headers: results.data[0], data: results.data, fileName: files.filter(Boolean)[0].name});
@@ -76,7 +74,6 @@ export default class Importer extends Component {
   setConfig(config) {
     this.setState({config}, this.nextStep);
   }
-
 
   render(){
     console.log(this.state.config);
@@ -120,23 +117,7 @@ const FileNameDisplay = ({fileName, restart}) => (
   </div>
 )
 
-const StepOne = ({onAdd}) => (
-  <Dropzone
-    className="importer-file-upload-input__input"
-    onDrop={onAdd}
-  >
-    <div className="file-upload-input__display">
-      <h3>
-        <i className="fa fa-cloud-upload circle-icon pulse-blue" style={{ marginBottom: '10px' }} /> <br />
-        <strong>Drag and drop files to upload</strong> <br />
-        <small>or click to select a file</small>
-      </h3>
-    </div>
-  </Dropzone>
-)
-
+const StepOne = FileUploader;
 const StepTwo = ConfigSelector;
-
 const StepThree = ColumnConfiguration;
-
 const StepFour = AcceptanceTable;
