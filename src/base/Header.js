@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Sidebar from './Sidebar';
-import coffee from '../images/new_coffee.png';
+import UserHeader from './UserHeader';
 import logo from '../images/logo.png';
 import './header.less';
 
@@ -60,13 +60,7 @@ export default class Header extends Component {
           <div className="ku-header-logo text-center">
             <img src={logo} alt="Kickup Logo"/>
           </div>
-          <div className="ku-header-profile">
-            <img src={coffee} alt="Sample Avatar" className="ku-header-profile-image" />
-            <div className="ku-header-profile-name">
-              <h4>Joel Sumner Smith</h4>
-              <h6 className="meta meta-soft">Irving ISD</h6>
-            </div>
-          </div>
+          <UserHeader />
         </header>
         <Sidebar
           open={open}

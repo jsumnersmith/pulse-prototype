@@ -299,7 +299,7 @@ class PeopleList extends Component {
             <div className="btn-group">
               <button className={`btn btn-default ${this.state.checked && this.state.checked.length > 1 && 'btn-disabled'}`} data-toggle="dropdown" title={this.state.checked && this.state.checked.length < 2 ? 'Select some users to perform bulk actions' : ''} disabled={this.state.checked && this.state.checked.length < 2}><i className="fa fa-bolt"/> Bulk Actions <i className="fa fa-caret-down"/></button>
               <ul className="dropdown-menu">
-                <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs"> onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
+                <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs" onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
                 <li className="divider"></li>
                 <li><a><i className="fa fa-envelope circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Send New Invites</strong></a></li>
                 <li><a><i className="fa fa-lock circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Permissions</strong></a></li>
