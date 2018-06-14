@@ -301,9 +301,10 @@ class PeopleList extends Component {
               <ul className="dropdown-menu">
                 <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs"> onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
                 <li className="divider"></li>
+                <li><a><i className="fa fa-envelope circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Send New Invites</strong></a></li>
                 <li><a><i className="fa fa-lock circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Permissions</strong></a></li>
                 <li><a><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Groups</strong></a></li>
-                <li><a><i className="fa fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Delete Users</strong></a></li>
+                <li><a><i className="fa fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Deactivate Users</strong></a></li>
               </ul>
             </div>
           </div>
