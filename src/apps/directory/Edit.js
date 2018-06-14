@@ -341,7 +341,7 @@ export default class Edit extends Component {
 
 const PendingBanner = ({user}) => (
   <div className="directory-banner">
-    <h5 className="directory-banner__header"><strong>{user.name} has a pending invite to KickUp</strong><button className="btn btn-sm btn-primary btn-trans">Resend Invite</button></h5>
+    <h5 className="directory-banner__header"><strong>{user.name} has a pending invite to KickUp</strong><button className="btn btn-sm btn-primary btn-trans" style={{margin: 0}}>Send New Invite</button></h5>
   </div>
 )
 

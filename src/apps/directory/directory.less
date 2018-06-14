@@ -53,6 +53,15 @@
   td a { text-decoration: underline; }
 }
 
+.fixed-column {
+  position: sticky;
+  background: white;
+  left: 0px;
+  z-index: 3;
+  border-bottom: 1px solid #dadada;
+}
+tr:nth-child(2n) td.fixed-column { background: #f8f8f8 } //Color from theme.
+
 .directory-table-header {
   tr {
     background: none !important;
