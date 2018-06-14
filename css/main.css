@@ -15391,10 +15391,13 @@ select.sharing-control {
   max-width: 125px;
 }
 .ku-header-profile {
+  position: relative;
   display: block;
+  min-height: 70px;
   padding: 7px 15px;
   background: white;
   border-left: 1px solid #eee;
+  height: 100%;
 }
 @media screen and (max-width: 660px) {
   .ku-header-profile {
@@ -15421,10 +15424,12 @@ select.sharing-control {
   border: 2px solid rgba(187, 187, 187, 0.9);
   border-radius: 50%;
   vertical-align: top;
+  cursor: pointer;
 }
 .ku-header-profile-name {
   display: inline-block;
   margin-top: 5px;
+  cursor: pointer;
 }
 .ku-header-profile-name > * {
   margin: 5px 0;
@@ -15441,6 +15446,32 @@ select.sharing-control {
 }
 .ku-navigation {
   z-index: 998;
+}
+.ku-header-profile-district-switch {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid rgba(187, 187, 187, 0.9);
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  z-index: -1;
+  transition: top 0.3s ease-in-out;
+}
+.ku-header-profile-district-switch > * {
+  padding: 10px;
+}
+.ku-header-profile-district-switch h6 {
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.ku-header-profile-district-switch h6 + h6 {
+  border-top: 1px solid #eee;
+}
+.ku-header-profile-district-switch.active {
+  top: 100%;
 }
 
 /*# sourceMappingURL=main.css.map*/
