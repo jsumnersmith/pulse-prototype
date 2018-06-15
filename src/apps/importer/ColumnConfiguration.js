@@ -20,10 +20,13 @@ const getRows = (index, data) => {
 
 export default ({data = [], nextStep = () => {}, config=''}) => (
   <div>
-    <div className="row" style={{marginBottom: 10}}>
-      <div className="col-md-12" style={{marginBottom: 20}}>
+    <div style={{marginBottom: 10}}>
+      <div style={{marginBottom: 20, display: 'flex', justifyContent: 'space-between'}}>
         <h5>{ getConfigText(config) }</h5>
+        { config === 'custom' && <SaveCustom />}
       </div>
+    </div>
+    <div className="row">
       {data[0].map((header, index) => <div className="col-md-4"><ConfigurableColumn rows={getRows(index, data)}title={header} index={index + 1}/></div>)}
     </div>
     <button className="btn btn-primary btn-block" onClick={nextStep}>Process Results</button>
@@ -61,5 +64,39 @@ const SampleTable = ({heading, rows}) => (
         {rows.map(row => <tr><td>{row}</td></tr>)}
       </tbody>
     </table>
+  </div>
+)
+
+const SaveCustom = () => (
+  <div>
+    <button className="btn btn-primary btn-trans btn-sm" data-toggle="modal" data-target="#save-modal">Save Configuration</button>
+    <SaveModal />
+  </div>
+)
+
+const SaveModal = () => (
+  <div className="modal modal-background fade in" id="save-modal" tabIndex="-1" role="dialog" style={{display: "none"}}>
+    <div className="modal-dialog">
+      <div className="modal-content" style={{padding: 20}}>
+        <div className="modal-header text-left">
+          <h3><i className="fa fa-pencil circle-icon pulse-blue" style={{marginRight: 5}}/> <strong>Save Configuration</strong></h3>
+          <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
+        </div>
+        <div className="modal-body" style={{padding: 20}}>
+          <div>
+            <fieldset>
+              <label>
+                Configuration Name
+              </label>
+              <input className="form-control"/>
+            </fieldset>
+          </div>
+        </div>
+        <div className="text-center" >
+          <button className="btn btn-primary" data-dismiss="modal">Save</button>
+          <button className="btn btn-danger btn-trans" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
   </div>
 )

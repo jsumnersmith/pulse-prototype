@@ -13,11 +13,11 @@ export default ({data}) => (
     <table className="no-border">
       <thead className="no-border-y no-border">
         <tr>
-          <th><i className="fa fa-check circle-icon--no-border circle-icon--small "/></th>
+          <th className="sticky-header"><i className="fa fa-check circle-icon--no-border circle-icon--small "/></th>
           {data[0].map(column =>
-            <th><strong>{column}</strong></th>
+            <th className="sticky-header"><strong>{column}</strong></th>
           )}
-          <th><strong>Import Type</strong></th>
+          <th className="sticky-header"><strong>Import Type</strong></th>
         </tr>
       </thead>
       <tbody className="no-border-y">
