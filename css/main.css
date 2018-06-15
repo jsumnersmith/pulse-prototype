@@ -14046,6 +14046,11 @@ th.empty {
   background-position: center center;
   background-repeat: no-repeat;
 }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
