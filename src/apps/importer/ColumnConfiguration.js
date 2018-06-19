@@ -23,7 +23,7 @@ export default ({data = [], nextStep = () => {}, config=''}) => (
     <div style={{marginBottom: 10}}>
       <div style={{marginBottom: 20, display: 'flex', justifyContent: 'space-between'}}>
         <h5>{ getConfigText(config) }</h5>
-        { config === 'custom' && <SaveCustom />}
+        { config === 'custom' && <SaveCustom /> }
       </div>
     </div>
     <div className="row">
@@ -47,7 +47,10 @@ const ConfigurableColumn = ({title, index, rows}) => (
           <option selected={title === 'Last Name'}>Last Name</option>
           <option selected={title === 'Email'}>Email</option>
           <option selected={title === 'Groups'}>Groups</option>
-          <option selected={title === 'Tags'}>Tags</option>
+          <option selected={title === 'School'}>School</option>
+          <option selected={title === 'Grade'}>Grade</option>
+          <option selected={title === 'Role'}>Role</option>
+          <option>Create New Attribute</option>
         </optgroup>
       </select>
     </div>

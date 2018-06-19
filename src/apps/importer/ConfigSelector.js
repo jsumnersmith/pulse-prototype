@@ -17,10 +17,10 @@ export default ({config = '', setConfig = (config)=>{return config;}}) =>(
       <span className="meta" style={{margin: '0 20px'}}>or</span>
       <hr style={{flexGrow: 1}} />
     </div>
-    <div >
+    <div>
       <h4>Choose a saved configuration</h4>
     </div>
-    <div style={{display: 'flex', alignItems: 'center'}}>
+    <div style={{display: 'flex', alignItems: 'center', marginBottom: 10}}>
       <i className="fa fa-gears circle-icon--small circle-icon--no-border"   style={{marginRight: 5}}/>
       <label>Configurations</label>
     </div>
