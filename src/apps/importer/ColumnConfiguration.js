@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AdvancedConfigModal from './AdvancedConfigModal';
 
 const getConfigText = (config) => {
   if (config === 'custom'){
@@ -33,29 +34,71 @@ export default ({data = [], nextStep = () => {}, config=''}) => (
   </div>
 )
 
-const ConfigurableColumn = ({title, index, rows}) => (
-  <div className="importer-column">
-    <div className="importer-column__header">
-      <div className="importer-column__number"><label>Column {index}</label></div>
-    </div>
-    <div className="importer-column__configuration">
-      <SampleTable heading={title} rows={rows} />
-      <select className="form-control">
-        <option>--- Select a Column Configuration ---</option>
-        <optgroup label="User/Person">
-          <option selected={title === 'First Name'}>First Name</option>
-          <option selected={title === 'Last Name'}>Last Name</option>
-          <option selected={title === 'Email'}>Email</option>
-          <option selected={title === 'Groups'}>Groups</option>
-          <option selected={title === 'School'}>School</option>
-          <option selected={title === 'Grade'}>Grade</option>
-          <option selected={title === 'Role'}>Role</option>
-          <option>Create New Attribute</option>
-        </optgroup>
-      </select>
-    </div>
-  </div>
-)
+
+class ConfigurableColumn extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      configType: this.getInitialConfig()
+    }
+    this.toggleModal = this.toggleModal.bind(this);
+    this.setConfigType = this.setConfigType.bind(this);
+  }
+  toggleModal(isModalOpen = !this.state.isModalOpen){
+    this.setState({isModalOpen});
+  }
+
+  getInitialConfig(){
+    const {title} = this.props;
+    let configType;
+    const presets = ['First Name', 'Last Name', 'Email', 'School', 'Grade', 'Role'];
+    if (presets.includes(title)) configType = title
+    else configType = 'unknown';
+    return configType;
+  }
+
+  setConfigType(e){
+    let configType = e.target.value;
+    this.setState({configType});
+  }
+
+  render(){
+    const {title, index, rows} = this.props;
+    return (
+      <div className="importer-column">
+        <div className="importer-column__header">
+          <div className="importer-column__number"><label>Column {index}</label></div>
+        </div>
+        <div className="importer-column__configuration">
+          <SampleTable heading={title} rows={rows} />
+          <select className="form-control" onChange={this.setConfigType}>
+            <option >--- Select a Column Configuration ---</option>
+            <optgroup label="User/Person">
+              <option selected={title === 'First Name'} value="First Name">First Name</option>
+              <option selected={title === 'Last Name'} value="Last Name">Last Name</option>
+              <option selected={title === 'Email'} value="Email">Email</option>
+              <option selected={title === 'Groups'} value="Groups">Groups</option>
+              <option selected={title === 'School'} value="School">School</option>
+              <option selected={title === 'Grade'} value="Grade">Grade</option>
+              <option selected={title === 'Role'} value="Role">Role</option>
+              <option value="New Attribute">Create New Attribute</option>
+              <option value="Remove">Deactivate User - True/False</option>
+            </optgroup>
+          </select>
+          <div className="text-center" style={{paddingTop: 10}}><a onClick={this.toggleModal}>Advanced Configuration</a></div>
+          <AdvancedConfigModal
+            configType={this.state.configType}
+            title={title}
+            isOpen={this.state.isModalOpen}
+            close={()=>this.toggleModal(false)}
+            index={index}
+          />
+        </div>
+      </div>
+    )
+  }
+}
 
 const SampleTable = ({heading, rows}) => (
   <div className="importer-column__table">
@@ -103,3 +146,4 @@ const SaveModal = () => (
     </div>
   </div>
 )
+

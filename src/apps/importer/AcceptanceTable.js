@@ -27,7 +27,7 @@ export default ({data}) => (
             {row.map(column => <td>{column}</td>)}
             <td>
               { index === 5 && <span className="blue">Update</span> }
-              { index === 7 && <span className="red-text">Delete</span> }
+              { index === 7 && <span className="red-text">Deactivate</span> }
               { index !== 5 && index !== 7 && <span className="green">Create</span> }
             </td>
           </tr>

@@ -45,20 +45,46 @@
   &__configuration { padding: 20px; }
   &__table {
     position: relative;
+    table, thead, tbody, tr, th, td { border-color: fadeout(@pulse-blue, 85%) !important; }
     &::before {
       content: '';
       position: absolute;
-      background: url('../../images/wave.svg');
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: bottom;
       left: 0;
-      bottom: 0px;
-      height: 60px;
-      width: 100%;
+      bottom: 0;
+      right: 0;
+      background-repeat: repeat;
+      height: 10px;
+      background-size: 20px 20px;
+      background-image:
+      radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
     }
-    table tr:nth-child(2n) { background: fadeout(@pulse-blue, 85%); }
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: repeat;
+      height: 15px;
+      background-size: 40px 20px;
+      background-image:
+        radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+    }
+    table tr:nth-child(2n) {
+      background: fadeout(@pulse-blue, 85%);
+      td:first-child { border-left: none; }
+    }
   }
+}
+
+.blue-header {
+  &__title {
+    padding: 10px;
+    background: fadeout(@pulse-blue, 85%);
+    text-align: center;
+    border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+  }
+  table, thead, tbody, tr, th, td { border-color: fadeout(@pulse-blue, 85%) !important; }
 }
 
 .kickup-icon {
