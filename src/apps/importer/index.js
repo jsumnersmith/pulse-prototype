@@ -113,7 +113,7 @@ const StepFooter = ({step, nextStep, previousStep, disabled}) => (
 
 const FileNameDisplay = ({fileName, restart}) => (
   <div className="importer-file-name">
-    <h5><i className="importer-file-name__icon fa fa-file-code-o"/> You uploaded <strong className="underline--pulse-blue">{fileName}</strong> <span className="meta" onClick={restart} style={{float: 'right', cursor: 'pointer', fontSize: 11}}><i className="fa fa-refresh"/> Start Over</span></h5>
+    <h5><i className="importer-file-name__icon fa fa-file-code-o"/> You uploaded <strong className="underline--pulse-blue">{fileName}</strong> <span className="meta" onClick={restart} style={{float: 'right', cursor: 'pointer', fontSize: 11}}><i className="fa fa-times"/> Cancel Changes</span></h5>
   </div>
 )
 
