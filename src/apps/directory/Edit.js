@@ -19,15 +19,30 @@ export default class Edit extends Component {
     let user = sampleUsers.find(user => String(user.id) === String(props.match.params.id));
     this.state = {
       viewPermissions: user.canLogin,
-      viewRestrictions: user.restrictions.length > 0
+      viewRestrictions: user.restrictions.length > 0,
+      showUpgradeModal: false
     }
     this.togglePermissions = this.togglePermissions.bind(this);
+    this.toggleRestrictions = this.toggleRestrictions.bind(this);
+    this.toggleCanLogin = this.toggleCanLogin.bind(this);
+    this.closeUpgradeModal = this.closeUpgradeModal.bind(this);
   }
   togglePermissions(value){
     this.setState({viewPermissions: value})
   }
   toggleRestrictions(value){
     this.setState({viewRestrictions: value})
+  }
+  toggleCanLogin(){
+    let user = sampleUsers.find(user => String(user.id) === String(this.props.match.params.id));
+    if (!user.canLogin && !this.state.viewPermissions){
+     this.setState({showUpgradeModal: true}, () => this.togglePermissions(!this.state.viewPermissions));
+    } else {
+      this.togglePermissions(!this.state.viewPermissions);
+    }
+  }
+  closeUpgradeModal(){
+    this.setState({showUpgradeModal: false})
   }
   render() {
     const id = this.props.match.params.id;
@@ -39,6 +54,7 @@ export default class Edit extends Component {
           <DirectoryHeader/>
           <Link className="btn btn-back btn-default" to={'/directory'} >Back to Directory</Link>
           <div className="block-flat" style={{marginTop: 10}}>
+            { user.invitePending && <PendingBanner user={user}/>}
             <div className="row">
               <div className="col-md-12">
                 <h3 style={{marginTop: 0}}><i className="fa fa-user circle-icon green" /> <strong>Basic Information</strong></h3>
@@ -116,7 +132,7 @@ export default class Edit extends Component {
                       <button className={`btn btn-xs ${!this.state.viewPermissions && 'btn-success'}`} onClick={() => this.togglePermissions(false)}>No</button>
                     </span>
                   </div>
-                  <span className="directory-big-toggle" onClick={()=>this.togglePermissions(!this.state.viewPermissions)}>
+                  <span className="directory-big-toggle" onClick={()=>this.toggleCanLogin()}>
                     <BigButton
                       isActive={this.state.viewPermissions}
                       title="Allow this person to login"
@@ -284,14 +300,49 @@ export default class Edit extends Component {
               </div>
             </div>
           </div>
-
+          <div className="modal modal-background fade in" id="upgrade-modal" tabIndex="-1" role="dialog" style={{display: this.state.showUpgradeModal ? "block" : "none"}}>
+            <div className="modal-dialog">
+              <div className="modal-content" style={{padding: 20}}>
+                <div className="modal-header text-left">
+                  <h3><i className="fa fa-user circle-icon green" style={{marginRight: 5}}/> <strong>Update information for {user.name}</strong></h3>
+                  <a className="close"  aria-hidden="true" onClick={this.closeUpgradeModal}>×</a>
+                </div>
+                <div className="modal-body" style={{padding: 20}}>
+                  <div>
+                    <fieldset className="fieldset" style={{marginBottom: 10}}>
+                      <label>First Name</label>
+                      <input value={user.name.split(' ')[0]} className="form-control" />
+                    </fieldset>
+                    <fieldset className="fieldset">
+                      <label>Last Name</label>
+                      <input value={user.name.split(' ')[1]} className="form-control" />
+                    </fieldset>
+                    <fieldset className="fieldset" style={{marginTop: 20}}>
+                      <label>Is the following a primary email for this user?</label>
+                      <div style={{margin: '10px 0'}}>
+                        <code>{user.email}</code>
+                      </div>
+                      <button className="btn btn-xs btn-success">Yes</button><button className="btn btn-xs btn-default">No</button>
+                    </fieldset>
+                  </div>
+                </div>
+                <div className="text-center" >
+                  <button className="btn btn-primary" onClick={this.closeUpgradeModal}>Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
   }
 };
 
-
+const PendingBanner = ({user}) => (
+  <div className="directory-banner">
+    <h5 className="directory-banner__header"><strong>{user.name} has a pending invite to KickUp</strong><button className="btn btn-sm btn-primary btn-trans" style={{margin: 0}}>Send New Invite</button></h5>
+  </div>
+)
 
 const Restrictions = () => (
   <div>

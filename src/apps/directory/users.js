@@ -72,7 +72,8 @@ export default [
     grade: '10',
     groups: ['Teachers', 'English', 'Nimitz High School'],
     permissions: ['Manage Reports'],
-    restrictions: []
+    restrictions: [],
+    invitePending: true
 
   },
   {

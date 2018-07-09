@@ -53,6 +53,15 @@
   td a { text-decoration: underline; }
 }
 
+.fixed-column {
+  position: sticky;
+  background: white;
+  left: 0px;
+  z-index: 3;
+  border-bottom: 1px solid #dadada;
+}
+tr:nth-child(2n) td.fixed-column { background: #f8f8f8 } //Color from theme.
+
 .directory-table-header {
   tr {
     background: none !important;
@@ -97,4 +106,16 @@
 .directory-email-table tr:last-child {
   border-color: transparent !important;
   background: transparent !important;
+}
+
+.directory-banner {
+  padding: 15px;
+  background: fadeout(@pulse-blue, 85%);
+  margin: -20px -20px 20px -20px;
+  &__header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    strong { margin-right: 20px; }
+  }
 }

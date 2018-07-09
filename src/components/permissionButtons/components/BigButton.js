@@ -8,7 +8,11 @@ export default class BigButton extends Component {
       isActive: this.props.isActive || false,
       isConfused: this.props.isConfused
     }
-    this.toggleActive = this.toggleActive.bind(this);
+    if (this.props.onClick) {
+      this.toggleActive = this.props.onClick;
+    } else {
+      this.toggleActive = this.toggleActive.bind(this);
+    }
     this.getIconClassName = this.getIconClassName.bind(this);
   }
 

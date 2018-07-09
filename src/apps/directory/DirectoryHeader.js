@@ -14,7 +14,7 @@ export default () => (
       <div className="btn-group" style={{marginLeft: 15}}>
         <button className="btn btn-primary btn-flat directory-header__link" data-toggle="dropdown">Add <i className="fa fa-caret-down" /></button>
         <ul className="dropdown-menu">
-          <li><Link to={'/directory/edit/0'}><i className="fa fa-user circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Person</strong></Link></li>
+          <li><Link to={'/directory/invite'}><i className="fa fa-user circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Invite People</strong></Link></li>
           <li><Link to={'/directory/groups/edit/0'}><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Add Group</strong></Link></li>
           <li><Link to={'/directory/upload'}><i className="fa fa-upload circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Upload CSV</strong></Link></li>
         </ul>

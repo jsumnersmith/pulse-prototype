@@ -1,0 +1,102 @@
+@import '~@kickup/pulse-ui/src/css/globals.less';
+
+.importer-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -20px -20px 30px;
+  padding: 15px 20px;
+  background: fadeout(@pulse-blue, 85%);
+  border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+}
+
+.importer-file-name {
+  margin: -30px -20px 30px;
+  background: fadeout(@gray-medium, 65%);
+  padding: 10px 20px;
+}
+.importer-header {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  &__title { flex-grow: 1; }
+}
+
+.importer-file-upload-input__input {
+  text-align:center;
+  background: fadeout(@pulse-blue, 85%);
+  border: 3px dashed @pulse-blue;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.importer-column {
+  border: 1px solid @gray-light;
+  margin-bottom: 20px;
+  &__number {
+    padding: 10px;
+    background: fadeout(@pulse-blue, 85%);
+    text-align: center;
+    border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+  }
+  &__title { padding: 10px 20px; }
+  &__configuration { padding: 20px; }
+  &__table {
+    position: relative;
+    table, thead, tbody, tr, th, td { border-color: fadeout(@pulse-blue, 85%) !important; }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: repeat;
+      height: 10px;
+      background-size: 20px 20px;
+      background-image:
+      radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: repeat;
+      height: 15px;
+      background-size: 40px 20px;
+      background-image:
+        radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+    }
+    table tr:nth-child(2n) {
+      background: fadeout(@pulse-blue, 85%);
+      td:first-child { border-left: none; }
+    }
+  }
+}
+
+.blue-header {
+  &__title {
+    padding: 10px;
+    background: fadeout(@pulse-blue, 85%);
+    text-align: center;
+    border-bottom: 3px solid fadeout(@pulse-blue, 75%)
+  }
+  table, thead, tbody, tr, th, td { border-color: fadeout(@pulse-blue, 85%) !important; }
+}
+
+.kickup-icon {
+  min-width: 84px;
+  background-image: url('../../images/kickup-icon-gray.svg');
+  background-size: 60% 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white;
+}

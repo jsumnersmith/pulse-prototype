@@ -36,6 +36,8 @@ import MultireferentFormAdd from './apps/multireferentForm/AddForm';
 
 import Folders from './apps/folders';
 
+import Importer from './apps/importer';
+
 import Directory from './apps/directory';
 import DirectoryGroups from './apps/directory/Groups.js'
 import DirectoryEntities from './apps/directory/Entities.js'
@@ -44,6 +46,7 @@ import DirectoryProfile from './apps/directory/Profile.js'
 import DirectoryEditEntity from './apps/directory/EditEntity.js'
 import DirectoryGroupEdit from './apps/directory/EditGroup.js'
 import DirectoryUpload from './apps/directory/Upload.js'
+import DirectoryInvite from './apps/directory/Invite.js'
 
 // Components
 import Visualizations from './components/visualizations';
@@ -108,6 +111,13 @@ export default [
     linkName: "Folders",
     parent: 'Apps',
     path: '/folders/',
+    exact: true
+  },
+  {
+    component: Importer,
+    linkName: "Importer",
+    parent: 'Apps',
+    path: '/importer/',
     exact: true
   },
   {
@@ -199,6 +209,10 @@ export default [
   {
     component: DirectoryUpload,
     path: '/directory/upload'
+  },
+  {
+    component: DirectoryInvite,
+    path: '/directory/invite'
   },
   {
     component: Visualizations,

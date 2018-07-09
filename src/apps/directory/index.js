@@ -299,11 +299,12 @@ class PeopleList extends Component {
             <div className="btn-group">
               <button className={`btn btn-default ${this.state.checked && this.state.checked.length > 1 && 'btn-disabled'}`} data-toggle="dropdown" title={this.state.checked && this.state.checked.length < 2 ? 'Select some users to perform bulk actions' : ''} disabled={this.state.checked && this.state.checked.length < 2}><i className="fa fa-bolt"/> Bulk Actions <i className="fa fa-caret-down"/></button>
               <ul className="dropdown-menu">
-                <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs"> onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
+                <li><div style={{padding:'5px 20px'}}><label>Selected {this.state.checked.length} of {sampleUsers.length}.</label><br/>{ sampleUsers.length > this.state.checked.length && <button className="btn btn-xs" onClick={this.toggleAllChecked}>Select all {sampleUsers.length}</button>}</div></li>
                 <li className="divider"></li>
+                <li><a><i className="fa fa-envelope circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Send New Invites</strong></a></li>
                 <li><a><i className="fa fa-lock circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Permissions</strong></a></li>
                 <li><a><i className="fa fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Groups</strong></a></li>
-                <li><a><i className="fa fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Delete Users</strong></a></li>
+                <li><a><i className="fa fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Deactivate Users</strong></a></li>
               </ul>
             </div>
           </div>
@@ -321,12 +322,11 @@ class PeopleList extends Component {
               <th colSpan="1"><i className="fa fa-check circle-icon--small"/></th>
               { this.showCols('user') && <th colSpan={this.getColSpan('user')}><i className="fa fa-user circle-icon--small"/> User</th>}
               { this.showCols('permissions') && <th colSpan={this.getColSpan('permissions')}><i className="fa fa-unlock circle-icon--small"/> Permissions</th>}
-              { this.showCols('attributes') && <th colSpan={this.getColSpan('attributes')}><i className="fa fa-tags circle-icon--small"/> Attributes</th>}
               { this.showCols('restrictions') && <th colSpan="1"><i className="fa fa-lock circle-icon--small"/></th> }
             </tr>
             <tr>
               <th><input type="checkbox" onChange={this.toggleAllChecked} checked={this.areAllChecked()}/></th>
-              { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable"><strong>Email <i className="fa fa-sort"/></strong></th> }
+              { this.isColumnActive('email') && <th onClick={() => this.sortUsers('email', 'asc')} className="clickable fixed-column"><strong>Email <i className="fa fa-sort"/></strong></th> }
               { this.isColumnActive('name') && <th onClick={() => this.sortUsers('name', 'asc')} style={{minWidth: 100}} className="clickable"><strong>Name <i className="fa fa-sort"/></strong></th>}
               <th></th>
               { this.isColumnActive('groups') && <th style={{minWidth: 200}} onClick={this.sortUsersByGroups} className="clickable"><strong>Groups <i className="fa fa-sort"/></strong></th>}
@@ -347,11 +347,11 @@ class PeopleList extends Component {
             {
               this.getUsers().map(user => <tr>
                 <td><input type="checkbox" checked={this.isChecked(user.id)} onChange={() => this.setChecked(user.id)}/></td>
-                { this.isColumnActive('email') && <td><strong><Link to={`/directory/profile/${user.id}`}>{user.email}</Link></strong></td>}
-                { this.isColumnActive('name') && <td><strong><Link to={`/directory/profile/${user.id}`}>{user.name}</Link></strong></td> }
+                { this.isColumnActive('email') && <td className="fixed-column"><strong><Link to={`/directory/profile/${user.id}`}>{user.email}</Link></strong></td>}
+                { this.isColumnActive('name') && <td className=""><strong><Link to={`/directory/profile/${user.id}`}>{user.name}</Link></strong></td> }
                 <td><Link to={`/directory/edit/${user.id}`} className="btn btn-sm btn-primary btn-trans"><i className="fa fa-pencil" />Edit</Link></td>
                 { this.isColumnActive('groups') && <td>{user.groups.map((group, index) => <Link to={`/directory/groups/edit/${getGroupId(group)}`}>{group}{!isLast(index, user.groups) && ', ' }</Link>)}</td>}
-                { this.isColumnActive('permissions') && <td className="text-center">{user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
+                { this.isColumnActive('permissions') && <td className="text-center">{user.invitePending ? <i className="fa fa-envelope-open orange"/>: user.canLogin ? <i className="fa fa-check green" />: <i className="fa fa-minus-circle red-text"/> }</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Reports') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Events') && <i className="fa fa-check green" />}</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Users') && <i className="fa fa-check green" />}</td>}
