@@ -264,7 +264,7 @@ export default class Edit extends Component {
         </div>
         <div className="modal full-width modal-background fade in" id="sample-modal" tabIndex="-1" role="dialog" style={{dispaly: 'none'}}>
             <div className="modal-dialog">
-              <div className="modal-content">
+              <div className="modal-content" style={{overflowY: 'scroll', maxHeight: '100vh', paddingBottom: 60}}>
                 <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
                   <h3><i className="fa fa-list-alt circle-icon purple" style={{marginRight: 5}}/> <strong>Set Restrictions for {user.name}</strong></h3>
                   <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
@@ -274,9 +274,10 @@ export default class Edit extends Component {
                     <Restrictions />
                   </div>
                 </div>
-                <div className="text-center">
-                  <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save Restrictions</button>
-                </div>
+              </div>
+              <div className="text-center full-width-modal-footer">
+                <button type="button" className="btn btn-primary btn-flat md-close" data-dismiss="modal">Save Restrictions</button>
+                <button type="button" className="btn btn-danger btn-trans btn-flat md-close" data-dismiss="modal">Cancel</button>
               </div>
             </div>
           </div>
@@ -385,5 +386,240 @@ const Restrictions = () => (
         />
       </div>
     </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'School',
+              items: [
+                { name: 'Crocket Middle School' },
+                { name: 'Nimitz High School' },
+                { name: 'MacArthur High School' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Role',
+              items: [
+                { name: 'English' }
+              ]
+            }
+          }
+        />
+      </div>
+      <div className="col-md-4">
+        <ListTable
+          list={{
+              title: 'Grade',
+              items: [
+                { name: '12' },
+                { name: '10' },
+                { name: '6' }
+              ]
+            }
+          }
+        />
+      </div>
+    </div>
+
   </div>
 )
