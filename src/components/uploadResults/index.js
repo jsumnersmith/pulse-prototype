@@ -4,15 +4,19 @@ import './upload-results.less';
 const ResultsTable = ({successes, failures, total}) => (
   <div className="upload-results">
     <div className="upload-results__header">
-      <i className="fa fa-upload circle-icon--medium green upload-results__icon" />
+      {total > 0 ?
+        <i className="fa fa-upload circle-icon--medium green upload-results__icon" />
+      :
+        <i className="fa fa-circle-o-notch fa-spin circle-icon--medium upload-results__icon" />
+      }
       <div className="upload-results__title">
-        <strong>Currently uploading users</strong>
+        <strong>{total > 0 ? "Currently uploading users": "Connecting to upload database"}</strong>
       </div>
       <div className="upload-results__progress">
         {
           successes + failures > 0 && <div className="upload-results__progress-bar" style={{width: `${((successes + failures) / total) * 100}%`}}></div>
         }
-        <strong>{`${Math.round(((successes + failures) / total) * 100)}%`}</strong>
+        <strong>{total > 0 && `${Math.round(((successes + failures) / total) * 100)}%`}</strong>
       </div>
     </div>
     <table className="no-border upload-results__table">
@@ -48,6 +52,11 @@ const ResultsError = ({errorMessage}) => (
 export default () => (
   <div className="wrapper">
     <div className="block-flat">
+      <ResultsTable
+        failures={0}
+        successes={0}
+        total={0}
+      />
       <ResultsTable
         failures={15}
         successes={234}
