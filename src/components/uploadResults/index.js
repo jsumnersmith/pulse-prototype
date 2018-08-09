@@ -57,21 +57,29 @@ export default () => (
         successes={0}
         total={0}
       />
+    </div>
+    <div className="block-flat">
       <ResultsTable
         failures={15}
         successes={234}
         total={539}
       />
+    </div>
+    <div className="block-flat">
       <ResultsTable
         failures={20}
         successes={40}
         total={60}
       />
+    </div>
+    <div className="block-flat">
       <ResultsTable
         failures={0}
         successes={0}
         total={539}
       />
+    </div>
+    <div className="block-flat">
       <ResultsError errorMessage={"Error. Results are malformed and discontent."} />
       <h5 style={{marginTop: 30}}>Then the results table would go here.</h5>
     </div>
