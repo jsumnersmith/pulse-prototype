@@ -14024,20 +14024,55 @@ th.empty {
 .importer-column__table {
   position: relative;
 }
+.importer-column__table table,
+.importer-column__table thead,
+.importer-column__table tbody,
+.importer-column__table tr,
+.importer-column__table th,
+.importer-column__table td {
+  border-color: rgba(0, 125, 160, 0.15) !important;
+}
 .importer-column__table::before {
   content: '';
   position: absolute;
-  background: url(./static/media/wave.27000173.svg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: bottom;
   left: 0;
-  bottom: 0px;
-  height: 60px;
-  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+}
+.importer-column__table::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
 }
 .importer-column__table table tr:nth-child(2n) {
   background: rgba(0, 125, 160, 0.15);
+}
+.importer-column__table table tr:nth-child(2n) td:first-child {
+  border-left: none;
+}
+.blue-header__title {
+  padding: 10px;
+  background: rgba(0, 125, 160, 0.15);
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 125, 160, 0.25);
+}
+.blue-header table,
+.blue-header thead,
+.blue-header tbody,
+.blue-header tr,
+.blue-header th,
+.blue-header td {
+  border-color: rgba(0, 125, 160, 0.15) !important;
 }
 .kickup-icon {
   min-width: 84px;
@@ -14225,6 +14260,14 @@ tr:nth-child(2n) td.fixed-column {
 }
 .directory-banner__header strong {
   margin-right: 20px;
+}
+.full-width-modal-footer {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0 10px;
+  border-top: 1px solid #eee;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -14626,6 +14669,14 @@ tr:nth-child(2n) td.fixed-column {
 }
 .directory-banner__header strong {
   margin-right: 20px;
+}
+.full-width-modal-footer {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0 10px;
+  border-top: 1px solid #eee;
 }
 .profile__avatar {
   max-width: 100px;
