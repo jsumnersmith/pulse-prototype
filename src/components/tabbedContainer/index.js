@@ -3,7 +3,7 @@ import './tabbed-container.less';
 
 export default () => (
   <div className="wrapper">
-    <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="fa fa-calendar circle-icon--medium green"></i> <strong>Search Events</strong></h5>
+    <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="far fa-calendar-alt circle-icon--medium green"></i> <strong>Search Events</strong></h5>
     <div className="block-flat tabbed-block">
       <ul className="nav nav-tabs flex-tabs">
         <li className="active"><a data-toggle="tab" href="#menu1">Item 1</a></li>

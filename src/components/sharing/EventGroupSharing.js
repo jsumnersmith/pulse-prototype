@@ -37,7 +37,7 @@ export default class Sharing extends Component {
             </div>
             <div className="col-md-12">
               <div className="sharing-header" style={{marginTop: 20}}>
-                <h5 className="sharing-header--title"><i className="fa fa-group circle-icon--small" /> <strong>Groups</strong></h5>
+                <h5 className="sharing-header--title"><i className="far fa-group circle-icon--small" /> <strong>Groups</strong></h5>
                 <SearchInput placeholder="Search users or groups to give them access to this event." />
                 <table className="no-border">
                   <thead className="no-border">
@@ -50,8 +50,8 @@ export default class Sharing extends Component {
                     {
                       this.state.groups.map(group =>
                         <tr>
-                          <td><i className="fa fa-group circle-icon--small" /> <strong>{group.name}</strong></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="fa fa-times" />Remove</button></td>
+                          <td><i className="far fa-group circle-icon--small" /> <strong>{group.name}</strong></td>
+                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="far fa-times" />Remove</button></td>
                         </tr>
                       )
                     }
@@ -59,7 +59,7 @@ export default class Sharing extends Component {
                       this.state.users.map((user, index) =>
                         <tr>
                           <td><img src={coffee} className="sharing-user-list--avatar" alt="Coffee Avatar"/> <strong>{user.name}</strong></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(user.name)}><i className="fa fa-times" />Remove</button></td>
+                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(user.name)}><i className="far fa-times" />Remove</button></td>
                         </tr>
                       )
                     }

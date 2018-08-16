@@ -21,7 +21,7 @@ export default () => (
     <div className="cohort__score cohort__score-green"><span className="meta">4.9</span></div>
     <div className="cohort__details">
       <h4 className="cohort__details-title"><strong>4th Grade Harrison Middle School</strong></h4>
-      <h5 className="cohort__details-subtitle"><strong><i className="circle-icon--small fa fa-envelope" /> <span className="underline--orange">55 </span> responses from <i className="circle-icon--small fa fa-user" /> <span className="underline--orange">22 </span> people</strong></h5>
+      <h5 className="cohort__details-subtitle"><strong><i className="circle-icon--small far fa-envelope" /> <span className="underline--orange">55 </span> responses from <i className="circle-icon--small far fa-user" /> <span className="underline--orange">22 </span> people</strong></h5>
     </div>
     <button className="btn btn-default" data-target="#collpsable" data-toggle="collapse">Details</button>
     <div className="cohort__content">

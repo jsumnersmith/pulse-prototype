@@ -8,7 +8,7 @@ export default () => (
   <div className="wrapper wrapper--narrow">
     <SubHeader />
     <div className="block-flat">
-      <h3 ><i className="fa fa-calendar circle-icon pulse-blue"></i> <strong> Details</strong></h3>
+      <h3 ><i className="far fa-calendar-alt circle-icon pulse-blue"></i> <strong> Details</strong></h3>
       <form>
         <fieldset className="form-group">
           <label>Event Name</label>
@@ -23,7 +23,7 @@ export default () => (
           <input className="form-control" placeholder="Event Leaders"/>
         </fieldset>
         <hr/>
-        <h3><i className="fa fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+        <h3><i className="far fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
         <fieldset className="form-group">
           <label>Date</label>
           <DatePicker
@@ -49,7 +49,7 @@ export default () => (
           <input className="form-control" placeholder="Event Location"/>
         </fieldset>
         <hr />
-        <h3><i className="fa fa-file-text circle-icon green"></i> <strong> Documentation</strong></h3>
+        <h3><i className="far fa-file-text circle-icon green"></i> <strong> Documentation</strong></h3>
         <fieldset className="form-group">
           <label>Add Link</label>
           <input className="form-control" placeholder="Event Location"/>
@@ -57,7 +57,7 @@ export default () => (
           <input className="form-control" placeholder="This will be a file uploader"/>
         </fieldset>
         <hr/>
-        <h3><i className="fa fa-info circle-icon red"></i> <strong>Meta Data</strong></h3>
+        <h3><i className="far fa-info circle-icon red"></i> <strong>Meta Data</strong></h3>
         <fieldset className="form-group">
           <span>LIST TABLE</span>
         </fieldset>
@@ -65,8 +65,8 @@ export default () => (
           <span>LIST TABLE</span>
         </fieldset>
         <fieldset className="text-center form-group">
-          <a href="#submitted" className="btn btn-success"><i className="fa fa-check"></i> Save and Publish Event</a>
-          <a href="#invited" className="btn btn-primary"><i className="fa fa-envelope"></i> Invite People</a>
+          <a href="#submitted" className="btn btn-success"><i className="far fa-check"></i> Save and Publish Event</a>
+          <a href="#invited" className="btn btn-primary"><i className="far fa-envelope"></i> Invite People</a>
         </fieldset>
       </form>
     </div>

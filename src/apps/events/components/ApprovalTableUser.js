@@ -22,7 +22,7 @@ export default class ApprovalTable extends Component {
     <div>
       <h5 className="event-list-title" style={{background: "#8B698E"}}>
           <div style={{display:"inline-block", width: "calc(100% - 500px)"}}>
-            <i className="fa fa-check circle-icon--medium purple color-text"></i>
+            <i className="far fa-check circle-icon--medium purple color-text"></i>
             <strong>Submitted Events</strong>
           </div>
           <span style={{display: "inline-block", width: 500}} className="text-right">
@@ -54,7 +54,7 @@ export default class ApprovalTable extends Component {
                       <td>{moment(submittedEvent.date).format('MMMM Do, YYYY')}</td>
                       <td><strong>{submittedEvent.name}</strong></td>
                       <td className="text-center">
-                        <Link to={`/events/submissions/${submittedEvent.id}`} className="btn btn-trans btn-primary btn-sm" ><i className="fa fa-info"></i> See Details</Link>
+                        <Link to={`/events/submissions/${submittedEvent.id}`} className="btn btn-trans btn-primary btn-sm" ><i className="far fa-info"></i> See Details</Link>
                       </td>
                       <td>
                         <DisplayStatus status={`${this.state.show === 'active' ? 'pending' : 'closed'}`}/>
@@ -73,10 +73,10 @@ export default class ApprovalTable extends Component {
 
 const DisplayStatus = ({status}) =>(
   <div>
-    {status === 'pending' && <h5><strong><i className="fa fa-hourglass orange circle-icon--small white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
-    {status === 'approved' && <h5><strong><i className="fa fa-thumbs-up pulse-blue circle-icon--small white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
-    {status === 'denied' && <h5><strong><i className="fa fa-times red circle-icon--small white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
-    {status === 'closed' && <h5><strong><i className="fa fa-minus red circle-icon--small white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
-    {status === 'confirmed' && <h5><strong><i className="fa fa-check green circle-icon--small white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
+    {status === 'pending' && <h5><strong><i className="far fa-hourglass orange circle-icon--small white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
+    {status === 'approved' && <h5><strong><i className="far fa-thumbs-up pulse-blue circle-icon--small white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
+    {status === 'denied' && <h5><strong><i className="far fa-times red circle-icon--small white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
+    {status === 'closed' && <h5><strong><i className="far fa-minus red circle-icon--small white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
+    {status === 'confirmed' && <h5><strong><i className="far fa-check green circle-icon--small white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
   </div>
 )

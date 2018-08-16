@@ -4,7 +4,7 @@ import './upload-results.less';
 const ResultsTable = ({successes, failures, total}) => (
   <div className="upload-results">
     <div className="upload-results__header">
-      <i className="fa fa-upload circle-icon--medium green upload-results__icon" />
+      <i className="far fa-upload circle-icon--medium green upload-results__icon" />
       <div className="upload-results__title">
         <strong>Currently uploading users</strong>
       </div>
@@ -18,9 +18,9 @@ const ResultsTable = ({successes, failures, total}) => (
     <table className="no-border upload-results__table">
       <thead className="no-border">
         <tr className="text-center">
-          <th className="text-center"><strong><i className="fa fa-list-alt" /> Completed</strong></th>
-          <th className="text-center"><strong><i className="fa fa-check green" /> Successes</strong></th>
-          <th className="text-center"><strong><i className="fa fa-times red" /> Failures</strong></th>
+          <th className="text-center"><strong><i className="far fa-list-alt" /> Completed</strong></th>
+          <th className="text-center"><strong><i className="far fa-check green" /> Successes</strong></th>
+          <th className="text-center"><strong><i className="far fa-times red" /> Failures</strong></th>
         </tr>
       </thead>
       <tbody className="no-border-y">
@@ -37,7 +37,7 @@ const ResultsTable = ({successes, failures, total}) => (
 const ResultsError = ({errorMessage}) => (
   <div className="upload-results">
     <div className="upload-results__header">
-      <i className="fa fa-exclamation circle-icon--medium red upload-results__icon" />
+      <i className="far fa-exclamation circle-icon--medium red upload-results__icon" />
       <div className="upload-results__title">
         <code>{errorMessage}</code>
       </div>

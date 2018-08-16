@@ -7,7 +7,7 @@ export default () => (
     <div className="block-flat">
       <div className="row">
         <div className="col-md-6">
-          <h3><i className="fa fa-user circle-icon pulse-blue"/> <strong>Edit User</strong></h3>
+          <h3><i className="far fa-user circle-icon pulse-blue"/> <strong>Edit User</strong></h3>
           <fieldset>
             <label>First Name</label>
             <input className="form-control"/>
@@ -22,14 +22,14 @@ export default () => (
           </fieldset>
         </div>
         <div className="col-md-6">
-          <h3><i className="fa fa-unlock-alt circle-icon green"/> <strong>Set Permissions</strong></h3>
+          <h3><i className="far fa-unlock-alt circle-icon green"/> <strong>Set Permissions</strong></h3>
           <BigButton
             iconclassName="fa-file-text-o"
             title="Manage Reports"
             description="User will be able to create, edit, and view all reports"
           />
           <BigButton
-            iconclassName="fa-calendar"
+            iconclassName="fa-calendar-alt"
             title="Manage Events"
             description="User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
           />
@@ -69,7 +69,7 @@ export default () => (
             description="User will be able to create, edit, and view all reports"
           />
           <BigButton
-            iconclassName="fa-calendar"
+            iconclassName="fa-calendar-alt"
             title="Manage Events"
             description="User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
           />

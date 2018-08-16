@@ -8,7 +8,7 @@ export default () => (
         <div className="attribute-header">
           <div className="search-box text-center">
             <div className="input-group">
-              <span className="input-group-addon"><i className="fa fa-search"></i></span>
+              <span className="input-group-addon"><i className="far fa-search"></i></span>
               <input className="form-control search-box-input" type="text" placeholder="Search to filter tags" />
             </div>
           </div>
@@ -16,182 +16,182 @@ export default () => (
         <div>
           <div className="attribute-value-list">
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="enough time" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample2"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample2"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="time" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample2" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample3"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample3"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="differentiation" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample3" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="curriculum" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample4" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample5"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample5"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="testing" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample5" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="collaboration" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
-              <i className="fa fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
+              <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
                 <input className="form-control"  value="Extra Tag Name" />
               </h5>
               <span className="meta" style={{display: "inline-block", marginLeft: 20}} data-toggle="popover" data-html="true" data-trigger="hover" data-content="<div><p><span className='orange'>30</span> responses tagged<br/>in the following reports:</p><ul><li className='meta'>Report 1</li><li className='meta'>Report 2</li></ul></div>" >
                 <span className="orange">30</span> responses tagged
               </span>
-              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="fa fa-code-fork" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="fa fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@ export default () => (
           </div>
           <div className="modal-body">
             <div className="text-center">
-              <div className="i-circle danger"><i className="fa fa-tag"></i></div>
+              <div className="i-circle danger"><i className="far fa-tag"></i></div>
               <h3 style={{fontWeight: 700, display: "block"}}>There are <strong className="red-text">34</strong> responses tagged with Tag Name?</h3>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default () => (
               <div style={{margin: 20}}>
                 <span className="tag label  label-default">
                   <span className="tag-inner">
-                    <i className="fa fa-tag"></i> enough time
+                    <i className="far fa-tag"></i> enough time
                   </span>
                 </span>
               </div>

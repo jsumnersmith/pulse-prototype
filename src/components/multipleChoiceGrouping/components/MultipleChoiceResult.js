@@ -57,7 +57,7 @@ class MultipleChoiceResult extends Component {
           <tbody>
             <tr>
               <td className="multiple-choice-question-icon">
-                <i className="fa fa-list-ul circle-icon--small meeting-goals" />
+                <i className="far fa-list-ul circle-icon--small meeting-goals" />
               </td>
               <td>
                 <h4 className="multiple-choice-question-title">{this.props.question.title}</h4>
@@ -235,7 +235,7 @@ class MultipleChoiceAnswers extends Component {
         {
           this.showViewMore() ?
             <div className="multiple-choice-answers-view-more">
-              <a className="meta view-more-button" onClick={this.toggleViewMore}><i className={`fa ${this.state.slice ? 'fa-plus' : 'fa-minus'}`} /> View {this.state.slice ? 'More' : 'Less'}</a>
+              <a className="meta view-more-button" onClick={this.toggleViewMore}><i className={`far ${this.state.slice ? 'fa-plus' : 'fa-minus'}`} /> View {this.state.slice ? 'More' : 'Less'}</a>
             </div>
           :
             <span />

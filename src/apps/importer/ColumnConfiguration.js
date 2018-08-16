@@ -125,7 +125,7 @@ const SaveModal = () => (
     <div className="modal-dialog">
       <div className="modal-content" style={{padding: 20}}>
         <div className="modal-header text-left">
-          <h3><i className="fa fa-pencil circle-icon pulse-blue" style={{marginRight: 5}}/> <strong>Save Configuration</strong></h3>
+          <h3><i className="far fa-pencil circle-icon pulse-blue" style={{marginRight: 5}}/> <strong>Save Configuration</strong></h3>
           <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
         </div>
         <div className="modal-body" style={{padding: 20}}>

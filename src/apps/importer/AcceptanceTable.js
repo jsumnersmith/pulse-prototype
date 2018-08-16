@@ -13,7 +13,7 @@ export default ({data}) => (
     <table className="no-border">
       <thead className="no-border-y no-border">
         <tr>
-          <th className="sticky-header"><i className="fa fa-check circle-icon--no-border circle-icon--small "/></th>
+          <th className="sticky-header"><i className="far fa-check circle-icon--no-border circle-icon--small "/></th>
           {data[0].map(column =>
             <th className="sticky-header"><strong>{column}</strong></th>
           )}

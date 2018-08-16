@@ -197,10 +197,10 @@ export default () => (
             <div className="header">
               <div className="actions">
                 <a href="#sample" className="minimize">
-                  <i className="fa fa-chevron-down"></i>
+                  <i className="far fa-chevron-down"></i>
                 </a>
                 <a href="#sample" className="close-down">
-                  <i className="fa fa-times"></i>
+                  <i className="far fa-times"></i>
                 </a>
               </div>
               <div className="input-group text-left">
@@ -229,10 +229,10 @@ export default () => (
             <div className="header">
               <div className="actions">
                 <a href="#sample" className="minimize">
-                  <i className="fa fa-chevron-down"></i>
+                  <i className="far fa-chevron-down"></i>
                 </a>
                 <a href="#sample" className="close-down">
-                  <i className="fa fa-times"></i>
+                  <i className="far fa-times"></i>
                 </a>
               </div>
               <div className="input-group text-left">
@@ -312,10 +312,10 @@ export default () => (
             <div className="header">
               <div className="actions">
                 <a href="#sample" className="minimize">
-                  <i className="fa fa-chevron-down"></i>
+                  <i className="far fa-chevron-down"></i>
                 </a>
                 <a href="#sample" className="close-down">
-                  <i className="fa fa-times"></i>
+                  <i className="far fa-times"></i>
                 </a>
               </div>
               <div className="input-group text-left">
@@ -344,10 +344,10 @@ export default () => (
             <div className="header">
               <div className="actions">
                 <a href="#sample" className="minimize">
-                  <i className="fa fa-chevron-down"></i>
+                  <i className="far fa-chevron-down"></i>
                 </a>
                 <a href="#sample" className="close-down">
-                  <i className="fa fa-times"></i>
+                  <i className="far fa-times"></i>
                 </a>
               </div>
               <div className="input-group text-left">
@@ -361,7 +361,7 @@ export default () => (
                   <div className="section-builder-new-header">
                     <div className="section-builder-widget-icon"></div>
                     <span className="section-builder-widget-title">Heatmap</span>
-                    <a className="section-builder-widget-btn" data-toggle="collapse" data-target="#next-config"><i className="fa fa-gear"></i></a>
+                    <a className="section-builder-widget-btn" data-toggle="collapse" data-target="#next-config"><i className="far fa-gear"></i></a>
                   </div>
                   <div id="next-config" className="collapse section-builder-widget-config">
                     <div className="input-group">
@@ -374,7 +374,7 @@ export default () => (
                         Sort topics alphabetically?
                       </label>
                     </div>
-                    <a data-toggle="modal" data-target="#attributes" type="button" className="btn btn-default"><i className="fa fa-filter"></i> Set Data Filters</a>
+                    <a data-toggle="modal" data-target="#attributes" type="button" className="btn btn-default"><i className="far fa-filter"></i> Set Data Filters</a>
                   </div>
                 </div>
                 <div className="section-builder-new" draggable="true">
@@ -455,36 +455,10 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Classroom Observation</strong></td><td></td>
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Classroom Observation</strong></td><td></td>
                                 </tr>
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Learning Walk</strong></td><td></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="list-table-wrapper report-builder-table-checklist">
-                  <table className="list-table list-table--simple table-responsive no-border">
-                    <thead className="no-border">
-                      <tr className="list-table-header report-builder-table-header-checkbox">
-                        <th><div><i className="fa fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Schools</div></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="list-table-content">
-                        <td className="list-table-content-column">
-                          <div className="list-table-column-wrapper constrained">
-                            <table className="list-table-column">
-                              <tbody className="no-border-x no-border-y">
-                                <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton MS/Freshman Center</strong></td>
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Learning Walk</strong></td><td></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -500,7 +474,7 @@ export default () => (
                   <table className="list-table list-table--simple table-responsive no-border">
                     <thead className="no-border">
                       <tr className="list-table-header report-builder-table-header-checkbox">
-                        <th><div><i className="fa fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Other Attribute</div></th>
+                        <th><div><i className="far fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Schools</div></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -510,10 +484,7 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>BOSCO</strong></td>
-                                </tr>
-                                <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton HS</strong></td>
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton MS/Freshman Center</strong></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -529,7 +500,7 @@ export default () => (
                   <table className="list-table list-table--simple table-responsive no-border">
                     <thead className="no-border">
                       <tr className="list-table-header report-builder-table-header-checkbox">
-                        <th><div><i className="fa fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Another Attribute</div></th>
+                        <th><div><i className="far fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Other Attribute</div></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -539,10 +510,39 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Cambridge ES</strong></td>
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>BOSCO</strong></td>
                                 </tr>
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="fa fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Gladden ES</strong></td>
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton HS</strong></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="list-table-wrapper report-builder-table-checklist">
+                  <table className="list-table list-table--simple table-responsive no-border">
+                    <thead className="no-border">
+                      <tr className="list-table-header report-builder-table-header-checkbox">
+                        <th><div><i className="far fa-check-square blue" style={{paddingLeft: 8, paddingRight: 16}}></i>Another Attribute</div></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="list-table-content">
+                        <td className="list-table-content-column">
+                          <div className="list-table-column-wrapper constrained">
+                            <table className="list-table-column">
+                              <tbody className="no-border-x no-border-y">
+                                <tr className="report-builder-table-checklist-row">
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Cambridge ES</strong></td>
+                                </tr>
+                                <tr className="report-builder-table-checklist-row">
+                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Gladden ES</strong></td>
                                 </tr>
                               </tbody>
                             </table>

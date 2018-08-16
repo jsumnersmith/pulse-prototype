@@ -10,7 +10,7 @@ export default ({onAdd}) => (
     >
       <div className="file-upload-input__display">
         <h3>
-          <i className="fa fa-cloud-upload circle-icon pulse-blue" style={{ marginBottom: '10px' }} /> <br />
+          <i className="far fa-cloud-upload-alt circle-icon pulse-blue" style={{ marginBottom: '10px' }} /> <br />
           <strong>Drag and drop files to upload</strong> <br />
           <small>or click to select a file</small>
         </h3>

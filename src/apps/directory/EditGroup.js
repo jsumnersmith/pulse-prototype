@@ -22,11 +22,11 @@ export default class Edit extends Component {
           <div className="block-flat" style={{marginTop: 10}}>
             <div className="row">
               <div className="col-md-12">
-                <h3 style={{marginTop: 0}}><i className="fa fa-info circle-icon pulse-blue" /> <strong>Edit Details</strong></h3>
+                <h3 style={{marginTop: 0}}><i className="far fa-info circle-icon pulse-blue" /> <strong>Edit Details</strong></h3>
                 <label>Name</label>
                 <input value={group.name} className="form-control" />
                 <hr />
-                <h3><i className="fa fa-users circle-icon yellow" /> <strong>Members</strong></h3>
+                <h3><i className="far fa-users circle-icon yellow" /> <strong>Members</strong></h3>
                 <div className="directory-search">
                   <div className="directory-search__input">
                     <SearchInput />
@@ -46,7 +46,7 @@ export default class Edit extends Component {
                         this.getUsers(group.name).map(user => <tr>
                           <td><Link to={`/directory/edit/${user.id}`}>{user.email}</Link></td>
                           <td><Link to={`/directory/edit/${user.id}`}>{user.name}</Link></td>
-                          <td><button className="btn-sm btn btn-danger btn-trans"><i className="fa fa-times"/> Remove</button></td>
+                          <td><button className="btn-sm btn btn-danger btn-trans"><i className="far fa-times"/> Remove</button></td>
                         </tr>)
                       }
                     </tbody>

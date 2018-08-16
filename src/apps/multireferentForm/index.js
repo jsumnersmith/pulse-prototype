@@ -11,7 +11,7 @@ export default ({ match }) => (
       <div className="content">
         <div className="response-configurations">
           <div className="response-configuration">
-            <i className="fa fa-envelope circle-icon--medium"/>
+            <i className="far fa-envelope circle-icon--medium"/>
             <div className="response-configuration__content">
               <h4 className="response-configuration__title"><strong>Response #1 Short Name</strong></h4>
               <ul className="response-configuration__details">
@@ -19,7 +19,7 @@ export default ({ match }) => (
               </ul>
             </div>
             <div>
-              <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors"><i className="fa fa-list"/> Processor List</button>
+              <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors"><i className="far fa-list"/> Processor List</button>
             </div>
             <div>
               <button className="btn btn-primary">Edit</button>
@@ -49,7 +49,7 @@ export default ({ match }) => (
             </div>
           </div>
           <div className="response-configuration">
-          <i className="fa fa-envelope circle-icon--medium"/>
+          <i className="far fa-envelope circle-icon--medium"/>
           <div className="response-configuration__content">
             <h4 className="response-configuration__title"><strong>Response #2 Short Name</strong></h4>
             <ul className="response-configuration__details">
@@ -57,7 +57,7 @@ export default ({ match }) => (
             </ul>
           </div>
           <div>
-            <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors2"><i className="fa fa-list"/> Processor List</button>
+            <button className="btn btn-default" data-toggle="collapse" data-target="#proccessors2"><i className="far fa-list"/> Processor List</button>
           </div>
           <div>
             <button className="btn btn-primary">Edit</button>
@@ -87,7 +87,7 @@ export default ({ match }) => (
         </div>
         </div>
           <Link to={`${match.url}/add`} className="btn btn-block btn-default" style={{marginLeft:0}}>
-            <i className="fa fa-plus-circle"/> Add Response Configuration
+            <i className="far fa-plus-circle"/> Add Response Configuration
           </Link>
         </div>
       </div>

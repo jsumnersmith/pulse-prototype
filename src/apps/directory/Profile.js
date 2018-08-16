@@ -19,7 +19,7 @@ export default class Profile extends Component {
             <div className="profile__header">
               <img src={coffee} className="profile__avatar" alt={user.name}/>
               <h3 className="profile__title"><strong>{user.name}</strong></h3>
-              <h5><i className="fa fa-envelope-o" style={{marginRight: 5}}/> {user.email}</h5>
+              <h5><i className="far fa-envelope-o" style={{marginRight: 5}}/> {user.email}</h5>
             </div>
             <div className="profile__tags">
               <div className="text-center"><label>Attributes</label></div>

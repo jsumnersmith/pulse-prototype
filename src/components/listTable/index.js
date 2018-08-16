@@ -15,7 +15,7 @@ export default class List extends Component {
                 <tr className="list-table-name-row" key={String(i)}>
                   <td>
                     <input type="checkbox" />
-                    <div className="list-table-teacher">{item.name}{item.options && <span data-toggle="collapse" data-target={`#${String(i)}${randomNumber}`} style={{float: 'right'}}><i className="fa fa-chevron-down" /></span>}</div>
+                    <div className="list-table-teacher">{item.name}{item.options && <span data-toggle="collapse" data-target={`#${String(i)}${randomNumber}`} style={{float: 'right'}}><i className="far fa-chevron-down" /></span>}</div>
                     {item.options && <div className="collapse" id={`${String(i)}${randomNumber}`}>
                       {item.options}
                     </div>}

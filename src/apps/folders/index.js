@@ -49,15 +49,15 @@ const ReportItem = ({index, showTags}) => (
       <div className="btn-group">
         <button className="btn btn-primary">View Report</button>
         <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <i className="fa fa-caret-down" />
+          <i className="far fa-caret-down" />
           <span className="sr-only">Toggle Dropdown</span>
         </button>
         <ul className="dropdown-menu" role="menu">
-          <li><a><i className="fa fa-pencil"/> &nbsp; Edit Report</a></li>
-          <li><a><i className="fa fa-share"/> &nbsp; Share Report</a></li>
-          <li><a><i className="fa fa-clone"/> &nbsp; Copy Report</a></li>
+          <li><a><i className="far fa-pencil"/> &nbsp; Edit Report</a></li>
+          <li><a><i className="far fa-share"/> &nbsp; Share Report</a></li>
+          <li><a><i className="far fa-clone"/> &nbsp; Copy Report</a></li>
           <li className="divider"></li>
-          <li><a><i className="fa fa-eye-slash"/> &nbsp; Hide Report</a></li>
+          <li><a><i className="far fa-eye-slash"/> &nbsp; Hide Report</a></li>
         </ul>
       </div>
     </td>
@@ -66,8 +66,8 @@ const ReportItem = ({index, showTags}) => (
 
 const SharingStats = () => (
   <div className="report-item__sharing">
-    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="user@email.com, other@email.com, others@my.email.com"><i className="fa fa-user circle-icon--small" /> <strong>{Math.floor(Math.random() * 10) + 1}</strong> users</a></span>
-    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="Admins, Principals, Teachers, Coaches"><i className="fa fa-users circle-icon--small" /> <strong>{Math.floor(Math.random() * 3) + 1}</strong> groups</a></span>
+    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="user@email.com, other@email.com, others@my.email.com"><i className="far fa-user circle-icon--small" /> <strong>{Math.floor(Math.random() * 10) + 1}</strong> users</a></span>
+    <span><a data-toggle="popover" data-trigger="focus" title="Shared with" data-content="Admins, Principals, Teachers, Coaches"><i className="far fa-users circle-icon--small" /> <strong>{Math.floor(Math.random() * 3) + 1}</strong> groups</a></span>
   </div>
 );
 
@@ -91,11 +91,11 @@ class Collections extends Component {
           <div className={`collections__item ${this.checkActive(3)}`} onClick={()=>(this.setState({count: 3}))}>
             Special Vintage Collection
           </div>
-          <button className="btn btn-default btn-sm btn-trans collections__add-collection"><i className="fa fa-plus"/> New Collection</button>
+          <button className="btn btn-default btn-sm btn-trans collections__add-collection"><i className="far fa-plus"/> New Collection</button>
         </div>
         <div className="collections__reports">
           <ReportList count={this.state.count} />
-          { this.state.count !== 5 ? <button className="btn btn-sm btn-default btn-trans collections__add-report"><i className="fa fa-file-text-o"/> Add Report to Collection</button> : null }
+          { this.state.count !== 5 ? <button className="btn btn-sm btn-default btn-trans collections__add-report"><i className="far fa-file-text-o"/> Add Report to Collection</button> : null }
         </div>
       </div>
     )

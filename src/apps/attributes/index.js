@@ -14,25 +14,25 @@ export default () => (
         </div>
         <div className="attribute-value-list">
           <div className="attribute-value-item" sortable="true" draggable="true">
-            <i className="fa fa-bars" style={{marginLeft: 20}}></i>
+            <i className="far fa-bars" style={{marginLeft: 20}}></i>
             <h5 className="attribute-value-title">
               <input className="form-control"  value="Possible Attribute Value" />
             </h5>
-            <i className="fa fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
           <div className="attribute-value-item" sortable="true" draggable="true">
-            <i className="fa fa-bars" style={{marginLeft: 20}}></i>
+            <i className="far fa-bars" style={{marginLeft: 20}}></i>
             <h5 className="attribute-value-title">
               <input className="form-control"  value="Other Attribute Value" />
             </h5>
-            <i className="fa fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
           <div className="attribute-value-item" sortable="true" draggable="true">
-            <i className="fa fa-bars" style={{marginLeft: 20}}></i>
+            <i className="far fa-bars" style={{marginLeft: 20}}></i>
             <h5 className="attribute-value-title">
               <input className="form-control"  value="One More Attribute Value" />
             </h5>
-            <i className="fa fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
         </div>
         <a className="btn btn-success" data-toggle="modal" data-target="#sample-merge-modal" style={{marginTop: 20}}>Test Merge Modal</a>
@@ -48,7 +48,7 @@ export default () => (
           </div>
           <div className="modal-body">
             <div className="text-center">
-              <div className="i-circle danger"><i className="fa fa-question"></i></div>
+              <div className="i-circle danger"><i className="far fa-question"></i></div>
               <div>There are <strong>34</strong> users connected to this attribute?</div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default () => (
           <div className="modal-body">
             <div className="text-center">
               <h2><strong>Possible Attribute Value</strong></h2>
-              <h2><i className="fa fa-arrow-down" style={{color: "#1b9974", margin: "10px auto"}}></i></h2>
+              <h2><i className="far fa-arrow-down" style={{color: "#1b9974", margin: "10px auto"}}></i></h2>
               <h2><strong>Other Attribute Value</strong></h2>
               <div style={{marginTop: 20}}>Would you like to merge all instances of these values?</div>
             </div>

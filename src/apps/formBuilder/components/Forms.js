@@ -248,7 +248,7 @@ export const scaledMatrixForm = (
 
 export const interestsForm = (
   <div>
-    <p><i className="fa fa-info-circle orange"/> Select topics in which survey respondents can express interest or ask for further support.</p>
+    <p><i className="far fa-info-circle orange"/> Select topics in which survey respondents can express interest or ask for further support.</p>
      <fieldset>
       <label>Prompt</label>
       <input className="form-control"/>

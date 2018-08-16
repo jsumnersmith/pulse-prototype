@@ -10,7 +10,7 @@ export default ({items}) => (
 
 const getIconForType = (typeName) => {
   if (typeName === 'event'){
-    return 'fa-calendar';
+    return 'fa-calendar-alt';
   } else if (typeName === 'response' || typeName === 'report') {
     return 'fa-file-text-o';
   } else {
@@ -52,7 +52,7 @@ const LandingFeedItem = ({title = "", type = "", date = new Date(), isTeacher = 
       </div>
     </div>
     <div className="feed-item__content">
-      <div className="feed-item__type"><i className={`fa ${getIconForType(type)} circle-icon circle-icon--small ${getColorForType(type)}`} /> <span className="meta">{type}</span></div>
+      <div className="feed-item__type"><i className={`far ${getIconForType(type)} circle-icon circle-icon--small ${getColorForType(type)}`} /> <span className="meta">{type}</span></div>
       <h5 className="feed-item__title">{title}</h5>
     </div>
     { isTeacher ? null :

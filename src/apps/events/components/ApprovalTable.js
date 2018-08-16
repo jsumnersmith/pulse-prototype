@@ -27,7 +27,7 @@ export default class ApprovalTable extends Component {
                     <td><strong>{submittedEvent.attendees[0].name}</strong></td>
                     <td><strong>{submittedEvent.name}</strong></td>
                     <td className="text-center">
-                      <Link to={`/events/admin/submissions/${submittedEvent.id}`} className="btn btn-trans btn-primary btn-sm" ><i className="fa fa-info"></i> See Details</Link>
+                      <Link to={`/events/admin/submissions/${submittedEvent.id}`} className="btn btn-trans btn-primary btn-sm" ><i className="far fa-info"></i> See Details</Link>
                     </td>
                     <td>
                       <select className="form-control">

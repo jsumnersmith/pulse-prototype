@@ -15,7 +15,7 @@ export default () => (
     <div className="">
       <div className="row">
         <div className="col-md-12">
-          <h5 className="meta" style={{marginLeft: 10}}><i className="fa fa-pie-chart" /> Analytics</h5>
+          <h5 className="meta" style={{marginLeft: 10}}><i className="far fa-pie-chart" /> Analytics</h5>
           <hr className="dark"/>
         </div>
         <div className="col-md-6">

@@ -9,7 +9,7 @@ import questions from './questions';
 export default () => (
   <div className="wrapper">
     <div className="block-flat">
-      <p><i className="orange fa fa-info-circle" /> This option would include the groupings widget within each specific multiple choice question.</p>
+      <p><i className="orange far fa-info-circle" /> This option would include the groupings widget within each specific multiple choice question.</p>
       <MultipleChoiceResult
         question={questions[0]}
         sliceAmount={3}
@@ -33,7 +33,7 @@ const GroupingContent = () => (
 
 const StandaloneGroupingContent = () => (
   <div>
-    <p><i className="orange fa fa-info-circle" /> This option would be a single grouping comparison tool where users could simply toggle which question they wanted to use as a base comparison.</p>
+    <p><i className="orange far fa-info-circle" /> This option would be a single grouping comparison tool where users could simply toggle which question they wanted to use as a base comparison.</p>
     <GroupingsControls complex={true}/>
     <GroupingsListTable
       lists={groupings}

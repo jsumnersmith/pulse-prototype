@@ -52,7 +52,7 @@ export default class NameCreatorWrapper extends Component {
           <div className="row">
             <div className="col-md-6">
               <BigButton
-                iconClass="fa-circle-o"
+                iconClass="fa-circle"
                 title="Configure for who Response is About"
                 description={<span>Setup an anonymization scheme to hide the identity people about whom responses were submitted.</span>}
               />
@@ -67,7 +67,7 @@ export default class NameCreatorWrapper extends Component {
             </div>
             <div className="col-md-6">
             <BigButton
-              iconClass="fa-circle-o"
+              iconClass="fa-circle"
               title="Configure for who Response is Submitted By"
               description={<span>Setup an anonymization scheme to hide the identity people who submitted responses.</span>}
             />

@@ -32,7 +32,7 @@ export default ({ match }) => (
 
 const ApprovalTableWrapper = () => (
   <div className="col-md-12" style={{marginBottom: 20}}>
-    <h5 className="event-list-title" style={{ background: "#007DA0"}}><i className="fa fa-calendar-check-o circle-icon--medium pulse-blue"></i> <strong>Approve Submitted Events</strong></h5>
+    <h5 className="event-list-title" style={{ background: "#007DA0"}}><i className="far fa-calendar-check circle-icon--medium pulse-blue"></i> <strong>Approve Submitted Events</strong></h5>
     <ApprovalTable
       events={sampleEvents}
     />

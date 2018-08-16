@@ -40,7 +40,7 @@ export default () => (
 );
 
 const RadioToggle = ({active}) => (
-  <i className={`fa fa-${active ? 'check-circle blue': 'circle-o'} radio-toggle`}/>
+  <i className={`far fa-${active ? 'check-circle blue': 'circle-o'} radio-toggle`}/>
 );
 
 class TableRow extends Component {

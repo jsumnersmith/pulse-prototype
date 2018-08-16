@@ -112,7 +112,7 @@ class EventTable extends Component {
             allowCellsRecycling
             cell={({ rowIndex, ...props }) => (
               <Cell {...props}>
-                <div className="text-center"><i className="fa fa-check circle-icon--small green" /></div>
+                <div className="text-center"><i className="far fa-check circle-icon--small green" /></div>
               </Cell>
               )}
             width={100}
