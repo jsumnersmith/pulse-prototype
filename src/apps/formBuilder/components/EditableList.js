@@ -16,8 +16,8 @@ const SortableItem = SortableElement(({uniqueValue, value, toggleActive, activeN
       </div>
     </div>
     <div className="form-builder__editable-item-menu">
-      <a className="form-builder__editable-item-menu-link" data-toggle="modal" data-target={`#edit-modal-${uniqueValue}`}><i className="far fa-pencil" /></a>
-      <a className="form-builder__editable-item-menu-link"><i className="far fa-trash-o" /></a>
+      <a className="form-builder__editable-item-menu-link" data-toggle="modal" data-target={`#edit-modal-${uniqueValue}`}><i className="far fa-pencil-alt" /></a>
+      <a className="form-builder__editable-item-menu-link"><i className="far fa-trash-alt" /></a>
       <a className="form-builder__editable-item-menu-link"><i className="far fa-copy" /></a>
       <a className="form-builder__editable-item-menu-link"><i className="far fa-plus-circle" /></a>
     </div>

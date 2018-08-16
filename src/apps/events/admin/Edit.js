@@ -43,7 +43,7 @@ export default class EditForm extends Component {
               <input className="form-control"value="Bella Smith"/>
             </fieldset>
             <hr/>
-            <h3><i className="far fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+            <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
             <fieldset className="form-group">
               <label>Date</label>
               <DatePicker
@@ -87,7 +87,7 @@ export default class EditForm extends Component {
             </Collapsible>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-gear circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-cog circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
               onOpen={this.toggleAdvanced}
               onClose={this.toggleAdvanced}
             >

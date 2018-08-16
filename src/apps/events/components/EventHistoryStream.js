@@ -7,7 +7,7 @@ export default () => (
     <div className="block-flat">
       <div className="event-history-timeline">
         <EventHistoryItem
-          icon="fa-pencil"
+          icon="fa-pencil-alt"
           date="03/03/17"
         >
           <strong>Joel Smith</strong> submitted this event
@@ -25,7 +25,7 @@ export default () => (
           <div className="event-history-item__blockquote">I think you forgot to include the location. Update and we can approve it!</div>
         </EventHistoryItem>
         <EventHistoryItem
-          icon="fa-pencil"
+          icon="fa-pencil-alt"
           date="03/11/17"
         >
           <strong>Joel Smith</strong> edited this event

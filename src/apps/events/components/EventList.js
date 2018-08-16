@@ -144,7 +144,7 @@ class EventList extends Component {
         </div>
         <div className="col-md-3">
           <p style={{ marginTop: 20, marginBottom: 0, paddingBottom: 5 }}>
-            <strong>Showing <span className="underline underline--green">{eventsByDay.length}</span> events</strong> <i style={{color: '#aaa'}} className={`far ${this.state.upcoming ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc'}`}/>
+            <strong>Showing <span className="underline underline--green">{eventsByDay.length}</span> events</strong> <i style={{color: '#aaa'}} className={`far ${this.state.upcoming ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`}/>
           </p>
           <div className="block-flat text-center" style={{marginTop: 0, marginLeft: 0, borderTop: "3px solid #007DA0"}}>
             <div style={{marginBottom: 10}}><label>Show Me events</label></div>
@@ -218,7 +218,7 @@ class Filters extends Component {
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>

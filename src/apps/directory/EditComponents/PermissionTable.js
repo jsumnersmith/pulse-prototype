@@ -100,12 +100,12 @@ class PermissionDropdown extends Component {
         </button>
         <ul className="dropdown-menu">
           <li onClick={()=>this.updateAppliesTo('Global')} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-            <a>{this.isActive('Global') ? <i className="far fa-check-square"/> : <i className="far fa-square-o" style={{marginRight: 2}} />} {'Global (All Users)'}</a>
+            <a>{this.isActive('Global') ? <i className="far fa-check-square"/> : <i className="far fa-square" style={{marginRight: 2}} />} {'Global (All Users)'}</a>
           </li>
           <li className="divider"></li>
           {groupList.map(item =>
             <li onClick={()=>this.updateAppliesTo(item)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-              <a>{this.isActive(item) ? <i className="far fa-check-square"/> : <i className="far fa-square-o" style={{marginRight: 2}} />} {item}</a>
+              <a>{this.isActive(item) ? <i className="far fa-check-square"/> : <i className="far fa-square" style={{marginRight: 2}} />} {item}</a>
             </li>
           )}
         </ul>

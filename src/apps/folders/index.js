@@ -53,7 +53,7 @@ const ReportItem = ({index, showTags}) => (
           <span className="sr-only">Toggle Dropdown</span>
         </button>
         <ul className="dropdown-menu" role="menu">
-          <li><a><i className="far fa-pencil"/> &nbsp; Edit Report</a></li>
+          <li><a><i className="far fa-pencil-alt"/> &nbsp; Edit Report</a></li>
           <li><a><i className="far fa-share"/> &nbsp; Share Report</a></li>
           <li><a><i className="far fa-clone"/> &nbsp; Copy Report</a></li>
           <li className="divider"></li>

@@ -29,7 +29,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="far fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit</button></td>
               </tr>
             }
             {
@@ -41,7 +41,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="far fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit</button></td>
               </tr>
             }
             {
@@ -53,7 +53,7 @@ export default class Edit extends Component {
                 <td>--</td>
                 <td>Irving ISD Roster Data Source</td>
                 <td><i className="far fa-check green"/> Active</td>
-                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil" /> Edit</button></td>
+                <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit</button></td>
               </tr>
             }
             {
@@ -66,7 +66,7 @@ export default class Edit extends Component {
                     <td>--</td>
                     <td>Sample Survey Import</td>
                     <td><i className="far fa-check green"/> Active</td>
-                    <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil" /> Edit</button></td>
+                    <td><button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit</button></td>
                   </tr>
                 )
             }

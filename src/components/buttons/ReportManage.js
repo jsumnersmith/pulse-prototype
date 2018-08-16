@@ -23,7 +23,7 @@ export default class SaveButtons extends Component {
               Manage Report <span className="caret"></span>
               </button>
                 <ul className="dropdown-menu" role="menu">
-                  <li><a><Icon icon='fa-pencil'/>Edit Report</a></li>
+                  <li><a><Icon icon='fa-pencil-alt'/>Edit Report</a></li>
                   <li className="divider"></li>
                   <li><a><Icon icon='fa-download'/>Export Data</a></li>
                   <li><a onClick={this.togglePrintView}><Icon icon='fa-print'/>{this.state.printView ? " Exit Print-Friendly View" : "Print-Friendly View" }</a></li>

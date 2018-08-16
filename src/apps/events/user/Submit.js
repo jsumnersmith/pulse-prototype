@@ -23,7 +23,7 @@ export default () => (
           <input className="form-control" placeholder="Event Leaders"/>
         </fieldset>
         <hr/>
-        <h3><i className="far fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+        <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
         <fieldset className="form-group">
           <label>Date</label>
           <DatePicker

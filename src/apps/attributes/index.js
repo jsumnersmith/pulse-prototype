@@ -18,21 +18,21 @@ export default () => (
             <h5 className="attribute-value-title">
               <input className="form-control"  value="Possible Attribute Value" />
             </h5>
-            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-alt" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
           <div className="attribute-value-item" sortable="true" draggable="true">
             <i className="far fa-bars" style={{marginLeft: 20}}></i>
             <h5 className="attribute-value-title">
               <input className="form-control"  value="Other Attribute Value" />
             </h5>
-            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-alt" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
           <div className="attribute-value-item" sortable="true" draggable="true">
             <i className="far fa-bars" style={{marginLeft: 20}}></i>
             <h5 className="attribute-value-title">
               <input className="form-control"  value="One More Attribute Value" />
             </h5>
-            <i className="far fa-trash-o" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
+            <i className="far fa-trash-alt" style={{marginLeft: 20}} data-toggle="modal" data-target="#sample-confirm-modal"></i>
           </div>
         </div>
         <a className="btn btn-success" data-toggle="modal" data-target="#sample-merge-modal" style={{marginTop: 20}}>Test Merge Modal</a>

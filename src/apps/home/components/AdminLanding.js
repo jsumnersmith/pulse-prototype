@@ -15,7 +15,7 @@ export default () => (
     <div className="">
       <div className="row">
         <div className="col-md-12">
-          <h5 className="meta" style={{marginLeft: 10}}><i className="far fa-pie-chart" /> Analytics</h5>
+          <h5 className="meta" style={{marginLeft: 10}}><i className="far fa-chart-pie" /> Analytics</h5>
           <hr className="dark"/>
         </div>
         <div className="col-md-6">
@@ -43,7 +43,7 @@ export default () => (
         </div>
         <div className="col-md-6">
           <BigButton
-            iconClass="fa-line-chart"
+            iconClass="fa-chart-line"
             title="View Your Log"
             description={<span>See your own feedback and historical data.</span>}
           />

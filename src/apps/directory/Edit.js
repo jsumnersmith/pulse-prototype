@@ -111,7 +111,7 @@ export default class Edit extends Component {
                     </h3>
                   </div>
                   <div className="text-right" style={{display: 'none'}}>
-                    <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil" /> Edit Attributes</button>
+                    <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit Attributes</button>
                   </div>
                 </div>
                 <div style={{padding: '0px 0 0 20px'}}>
@@ -245,7 +245,7 @@ export default class Edit extends Component {
 
                 { this.state.viewRestrictions &&
                   <div style={{padding: '0 20px'}}>
-                    <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="far fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="far fa-pencil" /> Edit Restrictions</button></h4>
+                    <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="far fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="far fa-pencil-alt" /> Edit Restrictions</button></h4>
                     { user.restrictions.length < 1 && <p><i className="far fa-info-circle orange"/> This user can currently see any data in reports that are shared with them.</p>}
                     {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                       return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>

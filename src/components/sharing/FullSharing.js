@@ -37,7 +37,7 @@ export default class Sharing extends Component {
             </div>
             <div className="col-md-12">
               <div className="sharing-header" style={{marginTop: 20}}>
-                <h5 className="sharing-header--title"><i className="far fa-group circle-icon--small" /> <strong>People</strong></h5>
+                <h5 className="sharing-header--title"><i className="far fa-users circle-icon--small" /> <strong>People</strong></h5>
                 <SearchInput placeholder="Search users or groups to give them access to this event." />
                 <table className="no-border">
                   <thead className="no-border">
@@ -51,7 +51,7 @@ export default class Sharing extends Component {
                     {
                       this.state.groups.map(group =>
                         <tr>
-                          <td><i className="far fa-group circle-icon--small" /> <strong>{group.name}</strong></td>
+                          <td><i className="far fa-users circle-icon--small" /> <strong>{group.name}</strong></td>
                           <td><UserActions /></td>
                           <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="far fa-times" />Remove</button></td>
                         </tr>

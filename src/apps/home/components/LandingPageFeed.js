@@ -14,7 +14,7 @@ const getIconForType = (typeName) => {
   } else if (typeName === 'response' || typeName === 'report') {
     return 'fa-file-text-o';
   } else {
-    return 'fa-line-chart';
+    return 'fa-chart-line';
   }
 }
 

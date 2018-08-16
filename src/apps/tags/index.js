@@ -24,7 +24,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
@@ -38,7 +38,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample2" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
@@ -52,7 +52,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample3" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
@@ -66,7 +66,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample4" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
@@ -80,7 +80,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
               <div className="collapse" id="collapseExample5" style={{padding: 20}}>
                 <label>Edit Tag Description</label><input className="form-control"  placeholder="Enter a description of this tag" />
               </div>
@@ -94,7 +94,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -105,7 +105,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -116,7 +116,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -127,7 +127,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -138,7 +138,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>        </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
@@ -148,7 +148,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -159,7 +159,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -170,7 +170,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>        </div>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>        </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
               <h5 className="attribute-value-title">
@@ -180,7 +180,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
             <div className="attribute-value-item" sortable="true" draggable="true">
               <i className="far fa-chevron-right collapse-icon collapsed" style={{cursor:"pointer", marginLeft: 20}} data-toggle="collapse" data-target="#collapseExample4"></i>
@@ -191,7 +191,7 @@ export default () => (
                 <span className="orange">30</span> responses tagged
               </span>
               <a className="btn btn-sm btn-default" data-toggle="modal" data-target="#sample-merge-modal" style={{marginLeft: 10}}><i className="far fa-code-branch" style={{cursor:"pointer"}} ></i> Merge</a>
-              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-o" style={{cursor:"pointer"}}></i> Delete</a>
+              <a className="btn btn-sm btn-default"  data-toggle="modal" data-target="#sample-confirm-modal" style={{marginLeft: 10}}><i className="far fa-trash-alt" style={{cursor:"pointer"}}></i> Delete</a>
             </div>
           </div>
         </div>

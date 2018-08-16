@@ -303,7 +303,7 @@ class PeopleList extends Component {
                 <li className="divider"></li>
                 <li><a><i className="far fa-envelope circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Send New Invites</strong></a></li>
                 <li><a><i className="far fa-lock circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Permissions</strong></a></li>
-                <li><a><i className="far fa-group circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Groups</strong></a></li>
+                <li><a><i className="far fa-users circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Update Groups</strong></a></li>
                 <li><a><i className="far fa-times circle-icon--small circle-icon--no-border" style={{marginRight: 5}}/> <strong>Deactivate Users</strong></a></li>
               </ul>
             </div>
@@ -349,7 +349,7 @@ class PeopleList extends Component {
                 <td><input type="checkbox" checked={this.isChecked(user.id)} onChange={() => this.setChecked(user.id)}/></td>
                 { this.isColumnActive('email') && <td className="fixed-column"><strong><Link to={`/directory/profile/${user.id}`}>{user.email}</Link></strong></td>}
                 { this.isColumnActive('name') && <td className=""><strong><Link to={`/directory/profile/${user.id}`}>{user.name}</Link></strong></td> }
-                <td><Link to={`/directory/edit/${user.id}`} className="btn btn-sm btn-primary btn-trans"><i className="far fa-pencil" />Edit</Link></td>
+                <td><Link to={`/directory/edit/${user.id}`} className="btn btn-sm btn-primary btn-trans"><i className="far fa-pencil-alt" />Edit</Link></td>
                 { this.isColumnActive('groups') && <td>{user.groups.map((group, index) => <Link to={`/directory/groups/edit/${getGroupId(group)}`}>{group}{!isLast(index, user.groups) && ', ' }</Link>)}</td>}
                 { this.isColumnActive('permissions') && <td className="text-center">{user.invitePending ? <i className="far fa-envelope-open orange"/>: user.canLogin ? <i className="far fa-check green" />: <i className="far fa-minus-circle red-text"/> }</td>}
                 { this.isColumnActive('permissions') && <td className={"text-center"}>{this.checkPermission(user, 'Manage Reports') && <i className="far fa-check green" />}</td>}

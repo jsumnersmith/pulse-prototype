@@ -361,7 +361,7 @@ export default () => (
                   <div className="section-builder-new-header">
                     <div className="section-builder-widget-icon"></div>
                     <span className="section-builder-widget-title">Heatmap</span>
-                    <a className="section-builder-widget-btn" data-toggle="collapse" data-target="#next-config"><i className="far fa-gear"></i></a>
+                    <a className="section-builder-widget-btn" data-toggle="collapse" data-target="#next-config"><i className="far fa-cog"></i></a>
                   </div>
                   <div id="next-config" className="collapse section-builder-widget-config">
                     <div className="input-group">
@@ -455,10 +455,10 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Classroom Observation</strong></td><td></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Belton Classroom Observation</strong></td><td></td>
                                 </tr>
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton Learning Walk</strong></td><td></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Belton Learning Walk</strong></td><td></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -484,7 +484,7 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton MS/Freshman Center</strong></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Belton MS/Freshman Center</strong></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -510,10 +510,10 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>BOSCO</strong></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>BOSCO</strong></td>
                                 </tr>
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Belton HS</strong></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Belton HS</strong></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -539,10 +539,10 @@ export default () => (
                             <table className="list-table-column">
                               <tbody className="no-border-x no-border-y">
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Cambridge ES</strong></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Cambridge ES</strong></td>
                                 </tr>
                                 <tr className="report-builder-table-checklist-row">
-                                  <td><i className="far fa-square-o"></i></td><td><strong style={{fontSize: 14}}>Gladden ES</strong></td>
+                                  <td><i className="far fa-square"></i></td><td><strong style={{fontSize: 14}}>Gladden ES</strong></td>
                                 </tr>
                               </tbody>
                             </table>

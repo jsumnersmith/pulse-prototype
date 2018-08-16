@@ -14,7 +14,7 @@ const nestedLinks = _.chain(routes)
 
 const iconLookup = (name) => {
   if (name === 'Apps') {
-    return 'fa-dashboard';
+    return 'fa-tachometer-alt';
   } else if (name === 'Components') {
     return 'fa-cog';
   } else if (name === 'Styles') {

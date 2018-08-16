@@ -198,7 +198,7 @@ class AttendanceTable extends Component {
               <div>
                 <label>Add attendees' emails separated by commas</label>
                 <textarea className="form-control"></textarea>
-                <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="far fa-warning" /> The following emails were not added: email@adress.com, other@address.com</p>
+                <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="far fa-exclamation-triangle" /> The following emails were not added: email@adress.com, other@address.com</p>
                 <p className="green"><i className="far fa-check-circle" /> Successfully added 3,456 emails.</p>
               </div>
             </div>

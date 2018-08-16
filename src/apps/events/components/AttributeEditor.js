@@ -5,7 +5,7 @@ import './attributeEditor.less';
 export default () => (
   <div className="row">
     <div className="col-md-12">
-      <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="far fa-gear circle-icon--medium green"></i> <strong>Manage Meta Data Attributes</strong></h5>
+      <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="far fa-cog circle-icon--medium green"></i> <strong>Manage Meta Data Attributes</strong></h5>
       <div className="block-flat">
         <div className="content">
           <div>
@@ -43,7 +43,7 @@ const AttributeEditorItem = ({value}) => (
       <div className="attribute-editor__input">
         <input className="form-control" defaultValue={value} />
       </div>
-      <span className="attribute-editor__delete"><i className="far fa-trash-o"></i></span>
+      <span className="attribute-editor__delete"><i className="far fa-trash-alt"></i></span>
    </div>
   </div>
 );

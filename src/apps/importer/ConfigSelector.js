@@ -21,7 +21,7 @@ export default ({config = '', setConfig = (config)=>{return config;}}) =>(
       <h4>Choose a saved configuration</h4>
     </div>
     <div style={{display: 'flex', alignItems: 'center', marginBottom: 10}}>
-      <i className="far fa-gears circle-icon--small circle-icon--no-border"   style={{marginRight: 5}}/>
+      <i className="far fa-cogs circle-icon--small circle-icon--no-border"   style={{marginRight: 5}}/>
       <label>Configurations</label>
     </div>
     <select className="form-control" style={{flexGrow: 1}} onChange={(e)=> setConfig(e.target.value)}>

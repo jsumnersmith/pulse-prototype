@@ -94,7 +94,7 @@ export default ({match}) => (
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header text-left">
-            <h3><i className="far fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
+            <h3><i className="far fa-cog circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
             <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
           </div>
           <div className="modal-body" style={{padding: 20}}>

@@ -41,7 +41,7 @@ export default class CreateForm extends Component {
               <input className="form-control" placeholder="Event Leaders"/>
             </fieldset>
             <hr/>
-            <h3><i className="far fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+            <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
             <fieldset className="form-group">
               <label>Date</label>
               <DatePicker
@@ -97,7 +97,7 @@ export default class CreateForm extends Component {
             <Collapsible
               trigger={
                 <h3 style={{cursor: "pointer"}}>
-                  <i className="far fa-gear circle-icon green"></i>
+                  <i className="far fa-cog circle-icon green"></i>
                   <div style={{display: "inline-flex", alignItems: "center", flexWrap: "wrap", height: 46, verticalAlign: "top", marginLeft: 10}}>
                     <strong style={{width: "100%"}}> Advanced Settings</strong>
                     <span style={{width: "100%", fontSize: 12, fontWeight: 500}}>Configure your event's confirmation workflow, visibility, and more.</span>

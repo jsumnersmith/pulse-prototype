@@ -51,7 +51,7 @@ export default class Filters extends Component {
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}} key={`checklist-${filterName}-${filter.name}`}>
-                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>

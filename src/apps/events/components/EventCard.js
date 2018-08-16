@@ -36,7 +36,7 @@ class EventCard extends Component {
             </div>
             <div className=" event-card-content">
               <div className="event-card-header">
-                {sampleEvent.external && <h5 className="meta meta-soft"><i className="far fa-external-link"/> Linked Event</h5> }
+                {sampleEvent.external && <h5 className="meta meta-soft"><i className="far fa-external-link-alt"/> Linked Event</h5> }
                 <h4 className="event-card-title">{sampleEvent.isCollection && <i className="far fa-clone circle-icon--small purple white-text" />} <strong>{sampleEvent.name}</strong></h4>
 
                   {
@@ -49,7 +49,7 @@ class EventCard extends Component {
                 { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
               </div>
               {isAttending &&  <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong></h6>}
-              <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
+              <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-map-marker-alt circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
               <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
               { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
               { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
@@ -72,7 +72,7 @@ class EventCard extends Component {
 
 const ExternalControls = () => (
   <div className="event-teacher-control">
-    <a className="btn btn-primary" style={{marginLeft: 0}}><i className="far fa-external-link"/> Go Register for Event</a>
+    <a className="btn btn-primary" style={{marginLeft: 0}}><i className="far fa-external-link-alt"/> Go Register for Event</a>
     <div className="btn-group btn-block">
       <a className="btn btn-success"><i className="far fa-calendar-check"/> Attendance Tracked</a>
       <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="far fa-angle-down" /></a>
@@ -106,7 +106,7 @@ class AdminControls extends Component {
             <span>
               <div className="event-attendance-code" style={{marginBottom: 10}}>X5fH8Gn</div>
               <div className="btn-group">
-                <Link to="/events/admin/edit" className="btn btn-primary"><i className="far fa-pencil" /> Edit Event</Link>
+                <Link to="/events/admin/edit" className="btn btn-primary"><i className="far fa-pencil-alt" /> Edit Event</Link>
                 <a className="btn btn-default dropdown-toggle btn-primary" data-toggle="dropdown"><i className="far fa-angle-down" /></a>
                 <AdminDropdown />
               </div>
@@ -148,7 +148,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle, isColle
 
 const AdminDropdown = () => (
   <ul className="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a><i className="far fa-trash-o"/> Delete Event</a></li>
+    <li><a><i className="far fa-trash-alt"/> Delete Event</a></li>
   </ul>
 );
 
@@ -167,7 +167,7 @@ const ExternalDropdown = () => (
 
 const SubmittedUserControls = () => (
   <div>
-    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="far fa-pencil"/> Edit Submission</Link>
+    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="far fa-pencil-alt"/> Edit Submission</Link>
     <Link to={"/"} className="btn btn-danger btn-trans btn-block btn-sm" style={{marginLeft: 0, marginBottom: 10}}><i className="far fa-times"/> Close Submission</Link>
     <UploadTable />
   </div>
@@ -204,7 +204,7 @@ class SubmittedAdminControls extends Component {
           <option value="closed">Closed</option>
         </select>
         <hr />
-        <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="far fa-pencil"/> Update Submission</Link>
+        <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="far fa-pencil-alt"/> Update Submission</Link>
         <UploadTable />
       </div>
     )
