@@ -37,7 +37,7 @@ export default class Sharing extends Component {
               <label>Who should see this event?</label>
               <div>
                 <button className={`btn btn-success ${!this.state.public && "btn-trans"} btn-sm`} onClick={()=>this.setPublicity(true)}>All Users</button>
-                <button className={`btn btn-success ${this.state.public && "btn-trans"} btn-sm`} onClick={()=>this.setPublicity(false)}>Only share with users and groups specified below</button>
+                <button className={`btn btn-success ${this.state.public && "btn-trans"} btn-sm`} onClick={()=>this.setPublicity(false)}>Only share with specific users and groups</button>
               </div>
             </div>
             <div className="col-md-12">
