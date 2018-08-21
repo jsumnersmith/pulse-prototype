@@ -179,7 +179,7 @@ export default class Edit extends Component {
                             permissions={[
                               {
                                 isActive: user.permissions.includes('Manage Reports'),
-                                iconclassName: "fa-file-text-o",
+                                iconclassName: "fa-file-alt",
                                 title: "Manage Reports",
                                 description: "User will be able to create, edit, and view all reports"
                               },

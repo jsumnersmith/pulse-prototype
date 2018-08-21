@@ -95,7 +95,7 @@ class Collections extends Component {
         </div>
         <div className="collections__reports">
           <ReportList count={this.state.count} />
-          { this.state.count !== 5 ? <button className="btn btn-sm btn-default btn-trans collections__add-report"><i className="far fa-file-text-o"/> Add Report to Collection</button> : null }
+          { this.state.count !== 5 ? <button className="btn btn-sm btn-default btn-trans collections__add-report"><i className="far fa-file-alt"/> Add Report to Collection</button> : null }
         </div>
       </div>
     )

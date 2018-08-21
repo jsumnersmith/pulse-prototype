@@ -12,7 +12,7 @@ const getIconForType = (typeName) => {
   if (typeName === 'event'){
     return 'fa-calendar-alt';
   } else if (typeName === 'response' || typeName === 'report') {
-    return 'fa-file-text-o';
+    return 'fa-file-alt';
   } else {
     return 'fa-chart-line';
   }

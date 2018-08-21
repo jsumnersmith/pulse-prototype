@@ -25,7 +25,7 @@ export default () => (
         <div className="col-md-6">
           <div>
             <BigButton
-              iconClass="fa-file-text-o"
+              iconClass="fa-file-alt"
               title="Browse Reports"
               description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
             />
@@ -39,7 +39,7 @@ export default () => (
           </div>
           <div style={{marginTop: 10}}>
             <BigButton
-              iconClass="fa-user-o"
+              iconClass="fa-user"
               title="View an Individual Log"
               description={<span>See feedback and activity for one of the 236 people in your organization.</span>}
             />

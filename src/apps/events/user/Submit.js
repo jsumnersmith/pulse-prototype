@@ -49,7 +49,7 @@ export default () => (
           <input className="form-control" placeholder="Event Location"/>
         </fieldset>
         <hr />
-        <h3><i className="far fa-file-text circle-icon green"></i> <strong> Documentation</strong></h3>
+        <h3><i className="far fa-file-alt circle-icon green"></i> <strong> Documentation</strong></h3>
         <fieldset className="form-group">
           <label>Add Link</label>
           <input className="form-control" placeholder="Event Location"/>

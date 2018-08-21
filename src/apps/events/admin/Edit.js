@@ -67,7 +67,7 @@ export default class EditForm extends Component {
               <input className="form-control" value="East High School Auditorium"/>
             </fieldset>
             <hr/>
-            <h3><i className="far fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
+            <h3><i className="far fa-file-alt circle-icon yellow"></i> <strong>Feedback</strong></h3>
             <fieldset className="form-group">
               <label>Feedback Form URL</label>
               <input className="form-control" value="http://jotform.com/awesome-feedback-form"/>

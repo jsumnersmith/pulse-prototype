@@ -24,7 +24,7 @@ export default () => (
         <div className="col-md-6">
           <h3><i className="far fa-unlock-alt circle-icon green"/> <strong>Set Permissions</strong></h3>
           <BigButton
-            iconclassName="fa-file-text-o"
+            iconclassName="fa-file-alt"
             title="Manage Reports"
             description="User will be able to create, edit, and view all reports"
           />
@@ -64,7 +64,7 @@ export default () => (
             <label>Set permissions for the <span className="underline--orange">13</span> selected users.</label>
           </div>
           <BigButton
-            iconclassName="fa-file-text-o"
+            iconclassName="fa-file-alt"
             title="Manage Reports"
             description="User will be able to create, edit, and view all reports"
           />

@@ -87,7 +87,7 @@ export default class Uploader extends Component {
               permissions={[
                 {
                   isActive: false,
-                  iconclassName: "fa-file-text-o",
+                  iconclassName: "fa-file-alt",
                   title: "Manage Reports",
                   description: "User will be able to create, edit, and view all reports"
                 },

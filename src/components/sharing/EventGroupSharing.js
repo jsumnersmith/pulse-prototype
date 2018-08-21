@@ -30,7 +30,7 @@ export default class Sharing extends Component {
             <div className="col-md-12">
               <BigButton
                 isActive={this.state.public}
-                iconclassName="fa-file-text-o"
+                iconclassName="fa-file-alt"
                 title="Make Event Public"
                 description="If selected, any user who can access events for your organziation should be able to see this event."
               />
