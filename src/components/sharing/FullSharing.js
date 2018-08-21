@@ -128,7 +128,8 @@ const UserActions = ({onChange, showAsterisk}) => (
   <div className="sharing-control-wrapper">
     <select className="form-control sharing-control" onChange={onChange}>
       <option value="view" selected>Can View</option>
-      <option value="edit" >Can Manage/Edit</option>
+      <option value="manage">Can Manage Attendance</option>
+      <option value="edit">Can Edit</option>
     </select>
     {showAsterisk && <label>*</label>}
   </div>
