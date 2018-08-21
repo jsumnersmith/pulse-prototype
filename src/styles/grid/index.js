@@ -5,7 +5,7 @@ import './grid.less'
 export default () => (
   <div className="wrapper">
     <div style={{marginBottom: 20}}>
-      <h3><i className="fa fa-table circle-icon green"/> <strong>CSS Grid Experiment</strong></h3>
+      <h3><i className="far fa-table circle-icon green"/> <strong>CSS Grid Experiment</strong></h3>
     </div>
     <div className="grid twelve">
       {/* 12 Columns */}

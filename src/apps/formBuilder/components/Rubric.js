@@ -38,7 +38,7 @@ class TableRow extends Component {
         {
           this.props.rubrics.map((value, index)=>{
             return <td onClick={()=>{this.setCheckbox(index)}} className={`rubric-box ${this.checkActive(index)?  'rubric-box__active': null}`}>
-              {this.checkActive(index) ? <i className="fa fa-check-circle blue rubric-box__check"/> : null}
+              {this.checkActive(index) ? <i className="far fa-check-circle blue rubric-box__check"/> : null}
               {value}
             </td>
           })

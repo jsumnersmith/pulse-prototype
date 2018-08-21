@@ -71,7 +71,7 @@ class AttendanceSummaryTable extends Component {
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
         <h5 className="event-list-title" style={{background: "#8B698E"}}>
           <div style={{display:"inline-block", width: "calc(100% - 400px)"}}>
-            <i className="fa fa-check circle-icon--medium purple color-text"></i>
+            <i className="far fa-check circle-icon--medium purple color-text"></i>
             <strong>Attendance Log</strong>
           </div>
           <span style={{display: "inline-block", width: 400}}>

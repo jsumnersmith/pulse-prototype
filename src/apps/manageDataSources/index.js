@@ -14,7 +14,7 @@ export default ({match}) => (
       </h2>
       <nav className="data-source-nav">
         <Link className="meta" to={match.url + 'queue'}>View Queue</Link>
-        <a className="btn btn-primary"><i className="fa fa-plus"/>Add Data Source</a>
+        <a className="btn btn-primary"><i className="far fa-plus"/>Add Data Source</a>
       </nav>
     </div>
     <div className="block-flat">
@@ -62,8 +62,8 @@ export default ({match}) => (
                     <td><strong>{dataSource.name}</strong></td>
                     <td><strong>{dataSource.district}</strong></td>
                     <td className="text-center">{dataSource.dataStatus ?
-                          <i className="fa fa-check circle-icon--small white-text green" /> :
-                          <i className="fa fa-cloud circle-icon--small white-text yellow" />
+                          <i className="far fa-check circle-icon--small white-text green" /> :
+                          <i className="far fa-cloud circle-icon--small white-text yellow" />
                         }</td>
                     <td>{dataSource.lastImport}</td>
                     <td>{dataSource.lastImportSubmissionCount}</td>
@@ -73,7 +73,7 @@ export default ({match}) => (
                     <td>
                       <div className="btn-group">
                         <button className="btn btn-sm btn-primary">Manage</button>
-                        <button className="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i className="fa fa-chevron-down fa-sm"/>
+                        <button className="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i className="far fa-chevron-down fa-sm"/>
                         </button>
                         <ul className="dropdown-menu dropdown-menu-right" role="menu">
                           <li><a data-toggle="modal" data-target="#sample-modal">Edit Import Configuration</a></li>
@@ -94,7 +94,7 @@ export default ({match}) => (
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header text-left">
-            <h3><i className="fa fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
+            <h3><i className="far fa-cog circle-icon green" style={{marginRight: 5}}/> <strong>Edit Import Configuration for *Title*</strong></h3>
             <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
           </div>
           <div className="modal-body" style={{padding: 20}}>
@@ -120,7 +120,7 @@ export default ({match}) => (
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header text-left">
-            <h3><i className="fa fa-exclamation circle-icon red" style={{marginRight: 5}}/> <strong>Errors Messages for *Title*</strong></h3>
+            <h3><i className="far fa-exclamation circle-icon red" style={{marginRight: 5}}/> <strong>Errors Messages for *Title*</strong></h3>
             <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
           </div>
           <div className="modal-body" style={{padding: 20}}>
@@ -165,7 +165,7 @@ const sampleDataSources = [
     dataStatus: true,
     lastImport: '2017-12-07T11:30:00',
     lastImportSubmissionCount: 452,
-    errorContent: <i className="fa fa-check green"/>,
+    errorContent: <i className="far fa-check green"/>,
     importConfiguration: 'Nightly'
   }
 

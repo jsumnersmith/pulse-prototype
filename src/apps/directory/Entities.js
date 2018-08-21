@@ -13,7 +13,7 @@ export default () => (
         <div>
           <div>
             <p>
-              <i className="fa fa-lock circle-icon--small orange circle-icon--no-border white-text" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
+              <i className="far fa-lock circle-icon--small orange circle-icon--no-border white-text" /> This management view is for super users to help manage non-people related entities generated from data sources in the system.
             </p>
           </div>
           <div className="directory-search">

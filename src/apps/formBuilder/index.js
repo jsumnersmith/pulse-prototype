@@ -50,10 +50,10 @@ export default class FormBuilder extends Component {
           </div>
           </div>
           <div className="inline-tabs">
-            <a className="inline-tab meta active"><i className="fa fa-align-justify"/> Layout </a>
-            <a className="inline-tab meta"><i className="fa fa-paint-brush"/> Styles</a>
-            <a className="inline-tab meta"><i className="fa fa-gear"/> Advanced Settings</a>
-            <a className="inline-tab meta"><i className="fa fa-users"/> Sharing</a>
+            <a className="inline-tab meta active"><i className="far fa-align-justify"/> Layout </a>
+            <a className="inline-tab meta"><i className="far fa-paint-brush"/> Styles</a>
+            <a className="inline-tab meta"><i className="far fa-cog"/> Advanced Settings</a>
+            <a className="inline-tab meta"><i className="far fa-users"/> Sharing</a>
           </div>
             <div className="form-builder__section">
               <div className="row">

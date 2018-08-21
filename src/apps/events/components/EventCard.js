@@ -36,8 +36,8 @@ class EventCard extends Component {
             </div>
             <div className=" event-card-content">
               <div className="event-card-header">
-                {sampleEvent.external && <h5 className="meta meta-soft"><i className="fa fa-external-link"/> Linked Event</h5> }
-                <h4 className="event-card-title">{sampleEvent.isCollection && <i className="fa fa-clone circle-icon--small purple white-text" />} <strong>{sampleEvent.name}</strong></h4>
+                {sampleEvent.external && <h5 className="meta meta-soft"><i className="far fa-external-link-alt"/> Linked Event</h5> }
+                <h4 className="event-card-title">{sampleEvent.isCollection && <i className="far fa-clone circle-icon--small purple white-text" />} <strong>{sampleEvent.name}</strong></h4>
 
                   {
                     (sampleEvent.isCollection && sampleEvent.subEvents) ?
@@ -48,11 +48,11 @@ class EventCard extends Component {
               <div>
                 { sampleEvent.description ? <p className="event-card-description">{sampleEvent.description}</p> : null }
               </div>
-              {isAttending &&  <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong></h6>}
-              <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-map-marker circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
-              <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
-              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
-              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="fa fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
+              {isAttending &&  <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong></h6>}
+              <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-map-marker-alt circle-icon--small"></i> <strong>{sampleEvent.location}</strong></h6>
+              <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-user circle-icon--small"></i> <strong>{sampleEvent.leaders}</strong></h6>
+              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-check circle-icon--small"></i> <strong>{this.getAttendance()}/{sampleEvent.attendees.length}</strong> Attended</h6> }
+              { isAdmin && !this.props.isSubmission && <h6 style={{marginTop: 0}} className="col-md-12"><i className="far fa-eye circle-icon--small"></i> Visible to <strong>{sampleEvent.id === 3 ? "Registered Attendees" : "All"}</strong></h6> }
             </div>
           </div>
           <div className="col-md-4">
@@ -72,13 +72,13 @@ class EventCard extends Component {
 
 const ExternalControls = () => (
   <div className="event-teacher-control">
-    <a className="btn btn-primary" style={{marginLeft: 0}}><i className="fa fa-external-link"/> Go Register for Event</a>
+    <a className="btn btn-primary" style={{marginLeft: 0}}><i className="far fa-external-link-alt"/> Go Register for Event</a>
     <div className="btn-group btn-block">
-      <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> Attendance Tracked</a>
-      <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+      <a className="btn btn-success"><i className="far fa-calendar-check"/> Attendance Tracked</a>
+      <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="far fa-angle-down" /></a>
       <ExternalDropdown />
     </div>
-    <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="fa fa-clipboard" /> Add Your Feedback</a>
+    <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="far fa-clipboard" /> Add Your Feedback</a>
   </div>
 )
 
@@ -98,7 +98,7 @@ class AdminControls extends Component {
       <div className="event-admin-control text-center">
         {
           isCollection ?
-          <Link to={actionLink} className="btn btn-default btn-block"><i className="fa fa-clone"/> View Events</Link>
+          <Link to={actionLink} className="btn btn-default btn-block"><i className="far fa-clone"/> View Events</Link>
           :
           isList ?
           <Link to={actionLink} className="btn btn-primary btn-block">{actionTitle}</Link>
@@ -106,8 +106,8 @@ class AdminControls extends Component {
             <span>
               <div className="event-attendance-code" style={{marginBottom: 10}}>X5fH8Gn</div>
               <div className="btn-group">
-                <Link to="/events/admin/edit" className="btn btn-primary"><i className="fa fa-pencil" /> Edit Event</Link>
-                <a className="btn btn-default dropdown-toggle btn-primary" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+                <Link to="/events/admin/edit" className="btn btn-primary"><i className="far fa-pencil-alt" /> Edit Event</Link>
+                <a className="btn btn-default dropdown-toggle btn-primary" data-toggle="dropdown"><i className="far fa-angle-down" /></a>
                 <AdminDropdown />
               </div>
             </span>
@@ -123,7 +123,7 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle, isColle
       isAttending ?
         <div>
           { isCollection?
-            <Link to={actionLink} className="btn btn-default btn-block"><i className="fa fa-clone"/> View Events</Link>
+            <Link to={actionLink} className="btn btn-default btn-block"><i className="far fa-clone"/> View Events</Link>
           :
           isList
             ? <div>
@@ -133,11 +133,11 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle, isColle
               </div>
             : <span>
                 <div className="btn-group btn-block">
-                  <a className="btn btn-success"><i className="fa fa-calendar-check-o"/> You're Registered</a>
-                  <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="fa fa-angle-down" /></a>
+                  <a className="btn btn-success"><i className="far fa-calendar-check"/> You're Registered</a>
+                  <a className="btn btn-success dropdown-toggle" data-toggle="dropdown"><i className="far fa-angle-down" /></a>
                   <UserDropdown />
                 </div>
-                <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="fa fa-clipboard" /> Add Your Feedback</a>
+                <a className="btn btn-default btn-trans" style={{marginLeft: 0, marginTop: 5}}><i className="far fa-clipboard" /> Add Your Feedback</a>
               </span>
           }
         </div>
@@ -148,38 +148,38 @@ const TeacherControls = ({ isAttending, isList, actionLink, actionTitle, isColle
 
 const AdminDropdown = () => (
   <ul className="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a><i className="fa fa-trash-o"/> Delete Event</a></li>
+    <li><a><i className="far fa-trash-alt"/> Delete Event</a></li>
   </ul>
 );
 
 const UserDropdown = () => (
   <ul className="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a><i className="fa fa-calendar-times-o"/> Unregister</a></li>
-    <li><a><i className="fa fa-envelope"/> Request Confirmation</a></li>
+    <li><a><i className="far fa-calendar-times"/> Unregister</a></li>
+    <li><a><i className="far fa-envelope"/> Request Confirmation</a></li>
   </ul>
 );
 
 const ExternalDropdown = () => (
   <ul className="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a><i className="fa fa-calendar-times-o"/> Untrack My Attendance</a></li>
+    <li><a><i className="far fa-calendar-times"/> Untrack My Attendance</a></li>
   </ul>
 );
 
 const SubmittedUserControls = () => (
   <div>
-    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="fa fa-pencil"/> Edit Submission</Link>
-    <Link to={"/"} className="btn btn-danger btn-trans btn-block btn-sm" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-times"/> Close Submission</Link>
+    <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 15}}><i className="far fa-pencil-alt"/> Edit Submission</Link>
+    <Link to={"/"} className="btn btn-danger btn-trans btn-block btn-sm" style={{marginLeft: 0, marginBottom: 10}}><i className="far fa-times"/> Close Submission</Link>
     <UploadTable />
   </div>
 )
 
 const DisplayStatus = ({status}) =>(
   <div>
-    {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="fa fa-hourglass orange circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
-    {status === 'approved' && <h5 style={{color: 'white'}}><strong><i className="fa fa-thumbs-up pulse-blue circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
-    {status === 'denied' && <h5 style={{color: 'white'}}><strong><i className="fa fa-times red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
-    {status === 'confirmed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-check green circle-icon--medium white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
-    {status === 'closed' && <h5 style={{color: 'white'}}><strong><i className="fa fa-minus red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
+    {status === 'pending' && <h5 style={{color: 'white'}}><strong><i className="far fa-hourglass orange circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Pending</strong></h5>}
+    {status === 'approved' && <h5 style={{color: 'white'}}><strong><i className="far fa-thumbs-up pulse-blue circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Approved</strong></h5>}
+    {status === 'denied' && <h5 style={{color: 'white'}}><strong><i className="far fa-times red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Denied</strong></h5>}
+    {status === 'confirmed' && <h5 style={{color: 'white'}}><strong><i className="far fa-check green circle-icon--medium white-text"style={{marginRight: 5}}/> Attendance Confirmed</strong></h5>}
+    {status === 'closed' && <h5 style={{color: 'white'}}><strong><i className="far fa-minus red circle-icon--medium white-text" style={{marginRight: 5}}/> Submission Closed</strong></h5>}
   </div>
 )
 
@@ -204,7 +204,7 @@ class SubmittedAdminControls extends Component {
           <option value="closed">Closed</option>
         </select>
         <hr />
-        <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="fa fa-pencil"/> Update Submission</Link>
+        <Link to={"/events/submit"} className="btn btn-primary btn-block" style={{marginLeft: 0, marginBottom: 10}}><i className="far fa-pencil-alt"/> Update Submission</Link>
         <UploadTable />
       </div>
     )
@@ -218,8 +218,8 @@ const UploadTable = () => (
         <tr><th><strong>Uploaded Files</strong></th></tr>
       </thead>
       <tbody>
-        <tr><td><a href="google.com"><i className="fa fa-file"/> File Name</a></td></tr>
-        <tr><td><a href="google.com"><i className="fa fa-file"/> Other File Name</a></td></tr>
+        <tr><td><a href="google.com"><i className="far fa-file"/> File Name</a></td></tr>
+        <tr><td><a href="google.com"><i className="far fa-file"/> Other File Name</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -238,11 +238,11 @@ export const QuickCard = ({ sampleEvent, isAttending, showAction = false, action
       {
         isAttending ?
           <div className="event-card-status--quick">
-            <i className="fa fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong>
+            <i className="far fa-check circle-icon--small meeting-goals color-text" /> <strong className="green">Registered</strong>
           </div>
         : null
       }
-      { showAction ? (<div className="event-card-actions"> { isAttending ? <h5 className="meta green" style={{ marginBottom: 0 }}><i className="fa fa-check" />{"You're Attending"}</h5> : <a href={actionLink} className="btn btn-primary btn-block" style={{ display: 'inline-block', width: 160 }}>{actionTitle}</a> } </div>) : null }
+      { showAction ? (<div className="event-card-actions"> { isAttending ? <h5 className="meta green" style={{ marginBottom: 0 }}><i className="far fa-check" />{"You're Attending"}</h5> : <a href={actionLink} className="btn btn-primary btn-block" style={{ display: 'inline-block', width: 160 }}>{actionTitle}</a> } </div>) : null }
       { sampleEvent.description ? <p>{ellipsis(sampleEvent.description, 200)}</p> : null }
     </Link>
   </div>

@@ -15,7 +15,7 @@ export default () => (
     </div>
 
     <div className="col-md-12">
-      <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="fa fa-check circle-icon--medium pulse-blue color-text"></i> <strong>Attendance Log</strong></h5>
+      <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="far fa-check circle-icon--medium pulse-blue color-text"></i> <strong>Attendance Log</strong></h5>
       <div className="events-table-actions">
         <label >Show</label>
         <select className="form-control" style={{background: 'white', width: 150}}>

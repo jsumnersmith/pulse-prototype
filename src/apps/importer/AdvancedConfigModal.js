@@ -5,7 +5,7 @@ export default ({configType = 'unconfigured', title, isOpen = false, close, inde
     <div className="modal-dialog" style={{width: '80%'}}>
       <div className="modal-content" style={{padding: 20}}>
         <div className="modal-header text-left">
-          <h3><i className="fa fa-gear circle-icon green" style={{marginRight: 5}}/> <strong>Advanced Column Configuration</strong></h3>
+          <h3><i className="far fa-cog circle-icon green" style={{marginRight: 5}}/> <strong>Advanced Column Configuration</strong></h3>
           <a className="close" onClick={close} aria-hidden="true">×</a>
         </div>
         <div className="modal-body" style={{padding: 20}}>

@@ -35,7 +35,7 @@ export default class Queue extends Component {
       </h2>
       <nav className="data-source-nav">
         <a className="meta active">View Queue</a>
-        <a className="btn btn-primary"><i className="fa fa-plus"/>Add Data Source</a>
+        <a className="btn btn-primary"><i className="far fa-plus"/>Add Data Source</a>
       </nav>
     </div>
     <div className="block-flat">
@@ -80,7 +80,7 @@ export default class Queue extends Component {
                       {item.type}
                     </td>
                     <td>
-                      {item.active && <i className="fa fa-check green"/> }
+                      {item.active && <i className="far fa-check green"/> }
                     </td>
                     <td>
                       {item.worker}

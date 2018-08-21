@@ -15,7 +15,7 @@ export default class Groups extends Component {
       <DirectoryHeader/>
       <Link className="btn btn-back btn-default" to={'/directory'} >Back to Directory</Link>
         <div className="block-flat" style={{marginTop: 10}}>
-        <h3 style={{marginTop: 0}}><i className="fa fa-users circle-icon yellow" /> <strong>Groups</strong></h3>
+        <h3 style={{marginTop: 0}}><i className="far fa-users circle-icon yellow" /> <strong>Groups</strong></h3>
         <div className="content">
             <div className="directory-search">
               <div className="directory-search__input">

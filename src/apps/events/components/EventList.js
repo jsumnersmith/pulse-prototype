@@ -115,7 +115,7 @@ class EventList extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="fa fa-calendar circle-icon--medium green"></i> <strong>Find an Event</strong></h5>
+          <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="far fa-calendar-alt circle-icon--medium green"></i> <strong>Find an Event</strong></h5>
           <div className="block-flat" style={{marginBottom: 0}}>
             <div className="content">
               <div className="row" style={{ marginTop: 0 }}>
@@ -144,13 +144,13 @@ class EventList extends Component {
         </div>
         <div className="col-md-3">
           <p style={{ marginTop: 20, marginBottom: 0, paddingBottom: 5 }}>
-            <strong>Showing <span className="underline underline--green">{eventsByDay.length}</span> events</strong> <i style={{color: '#aaa'}} className={`fa ${this.state.upcoming ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc'}`}/>
+            <strong>Showing <span className="underline underline--green">{eventsByDay.length}</span> events</strong> <i style={{color: '#aaa'}} className={`far ${this.state.upcoming ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`}/>
           </p>
           <div className="block-flat text-center" style={{marginTop: 0, marginLeft: 0, borderTop: "3px solid #007DA0"}}>
             <div style={{marginBottom: 10}}><label>Show Me events</label></div>
             <div className="btn-group text-center" style={{width: "100%"}}>
-              <a className={`btn btn-sm btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="fa fa-angle-left"/> Before</a>
-              <a className={`btn btn-sm btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>After <i className="fa fa-angle-right"/></a>
+              <a className={`btn btn-sm btn-${this.state.upcoming ? 'default' : 'primary'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}><i className="far fa-angle-left"/> Before</a>
+              <a className={`btn btn-sm btn-${this.state.upcoming ? 'primary' : 'default'}`} style={{width: '48%'}} onClick={this.toggleUpcoming}>After <i className="far fa-angle-right"/></a>
             </div>
             <DayPicker
               onDayClick={this.onDayClick}
@@ -214,11 +214,11 @@ class Filters extends Component {
           _.map(filters, (filterSet, filterName) =>
               <div className="btn-group">
                 <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                  {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="fa fa-caret-down" />
+                  {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="far fa-caret-down" />
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-                      <a>{this.isActive(filter) ? <i className="fa fa-check-square-o "/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>

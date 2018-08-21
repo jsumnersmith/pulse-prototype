@@ -5,7 +5,7 @@ import './attributeEditor.less';
 export default () => (
   <div className="row">
     <div className="col-md-12">
-      <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="fa fa-gear circle-icon--medium green"></i> <strong>Manage Meta Data Attributes</strong></h5>
+      <h5 className="event-list-title" style={{background: "#1FAF84"}}><i className="far fa-cog circle-icon--medium green"></i> <strong>Manage Meta Data Attributes</strong></h5>
       <div className="block-flat">
         <div className="content">
           <div>
@@ -22,7 +22,7 @@ export default () => (
             <AttributeEditorItem value="Coaching"/>
             <AttributeEditorItem value="EdCamp"/>
             <div className="buttons" style={{marginTop: 20}}>
-              <a className="btn btn-primary btn-block btn-xl"><i className="fa fa-plus" /> Add Option</a>
+              <a className="btn btn-primary btn-block btn-xl"><i className="far fa-plus" /> Add Option</a>
             </div>
           </div>
           <div style={{marginTop:20}}>
@@ -39,11 +39,11 @@ export default () => (
 const AttributeEditorItem = ({value}) => (
   <div className="attribute-editor__item">
     <div className="attribute-editor__item-content">
-      <span className="attribute-editor__move"><i className="fa fa-bars"></i></span>
+      <span className="attribute-editor__move"><i className="far fa-bars"></i></span>
       <div className="attribute-editor__input">
         <input className="form-control" defaultValue={value} />
       </div>
-      <span className="attribute-editor__delete"><i className="fa fa-trash-o"></i></span>
+      <span className="attribute-editor__delete"><i className="far fa-trash-alt"></i></span>
    </div>
   </div>
 );

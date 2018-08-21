@@ -3,11 +3,11 @@ import './eventHistoryStream.less';
 
 export default () => (
   <div style={{marginTop: 40}}>
-    <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="fa fa-calendar circle-icon--medium pulse-blue"></i> <strong>Activity</strong></h5>
+    <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="far fa-calendar-alt circle-icon--medium pulse-blue"></i> <strong>Activity</strong></h5>
     <div className="block-flat">
       <div className="event-history-timeline">
         <EventHistoryItem
-          icon="fa-pencil"
+          icon="fa-pencil-alt"
           date="03/03/17"
         >
           <strong>Joel Smith</strong> submitted this event
@@ -25,7 +25,7 @@ export default () => (
           <div className="event-history-item__blockquote">I think you forgot to include the location. Update and we can approve it!</div>
         </EventHistoryItem>
         <EventHistoryItem
-          icon="fa-pencil"
+          icon="fa-pencil-alt"
           date="03/11/17"
         >
           <strong>Joel Smith</strong> edited this event
@@ -81,7 +81,7 @@ export default () => (
 const EventHistoryItem = ({children, icon, date}) => (
   <div className="event-history-item">
     <div className="event-history-item__date">{date}</div>
-    <i className={`fa ${icon} circle-icon--medium event-history-item__icon`} />
+    <i className={`far ${icon} circle-icon--medium event-history-item__icon`} />
     <div className="event-history-item__content">
       {children}
     </div>
@@ -90,6 +90,6 @@ const EventHistoryItem = ({children, icon, date}) => (
 
 const EventHistoryFile = ({title}) => (
   <div className="event-history-item__file">
-    <i className="fa fa-download circle-icon--small"/> <h5>{title}</h5>
+    <i className="far fa-download circle-icon--small"/> <h5>{title}</h5>
   </div>
 )

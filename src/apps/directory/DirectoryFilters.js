@@ -47,11 +47,11 @@ export default class Filters extends Component {
           _.map(filters, (filterSet, filterName) =>
               <div className="btn-group" key={`${filterName}`}>
                 <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                  {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="fa fa-caret-down" />
+                  {filterName} {this.getCategoryCount(filterName) > 0 && <span style={{background: "#eee", borderRadius: "50%", height: 15, width:15, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 9}}>{this.getCategoryCount(filterName)}</span>} <i className="far fa-caret-down" />
                 </button>
                 <ul className="dropdown-menu">
                   {filterSet.map(filter => <li onClick={()=>this.toggleFilter(filter)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}} key={`checklist-${filterName}-${filter.name}`}>
-                      <a>{this.isActive(filter) ? <i className="fa fa-check-square-o "/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {filter.name}</a>
+                      <a>{this.isActive(filter) ? <i className="far fa-check-square "/> : <i className="far fa-square" style={{marginRight: 2}} />} {filter.name}</a>
                     </li>)
                   }
                 </ul>

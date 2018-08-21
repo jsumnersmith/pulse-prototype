@@ -4,7 +4,7 @@ import './adding-table.less';
 
 const SortableItem = SortableElement(({value}) =>
   <div className="adding-table__row">
-    <i className="fa fa-bars adding-table__row-icon" style={{marginRight: 10}}/><div className="adding-table__row-content">{value.columns.map((column)=><div className="adding-table__column">{column}</div>)}</div><i className="fa fa-times adding-table__row-icon circle-icon--small" style={{marginLeft: 10, cursor: "pointer"}}/>
+    <i className="far fa-bars adding-table__row-icon" style={{marginRight: 10}}/><div className="adding-table__row-content">{value.columns.map((column)=><div className="adding-table__column">{column}</div>)}</div><i className="far fa-times adding-table__row-icon circle-icon--small" style={{marginLeft: 10, cursor: "pointer"}}/>
   </div>
 );
 

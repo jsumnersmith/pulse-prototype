@@ -15,12 +15,12 @@ export default () => (
     <div className="">
       <div className="row">
         <div className="col-md-12">
-          <h5 className="meta" style={{marginLeft: 10}}><i className="fa fa-pie-chart" /> Analytics</h5>
+          <h5 className="meta" style={{marginLeft: 10}}><i className="far fa-chart-pie" /> Analytics</h5>
           <hr className="dark"/>
         </div>
         <div className="col-md-6">
           <BigButton
-            iconClass="fa-file-text-o"
+            iconClass="fa-file-alt"
             title="Browse Reports"
             description={<span>Dive into the data from <strong>16</strong> reports in your organization.</span>}
           />
@@ -36,14 +36,14 @@ export default () => (
       <div className="row" style={{marginTop: 20}}>
         <div className="col-md-6">
           <BigButton
-            iconClass="fa-user-o"
+            iconClass="fa-user"
             title="View an Individual Log"
             description={<span>See feedback and activity for one of the 236 people in your organization.</span>}
           />
         </div>
         <div className="col-md-6">
           <BigButton
-            iconClass="fa-line-chart"
+            iconClass="fa-chart-line"
             title="View Your Log"
             description={<span>See your own feedback and historical data.</span>}
           />

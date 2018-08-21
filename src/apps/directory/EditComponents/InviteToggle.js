@@ -29,14 +29,14 @@ class Button extends Component {
     if (isActive){
       return "fa-check-circle green";
     } else {
-      return "fa-circle-thin"
+      return "fa-circle"
     }
   }
   render(){
     const {title, description, isActive} = this.props;
     return (
       <div className={`btn-huge btn-huge__tight ${isActive ? "btn-huge__active" : ""}`}>
-        <i className={`fa ${this.getIconClassName()} btn-huge__icon`} />
+        <i className={`far ${this.getIconClassName()} btn-huge__icon`} />
         <div className="btn-huge__content">
           <h4 className="btn-huge__title"><strong>{title}</strong></h4>
           <p className="btn-huge__description">{description}</p>

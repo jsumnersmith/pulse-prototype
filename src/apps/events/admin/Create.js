@@ -26,7 +26,7 @@ export default class CreateForm extends Component {
       <div className="wrapper wrapper--narrow">
         <SubHeader activeName="create" admin={true}/>
         <div className="block-flat">
-          <h3 ><i className="fa fa-calendar circle-icon pulse-blue"></i> <strong> Details</strong></h3>
+          <h3 ><i className="far fa-calendar-alt circle-icon pulse-blue"></i> <strong> Details</strong></h3>
           <form>
             <fieldset className="form-group">
               <label>Event Name</label>
@@ -41,7 +41,7 @@ export default class CreateForm extends Component {
               <input className="form-control" placeholder="Event Leaders"/>
             </fieldset>
             <hr/>
-            <h3><i className="fa fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+            <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
             <fieldset className="form-group">
               <label>Date</label>
               <DatePicker
@@ -65,7 +65,7 @@ export default class CreateForm extends Component {
               <input className="form-control" placeholder="Event Location"/>
             </fieldset>
             <hr/>
-            <h3><i className="fa fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
+            <h3><i className="far fa-file-alt circle-icon yellow"></i> <strong>Feedback</strong></h3>
             <fieldset className="form-group">
               <label>Feedback Form URL</label>
               <input className="form-control"/>
@@ -74,12 +74,12 @@ export default class CreateForm extends Component {
             <Collapsible
               trigger={
                 <h3 style={{cursor: "pointer"}}>
-                  <i className="fa fa-info circle-icon red"></i>
+                  <i className="far fa-info circle-icon red"></i>
                   <div style={{display: "inline-flex", alignItems: "center", flexWrap: "wrap", height: 46, verticalAlign: "top", marginLeft: 10}}>
                     <strong style={{width: "100%", boxSizing: "border-box", flexGrow: 1}}> Meta Data</strong>
                     <span style={{width: "100%", boxSizing: "border-box", fontSize: 12, fontWeight: 500, flexGrow: 1}}>Add meta data to help categorize and analyze your event.</span>
                   </div>
-                  <i className={`fa fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
+                  <i className={`far fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
 
                 </h3>
               }
@@ -97,12 +97,12 @@ export default class CreateForm extends Component {
             <Collapsible
               trigger={
                 <h3 style={{cursor: "pointer"}}>
-                  <i className="fa fa-gear circle-icon green"></i>
+                  <i className="far fa-cog circle-icon green"></i>
                   <div style={{display: "inline-flex", alignItems: "center", flexWrap: "wrap", height: 46, verticalAlign: "top", marginLeft: 10}}>
                     <strong style={{width: "100%"}}> Advanced Settings</strong>
                     <span style={{width: "100%", fontSize: 12, fontWeight: 500}}>Configure your event's confirmation workflow, visibility, and more.</span>
                   </div>
-                  <i className={`fa fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
+                  <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/>
 
                 </h3>
               }
@@ -113,19 +113,19 @@ export default class CreateForm extends Component {
                 <fieldset className="form-group">
                   <label>Allow users to confirm their own attendance (with confirmation code)?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, I'll manage confirmation</a>
+                    <a className="btn btn-sm btn-primary"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="far fa-times"/> No, I'll manage confirmation</a>
                   </div>
                 </fieldset>
                 <fieldset className="form-group">
                   <label>Should all users see this event?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, only show to registered users</a>
+                    <a className="btn btn-sm btn-primary"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="far fa-times"/> No, only show to registered users</a>
                   </div>
                 </fieldset>
                 <fieldset className="form-group">
                   <label>Does this event require external registration?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-default"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-primary"><i className="fa fa-times"/> No, this event is just in KickUp</a>
+                    <a className="btn btn-sm btn-default"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-primary"><i className="far fa-times"/> No, this event is just in KickUp</a>
                   </div>
                   <input className="form-control" placeholder="Enter the URL for the event's registration page" style={{display: "none"}}/>
                 </fieldset>
@@ -133,8 +133,8 @@ export default class CreateForm extends Component {
             </Collapsible>
             <hr/>
             <fieldset className="text-center form-group">
-              <a href="#submitted" className="btn btn-success"><i className="fa fa-check"></i> Save and Publish Event</a>
-              <a href="#invited" className="btn btn-primary"><i className="fa fa-envelope"></i> Invite People</a>
+              <a href="#submitted" className="btn btn-success"><i className="far fa-check"></i> Save and Publish Event</a>
+              <a href="#invited" className="btn btn-primary"><i className="far fa-envelope"></i> Invite People</a>
             </fieldset>
           </form>
         </div>

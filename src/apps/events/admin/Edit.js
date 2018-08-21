@@ -26,7 +26,7 @@ export default class EditForm extends Component {
       <div className="wrapper wrapper--narrow">
         <SubHeader activeName="create" admin={true}/>
         <div className="block-flat">
-          <h3 ><i className="fa fa-calendar circle-icon pulse-blue"></i> <strong> Details</strong></h3>
+          <h3 ><i className="far fa-calendar-alt circle-icon pulse-blue"></i> <strong> Details</strong></h3>
           <form>
             <fieldset className="form-group">
               <label>Event Name</label>
@@ -43,7 +43,7 @@ export default class EditForm extends Component {
               <input className="form-control"value="Bella Smith"/>
             </fieldset>
             <hr/>
-            <h3><i className="fa fa-map-marker circle-icon purple"></i> <strong> Time & Location</strong></h3>
+            <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
             <fieldset className="form-group">
               <label>Date</label>
               <DatePicker
@@ -67,14 +67,14 @@ export default class EditForm extends Component {
               <input className="form-control" value="East High School Auditorium"/>
             </fieldset>
             <hr/>
-            <h3><i className="fa fa-file-text-o circle-icon yellow"></i> <strong>Feedback</strong></h3>
+            <h3><i className="far fa-file-alt circle-icon yellow"></i> <strong>Feedback</strong></h3>
             <fieldset className="form-group">
               <label>Feedback Form URL</label>
               <input className="form-control" value="http://jotform.com/awesome-feedback-form"/>
             </fieldset>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="fa fa-info circle-icon red"></i> <strong>Meta Data</strong> <i className={`fa fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-info circle-icon red"></i> <strong>Meta Data</strong> <i className={`far fa-${this.state.metaOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
               onOpen={this.toggleMeta}
               onClose={this.toggleMeta}
             >
@@ -87,7 +87,7 @@ export default class EditForm extends Component {
             </Collapsible>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="fa fa-gear circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`fa fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-cog circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
               onOpen={this.toggleAdvanced}
               onClose={this.toggleAdvanced}
             >
@@ -95,19 +95,19 @@ export default class EditForm extends Component {
                 <fieldset className="form-group">
                   <label>Allow users to confirm their own attendance (with confirmation code)?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, I'll manage confirmation</a>
+                    <a className="btn btn-sm btn-primary"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="far fa-times"/> No, I'll manage confirmation</a>
                   </div>
                 </fieldset>
                 <fieldset className="form-group">
                   <label>Should all users see this event?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-primary"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="fa fa-times"/> No, only show to registered users</a>
+                    <a className="btn btn-sm btn-primary"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-default"><i className="far fa-times"/> No, only show to registered users</a>
                   </div>
                 </fieldset>
                 <fieldset className="form-group">
                   <label>Does this event require external registration?</label>
                   <div style={{padding: "5px 0"}}>
-                    <a className="btn btn-sm btn-default"><i className="fa fa-check"/> Yes</a> <a className="btn btn-sm btn-primary"><i className="fa fa-times"/> No, this event is just in KickUp</a>
+                    <a className="btn btn-sm btn-default"><i className="far fa-check"/> Yes</a> <a className="btn btn-sm btn-primary"><i className="far fa-times"/> No, this event is just in KickUp</a>
                   </div>
                   <input className="form-control" placeholder="Enter the URL for the event's registration page" style={{display: "none"}}/>
                 </fieldset>
@@ -115,8 +115,8 @@ export default class EditForm extends Component {
             </Collapsible>
             <hr/>
             <fieldset className="text-center form-group">
-              <a href="#submitted" className="btn btn-success"><i className="fa fa-check"></i> Save and Publish Event</a>
-              <a href="#invited" className="btn btn-primary"><i className="fa fa-envelope"></i> Invite People</a>
+              <a href="#submitted" className="btn btn-success"><i className="far fa-check"></i> Save and Publish Event</a>
+              <a href="#invited" className="btn btn-primary"><i className="far fa-envelope"></i> Invite People</a>
             </fieldset>
           </form>
         </div>

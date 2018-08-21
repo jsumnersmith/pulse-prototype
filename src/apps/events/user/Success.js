@@ -9,7 +9,7 @@ export default class EventPage extends Component {
         {/* <SubHeader activeName="browse" /> */}
         <div className="block-flat" style={{maxWidth: 500, marginLeft: 'auto',  marginRight: 'auto'}}>
           <div className="text-center">
-            <h3 style={{margin:0}}><i className="fa fa-check circle-icon green"/> <strong>Payment Submitted</strong></h3>
+            <h3 style={{margin:0}}><i className="far fa-check circle-icon green"/> <strong>Payment Submitted</strong></h3>
           </div>
           <p style={{margin: '20px 0'}}>Your payment has been submitted! There may be a delay before our system receives confirmation of that payment, but your registration information will reflect your payment when that confirmation arrives.</p>
           <div className="text-center">

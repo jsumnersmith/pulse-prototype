@@ -23,7 +23,7 @@ export default class SaveButtons extends Component {
               Manage Report <span className="caret"></span>
               </button>
                 <ul className="dropdown-menu" role="menu">
-                  <li><a><Icon icon='fa-pencil'/>Edit Report</a></li>
+                  <li><a><Icon icon='fa-pencil-alt'/>Edit Report</a></li>
                   <li className="divider"></li>
                   <li><a><Icon icon='fa-download'/>Export Data</a></li>
                   <li><a onClick={this.togglePrintView}><Icon icon='fa-print'/>{this.state.printView ? " Exit Print-Friendly View" : "Print-Friendly View" }</a></li>
@@ -32,14 +32,14 @@ export default class SaveButtons extends Component {
             {
               this.state.printView &&
               <span>
-                <span className="label meta blue" style={{"font-size": 11, fontWeight: "600"}}><i className="fa fa-print"/> Currently in Print-Friendly View</span>
+                <span className="label meta blue" style={{"font-size": 11, fontWeight: "600"}}><i className="far fa-print"/> Currently in Print-Friendly View</span>
                 <button className="btn btn-trans btn-xs btn-danger" style={{marginLeft: 0}}onClick={this.togglePrintView}>Exit</button>
               </span>
             }
             <div style={{marginTop: 30}}>
               <button type="button" className={`btn btn-default`} style={{position: 'relative'}} onClick={this.togglePrintView}>
                <Icon icon="fa-print"/> Print-Friendly View
-               {this.state.printView && <span className="active-icon circle-icon--small fa fa-check pulse-blue white-text" />}
+               {this.state.printView && <span className="active-icon circle-icon--small far fa-check pulse-blue white-text" />}
               </button>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default class SaveButtons extends Component {
 const Icon = ({icon}) => (
   <span>
     {
-      icon ? <i className={`fa ${icon}`} style={{marginRight: 10}}></i> : null
+      icon ? <i className={`far ${icon}`} style={{marginRight: 10}}></i> : null
     }
   </span>
 );

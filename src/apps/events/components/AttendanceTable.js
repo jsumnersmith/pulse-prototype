@@ -52,7 +52,7 @@ class AttendanceTable extends Component {
         <div style={{marginTop: 5, marginBottom: 10, position: 'relative'}} className="text-right">
           <label>1 user has not received a registration email notification.</label>
           <button className="btn btn-sm btn-default btn-trans" data-toggle="modal" data-target="#attendance-modal">Review and Send</button>
-          <button className="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Options <i className="fa fa-caret-down" /></button>
+          <button className="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Options <i className="far fa-caret-down" /></button>
           <ul className="dropdown-menu dropdown-menu-right" role="menu">
             <li><a data-toggle="modal" data-target="#bulk-modal">Bulk Register Users</a></li>
             <li><Link to={match.url + '/sheet'}>Printable Sign-in Sheet</Link></li>
@@ -117,8 +117,8 @@ class AttendanceTable extends Component {
               <div className="text-center">
                 {
                     sampleEvent.attendees[rowIndex].confirmed
-                    ? <i className="fa fa-check circle-icon--small green" />
-                    : <i className="fa fa-times circle-icon--small" />
+                    ? <i className="far fa-check circle-icon--small green" />
+                    : <i className="far fa-times circle-icon--small" />
                   }
               </div>
             </Cell>
@@ -133,8 +133,8 @@ class AttendanceTable extends Component {
                 <div className="text-center" style={{ paddingRight: 5 }}>
                   {
                       sampleEvent.attendees[rowIndex].confirmed
-                      ? <a className="btn btn-danger btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-times" /> Reset Attendence</a>
-                      : <a className="btn btn-success btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-check" /> Confirm Attendence</a>
+                      ? <a className="btn btn-danger btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="far fa-times" /> Reset Attendence</a>
+                      : <a className="btn btn-success btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="far fa-check" /> Confirm Attendence</a>
                   }
                 </div>
               </Cell>
@@ -147,7 +147,7 @@ class AttendanceTable extends Component {
             cell={({ rowIndex, ...props }) => (
               <Cell {...props}>
                 <div className="text-center" style={{ paddingRight: 5 }}>
-                  <a className="btn btn-default btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="fa fa-calendar-times-o" /> Unregister</a>
+                  <a className="btn btn-default btn-trans btn-sm btn-block" style={{ marginLeft: 0 }}><i className="far fa-calendar-times" /> Unregister</a>
                 </div>
               </Cell>
               )}
@@ -198,8 +198,8 @@ class AttendanceTable extends Component {
               <div>
                 <label>Add attendees' emails separated by commas</label>
                 <textarea className="form-control"></textarea>
-                <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="fa fa-warning" /> The following emails were not added: email@adress.com, other@address.com</p>
-                <p className="green"><i className="fa fa-check-circle" /> Successfully added 3,456 emails.</p>
+                <p className="red-text" style={{marginTop: 10, marginBottom: 5}}><i className="far fa-exclamation-triangle" /> The following emails were not added: email@adress.com, other@address.com</p>
+                <p className="green"><i className="far fa-check-circle" /> Successfully added 3,456 emails.</p>
               </div>
             </div>
             <div className="modal-footer text-right">

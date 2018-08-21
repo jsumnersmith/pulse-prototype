@@ -57,7 +57,7 @@ export default class Edit extends Component {
             { user.invitePending && <PendingBanner user={user}/>}
             <div className="row">
               <div className="col-md-12">
-                <h3 style={{marginTop: 0}}><i className="fa fa-user circle-icon green" /> <strong>Basic Information</strong></h3>
+                <h3 style={{marginTop: 0}}><i className="far fa-user circle-icon green" /> <strong>Basic Information</strong></h3>
               </div>
               <div style={{padding: '20px 0 0 20px'}}>
                 <div className="col-md-6">
@@ -84,14 +84,14 @@ export default class Edit extends Component {
                     <tbody className="no-border-y">
                       <tr>
                         <td>{user.email}</td>
-                        <td><i className="fa fa-check circle-icon--small white-text green"/></td>
-                        <td><button className="btn btn-sm btn-trans btn-primary">Actions <i className="fa fa-caret-down" /></button></td>
+                        <td><i className="far fa-check circle-icon--small white-text green"/></td>
+                        <td><button className="btn btn-sm btn-trans btn-primary">Actions <i className="far fa-caret-down" /></button></td>
                       </tr>
                       <tr>
                         <td colSpan="3">
                           <div style={{display: 'flex', alignContent: 'center'}} >
                             <input placeholder="Enter another email address" className="form-control" />
-                            <button className="btn btn-primary"><i className="fa fa-plus" />Add</button>
+                            <button className="btn btn-primary"><i className="far fa-plus" />Add</button>
                           </div>
                         </td>
                       </tr>
@@ -106,18 +106,18 @@ export default class Edit extends Component {
               <div className="col-md-12">
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} >
                   <div className="">
-                    <h3 style={{marginTop: 0}}><i className="fa fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
-                      <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are attributes?" data-content="Attributes are basic demographic facts that are known about a user. Typically, this data is used for data analysis in analytics reporting. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
+                    <h3 style={{marginTop: 0}}><i className="far fa-tags circle-icon yellow" /> <strong>Attributes</strong> &nbsp;
+                      <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are attributes?" data-content="Attributes are basic demographic facts that are known about a user. Typically, this data is used for data analysis in analytics reporting. "><i className="far fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
                     </h3>
                   </div>
                   <div className="text-right" style={{display: 'none'}}>
-                    <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-pencil" /> Edit Attributes</button>
+                    <button className="btn btn-primary btn-trans btn-sm text-right" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="far fa-pencil-alt" /> Edit Attributes</button>
                   </div>
                 </div>
                 <div style={{padding: '0px 0 0 20px'}}>
                   <EditAttributes user={user} />
                   <div className="text-right">
-                    <button className="btn btn-primary" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="fa fa-plus" /> Add Attribute</button>
+                    <button className="btn btn-primary" style={{marginTop: 10}} data-toggle="modal" data-target="#attribute-modal"><i className="far fa-plus" /> Add Attribute</button>
                   </div>
                 </div>
               </div>
@@ -143,8 +143,8 @@ export default class Edit extends Component {
                   <div style={{paddingLeft: 20, paddingRight: 20}}>
                     <div className="col-md-12" style={{marginBottom: 30}}>
                       <h3 className={`${!this.state.viewPermissions && 'inactive'}`}>
-                        <i className={`fa fa-users circle-icon red ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Groups</strong> &nbsp;
-                        <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="fa fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
+                        <i className={`far fa-users circle-icon red ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Groups</strong> &nbsp;
+                        <span style={{color: '#bbb', background: '#eee', borderRadius: '50%', height: 20, width: 20, fontSize: 15, display: 'inline-flex', alignItems:'center', justifyContent: 'center'}} data-placement="top" data-toggle="popover" data-trigger="hover" title="What are groups?" data-content="Groups are a tool for easily sharing or pre-registering a number of users in either analytics or events. "><i className="far fa-question" style={{color: '#bbb', fontSize: 15}}/></span>
                       </h3>
                       {
                         this.state.viewPermissions ?
@@ -164,33 +164,33 @@ export default class Edit extends Component {
                             />
                           </div>
                         :
-                        <p><i className="fa fa-info-circle orange" /> This person must be able to login to be added to a group.</p>
+                        <p><i className="far fa-info-circle orange" /> This person must be able to login to be added to a group.</p>
                       }
                   </div>
                   <div className="col-md-12">
-                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-unlock-alt circle-icon pulse-blue ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Permissions</strong></h3>
+                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`far fa-unlock-alt circle-icon pulse-blue ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Permissions</strong></h3>
                     {
                         this.state.viewPermissions ?
                         <div style={{paddingLeft: 20, paddingRight: 20}}>
-                          <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-user circle-icon--small pulse-blue white-text"/> Administrative Permissions</strong></h4>
+                          <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="far fa-user circle-icon--small pulse-blue white-text"/> Administrative Permissions</strong></h4>
                           <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
                           <PermissionsTable
                             appliesTo={false}
                             permissions={[
                               {
                                 isActive: user.permissions.includes('Manage Reports'),
-                                iconclassName: "fa-file-text-o",
+                                iconclassName: "fa-file-alt",
                                 title: "Manage Reports",
                                 description: "User will be able to create, edit, and view all reports"
                               },
                               {
                                 isActive: user.permissions.includes('Manage Events'),
-                                iconclassName: "fa-calendar",
+                                iconclassName: "fa-calendar-alt",
                                 title: "Manage Events",
                                 description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
                               }
                             ]} />
-                            <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="fa fa-users circle-icon--small pulse-blue white-text"/> Management Permissions</strong></h4>
+                            <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="far fa-users circle-icon--small pulse-blue white-text"/> Management Permissions</strong></h4>
                             <p>These permissions will grant a user specific permissions to manage content and may be constrained down to content related to specific groups.</p>
                             <div className="col-md-12">
                               <PermissionsTable
@@ -218,11 +218,11 @@ export default class Edit extends Component {
                             </div>
                           </div>
                           :
-                          <p><i className="fa fa-info-circle orange" /> This person must be able to login to be granted specific permissions.</p>
+                          <p><i className="far fa-info-circle orange" /> This person must be able to login to be granted specific permissions.</p>
                         }
                   </div>
                   <div className="col-md-12" style={{marginTop: 30}}>
-                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`fa fa-list-alt circle-icon purple ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Restrictions</strong></h3>
+                    <h3 style={{marginTop: 0, marginBottom: 20}} className={`${!this.state.viewPermissions && 'inactive'}`}><i className={`far fa-list-alt circle-icon purple ${!this.state.viewPermissions && 'inactive'}`} /> <strong>Restrictions</strong></h3>
                     {
                         this.state.viewPermissions ?
                         <div style={{padding: '0 20px'}}>
@@ -240,13 +240,13 @@ export default class Edit extends Component {
                           </div>
                         </div>
                       :
-                      <p><i className="fa fa-info-circle orange" /> This person must be able to login to be given data restrictions.</p>
+                      <p><i className="far fa-info-circle orange" /> This person must be able to login to be given data restrictions.</p>
                 }
 
                 { this.state.viewRestrictions &&
                   <div style={{padding: '0 20px'}}>
-                    <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="fa fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="fa fa-pencil" /> Edit Restrictions</button></h4>
-                    { user.restrictions.length < 1 && <p><i className="fa fa-info-circle orange"/> This user can currently see any data in reports that are shared with them.</p>}
+                    <h4 className="directory-section-subheader" style={{borderColor: '#8B698E'}}><i className="far fa-lock circle-icon--small purple white-text"/> <strong>Current Restrictions</strong> <button className="btn btn-sm btn-primary btn-trans" data-toggle="modal" data-target="#sample-modal"><i className="far fa-pencil-alt" /> Edit Restrictions</button></h4>
+                    { user.restrictions.length < 1 && <p><i className="far fa-info-circle orange"/> This user can currently see any data in reports that are shared with them.</p>}
                     {_.chain(user.restrictions).groupBy(restriction => restriction.type).map((restrictions, restrictionType) => {
                       return <span style={{display: 'inline-flex', alignItems: 'center', marginRight: 10}}><label style={{display: 'inline-block', marginRight: 5}}>{restrictionType}</label> {restrictions.map(restriction => <Tag name={`${restriction.value}`}/>)}</span>
                     }).value()}
@@ -266,7 +266,7 @@ export default class Edit extends Component {
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
-                  <h3><i className="fa fa-list-alt circle-icon purple" style={{marginRight: 5}}/> <strong>Set Restrictions for {user.name}</strong></h3>
+                  <h3><i className="far fa-list-alt circle-icon purple" style={{marginRight: 5}}/> <strong>Set Restrictions for {user.name}</strong></h3>
                   <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
                 </div>
                 <div className="modal-body" style={{padding: 20}}>
@@ -284,7 +284,7 @@ export default class Edit extends Component {
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header text-left" style={{paddingTop:40, paddingBottom: 0}}>
-                  <h3><i className="fa fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Add Attribute for {user.name}</strong></h3>
+                  <h3><i className="far fa-tags circle-icon yellow" style={{marginRight: 5}}/> <strong>Add Attribute for {user.name}</strong></h3>
                   <a className="close" data-dismiss="modal" aria-hidden="true">×</a>
                 </div>
                 <div className="modal-body" style={{padding: 20}}>
@@ -304,7 +304,7 @@ export default class Edit extends Component {
             <div className="modal-dialog">
               <div className="modal-content" style={{padding: 20}}>
                 <div className="modal-header text-left">
-                  <h3><i className="fa fa-user circle-icon green" style={{marginRight: 5}}/> <strong>Update information for {user.name}</strong></h3>
+                  <h3><i className="far fa-user circle-icon green" style={{marginRight: 5}}/> <strong>Update information for {user.name}</strong></h3>
                   <a className="close"  aria-hidden="true" onClick={this.closeUpgradeModal}>×</a>
                 </div>
                 <div className="modal-body" style={{padding: 20}}>

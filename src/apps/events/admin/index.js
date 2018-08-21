@@ -12,7 +12,7 @@ export default class Events extends Component {
         <SubHeader activeName="home" admin={true}/>
         <div className="row">
           <div className="col-md-12">
-            <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="fa fa-calendar circle-icon--medium pulse-blue color-text"></i> <strong>Welcome!</strong></h5>
+            <h5 className="event-list-title" style={{background: "#007DA0"}}><i className="far fa-calendar-alt circle-icon--medium pulse-blue color-text"></i> <strong>Welcome!</strong></h5>
             <div className="block-flat">
               <div className="content">
                 <div className="row">
@@ -26,7 +26,7 @@ export default class Events extends Component {
             </div>
             <div className="row" style={{marginTop: 0}}>
               <div className="col-md-6">
-                <h5 className="event-list-title" style={{background: "rgb(31, 175, 132)"}}><i className="fa fa-calendar-check-o circle-icon--medium green color-text"></i> <strong>Upcoming Events</strong></h5>
+                <h5 className="event-list-title" style={{background: "rgb(31, 175, 132)"}}><i className="far fa-calendar-check circle-icon--medium green color-text"></i> <strong>Upcoming Events</strong></h5>
                 <EventSummaryList
                   index={4}
                   events={sampleEvents}
@@ -35,7 +35,7 @@ export default class Events extends Component {
                 />
               </div>
               <div className="col-md-6">
-                <h5 className="event-list-title" style={{background: "#8B698E"}}><i className="fa fa-check circle-icon--medium purple color-text"></i> <strong>Recent Events</strong></h5>
+                <h5 className="event-list-title" style={{background: "#8B698E"}}><i className="far fa-check circle-icon--medium purple color-text"></i> <strong>Recent Events</strong></h5>
                 <EventSummaryList
                   index={1}
                   events={sampleEvents.slice(0,2)}

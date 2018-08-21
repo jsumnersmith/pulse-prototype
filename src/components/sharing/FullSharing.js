@@ -30,14 +30,14 @@ export default class Sharing extends Component {
             <div className="col-md-12">
               <BigButton
                 isActive={this.state.public}
-                iconclassName="fa-file-text-o"
+                iconclassName="fa-file-alt"
                 title="Make Event Public"
                 description="If selected, any user who can access events for your organziation should be able to see this event."
               />
             </div>
             <div className="col-md-12">
               <div className="sharing-header" style={{marginTop: 20}}>
-                <h5 className="sharing-header--title"><i className="fa fa-group circle-icon--small" /> <strong>People</strong></h5>
+                <h5 className="sharing-header--title"><i className="far fa-users circle-icon--small" /> <strong>People</strong></h5>
                 <SearchInput placeholder="Search users or groups to give them access to this event." />
                 <table className="no-border">
                   <thead className="no-border">
@@ -51,9 +51,9 @@ export default class Sharing extends Component {
                     {
                       this.state.groups.map(group =>
                         <tr>
-                          <td><i className="fa fa-group circle-icon--small" /> <strong>{group.name}</strong></td>
+                          <td><i className="far fa-users circle-icon--small" /> <strong>{group.name}</strong></td>
                           <td><UserActions /></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="fa fa-times" />Remove</button></td>
+                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="far fa-times" />Remove</button></td>
                         </tr>
                       )
                     }
@@ -62,7 +62,7 @@ export default class Sharing extends Component {
                         <tr>
                           <td><img src={coffee} className="sharing-user-list--avatar" alt="Coffee Avatar"/> <strong>{user.name}</strong></td>
                           <td><UserActions value={index === 0 ? 'edit' : 'view'}/></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(user.name)}><i className="fa fa-times" />Remove</button></td>
+                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(user.name)}><i className="far fa-times" />Remove</button></td>
                         </tr>
                       )
                     }
@@ -74,7 +74,7 @@ export default class Sharing extends Component {
             <hr className="col-md-12" />
             <div className="col-md-12">
               <div className="sharing-header">
-                <h5 className="sharing-header--title"><i className="fa fa-link circle-icon--small" /> <strong>Links</strong></h5>
+                <h5 className="sharing-header--title"><i className="far fa-link circle-icon--small" /> <strong>Links</strong></h5>
               </div>
             </div>
           </div>

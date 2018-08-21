@@ -55,7 +55,7 @@ export default class Header extends Component {
       <div className="cl-wrapper">
         <header className={`ku-header ${fixed || open  ? "fixed" : null} ${open  ? "open" : null}`}>
           <div className="ku-header-toggle">
-            <a onClick={()=>this.toggleOpen()}>Menu <i className="fa fa-bars"></i></a>
+            <a onClick={()=>this.toggleOpen()}>Menu <i className="far fa-bars"></i></a>
           </div>
           <div className="ku-header-logo text-center">
             <img src={logo} alt="Kickup Logo"/>

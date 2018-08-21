@@ -103,17 +103,17 @@ export default class Importer extends Component {
 
 const StepFooter = ({step, nextStep, previousStep, disabled}) => (
   <div className="importer-step-footer">
-    { !disabled && <button className="btn btn-primary btn-sm btn-trans" onClick={previousStep}><i className="fa fa-caret-left"/> Previous</button> }
+    { !disabled && <button className="btn btn-primary btn-sm btn-trans" onClick={previousStep}><i className="far fa-caret-left"/> Previous</button> }
     <label style={{flexGrow: 1, textAlign: 'center'}}>Step {step} of 4: {stepDescriptions[step - 1]}</label>
     <div className="importer-step-footer__action">
-    { !disabled && <button className="btn btn-primary btn-sm btn-trans" onClick={nextStep}>Next <i className="fa fa-caret-right"/></button> }
+    { !disabled && <button className="btn btn-primary btn-sm btn-trans" onClick={nextStep}>Next <i className="far fa-caret-right"/></button> }
     </div>
   </div>
 )
 
 const FileNameDisplay = ({fileName, restart}) => (
   <div className="importer-file-name">
-    <h5><i className="importer-file-name__icon fa fa-file-code-o"/> You uploaded <strong className="underline--pulse-blue">{fileName}</strong> <span className="meta" onClick={restart} style={{float: 'right', cursor: 'pointer', fontSize: 11}}><i className="fa fa-times"/> Cancel Changes</span></h5>
+    <h5><i className="importer-file-name__icon far fa-file-code"/> You uploaded <strong className="underline--pulse-blue">{fileName}</strong> <span className="meta" onClick={restart} style={{float: 'right', cursor: 'pointer', fontSize: 11}}><i className="far fa-times"/> Cancel Changes</span></h5>
   </div>
 )
 

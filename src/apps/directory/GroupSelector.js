@@ -23,11 +23,11 @@ class GroupItem extends Component {
     return (
       <div className="group-selector__item" >
         <span onClick={this.toggleSelected} className="group-selector__header">
-          <Icon iconName={this.state.selected ? "fa-check-circle green": "fa-circle-thin"}/>
+          <Icon iconName={this.state.selected ? "fa-check-circle green": "fa-circle"}/>
           <h5 className="group-selector__title"><strong>{this.props.group}</strong></h5>
         </span>
         { this.state.selected &&
-          <i className="fa fa-chevron-down" style={{float: "right"}} data-toggle="collapse" data-target={`#${randomNumber}`} />
+          <i className="far fa-chevron-down" style={{float: "right"}} data-toggle="collapse" data-target={`#${randomNumber}`} />
         }
         { this.state.selected &&
           <div className="group-selector__options collapse" id={`${randomNumber}`}>
@@ -39,8 +39,8 @@ class GroupItem extends Component {
   }
 }
 
-const Icon = ({iconName = 'fa-circle-thin'}) => (
-  <i className={`group-selector__icon fa ${iconName}`}/>
+const Icon = ({iconName = 'fa-circle'}) => (
+  <i className={`group-selector__icon far ${iconName}`}/>
 )
 
 const GroupAdminOptions = () => (

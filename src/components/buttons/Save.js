@@ -48,7 +48,7 @@ export default class SaveButtons extends Component {
   getIcon(){
     const {buttonState} = this.state;
     if (buttonState === 'saving') {
-      return 'fa-circle-o-notch fa-spin';
+      return 'fa-circle-notch fa-spin';
     } else if (buttonState === 'success') {
       return 'fa-check'
     }
@@ -83,7 +83,7 @@ export default class SaveButtons extends Component {
 const Icon = ({icon}) => (
   <span>
     {
-      icon ? <i className={`fa ${icon}`} style={{marginRight: 5}}></i> : null
+      icon ? <i className={`far ${icon}`} style={{marginRight: 5}}></i> : null
     }
   </span>
 );

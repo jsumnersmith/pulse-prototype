@@ -44,7 +44,7 @@ class PermissionRow extends Component {
     } else  if (isConfused){
       return "fa-minus-circle";
     } else {
-      return "fa-circle-thin"
+      return "fa-circle"
     }
   }
   render(){
@@ -53,7 +53,7 @@ class PermissionRow extends Component {
         <td onClick={this.toggleActive} style={{cursor: 'pointer'}} className="td-button">
           <BigButton
             isActive={this.state.isActive}
-            iconclassName="fa-calendar"
+            iconclassName="fa-calendar-alt"
             title={this.props.title}
             description={this.props.description}
           />
@@ -96,16 +96,16 @@ class PermissionDropdown extends Component {
     return (
       <div className="btn-group">
         <button className="btn btn-default dropdown-toggle" data-toggle="dropdown" >
-          <span style={{display: 'inline-block', maxWidth: 300, overflow: 'hidden'}}>{this.state.appliesTo.join(', ')}</span> <i className="fa fa-caret-down" />
+          <span style={{display: 'inline-block', maxWidth: 300, overflow: 'hidden'}}>{this.state.appliesTo.join(', ')}</span> <i className="far fa-caret-down" />
         </button>
         <ul className="dropdown-menu">
           <li onClick={()=>this.updateAppliesTo('Global')} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-            <a>{this.isActive('Global') ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {'Global (All Users)'}</a>
+            <a>{this.isActive('Global') ? <i className="far fa-check-square"/> : <i className="far fa-square" style={{marginRight: 2}} />} {'Global (All Users)'}</a>
           </li>
           <li className="divider"></li>
           {groupList.map(item =>
             <li onClick={()=>this.updateAppliesTo(item)} style={{listStyle: 'none', paddingLeft: 0, cursor: 'pointer'}}>
-              <a>{this.isActive(item) ? <i className="fa fa-check-square-o"/> : <i className="fa fa-square-o" style={{marginRight: 2}} />} {item}</a>
+              <a>{this.isActive(item) ? <i className="far fa-check-square"/> : <i className="far fa-square" style={{marginRight: 2}} />} {item}</a>
             </li>
           )}
         </ul>
