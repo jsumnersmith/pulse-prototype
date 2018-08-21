@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecated';
-import BigButton from '../../components/permissionButtons/components/BigButton.js';
 import users, {groups} from '../../apps/directory/users.js';
 import coffee from '../../images/new_coffee.png';
 
@@ -15,6 +14,7 @@ export default class Sharing extends Component {
       groups: groups.slice(0,2)
     }
     this.removeUserOrGroup = this.removeUserOrGroup.bind(this);
+    this.setPublicity = this.setPublicity.bind(this);
   }
   removeUserOrGroup(name){
     console.log(name)
@@ -22,18 +22,18 @@ export default class Sharing extends Component {
     let updatedGroups = this.state.groups.filter(group => group.name !== name);
     this.setState({users: updatedUsers, groups: updatedGroups});
   }
+  setPublicity(val){
+    this.setState({ public: val });
+  }
   render(){
     return (
       <div>
         <div className="block-flat">
           <div className="row">
             <div className="col-md-12">
-              <BigButton
-                isActive={this.state.public}
-                iconclassName="fa-file-alt"
-                title="Make Event Public"
-                description="If selected, any user who can access events for your organziation should be able to see this event."
-              />
+              <label>Make this event visible to:</label>
+              <button className={`btn btn-success ${!this.state.public && "btn-trans"} btn-xs`} onClick={()=>this.setPublicity(true)}>All Users</button>
+              <button className={`btn btn-success ${this.state.public && "btn-trans"} btn-xs`} onClick={()=>this.setPublicity(false)}>Only share with users and groups specified below</button>
             </div>
             <div className="col-md-12">
               <div className="sharing-header" style={{marginTop: 20}}>
@@ -50,31 +50,28 @@ export default class Sharing extends Component {
                   <tbody className="no-border-y">
                     {
                       this.state.groups.map(group =>
-                        <tr>
-                          <td><i className="far fa-users circle-icon--small" /> <strong>{group.name}</strong></td>
-                          <td><UserActions /></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(group.name)}><i className="far fa-times" />Remove</button></td>
-                        </tr>
+                        <ShareRow
+                          item={group}
+                          rowType='group'
+                          itemIsPublic={this.state.public}
+                          removeUserOrGroup={this.removeUserOrGroup}
+                        />
                       )
                     }
                     {
                       this.state.users.map((user, index) =>
-                        <tr>
-                          <td><img src={coffee} className="sharing-user-list--avatar" alt="Coffee Avatar"/> <strong>{user.name}</strong></td>
-                          <td><UserActions value={index === 0 ? 'edit' : 'view'}/></td>
-                          <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.removeUserOrGroup(user.name)}><i className="far fa-times" />Remove</button></td>
-                        </tr>
+                        <ShareRow
+                          item={user}
+                          rowType='user'
+                          itemIsPublic={this.state.public}
+                          removeUserOrGroup={this.removeUserOrGroup}
+                        />
                       )
                     }
 
                   </tbody>
-                </table>
-              </div>
-            </div>
-            <hr className="col-md-12" />
-            <div className="col-md-12">
-              <div className="sharing-header">
-                <h5 className="sharing-header--title"><i className="far fa-link circle-icon--small" /> <strong>Links</strong></h5>
+                </table>.
+                <div className="text-center">{this.state.public && <label>*This event is currently shared with all users.</label>}</div>
               </div>
             </div>
           </div>
@@ -84,9 +81,55 @@ export default class Sharing extends Component {
   }
 }
 
-const UserActions = ({value = 'view'}) => (
-  <select className="form-control sharing-control">
-    <option value="view" selected={value === 'view'}>Can View</option>
-    <option value="edit" selected={value === 'edit'}>Can Manage/Edit</option>
-  </select>
+class ShareRow extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      permission: 'view'
+    }
+    this.setPermission = this.setPermission.bind(this);
+    this.showAsterisk = this.showAsterisk.bind(this);
+  }
+  setPermission(permission){
+    this.setState({permission});
+  }
+  showAsterisk(){
+    return this.props.itemIsPublic && this.state.permission === 'view';
+  }
+  render(){
+    const {item, rowType} = this.props;
+    return (
+      <tr>
+        <td><Avatar rowType={rowType} /> <strong>{item.name}</strong></td>
+        <td>
+          <UserActions
+            onChange={(e)=>this.setPermission(e.target.value)}
+            showAsterisk={this.showAsterisk()}
+          />
+        </td>
+        <td><button className="btn btn-sm btn-danger btn-trans" onClick={() => this.props.removeUserOrGroup(item.name)}><i className="far fa-times" />Remove</button></td>
+      </tr>
+    )
+  }
+}
+
+const Avatar = ({rowType}) => (
+  <span>
+    {rowType === 'user'
+      ?
+      <img src={coffee} className="sharing-user-list--avatar" alt="Coffee Avatar"/>
+      :
+      <i className="far fa-users circle-icon--small" />
+    }
+  </span>
+)
+
+const UserActions = ({onChange, showAsterisk}) => (
+  <div className="sharing-control-wrapper">
+    <select className="form-control sharing-control" onChange={onChange}>
+      <option value="view" selected>Can View</option>
+      <option value="edit" >Can Manage/Edit</option>
+    </select>
+    {showAsterisk && <label>*</label>}
+  </div>
 )
