@@ -5,10 +5,7 @@ import EventGroupSharing from './EventGroupSharing';
 
 export default () => (
   <div className="wrapper">
-    <label>Current View for Events Group Sharing</label>
-    <EventGroupSharing />
-
-    <label>Where we'd like to get to for All Sharing.</label>
+    <label>Proposed Sharing UI</label>
     <FullSharing />
   </div>
 );
