@@ -80,6 +80,8 @@
   }
 }
 .ku-header-profile-image {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   max-width: 45px;
   margin: 5px 10px 5px 0;
@@ -87,6 +89,7 @@
   border-radius: 50%;
   vertical-align: top;
   cursor: pointer;
+  &--primary { border-color: @pulse-blue !important};
 }
 .ku-header-profile-name {
   display: inline-block;

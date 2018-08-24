@@ -6,7 +6,8 @@ export default class BigButton extends Component {
     super(props);
     this.state = {
       isActive: this.props.isActive || false,
-      isConfused: this.props.isConfused
+      isConfused: this.props.isConfused,
+      isDisabled: this.props.isDisabled
     }
     if (this.props.onClick) {
       this.toggleActive = this.props.onClick;
@@ -24,7 +25,7 @@ export default class BigButton extends Component {
   }
 
   getIconClassName(){
-    const {isActive, isConfused} = this.state;
+    const {isActive, isConfused, isDisabled} = this.state;
     if (isActive){
       return "fa-check-circle green";
     } else  if (isConfused){
