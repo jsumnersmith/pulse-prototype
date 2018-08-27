@@ -4,11 +4,11 @@ import BigButton from '../../../components/permissionButtons/components/BigButto
 
 import './permission-table.less';
 
-export default ({permissions, appliesTo}) => (
+export default ({permissions, appliesTo, title="Permission"}) => (
   <table className="no-border">
     <thead className="no-border">
       <tr>
-        <th><strong>Permission</strong></th>
+        <th><strong>{title}</strong></th>
         {appliesTo && <th><strong>Applies To</strong></th>}
       </tr>
     </thead>
@@ -50,13 +50,16 @@ class PermissionRow extends Component {
   render(){
     return (
       <tr className="permission-table-row">
-        <td onClick={this.toggleActive} style={{cursor: 'pointer'}} className="td-button">
-          <BigButton
-            isActive={this.state.isActive}
-            iconclassName="fa-calendar-alt"
-            title={this.props.title}
-            description={this.props.description}
-          />
+        <td onClick={this.toggleActive} style={{cursor: 'pointer', opacity: this.props.isDisabled ? .5 : 1, pointerEvents: this.props.isDisabled ? 'none' : 'initial'}} className="td-button">
+          <div onClick={()=> this.props.onClick && this.props.onClick()}>
+            <BigButton
+              isActive={this.state.isActive}
+              iconclassName="fa-calendar-alt"
+              title={this.props.title}
+              isDisabled={false}
+              description={this.props.description}
+            />
+          </div>
         </td>
         {this.props.appliesTo && <td style={{width: 400,}}><div style={{ opacity: this.state.isActive ? '1' : '.5', pointerEvents: this.state.isActive ? 'initial' : 'none'}}><PermissionDropdown /></div></td>}
       </tr>

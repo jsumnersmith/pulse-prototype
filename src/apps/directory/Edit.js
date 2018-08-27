@@ -20,7 +20,8 @@ export default class Edit extends Component {
     this.state = {
       viewPermissions: user.canLogin,
       viewRestrictions: user.restrictions.length > 0,
-      showUpgradeModal: false
+      showUpgradeModal: false,
+      canManageEvents: user.permissions.includes('Can Manage Events')
     }
     this.togglePermissions = this.togglePermissions.bind(this);
     this.toggleRestrictions = this.toggleRestrictions.bind(this);
@@ -175,6 +176,7 @@ export default class Edit extends Component {
                           <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="far fa-user circle-icon--small pulse-blue white-text"/> Administrative Permissions</strong></h4>
                           <p>These permissions will grant a user global, application-wide permissions to manage content.</p>
                           <PermissionsTable
+                            title={"Report Permissions"}
                             appliesTo={false}
                             permissions={[
                               {
@@ -182,12 +184,26 @@ export default class Edit extends Component {
                                 iconclassName: "fa-file-alt",
                                 title: "Manage Reports",
                                 description: "User will be able to create, edit, and view all reports"
-                              },
+                              }
+                            ]}
+                          />
+                          <PermissionsTable
+                            title={"Events Permissions"}
+                            appliesTo={false}
+                            permissions={[
                               {
                                 isActive: user.permissions.includes('Manage Events'),
                                 iconclassName: "fa-calendar-alt",
                                 title: "Manage Events",
-                                description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events."
+                                description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events.",
+                                onClick: () => this.setState({canManageEvents: !this.state.canManageEvents})
+                              },
+                              {
+                                isActive: this.state.canManageEvents || user.permissions.includes('Manage Event Attendance'),
+                                iconclassName:"fa-user-circle",
+                                title:"Manage Event Attendance",
+                                isDisabled: !this.state.canManageEvents,
+                                description: "User will be able to add, remove, and confirm user attendance for all events."
                               }
                             ]} />
                             <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="far fa-users circle-icon--small pulse-blue white-text"/> Management Permissions</strong></h4>
@@ -202,6 +218,7 @@ export default class Edit extends Component {
                                   title:"Manage Users",
                                   description: "User will be able to create, edit, and view all users and groups."
                                 },
+
                                 {
                                   isActive: user.permissions.includes('Manage Event Requests'),
                                   iconclassName:"fa-user-circle",
