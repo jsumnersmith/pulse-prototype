@@ -15457,17 +15457,18 @@ select.sharing-control {
 }
 .ku-header-profile {
   position: relative;
-  display: block;
+  display: flex;
   min-height: 70px;
   padding: 7px 15px;
   background: white;
   border-left: 1px solid #eee;
-  height: 100%;
+  height: 70px;
 }
 @media screen and (max-width: 660px) {
   .ku-header-profile {
     max-height: 0;
     position: relative;
+    display: block;
     z-index: -1;
     width: 100%;
     border-left: none;
