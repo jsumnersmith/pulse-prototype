@@ -24,10 +24,12 @@ export default class UserHeader extends Component {
           <h4>Joel Sumner Smith</h4>
           <h6 className="meta meta-soft">{this.state.activeDistrict}</h6>
         </div>
+        <i className="fas fa-caret-down" />
         <DistrictDropDown
           isOpen={this.state.dropdownIsOpen}
           onChange={this.toggleDistrict}
         />
+
       </div>
     )
   }
