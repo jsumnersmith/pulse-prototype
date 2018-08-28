@@ -19,12 +19,14 @@ export default class UserHeader extends Component {
   render(){
     return (
       <div className="ku-header-profile" >
-        <img src={coffee} alt="Sample Avatar" className="ku-header-profile-image" onClick={this.toggleDropdown}/>
-        <div className="ku-header-profile-name" onClick={this.toggleDropdown}>
-          <h4>Joel Sumner Smith</h4>
-          <h6 className="meta meta-soft">{this.state.activeDistrict}</h6>
-        </div>
-        <i className="fas fa-caret-down" />
+        <span onClick={this.toggleDropdown} className="ku-header-profile-content">
+          <img src={coffee} alt="Sample Avatar" className="ku-header-profile-image" onClick={this.toggleDropdown}/>
+          <div className="ku-header-profile-name" onClick={this.toggleDropdown}>
+            <h4>Joel Sumner Smith</h4>
+            <h6 className="meta meta-soft">{this.state.activeDistrict}</h6>
+          </div>
+          <i className="fas fa-caret-down ku-header-profile-caret" />
+        </span>
         <DistrictDropDown
           isOpen={this.state.dropdownIsOpen}
           onChange={this.toggleDistrict}
