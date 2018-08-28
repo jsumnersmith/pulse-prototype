@@ -15457,7 +15457,6 @@ fieldset[disabled] .btn {
 }
 .ku-header-profile {
   position: relative;
-  display: flex;
   min-height: 70px;
   padding: 7px 15px;
   background: white;
@@ -15482,6 +15481,10 @@ fieldset[disabled] .btn {
     max-height: 70px;
     padding: 7px 15px;
   }
+}
+.ku-header-profile-content {
+  display: flex;
+  align-items: center;
 }
 .ku-header-profile-image {
   position: relative;
@@ -15511,6 +15514,17 @@ fieldset[disabled] .btn {
   width: 30px;
   text-align: center;
   vertical-align: top;
+}
+.ku-header-profile-caret {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 18px;
+  width: 18px;
+  background: #eee;
+  border-radius: 50%;
 }
 .ku-header {
   z-index: 999;
