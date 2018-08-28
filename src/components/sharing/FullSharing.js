@@ -137,10 +137,10 @@ class ListView extends Component {
         <table className="no-border">
           <thead className="no-border">
             <tr>
-              <th><strong>User/Group</strong></th>
-              <th><strong>Members</strong></th>
-              <th style={{width: 250}}><strong>Access</strong></th>
-              <th style={{width: 30}}></th>
+              <th style={{width: "30%"}}><strong>User/Group</strong></th>
+              <th style={{width: "5%"}}><strong>Members</strong></th>
+              <th style={{width: "30%"}}><strong>Access</strong></th>
+              <th style={{width: "15%"}}></th>
             </tr>
           </thead>
           <tbody className="no-border-y">
@@ -248,7 +248,7 @@ class EditRow extends ShareRow {
           <GroupModal n={this.n} id={"edit-group-modal"} title={"Can Edit All Events"}/>
         </td>
         <td><label>View, Manage Attendance, and Edit</label></td>
-        <td></td>
+        <td ><span></span></td>
       </tr>
     )
   }
