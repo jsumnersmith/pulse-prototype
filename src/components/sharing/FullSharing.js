@@ -3,6 +3,7 @@ import { SearchWithFilters as SearchInput } from '@kickup/pulse-ui/src/deprecate
 import users, {groups} from '../../apps/directory/users.js';
 import coffee from '../../images/new_coffee.png';
 import tokens from '@kickup/pulse-style-tokens';
+import {sample} from 'lodash';
 import chroma from 'chroma-js';
 
 import './sharing.less';
@@ -56,19 +57,20 @@ class ListView extends Component {
   constructor(props){
     super(props);
     this.state = {
-      users: this.assignPermissions(users.slice(0,4)),
-      groups: this.assignPermissions(groups.slice(0,2))
+      users: [],
+      groups: [],
+      query: ""
     }
+    this.assignPermission = this.assignPermission.bind(this);
     this.setPermission = this.setPermission.bind(this);
     this.removeUserOrGroup = this.removeUserOrGroup.bind(this);
+    this.renderSearchResults = this.renderSearchResults.bind(this);
   }
-  assignPermissions(items){
-    let itemsClone =  Array.from(items);
-    itemsClone.map(item => item.id % 2 === 0 ? item.itemPermission = 'view' : item.itemPermission = 'edit')
-    return itemsClone;
+  assignPermission(item){
+    item.itemPermission = this.props.isPublic ? 'edit' : 'view';
+    return item;
   }
   setPermission(itemType, id, permission){
-    console.log(itemType);
     let itemsClone = Array.from(this.state[itemType]);
     itemsClone.map(item => {
       if (id === item.id){
@@ -86,12 +88,52 @@ class ListView extends Component {
     let updatedGroups = this.state.groups.filter(group => group.name !== name);
     this.setState({users: updatedUsers, groups: updatedGroups});
   }
+  addUserOrGroup(name){
+    let updatedUsers = users.filter(user => user.name === name).map(this.assignPermission);
+    let updatedGroups = groups.filter(group => group.name === name).map(this.assignPermission);
+    this.setState({users: this.state.users.concat(updatedUsers), groups: this.state.groups.concat(updatedGroups), query: ""});
+  }
+  renderSearchResults(){
+    const { query } = this.state;
+    const matchingGroups = groups.filter(group => group.name.match(query));
+    const matchingUsers = users.filter(user => user.name.match(query));
+    return (
+      <div>
+        {
+          matchingGroups.map(group =>
+            <div className="search-box-result" onClick={() => this.addUserOrGroup(group.name)} style={{display: "flex", alignItems: 'center', cursor: 'pointer'}}>
+              <strong>{group.name}</strong>
+            </div>
+          )
+        }
+        {
+          matchingUsers.map(user =>
+            <div className="search-box-result" onClick={() => this.addUserOrGroup(user.name)} style={{display: "flex", alignItems: 'center', cursor: 'pointer'}}>
+              <strong style={{flexGrow: 1}}>{user.name}</strong>
+            </div>
+          )
+        }
+      </div>
+    )
+  }
   render(){
     const {isPublic} = this.props;
     return (
       <div className="sharing-header" style={{marginTop: 20}}>
         <h5 className="sharing-header--title"><strong>Add users or groups to allow them to { !isPublic && "view this event,"} manage attendance{!isPublic && ","} and/or edit this event.</strong></h5>
-        <SearchInput placeholder="Search users or group to add" />
+        <div className="search-box">
+          <div className="input-group">
+            <SearchInput
+              placeholder="Search users or group to add"
+              onChange={(e) => this.setState({query: e.target.value})}
+            />
+          </div>
+          { this.state.query &&
+            <div className="search-box-results">
+              { this.renderSearchResults() }
+            </div>
+          }
+        </div>
         <table className="no-border">
           <thead className="no-border">
             <tr>
@@ -143,6 +185,7 @@ class ShareRow extends Component {
     this.setPermission = this.setPermission.bind(this);
     this.showRow = this.showRow.bind(this);
     this.generateRandomNumber = this.generateRandomNumber.bind(this);
+    this.n = this.generateRandomNumber(10, 45);
   }
   setPermission(permission){
     const {item, rowType} = this.props;
@@ -166,7 +209,16 @@ class ShareRow extends Component {
         this.showRow() &&
           <tr>
             <td><Avatar rowType={rowType} /> <strong>{item.name}</strong></td>
-            <td>{rowType === 'groups' && (this.generateRandomNumber(10, 45) + " Members")}</td>
+            <td>
+              { rowType === 'groups' &&
+                <span>
+                  <a data-toggle="modal" data-target={`#${item.name}-group-modal`}>
+                    {this.n} Members
+                  </a>
+                  <GroupModal n={this.n} id={`${item.name}-group-modal`} title={`Members of ${item.name}`}/>
+                </span>
+              }
+            </td>
             <td>
               <UserActions
                 itemPermission={item.itemPermission}
@@ -181,11 +233,20 @@ class ShareRow extends Component {
 }
 
 class EditRow extends ShareRow {
+  constructor(props){
+    super(props)
+    this.n = this.generateRandomNumber(10, 20)
+  }
   render(){
     return (
       <tr style={{background: fadedBlue}}>
         <td><i className="far fa-unlock circle-icon--small pulse-blue" /> <strong>{"Users who can edit all events"}</strong></td>
-        <td>{this.generateRandomNumber(10, 20)} Members</td>
+        <td>
+          <a data-toggle="modal" data-target="#edit-group-modal">
+            {this.n} Members
+          </a>
+          <GroupModal n={this.n} id={"edit-group-modal"} title={"Can Edit All Events"}/>
+        </td>
         <td><label>View, Manage Attendance, and Edit</label></td>
         <td></td>
       </tr>
@@ -194,11 +255,20 @@ class EditRow extends ShareRow {
 }
 
 class ManageRow extends ShareRow {
+  constructor(props){
+    super(props)
+    this.n = this.generateRandomNumber(30, 40)
+  }
   render(){
     return (
       <tr style={{background: fadedBlue}}>
         <td><i className="far fa-unlock circle-icon--small pulse-blue" /> <strong>{"Users who can manage attendance for all events"}</strong></td>
-        <td>{this.generateRandomNumber(30, 40)} Members</td>
+        <td>
+          <a data-toggle="modal" data-target="#manage-group-modal">
+            {this.n} Members
+          </a>
+          <GroupModal n={this.n} id={"manage-group-modal"} title={"Can Manage Attendance for All Events"}/>
+        </td>
         <td><label>View and Manage Attendance</label></td>
         <td></td>
       </tr>
@@ -227,3 +297,71 @@ const UserActions = ({itemPermission, onChange, itemIsPublic}) => (
     </select>
   </div>
 )
+
+const GroupModal = ({n, id, title="Members"}) => (
+  <div className="modal modal-background fade in" id={id} tabIndex="-1" role="dialog" style={{display: "none"}}>
+    <div className="modal-dialog" style={{minWidth: 700, maxWidth: '95%'}}>
+      <div className="modal-content" style={{padding: 20}}>
+        <div className="modal-header text-left">
+          <h3><i className="far fa-users circle-icon green" style={{marginRight: 5}}/> <strong>{title}</strong></h3>
+          <a className="close"  aria-hidden="true" data-dismiss="modal">×</a>
+        </div>
+        <div className="modal-body" style={{padding: 20}}>
+          <GroupList n={n}/>
+        </div>
+        <div className="text-center" >
+          <button className="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const generateNames = (amount) => {
+  const list = Array.from(Array(amount).keys());
+  const namesList = list.map(item => `${sample(firstNames)} ${sample(lastNames)}`)
+  console.log(namesList);
+  return namesList;
+}
+
+const GroupList = ({n}) => (
+  <table className="no-border">
+    <thead className="no-border-y"><tr><th><strong>User</strong></th></tr></thead>
+    <tbody className="no-border-y">
+      {
+        generateNames(n).map(name => <tr><td><img src={coffee} className="sharing-user-list--avatar" alt="Coffee Avatar"/> <strong>{name}</strong></td></tr>)
+      }
+    </tbody>
+
+  </table>
+)
+
+const firstNames = [
+  "John",
+  "Joe",
+  "Jim",
+  "Josh",
+  "Jacob",
+  "James",
+  "Joseph",
+  "Julia",
+  "Jamie",
+  "Jayla",
+  "Jenny",
+  "Justin"
+]
+
+const lastNames = [
+  "Jones",
+  "Jameison",
+  "Jackson",
+  "Jimenez",
+  "Jenkins",
+  "Jefferson",
+  "Jung",
+  "Joyce",
+  "Johnson",
+  "Jordan",
+  "Jurgen",
+  "Jagger"
+]
