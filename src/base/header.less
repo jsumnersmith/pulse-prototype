@@ -56,12 +56,11 @@
 
 .ku-header-profile {
   position:relative;
-  display: block;
   min-height: 70px;
   padding: 7px 15px;
   background: white;
   border-left: 1px solid #eee;
-  height: 100%;
+  height: 70px;
   @media screen and (max-width: 660px) {
    .ku-header.open & {
      transform: translateY(0);
@@ -70,6 +69,7 @@
    }
    max-height: 0;
    position: relative;
+   display: block;
    z-index:-1;
    width: 100%;
    border-left: none;
@@ -77,6 +77,10 @@
    transform: translateY(-75px);
    transition: all .2s ease-in-out;
    padding: 0px 15px;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
   }
 }
 .ku-header-profile-image {
@@ -103,6 +107,18 @@
   width: 30px;
   text-align: center;
   vertical-align: top;
+}
+
+.ku-header-profile-caret {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 18px;
+  width: 18px;
+  background: @gray-light;
+  border-radius: 50%;
 }
 
 .ku-header { z-index: 999; }

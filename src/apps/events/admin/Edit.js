@@ -3,6 +3,7 @@ import SubHeader from '../components/SubHeader';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import Collapsible from 'react-collapsible';
+import FullSharing from '../../../components/sharing/FullSharing';
 import '../events.less';
 
 export default class EditForm extends Component {
@@ -43,7 +44,7 @@ export default class EditForm extends Component {
               <input className="form-control"value="Bella Smith"/>
             </fieldset>
             <hr/>
-            <h3><i className="far fa-map-marker-alt circle-icon purple"></i> <strong> Time & Location</strong></h3>
+            <h3><i className="far fa-map-marker-alt circle-icon orange"></i> <strong> Time & Location</strong></h3>
             <fieldset className="form-group">
               <label>Date</label>
               <DatePicker
@@ -67,6 +68,10 @@ export default class EditForm extends Component {
               <input className="form-control" value="East High School Auditorium"/>
             </fieldset>
             <hr/>
+            <h3><i className="far fa-clone circle-icon purple"></i> <strong> Collection</strong></h3>
+            <label>Collection (Optional)</label>
+            <input className="form-control" placeholder="Search for a collection to add this event to"/>
+            <hr/>
             <h3><i className="far fa-file-alt circle-icon yellow"></i> <strong>Feedback</strong></h3>
             <fieldset className="form-group">
               <label>Feedback Form URL</label>
@@ -87,7 +92,7 @@ export default class EditForm extends Component {
             </Collapsible>
             <hr/>
             <Collapsible
-              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-cog circle-icon green"></i> <strong> Advanced Settings</strong> <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
+              trigger={<h3 style={{cursor: "pointer"}}><i className="far fa-cog circle-icon"></i> <strong> Advanced Settings</strong> <i className={`far fa-${this.state.advancedOpen ? "minus" : "plus"}`} style={{marginLeft: 10, opacity: ".6"}}/></h3>}
               onOpen={this.toggleAdvanced}
               onClose={this.toggleAdvanced}
             >
@@ -114,9 +119,11 @@ export default class EditForm extends Component {
               </div>
             </Collapsible>
             <hr/>
+            <FullSharing />
+            <hr/>
             <fieldset className="text-center form-group">
-              <a href="#submitted" className="btn btn-success"><i className="far fa-check"></i> Save and Publish Event</a>
-              <a href="#invited" className="btn btn-primary"><i className="far fa-envelope"></i> Invite People</a>
+              <a href="#submitted" className="btn btn-primary">Save and Publish</a>
+              <a href="#invited" className="btn btn-danger btn-trans">Cancel</a>
             </fieldset>
           </form>
         </div>

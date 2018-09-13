@@ -194,16 +194,16 @@ export default class Edit extends Component {
                               {
                                 isActive: user.permissions.includes('Manage Events'),
                                 iconclassName: "fa-calendar-alt",
-                                title: "Manage Events",
+                                title: "Manage and Edit Events",
                                 description: "User will be able to create, edit, and view all events. Additionally, they will be able to register and confirm attendence for events.",
                                 onClick: () => this.setState({canManageEvents: !this.state.canManageEvents})
                               },
                               {
                                 isActive: this.state.canManageEvents || user.permissions.includes('Manage Event Attendance'),
                                 iconclassName:"fa-user-circle",
-                                title:"Manage Event Attendance",
+                                title:"Manage Attendance for Events",
                                 isDisabled: !this.state.canManageEvents,
-                                description: "User will be able to add, remove, and confirm user attendance for all events."
+                                description: "User will be able to view as well add, remove, and confirm user attendance for all events."
                               }
                             ]} />
                             <h4 className="directory-section-subheader" style={{marginTop: 40}}><strong><i className="far fa-users circle-icon--small pulse-blue white-text"/> Management Permissions</strong></h4>

@@ -60,6 +60,7 @@ import MultipleChoiceGrouping from './components/multipleChoiceGrouping';
 import TabbedContainer from './components/tabbedContainer';
 import Sharing from './components/sharing';
 import UploadResults from './components/uploadResults';
+import Modals from './components/modals';
 
 //Styles
 import Grid from './styles/grid';
@@ -247,6 +248,13 @@ export default [
     linkName: "Multiple Choice Groupings",
     parent: 'Components',
     path: '/multichoice/',
+    exact: true
+  },
+  {
+    component: Modals,
+    linkName: "Modals",
+    parent: 'Components',
+    path: '/modals/',
     exact: true
   },
   {
