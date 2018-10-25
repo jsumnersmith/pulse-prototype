@@ -61,6 +61,7 @@ import TabbedContainer from './components/tabbedContainer';
 import Sharing from './components/sharing';
 import UploadResults from './components/uploadResults';
 import Modals from './components/modals';
+import Dropdowns from './components/dropdowns';
 
 //Styles
 import Grid from './styles/grid';
@@ -343,5 +344,11 @@ export default [
     path: '/styles/grid',
     linkName: "Grid",
     parent: 'Styles',
+  },
+  {
+    component: Dropdowns,
+    path: '/dropdowns',
+    linkName: "Dropdowns",
+    parent: 'Components',
   }
 ]
