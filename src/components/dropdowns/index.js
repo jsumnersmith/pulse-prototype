@@ -8,8 +8,9 @@ export default () => (
       <label style={{marginBottom: 5}}>Simple Input</label>
       <Input />
       <hr />
-      <label style={{marginBottom: 5}}>Selectable Input</label>
-      <SelectableInput />
+      <SelectableInput
+        label="Selectable Input"
+      />
     </div>
   </div>
 )
