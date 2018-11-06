@@ -38,12 +38,17 @@ export default class SelectableInput extends Component{
   constructor(props){
     super(props);
     this.state = {
-      isFocused: false
+      isFocused: false,
+      inputValue: ''
     }
-    this.setFocuse = this.setFocus.bind(this);
+    this.setFocus = this.setFocus.bind(this);
+    this.setValue = this.setValue.bind(this);
   }
-  setFocus(isFocused = true){
+  setFocus(isFocused = true, e = {}){
     this.setState({isFocused});
+  }
+  setValue(inputValue){
+    this.setState({inputValue, isFocused: true});
   }
   render(){
     return (
@@ -51,11 +56,12 @@ export default class SelectableInput extends Component{
         <Label>Selectable Input</Label>
         <Input
           onFocus={() => this.setFocus(true)}
-          onBlur={()=> this.setFocus(false)}
+          onBlur={() => this.setFocus(false)}
+          value={this.state.inputValue ? this.state.inputValue : ''}
         />
         { this.state.isFocused &&
           <Results>
-            <SelectableList />
+            <SelectableList setValue={this.setValue}/>
           </Results>
         }
       </Dropdown>

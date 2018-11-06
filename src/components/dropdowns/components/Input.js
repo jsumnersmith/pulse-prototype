@@ -23,10 +23,11 @@ const Input = styled.input`
 export default ({
   placeholder = "Start typing to search",
   onFocus = () => {},
-  onBlur = () => {}
+  onBlur = () => {},
 }) => (
   <Input
     placeholder={placeholder}
     onFocus={onFocus}
-    onBlur={onBlur} />
+    onBlur={onBlur}
+  />
 )

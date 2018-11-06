@@ -16,8 +16,8 @@ const ListItem = styled.li`
   &:hover { background: ${tokens.colors.grayLight}};
 `
 
-export default ({list = ["Item 1", "Item 2", "Item 3"]}) => (
+export default ({list = ["Item 1", "Item 2", "Item 3"], setValue}) => (
   <List>
-    {list.map(item => <ListItem>{item}</ListItem>)}
+    {list.map(item => <ListItem onClick={()=> setValue(item)} key={item}>{item}</ListItem>)}
   </List>
 )

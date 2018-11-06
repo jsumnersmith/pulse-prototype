@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './components/Input';
 import SelectableInput from './components/SelectableInput';
+import ReactSelect from './components/ReactSelect';
 
 export default () => (
   <div className="wrapper">
@@ -10,6 +11,10 @@ export default () => (
       <hr />
       <SelectableInput
         label="Selectable Input"
+      />
+      <hr />
+      <ReactSelect
+        label="React Select Example"
       />
     </div>
   </div>
