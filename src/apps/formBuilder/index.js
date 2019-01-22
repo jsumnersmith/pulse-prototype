@@ -7,8 +7,11 @@ import './form-builder.less';
 
 export default () => (
   <div className="wrapper">
-    <h2 className="header-title"><img src={formIcon} alt="Form Icon" className="header-icon"/><strong>Forms</strong></h2>
-    <div className="block-flat">
+    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20}}>
+      <h2 className="header-title"><img src={formIcon} alt="Form Icon" className="header-icon"/><strong>Forms</strong></h2>
+      <Link to="/form-builder/" className="btn btn-primary" style={{height: 34}}>Create New Form</Link>
+    </div>
+    <div className="block-flat blue-border-top">
       <div style={{height: 40}}>
         <SearchInput
           placeholder="Search for a form"
@@ -24,15 +27,15 @@ export default () => (
         <tbody className="no-border-x no-border-y">
           <tr>
             <td><strong>Cool Form</strong></td>
-            <td style={{width: 150}}><Link to="/form-builder/edit" className="btn btn-primary">Edit</Link></td>
+            <td style={{width: 50}}><Link to="/form-builder/edit" className="btn btn-primary btn-sm btn-trans">Edit</Link></td>
           </tr>
           <tr>
             <td><strong>Other Form</strong></td>
-            <td style={{width: 150}}><Link to="/form-builder/edit" className="btn btn-primary">Edit</Link></td>
+            <td style={{width: 50}}><Link to="/form-builder/edit" className="btn btn-primary btn-sm btn-trans">Edit</Link></td>
           </tr>
           <tr>
             <td><strong>Nice Form</strong></td>
-            <td style={{width: 150}}><Link to="/form-builder/edit" className="btn btn-primary">Edit</Link></td>
+            <td style={{width: 50}}><Link to="/form-builder/edit" className="btn btn-primary btn-sm btn-trans">Edit</Link></td>
           </tr>
         </tbody>
       </table>
