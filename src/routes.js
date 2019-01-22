@@ -25,6 +25,7 @@ import UserSubmittedEvent from './apps/events/user/SubmittedEvent';
 import UserSuccess from './apps/events/user/Success';
 
 import FormBuilder from './apps/formBuilder';
+import FormEditor from './apps/formBuilder/Editor.js';
 import ScaleQuestions from './apps/formBuilder/ScaleQuestions';
 import QuestionEditors from './apps/formBuilder/QuestionEditors';
 
@@ -99,6 +100,11 @@ export default [
     linkName: "Form Builder",
     parent: 'Apps',
     path: '/form-builder/',
+    exact: true
+  },
+  {
+    component: FormEditor,
+    path: '/form-builder/edit',
     exact: true
   },
   {
