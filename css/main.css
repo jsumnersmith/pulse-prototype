@@ -8658,6 +8658,12 @@ body.modal-open,
   text-shadow: 2px 2px 2px #fec139;
   color: #fff;
 }
+.block.blue-border-top,
+.block-flat.blue-border-top {
+  border-top: 5px solid rgba(0, 125, 160, 0.25);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
 .block .loading,
 .block-flat .loading {
   display: none;
@@ -8788,7 +8794,7 @@ body.modal-open,
   border: 3px solid rgba(187, 187, 187, 0.7);
   font-family: 'Nunito Sans', 'Open Sans', Helvetica, sans-serif;
   color: #555;
-  font-size: 10px;
+  font-size: 12px;
   -webkit-box-shadow: 0 3px 10px rgba(102, 102, 102, 0.2);
   box-shadow: 0 3px 10px rgba(102, 102, 102, 0.2);
 }
@@ -13229,146 +13235,6 @@ select.sharing-control {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
-.adding-table {
-  border: 2px solid #eee;
-  background-color: #eee;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-}
-.adding-table__row {
-  display: flex;
-  padding: 5px 5px 5px 15px;
-  border: 1px solid #eee;
-  background: white;
-  align-items: center;
-}
-.adding-table__row-icon {
-  margin-right: 15px;
-  align-content: center;
-}
-.adding-table__row-content {
-  flex: 1;
-  align-items: center;
-  display: flex;
-}
-.adding-table__row-content > * {
-  flex: 1;
-  padding: 5px;
-}
-.adding-table__form {
-  padding: 10px;
-  background: white;
-}
-.adding-table__header {
-  background: #eee;
-  padding: 5px 15px;
-}
-.adding-table__header .adding-table__row-content > * {
-  padding: 0;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
-th.empty {
-  border: none;
-}
-.scale-table {
-  border-collapse: separate;
-}
-.scale-table__matrix thead {
-  border-bottom: 2px solid white;
-}
-.scale-table__matrix th:first-child {
-  width: 500px;
-}
-.scale-table__matrix th.scale-table__score-column {
-  padding: 10px;
-  border: 3px solid #eee;
-  border-right: none;
-  border-bottom: none;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  background: #f8f8f8;
-}
-.scale-table__matrix th.scale-table__score-column:last-child {
-  border-right: 3px solid #eee;
-}
-.scale-table tbody td {
-  cursor: pointer;
-  text-align: center;
-  border: 3px solid #eee;
-  border-bottom: none;
-  border-right: none;
-}
-.scale-table tbody tr td:last-child {
-  border-right: 3px solid #eee;
-}
-.scale-table tbody tr:last-child td {
-  border-bottom: 3px solid #eee;
-}
-.scale-table tbody tr td:first-child {
-  font-weight: 700;
-}
-.scale-table tbody td i.fa {
-  font-size: 24px;
-}
-.scale-table tbody tr td:first-child {
-  text-align: left;
-  cursor: initial;
-}
-.scale-table__rubric tbody td {
-  text-align: left;
-  transition: all 0.2s ease-in-out;
-}
-.scale-table__rubric tbody td:hover {
-  box-shadow: 0px 0px 0px 2px #eee inset;
-}
-.scale-table__rubric tbody td:first-child:hover {
-  box-shadow: none;
-}
-.scale-table__rubric td:first-child {
-  min-width: 300px;
-  max-width: 500px;
-}
-.scale-table__rubric .rubric-box {
-  position: relative;
-  cursor: pointer;
-  padding: 10px;
-}
-.scale-table__rubric .rubric-box__active,
-.scale-table__rubric .rubric-box__active:hover {
-  box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.9) inset;
-}
-.scale-table__rubric .rubric-box__check {
-  font-size: 14px !important;
-  position: absolute;
-  top: 4px;
-  right: -1px;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-/*General colors palette*/
-/*General elements*/
-/*Flat palette*/
-/* Pulse GrayScale */
-/*social colors*/
-/*Functions*/
-/* Rating Colors */
 .header-title {
   display: flex;
   align-items: center;
@@ -13415,6 +13281,9 @@ th.empty {
 }
 .form-builder__header-subtitle {
   display: block;
+}
+.form-builder__section.blue-border-top {
+  border-top: 5px solid rgba(0, 125, 160, 0.25);
 }
 .form-builder__section-content {
   padding: 10px 0;
@@ -13659,6 +13528,146 @@ th.empty {
 }
 .form-builder__widget-menu .form-builder__sidebar-item {
   margin-bottom: 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.adding-table {
+  border: 2px solid #eee;
+  background-color: #eee;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+.adding-table__row {
+  display: flex;
+  padding: 5px 5px 5px 15px;
+  border: 1px solid #eee;
+  background: white;
+  align-items: center;
+}
+.adding-table__row-icon {
+  margin-right: 15px;
+  align-content: center;
+}
+.adding-table__row-content {
+  flex: 1;
+  align-items: center;
+  display: flex;
+}
+.adding-table__row-content > * {
+  flex: 1;
+  padding: 5px;
+}
+.adding-table__form {
+  padding: 10px;
+  background: white;
+}
+.adding-table__header {
+  background: #eee;
+  padding: 5px 15px;
+}
+.adding-table__header .adding-table__row-content > * {
+  padding: 0;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+th.empty {
+  border: none;
+}
+.scale-table {
+  border-collapse: separate;
+}
+.scale-table__matrix thead {
+  border-bottom: 2px solid white;
+}
+.scale-table__matrix th:first-child {
+  width: 500px;
+}
+.scale-table__matrix th.scale-table__score-column {
+  padding: 10px;
+  border: 3px solid #eee;
+  border-right: none;
+  border-bottom: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f8f8f8;
+}
+.scale-table__matrix th.scale-table__score-column:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody td {
+  cursor: pointer;
+  text-align: center;
+  border: 3px solid #eee;
+  border-bottom: none;
+  border-right: none;
+}
+.scale-table tbody tr td:last-child {
+  border-right: 3px solid #eee;
+}
+.scale-table tbody tr:last-child td {
+  border-bottom: 3px solid #eee;
+}
+.scale-table tbody tr td:first-child {
+  font-weight: 700;
+}
+.scale-table tbody td i.fa {
+  font-size: 24px;
+}
+.scale-table tbody tr td:first-child {
+  text-align: left;
+  cursor: initial;
+}
+.scale-table__rubric tbody td {
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.scale-table__rubric tbody td:hover {
+  box-shadow: 0px 0px 0px 2px #eee inset;
+}
+.scale-table__rubric tbody td:first-child:hover {
+  box-shadow: none;
+}
+.scale-table__rubric td:first-child {
+  min-width: 300px;
+  max-width: 500px;
+}
+.scale-table__rubric .rubric-box {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+}
+.scale-table__rubric .rubric-box__active,
+.scale-table__rubric .rubric-box__active:hover {
+  box-shadow: 0px 0px 0px 4px rgba(0, 125, 160, 0.9) inset;
+}
+.scale-table__rubric .rubric-box__check {
+  font-size: 14px !important;
+  position: absolute;
+  top: 4px;
+  right: -1px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
