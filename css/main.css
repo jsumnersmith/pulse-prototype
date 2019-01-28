@@ -12942,6 +12942,40 @@ strong {
   width: calc(100% - 155px);
   text-align: right;
 }
+@media screen and (max-width: 660px) {
+  .event-header h2 {
+    display: none;
+  }
+  .event-header .nav {
+    margin-top: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .event-header .nav .btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .event-header .nav-links > li {
+    width: 50%;
+  }
+  .event-header .nav-links > li .nav-link {
+    padding: 20px 10px;
+  }
+  .event-header .nav-links > li .nav-link:hover:after {
+    width: 0;
+  }
+  .event-header .nav-links > li .nav-link:focus {
+    background: rgba(102, 102, 102, 0.25);
+  }
+  .event-header .nav-links > li.active .nav-link {
+    background: rgba(229, 144, 98, 0.05);
+  }
+  .event-header .nav-links > li.active .nav-link:after {
+    width: 0 !important;
+  }
+}
 .event-list-advanced-search-toggle {
   position: absolute;
   z-index: 6;
@@ -15431,6 +15465,7 @@ fieldset[disabled] .btn {
 @media screen and (max-width: 660px) {
   .ku-header {
     margin-top: -72px;
+    height: 74px;
   }
 }
 .ku-header.fixed {
@@ -15453,12 +15488,14 @@ fieldset[disabled] .btn {
 }
 .ku-header-logo {
   background: white;
-  padding: 15px 0;
+  padding: 19px 0;
 }
 @media screen and (max-width: 660px) {
   .ku-header-logo {
+    text-align: left;
+    padding-left: 25px;
     display: inline-block;
-    width: calc(100% - 120px);
+    width: calc(100% - 110.8px);
   }
 }
 .ku-header-logo img {
@@ -15550,11 +15587,16 @@ fieldset[disabled] .btn {
   border-bottom: 2px solid rgba(187, 187, 187, 0.9);
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
-  z-index: -1;
+  z-index: -2;
   transition: top 0.3s ease-in-out;
 }
 .ku-header-profile-district-switch > * {
   padding: 10px;
+}
+@media screen and (max-width: 760px) {
+  .ku-header-profile-district-switch {
+    top: -300%;
+  }
 }
 .ku-header-profile-district-switch h6 {
   margin: 0;
@@ -15566,6 +15608,7 @@ fieldset[disabled] .btn {
 }
 .ku-header-profile-district-switch.active {
   top: 100%;
+  z-index: -1;
 }
 /*!
  * Font Awesome Pro 5.2.0 by @fontawesome - https://fontawesome.com
