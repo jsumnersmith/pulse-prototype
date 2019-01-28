@@ -25,6 +25,7 @@
   transition: all .1s ease-in-out;
   @media screen and (max-width: 660px) {
    margin-top: -72px;
+   height: 74px;
   }
 }
 .ku-header.fixed {
@@ -46,10 +47,12 @@
 
 .ku-header-logo {
   background: white;
-  padding: 15px 0;
+  padding: 19px 0;
   @media screen and (max-width: 660px) {
+    text-align: left;
+    padding-left: 25px;
     display: inline-block;
-    width: ~"calc(100% - 120px)";
+    width: ~"calc(100% - 110.8px)";
   }
 }
 .ku-header-logo img { max-width: 125px;}
@@ -133,14 +136,17 @@
   border-bottom: 2px solid  rgba(187, 187, 187, 0.9);
   border-left: 1px solid @gray-light;
   border-right: 1px solid @gray-light;
-  z-index: -1;
+  z-index: -2;
   transition: top .3s ease-in-out;
   > * { padding: 10px; }
+  @media screen and (max-width: 760px) {
+    top: -300%;
+  }
   h6 {
     margin: 0;
     padding: 10px 20px;
     cursor: pointer;
     & + h6 { border-top: 1px solid @gray-light; }
   }
-  &.active { top: 100%; }
+  &.active { top: 100%; z-index: -1}
 }

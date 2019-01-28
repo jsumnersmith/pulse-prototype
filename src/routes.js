@@ -5,6 +5,9 @@ import ReportBuilder from './apps/reportBuilder/';
 import TagList from './apps/tags';
 import AttributeEditor from './apps/attributes';
 
+//Events - Navigation Testing
+import EventsNav from './apps/events/navigation';
+
 //Events - Admin User
 import AdminEvents from './apps/events/admin';
 import AdminBrowseEvents from './apps/events/admin/Browse';
@@ -86,6 +89,13 @@ export default [
     linkName: "Events",
     parent: 'Apps',
     path: '/events/',
+    exact: true
+  },
+  {
+    component: EventsNav,
+    linkName: "Events - Navigation",
+    parent: 'Apps',
+    path: '/events/nav/',
     exact: true
   },
   {

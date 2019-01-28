@@ -203,6 +203,33 @@
   }
   h2,  .nav { display: inline-block; }
   .nav { width: ~"calc(100% - 155px)"; text-align: right;}
+
+  //Mobile Events Nav Testing
+  @media screen and (max-width: 660px) {
+    h2 { display: none; }
+    .nav {
+      margin-top: 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+      .btn { display: block; width: 100%; margin-top: 10px; }
+    }
+    .nav-links > li {
+      width: 50%;
+      .nav-link {
+        padding: 20px 10px;
+        &:hover:after { width: 0; }
+        &:focus {
+          background: fadeout(@gray-dark, 75%);
+        }
+      }
+      &.active .nav-link {
+        &:after { width: 0 !important; }
+        background: fadeout(@orange, 95%)
+      }
+    }
+
+  }
 }
 
 .event-list-advanced-search-toggle {
