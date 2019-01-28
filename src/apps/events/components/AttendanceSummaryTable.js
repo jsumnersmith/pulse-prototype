@@ -6,12 +6,73 @@ import _ from 'lodash';
 
 import MultiSelectField from './MultiSelectField';
 
+const segments = [
+  { name: "In/Out District",
+    id: "1",
+    values: [
+      'In District',
+      'Out of District'
+    ] },
+  { name: "Event Type",
+    id: "2",
+    values: [
+      'Coaching',
+      'Workshop',
+      'PLC'
+    ] }
+];
+
 function getTeachers(events) {
   return _.chain(events)
     .flatMap('attendees')
     .uniqBy('name')
     .value();
 }
+
+function getRandomSegmentBreakdowns(segmentId, events){
+  const segment = _.find(segments, (segment) => segment.id === segmentId);
+  const possibleAmounts = [25, 38, 49, 52];
+  return _.map(segment.values, (value, index) => {
+    return { name: value, amount: _.random(possibleAmounts)}
+  });
+}
+
+class BarGraph extends Component {
+  constructor(props){
+    super(props);
+    const {segmentId, events} = props;
+    this.state = {
+      segments: getRandomSegmentBreakdowns(segmentId, events)
+    }
+    this.getLength = this.getLength.bind(this);
+  }
+  getLength(){
+    return _.chain(this.state.segments)
+      .map(segment => segment.amount)
+      .sum()
+      .value();
+  }
+  render() {
+    const segment = _.find(segments, (segment) => segment.id === this.props.segmentId);
+    const length = this.getLength();
+    return (
+      <div>
+        <label>{segment.name}</label>
+        {this.state.segments.map(segmentItem => {
+          return <div className="progress-bar" style={{width: `${(segmentItem.amount / length)*100}%`}}></div>
+        })}
+      </div>
+    )
+  }
+}
+
+const AttendanceVisualization = ({currentBreakdown, events}) =>(
+  <div>
+    {
+      currentBreakdown.map(segmentId => <BarGraph segmentId={segmentId} events={events} />)
+    }
+  </div>
+)
 
 class AttendanceSummaryTable extends Component {
   constructor(props) {
@@ -67,6 +128,7 @@ class AttendanceSummaryTable extends Component {
   render() {
     const { events } = this.props;
     const teachers = getTeachers(events);
+    console.log(events)
     return (
       <div ref={(wrapper) => { this.wrapper = wrapper; }}>
         <h5 className="event-list-title" style={{background: "#8B698E"}}>
@@ -81,10 +143,7 @@ class AttendanceSummaryTable extends Component {
                 label=""
                 name="hoursBreakDown"
                 onChange={this.onMultiSelectChange}
-                options={[
-                  { name: "In/Out District", id: "1" },
-                  { name: "Event Type", id: "2" },
-                ]}
+                options={segments}
                 showActions={false}
                 value={[ "1" ]}
               />
@@ -225,6 +284,9 @@ class AttendanceSummaryTable extends Component {
             width={100}
           />
         </Table>
+        <div>
+          <AttendanceVisualization currentBreakdown={this.state.currentBreakdown} />
+        </div>
       </div>
     );
   }
