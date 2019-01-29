@@ -82,7 +82,6 @@ class EventList extends Component {
       .flatten()
       .filter(item => item !== false)
       .value()
-    console.log(matches, filterGroupCount, sampleEvent.meta)
     return matches.length === filterGroupCount;
 
   }
