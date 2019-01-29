@@ -104,7 +104,6 @@ class FilterDropdown extends Component {
     return filterName === openDropdown;
   }
   matchesSearch(filter){
-    console.log("Search is", this.state.searchText)
     if (this.state.searchText.length < 1) {
       return true;
     }
@@ -120,7 +119,7 @@ class FilterDropdown extends Component {
     } = this.props;
     return (
       <div className="btn-group filter-selector">
-        <button className="btn btn-default" onClick={()=> this.handleClick()}>
+        <button className={`btn btn-default ${this.checkIfActive() && "open"}`} onClick={()=> this.handleClick()}>
           {filterName} <i className="far fa-caret-down" />
         </button>
         {this.checkIfActive() &&

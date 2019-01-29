@@ -3,6 +3,36 @@
 
 .filter-selector {
   position: relative;
+  .btn {
+
+  }
+  @media screen and (max-width: 660px){
+    display: block;
+    margin-bottom: 5px;
+    height: auto;
+    clear: both;
+    min-height: 36px;
+    .btn {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0 !important;
+      border: 2px solid @gray-light;
+      &:hover { background: @gray-light;}
+      &:focus,
+      &:active {
+        outline: none;
+        background: transparent;
+        border: 2px solid @gray-light;
+      }
+      &.open {
+        border-color:  fadeout(@pulseBlue, 85%);
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
   &__options {
     padding-left: 0;
     margin: 0;
@@ -18,6 +48,15 @@
     box-shadow: 0 5px 10px fadeout(@grayMedium, 75%);
     z-index: 10;
     a { text-decoration: none; }
+    @media screen and (max-width: 660px){
+      position: relative;
+      min-width: initial;
+      box-shadow: none;
+      margin-bottom: 5px;
+      border-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
   &__option {
     cursor: pointer;
