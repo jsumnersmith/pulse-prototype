@@ -13046,6 +13046,9 @@ strong {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
+  .filter-selector input {
+    -webkit-appearance: none;
+  }
 }
 .filter-selector__options {
   padding-left: 0;
