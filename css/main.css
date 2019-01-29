@@ -12950,7 +12950,7 @@ strong {
     margin-top: 0;
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .event-header .nav .btn {
     display: block;
@@ -12961,16 +12961,18 @@ strong {
     width: 50%;
   }
   .event-header .nav-links > li .nav-link {
+    text-align: center;
     padding: 20px 10px;
   }
   .event-header .nav-links > li .nav-link:hover:after {
     width: 0;
   }
+  .event-header .nav-links > li .nav-link:hover,
   .event-header .nav-links > li .nav-link:focus {
-    background: rgba(102, 102, 102, 0.25);
+    background: rgba(102, 102, 102, 0.15);
   }
   .event-header .nav-links > li.active .nav-link {
-    background: rgba(229, 144, 98, 0.05);
+    background: rgba(229, 144, 98, 0.15);
   }
   .event-header .nav-links > li.active .nav-link:after {
     width: 0 !important;
