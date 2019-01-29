@@ -16,7 +16,8 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 import AdminSubmittedEvent from './apps/events/admin/SubmittedEvent';
-import AdminSignupSheet from './apps/events/admin/SignupSheet'
+import AdminSignupSheet from './apps/events/admin/SignupSheet';
+import AdminLog from './apps/events/admin/Log';
 
 //Events - Normal User
 import UserEvents from './apps/events/user';
@@ -325,6 +326,10 @@ export default [
   {
     component: UserManageEvents,
     path: '/events/manage'
+  },
+  {
+    component: AdminLog,
+    path: '/events/admin/log'
   },
   {
     component: UserEvent,
