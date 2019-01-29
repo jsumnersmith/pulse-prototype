@@ -13026,24 +13026,23 @@ strong {
     min-height: 36px;
   }
   .filter-selector .btn {
+    outline: none;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    float: none;
     margin-bottom: 0 !important;
     border: 2px solid #eee;
   }
-  .filter-selector .btn:hover {
-    background: #eee;
-  }
+  .filter-selector .btn:hover,
   .filter-selector .btn:focus,
   .filter-selector .btn:active {
     outline: none;
     background: transparent;
-    border: 2px solid #eee;
+    border-color: #eee;
   }
   .filter-selector .btn.open {
     border-color: rgba(0, 125, 160, 0.15);
-    border-bottom: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -13060,7 +13059,6 @@ strong {
   background: #fff;
   border-radius: 3px;
   border: 2px solid rgba(0, 125, 160, 0.15);
-  box-shadow: 0 5px 10px rgba(187, 187, 187, 0.25);
   z-index: 10;
 }
 .filter-selector__options a {
@@ -13072,6 +13070,7 @@ strong {
     min-width: initial;
     box-shadow: none;
     margin-bottom: 5px;
+    margin-top: -2px;
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
