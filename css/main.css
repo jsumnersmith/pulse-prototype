@@ -12969,7 +12969,7 @@ strong {
   }
   .event-header .nav-links > li .nav-link:hover,
   .event-header .nav-links > li .nav-link:focus {
-    background: rgba(102, 102, 102, 0.15);
+    background: rgba(102, 102, 102, 0.05);
   }
   .event-header .nav-links > li.active .nav-link {
     background: rgba(229, 144, 98, 0.15);
@@ -13000,6 +13000,61 @@ strong {
 }
 .events-table-actions > * {
   margin-right: 10px;
+}
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*General colors palette*/
+/*General elements*/
+/*Flat palette*/
+/* Pulse GrayScale */
+/*social colors*/
+/*Functions*/
+/* Rating Colors */
+.filter-selector {
+  position: relative;
+}
+.filter-selector__options {
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  top: calc(100% - 5px);
+  min-width: 400px;
+  max-width: 100%;
+  max-height: 320px;
+  overflow-y: scroll;
+  background: #fff;
+  border-radius: 3px;
+  border: 2px solid rgba(0, 125, 160, 0.15);
+  box-shadow: 0 5px 10px rgba(187, 187, 187, 0.25);
+  z-index: 10;
+}
+.filter-selector__options a {
+  text-decoration: none;
+}
+.filter-selector__option {
+  cursor: pointer;
+  clear: both;
+  list-style: none;
+  padding: 10px;
+  background: transparent;
+  transition: background 0.2s ease-in-out;
+}
+.filter-selector__option + .filter-selector__option {
+  border-top: 1px solid #efefef;
+}
+.filter-selector__option:hover {
+  background: rgba(0, 125, 160, 0.15);
+}
+.filter-selector__search {
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  list-style: none;
+  height: 44px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
