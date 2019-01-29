@@ -211,21 +211,23 @@
       margin-top: 0;
       display: block;
       width: 100%;
-      text-align: center;
+      text-align: left;
       .btn { display: block; width: 100%; margin-top: 10px; }
     }
     .nav-links > li {
       width: 50%;
       .nav-link {
+        text-align:center;
         padding: 20px 10px;
         &:hover:after { width: 0; }
+        &:hover,
         &:focus {
-          background: fadeout(@gray-dark, 75%);
+          background: fadeout(@gray-dark, 85%);
         }
       }
       &.active .nav-link {
         &:after { width: 0 !important; }
-        background: fadeout(@orange, 95%)
+        background: fadeout(@orange, 85%)
       }
     }
 
