@@ -13017,6 +13017,37 @@ strong {
 .filter-selector {
   position: relative;
 }
+@media screen and (max-width: 660px) {
+  .filter-selector {
+    display: block;
+    margin-bottom: 5px;
+    height: auto;
+    clear: both;
+    min-height: 36px;
+  }
+  .filter-selector .btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0 !important;
+    border: 2px solid #eee;
+  }
+  .filter-selector .btn:hover {
+    background: #eee;
+  }
+  .filter-selector .btn:focus,
+  .filter-selector .btn:active {
+    outline: none;
+    background: transparent;
+    border: 2px solid #eee;
+  }
+  .filter-selector .btn.open {
+    border-color: rgba(0, 125, 160, 0.15);
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
 .filter-selector__options {
   padding-left: 0;
   margin: 0;
@@ -13034,6 +13065,17 @@ strong {
 }
 .filter-selector__options a {
   text-decoration: none;
+}
+@media screen and (max-width: 660px) {
+  .filter-selector__options {
+    position: relative;
+    min-width: initial;
+    box-shadow: none;
+    margin-bottom: 5px;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 .filter-selector__option {
   cursor: pointer;
