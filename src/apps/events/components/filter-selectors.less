@@ -3,9 +3,6 @@
 
 .filter-selector {
   position: relative;
-  .btn {
-
-  }
   @media screen and (max-width: 660px){
     display: block;
     margin-bottom: 5px;
@@ -13,24 +10,39 @@
     clear: both;
     min-height: 36px;
     .btn {
+      outline: none;
       display: flex;
       justify-content: space-between;
       width: 100%;
+      float: none;
       margin-bottom: 0 !important;
       border: 2px solid @gray-light;
-      &:hover { background: @gray-light;}
+      &:hover,
       &:focus,
       &:active {
         outline: none;
         background: transparent;
-        border: 2px solid @gray-light;
+        border-color: @gray-light;
       }
       &.open {
-        border-color:  fadeout(@pulseBlue, 85%);
-        border-bottom: none;
+        border-color: fadeout(@pulseBlue, 85%);
+        //border-bottom: 2px solid transparent;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
       }
+    }
+    .input-group {
+      height: 38px !important;
+      border: 2px solid @grayLight;
+      transition: border .2s ease-in-out;
+      &:focus-within { border-color: @pulseBlue; }
+    }
+    input {
+      display: block;
+      font-size: 16px;
+      appearance: none;
+      box-shadow: none !important;
+      border: none;
     }
   }
   &__options {
@@ -45,7 +57,7 @@
     background: @white;
     border-radius: 3px;
     border: 2px solid  fadeout(@pulseBlue, 85%);
-    box-shadow: 0 5px 10px fadeout(@grayMedium, 75%);
+    // box-shadow: 0 5px 10px fadeout(@grayMedium, 75%);
     z-index: 10;
     a { text-decoration: none; }
     @media screen and (max-width: 660px){
@@ -53,6 +65,7 @@
       min-width: initial;
       box-shadow: none;
       margin-bottom: 5px;
+      margin-top: -2px;
       border-top: 0;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
@@ -71,8 +84,7 @@
   &__search {
     display: block;
     padding: 10px;
-    margin-bottom: 5px;
     list-style: none;
-    height: 44px; //Search input is weird...
+    height: 56px; //Search input is weird...
   }
 }

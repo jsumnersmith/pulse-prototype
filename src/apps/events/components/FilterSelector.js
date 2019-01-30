@@ -119,7 +119,7 @@ class FilterDropdown extends Component {
     } = this.props;
     return (
       <div className="btn-group filter-selector">
-        <button className={`btn btn-default ${this.checkIfActive() && "open"}`} onClick={()=> this.handleClick()}>
+        <button className={`btn btn-default ${this.checkIfActive() ? "open" : ""}`} onClick={()=> this.handleClick()}>
           {filterName} <i className="far fa-caret-down" />
         </button>
         {this.checkIfActive() &&

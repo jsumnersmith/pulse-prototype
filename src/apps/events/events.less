@@ -1,10 +1,30 @@
 @import '~@kickup/pulse-ui/src/css/globals.less';
+@import "~@kickup/pulse-style-tokens/less/globals.less";
 
 .meta { text-transform: uppercase; }
 
 .btn-group .btn { margin-right: 3px; }
 
 .wrapper--narrow { width: 960px; }
+
+//This is a fix for the WEIRD behavior on mobile.
+.search-box {
+  @media screen and (max-width: 660px) {
+    .input-group {
+      height: 38px !important;
+      border: 2px solid @grayLight;
+      transition: border .2s ease-in-out;
+      &:focus-within { border-color: @pulseBlue; }
+    }
+    input {
+      display: block;
+      font-size: 16px;
+      appearance: none;
+      box-shadow: none !important;
+      border: none;
+    }
+  }
+}
 
 .event-card {
   position: relative;
