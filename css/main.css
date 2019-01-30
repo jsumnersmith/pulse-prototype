@@ -12717,20 +12717,22 @@ strong {
 .wrapper--narrow {
   width: 960px;
 }
-.search-box .input-group {
-  height: 38px !important;
-  border: 2px solid #efefef;
-  transition: border 0.2s ease-in-out;
-}
-.search-box .input-group:focus-within {
-  border-color: #007da0;
-}
-.search-box input {
-  display: block;
-  font-size: 16px;
-  appearance: none;
-  box-shadow: none !important;
-  border: none;
+@media screen and (max-width: 660px) {
+  .search-box .input-group {
+    height: 38px !important;
+    border: 2px solid #efefef;
+    transition: border 0.2s ease-in-out;
+  }
+  .search-box .input-group:focus-within {
+    border-color: #007da0;
+  }
+  .search-box input {
+    display: block;
+    font-size: 16px;
+    appearance: none;
+    box-shadow: none !important;
+    border: none;
+  }
 }
 .event-card {
   position: relative;
@@ -13123,9 +13125,8 @@ strong {
 .filter-selector__search {
   display: block;
   padding: 10px;
-  margin-bottom: 5px;
   list-style: none;
-  height: 44px;
+  height: 56px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
