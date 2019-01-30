@@ -18,9 +18,9 @@ export default withRouter(({ match, history }) => (
       {({size}) =>
         size.width > 660 ?
         <ul className="ku-subnav">
-          <li className="ku-subnav__nav-item"><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
-          <li className="ku-subnav__nav-item"><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
-          <li className="ku-subnav__nav-item"><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/attendance` ? 'active' : '' }`}><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/approval` ? 'active' : '' }`}><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/attributes` ? 'active' : '' }`}><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
         </ul>
         :
         <select className="form-control" onChange={(e)=> history.push(e.target.value)}>
