@@ -23,7 +23,7 @@ export default withRouter(({ match, history }) => (
           <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/attributes` ? 'active' : '' }`}><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
         </ul>
         :
-        <select className="form-control" onChange={(e)=> history.push(e.target.value)}>
+        <select className="form-control" style={{fontSize: 16}} onChange={(e)=> history.push(e.target.value)}>
           <option value={`${match.url}/attendance`} selected={history.location.pathname === `${match.url}/attendance`}>Attendance</option>
           <option value={`${match.url}/approval`} selected={history.location.pathname === `${match.url}/approval`}>Approval</option>
           <option value={`${match.url}/attributes`} selected={history.location.pathname === `${match.url}/attributes`}>Attributes</option>
