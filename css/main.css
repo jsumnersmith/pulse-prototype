@@ -13245,6 +13245,10 @@ strong {
 .ku-subnav__nav-item:hover a:after {
   width: 75%;
 }
+.ku-subnav__nav-item.active a:after {
+  width: 75%;
+  background: #f49064;
+}
 .ku-subnav__nav-item a:after {
   content: "";
   display: block;
@@ -13252,7 +13256,7 @@ strong {
   margin-right: auto;
   height: 3px;
   width: 0%;
-  background: #ddd;
+  background: #d3d3d3;
   transition: width 0.1s ease-in-out;
 }
 /*---------------------------------------------------
