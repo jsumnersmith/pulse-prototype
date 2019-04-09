@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { withRouter, HashRouter as Router, Route, Link } from 'react-router-dom';
+import { SizeMe } from 'react-sizeme';
 import SubHeader from '../components/SubHeader';
 import AttendanceSummaryTable from '../components/AttendanceSummaryTable';
 import ApprovalTable from '../components/ApprovalTable';
@@ -9,14 +10,27 @@ import sampleEvents from '../components/sampleEvents';
 import '../events.less';
 import '../../../base/subnav.less';
 
-export default ({ match }) => (
+export default withRouter(({ match, history }) => (
   <div className="wrapper">
+    {console.log(history)}
     <SubHeader activeName="manage" admin={true}/>
-    <ul className="ku-subnav">
-      <li className="ku-subnav__nav-item"><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
-      <li className="ku-subnav__nav-item"><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
-      <li className="ku-subnav__nav-item"><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
-    </ul>
+    <SizeMe>
+      {({size}) =>
+        size.width > 660 ?
+        <ul className="ku-subnav">
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/attendance` ? 'active' : '' }`}><Link to={`${match.url}/attendance`} className="meta">Attendance</Link></li>
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/approval` ? 'active' : '' }`}><Link to={`${match.url}/approval`} className="meta">Approval</Link></li>
+          <li className={`ku-subnav__nav-item ${history.location.pathname === `${match.url}/attributes` ? 'active' : '' }`}><Link to={`${match.url}/attributes`} className="meta">Attributes</Link></li>
+        </ul>
+        :
+        <select className="form-control" style={{fontSize: 16}} onChange={(e)=> history.push(e.target.value)}>
+          <option value={`${match.url}/attendance`} selected={history.location.pathname === `${match.url}/attendance`}>Attendance</option>
+          <option value={`${match.url}/approval`} selected={history.location.pathname === `${match.url}/approval`}>Approval</option>
+          <option value={`${match.url}/attributes`} selected={history.location.pathname === `${match.url}/attributes`}>Attributes</option>
+        </select>
+      }
+
+    </SizeMe>
     <div className="row" style={{marginTop: 0}}>
       <Router>
         <div>
@@ -28,7 +42,7 @@ export default ({ match }) => (
       </Router>
     </div>
   </div>
-)
+));
 
 const ApprovalTableWrapper = () => (
   <div className="col-md-12" style={{marginBottom: 20}}>

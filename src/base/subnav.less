@@ -1,3 +1,5 @@
+@import "~@kickup/pulse-style-tokens/less/globals.less";
+
 .ku-subnav {
   display: flex;
   justify-content: flex-start;
@@ -19,6 +21,7 @@
 .ku-subnav__nav-item a { text-decoration: none; }
 .ku-subnav__nav-item a:hover{ text-decoration: none; }
 .ku-subnav__nav-item:hover a:after { width: 75%; }
+.ku-subnav__nav-item.active a:after { width: 75%; background: @orange; }
 
 .ku-subnav__nav-item a:after {
   content:"";
@@ -27,6 +30,6 @@
   margin-right: auto;
   height: 3px;
   width: 0%;
-  background: #ddd;
+  background: @grayMediumLight;
   transition: width .1s ease-in-out;
 }

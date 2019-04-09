@@ -23,6 +23,38 @@ const events = [
       {
         type: 'State',
         name: 'California - Southern'
+      },
+      {
+        type: 'State',
+        name: 'Pennsylvania'
+      },
+      {
+        type: 'State',
+        name: 'Oregon'
+      },
+      {
+        type: 'State',
+        name: 'New York'
+      },
+      {
+        type: 'State',
+        name: 'Massachusets'
+      },
+      {
+        type: 'State',
+        name: 'Washington'
+      },
+      {
+        type: 'State',
+        name: 'Alabama'
+      },
+      {
+        type: 'State',
+        name: 'Louisiana'
+      },
+      {
+        type: 'State',
+        name: 'Michigan'
       }
     ],
     attendees: [

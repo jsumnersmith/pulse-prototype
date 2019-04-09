@@ -1,10 +1,30 @@
 @import '~@kickup/pulse-ui/src/css/globals.less';
+@import "~@kickup/pulse-style-tokens/less/globals.less";
 
 .meta { text-transform: uppercase; }
 
 .btn-group .btn { margin-right: 3px; }
 
 .wrapper--narrow { width: 960px; }
+
+//This is a fix for the WEIRD behavior on mobile.
+.search-box {
+  @media screen and (max-width: 660px) {
+    .input-group {
+      height: 38px !important;
+      border: 2px solid @grayLight;
+      transition: border .2s ease-in-out;
+      &:focus-within { border-color: @pulseBlue; }
+    }
+    input {
+      display: block;
+      font-size: 16px;
+      appearance: none;
+      box-shadow: none !important;
+      border: none;
+    }
+  }
+}
 
 .event-card {
   position: relative;
@@ -203,6 +223,35 @@
   }
   h2,  .nav { display: inline-block; }
   .nav { width: ~"calc(100% - 155px)"; text-align: right;}
+
+  //Mobile Events Nav Testing
+  @media screen and (max-width: 660px) {
+    h2 { display: none; }
+    .nav {
+      margin-top: 0;
+      display: block;
+      width: 100%;
+      text-align: left;
+      .btn { display: block; width: 100%; margin-top: 10px; }
+    }
+    .nav-links > li {
+      width: 50%;
+      .nav-link {
+        text-align:center;
+        padding: 20px 10px;
+        &:hover:after { width: 0; }
+        &:hover,
+        &:focus {
+          background: fadeout(@gray-dark, 95%);
+        }
+      }
+      &.active .nav-link {
+        &:after { width: 0 !important; }
+        background: fadeout(@orange, 85%)
+      }
+    }
+
+  }
 }
 
 .event-list-advanced-search-toggle {

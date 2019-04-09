@@ -5,6 +5,9 @@ import ReportBuilder from './apps/reportBuilder/';
 import TagList from './apps/tags';
 import AttributeEditor from './apps/attributes';
 
+//Events - Navigation Testing
+import EventsNav from './apps/events/navigation';
+
 //Events - Admin User
 import AdminEvents from './apps/events/admin';
 import AdminBrowseEvents from './apps/events/admin/Browse';
@@ -13,7 +16,8 @@ import AdminEvent from './apps/events/admin/Event';
 import AdminCreate from './apps/events/admin/Create';
 import AdminEdit from './apps/events/admin/Edit';
 import AdminSubmittedEvent from './apps/events/admin/SubmittedEvent';
-import AdminSignupSheet from './apps/events/admin/SignupSheet'
+import AdminSignupSheet from './apps/events/admin/SignupSheet';
+import AdminLog from './apps/events/admin/Log';
 
 //Events - Normal User
 import UserEvents from './apps/events/user';
@@ -86,6 +90,13 @@ export default [
     linkName: "Events",
     parent: 'Apps',
     path: '/events/',
+    exact: true
+  },
+  {
+    component: EventsNav,
+    linkName: "Events - Navigation",
+    parent: 'Apps',
+    path: '/events/nav/',
     exact: true
   },
   {
@@ -315,6 +326,10 @@ export default [
   {
     component: UserManageEvents,
     path: '/events/manage'
+  },
+  {
+    component: AdminLog,
+    path: '/events/admin/log'
   },
   {
     component: UserEvent,
