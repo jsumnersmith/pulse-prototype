@@ -51,8 +51,7 @@ const Wrapper = styled.div`
      * When menu is closed, hide it but continue rendering it in case
      * any of its children have created portals (such as modals)
      */
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 `;
 

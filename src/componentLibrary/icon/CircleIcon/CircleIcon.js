@@ -33,12 +33,14 @@ const CircleIcon = ({
     icon={icon}
     iconWeight={iconWeight}
     css={`
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-      border-radius: 50%;
-      ${p => sizeLookup[p.size]}
-      flex-shrink: 0;
+      && {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 50%;
+        ${p => sizeLookup[p.size]}
+        flex-shrink: 0;
+      }
     `}
   />
 );
