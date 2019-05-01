@@ -53,6 +53,8 @@ import DirectoryGroupEdit from './apps/directory/EditGroup.js'
 import DirectoryUpload from './apps/directory/Upload.js'
 import DirectoryInvite from './apps/directory/Invite.js'
 
+import Onboarding from './apps/onboarding/';
+
 // Components
 import Visualizations from './components/visualizations';
 import LoadingStates from './components/loadingStates';
@@ -232,6 +234,12 @@ export default [
   {
     component: DirectoryInvite,
     path: '/directory/invite'
+  },
+  {
+    component: Onboarding,
+    linkName: "Onboarding",
+    parent: 'Apps',
+    path: '/onboarding'
   },
   {
     component: Visualizations,
