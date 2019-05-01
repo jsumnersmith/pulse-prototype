@@ -1,9 +1,7 @@
 import React from 'react';
 import './onboarding.less';
-import tokens from '@kickup/pulse-style-tokens';
 import logo from '../../images/logo.png';
 
-import { ContentBlock } from '../../componentLibrary/layout';
 import { TextInput  } from '../../componentLibrary/input';
 import  { Label, Paragraph } from '../../componentLibrary/text';
 import  { Button } from '../../componentLibrary/button';
