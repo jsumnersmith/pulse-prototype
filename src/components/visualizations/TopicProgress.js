@@ -193,7 +193,6 @@ class TopicProgress extends Component {
 class LineGraphLabel extends Component {
   render() {
     const {x, y, datum } = this.props;
-    console.log(this.props);
     return (
       <text y={y} x={x-8} fontSize={10} fontWeight={700}>{datum.y}%</text>
     )
