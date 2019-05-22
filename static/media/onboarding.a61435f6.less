@@ -1,0 +1,9 @@
+var escape = require("../../../node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = require("../../../node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.id, ".data-mountains {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 300px;\n  max-height: 10vh;\n  background-image: url(" + escape(require("../../Mountains-Teal.png")) + ");\n  background-size: cover;\n}\n", ""]);
+
+// exports

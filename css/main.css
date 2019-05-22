@@ -1032,7 +1032,7 @@ label,
   font-weight: 700;
   color: #333;
   letter-spacing: 1px;
-  font-size: 11px;
+  font-size: 12px;
   color: #007DA0;
   padding-left: 3px;
 }
@@ -12983,7 +12983,9 @@ strong {
   .event-header .nav .btn {
     display: block;
     width: 100%;
-    margin-top: 10px;
+  }
+  .event-header .nav-links {
+    margin-top: -20px;
   }
   .event-header .nav-links > li {
     width: 50%;
@@ -14928,6 +14930,16 @@ tr:nth-child(2n) td.fixed-column {
   flex-grow: 1;
   width: 100%;
   padding: 10px 20px 20px;
+}
+.data-mountains {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  max-height: 10vh;
+  background-image: url(./static/media/Mountains-Teal.b7fc1c9d.png);
+  background-size: cover;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
