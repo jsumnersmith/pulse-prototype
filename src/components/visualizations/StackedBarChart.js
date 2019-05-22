@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContentBlock } from '../../componentLibrary/layout'
 import tokens from '@kickup/pulse-style-tokens';
-import { VictoryChart, VictoryStack, VictoryBar, VictoryAxis, VictoryGroup} from 'victory';
+import { VictoryChart, VictoryStack, VictoryBar, VictoryAxis } from 'victory';
 import { random } from 'lodash';
 import {colors} from '@kickup/pulse-ui/src/deprecated';
 
