@@ -23,23 +23,14 @@
     "moment": "^2.18.1",
     "papaparse": "^4.5.0",
     "plotly.js": "^1.32.0",
-<<<<<<< HEAD
     "prop-types": "^15.7.2",
     "react": "^16.3.x",
-=======
-    "prop-types": "^15.5.10",
-    "react": "16.x.x",
->>>>>>> master
     "react-bootstrap-modal": "^4.0.0",
     "react-collapsible": "^2.2.0",
     "react-datepicker": "^0.47.0",
     "react-day-picker": "^5.5.3",
     "react-debounce-input": "^3.1.0",
-<<<<<<< HEAD
     "react-dom": "^16.3.x",
-=======
-    "react-dom": "16.x.x",
->>>>>>> master
     "react-dropzone": "^4.2.11",
     "react-plotlyjs": "^0.4.4",
     "react-portal": "^4.1.0",
@@ -47,14 +38,10 @@
     "react-sizeme": "^2.5.2",
     "react-sortable-hoc": "^0.6.7",
     "react-toggle": "^4.0.2",
-<<<<<<< HEAD
     "react-transition-group": "^4.0.0",
     "rebass": "^3.1.0",
     "styled-components": "^4.x.x",
-=======
-    "styled-components": "^3.4.9",
     "terser": "^4.0.0",
->>>>>>> master
     "text-ellipsis": "^1.0.3",
     "timedstorage": "^1.1.0",
     "victory": "^0.24.5",
