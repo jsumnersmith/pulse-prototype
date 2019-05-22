@@ -5,7 +5,7 @@ import tokens from '@kickup/pulse-style-tokens';
 const Input = styled.input`
   width: 100%;
   font-size: ${tokens.typography.baseFontSize}px;
-  font-weight: ${tokens.typography.fontWeight.bold};
+  font-weight: ${tokens.typography.fontWeights.bold};
   padding: 8px 10px;
   border: solid 2px ${tokens.colors.grayMediumLight};
   transition: border .1s ease-in-out;
