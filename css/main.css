@@ -15553,6 +15553,10 @@ fieldset[disabled] .btn {
 .ku-navigation {
   position: fixed;
   height: 100vh;
+  left: -1000px;
+}
+.ku-navigation.active {
+  transform: translateX(1000px);
 }
 .ku-navigation .cl-navblock {
   height: 100%;
@@ -15600,10 +15604,13 @@ fieldset[disabled] .btn {
 /*social colors*/
 /*Functions*/
 /* Rating Colors */
+body {
+  padding-top: 0 !important;
+}
 .ku-header {
   position: relative;
   z-index: 4;
-  display: flex;
+  display: none;
   background-repeat: no-repeat;
   background-size: 125px auto;
   background-position: center center;
@@ -15657,7 +15664,7 @@ fieldset[disabled] .btn {
     text-align: left;
     padding-left: 25px;
     display: inline-block;
-    width: calc(100% - 110.8px);
+    width: calc(100% - 114px);
   }
 }
 .ku-header-logo img {
