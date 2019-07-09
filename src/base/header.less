@@ -1,9 +1,11 @@
 @import '~@kickup/pulse-ui/src/css/globals.less';
 
+body { padding-top: 0 !important; }
+
 .ku-header {
   position: relative;
   z-index: 4;
-  display: flex;
+  display: none;
   background-repeat: no-repeat;
   background-size: 125px auto;
   background-position: center center;
@@ -52,7 +54,7 @@
     text-align: left;
     padding-left: 25px;
     display: inline-block;
-    width: ~"calc(100% - 110.8px)";
+    width: ~"calc(100% - 114px)";
   }
 }
 .ku-header-logo img { max-width: 125px;}

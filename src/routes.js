@@ -55,6 +55,8 @@ import DirectoryInvite from './apps/directory/Invite.js'
 
 import Onboarding from './apps/onboarding/';
 
+import MobileForms from './apps/mobileForms';
+
 // Components
 import Visualizations from './components/visualizations';
 import LoadingStates from './components/loadingStates';
@@ -247,6 +249,13 @@ export default [
     parent: 'Components',
     path: '/visualizations/',
     exact: true
+  },{
+    component: MobileForms,
+    linkName: "Mobile Forms",
+    parent: 'Components',
+    path: '/mobile-forms/',
+    exact: true,
+    header: false
   },
   {
     component: NameCreator,
