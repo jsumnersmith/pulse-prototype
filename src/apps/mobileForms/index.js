@@ -44,7 +44,7 @@ export default () => (
     </Section>
     <Section
       headingText="Make some Choices"
-      headingIcon="list-alt"
+      headingIcon="stream"
       subtitle="2 min"
     >
       <Fieldset>
@@ -68,7 +68,7 @@ export default () => (
       subtitle="6 min"
     >
       <Fieldset>
-        <Label>What is your preference?</Label>
+        <Label>How do you feel about sandwiches?</Label>
         <Matrix
           choices={['PB&J', 'Turkey Club', 'Chicken Salad', 'Falafel']}
           rubric={["Hate", "Dislike", "Neutral", "Like", "Love"]}

@@ -16,13 +16,7 @@ const Textarea = styled.textarea`
   transition: all .2s ease-in-out;
   resize: none;
   &:focus, &:active {
-    border-image-source: linear-gradient(
-      90deg,
-      ${({theme}) => chroma(theme.colors.orange).alpha(.6).css()},
-      ${({theme}) => chroma(theme.colors.gold).alpha(.6).css()},
-      ${({theme}) => chroma(theme.colors.teal).alpha(.6).css()}
-    );
-    border-image-slice: 1;
+    border-color: ${({theme}) => theme.colors.blue};
     background: ${({theme}) => `${chroma(theme.colors.blue).alpha(.1).css()}`};
   }
 `

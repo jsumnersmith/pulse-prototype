@@ -13,14 +13,8 @@ const Input = styled.input`
   background: ${({theme}) => theme.colors.grayLight};
   transition: all .2s ease-in-out;
   &:focus, &:active {
-    border-image-source: linear-gradient(
-      90deg,
-      ${({theme}) => chroma(theme.colors.orange).alpha(.6).css()},
-      ${({theme}) => chroma(theme.colors.gold).alpha(.6).css()},
-      ${({theme}) => chroma(theme.colors.teal).alpha(.6).css()}
-    );
-    border-image-slice: 1;
-    background: ${({theme}) => `${chroma(theme.colors.teal).alpha(.1).css()}`};
+    border-color: ${({theme}) => theme.colors.blue};
+    background: ${({theme}) => `${chroma(theme.colors.blue).alpha(.1).css()}`};
   }
 `;
 
