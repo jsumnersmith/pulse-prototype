@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import chroma from 'chroma-js';
+// import chroma from 'chroma-js';
 
 import { Icon } from '../../../componentLibrary/icon';
 import { Paragraph } from '../../../componentLibrary/text';
@@ -54,7 +54,7 @@ const Option = styled.label`
     border-color:  ${({theme}) => `${theme.colors.blue}`}
   }
   input:focus ~ i {
-    box-shadow: ${({theme}) => `0 0 5px  ${theme.colors.gold}` };
+    box-shadow: ${({theme}) => `0 0 5px  ${theme.colors.gold}`};
 `;
 
 const List = styled.ul`
