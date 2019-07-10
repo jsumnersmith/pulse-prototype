@@ -7,7 +7,6 @@ import { Paragraph } from '../../../componentLibrary/text';
 
 const Option = styled.label`
   position: relative;
-
   display: flex;
   align-items: center;
   cursor:pointer;
@@ -18,9 +17,9 @@ const Option = styled.label`
   text-transform: none;
   letter-spacing: 0px;
   transition: all .2s ease-in-out;
+  border: ${({theme}) => `solid ${theme.colors.grayLight} ${theme.space[1]}px`};
   &:checked { background: red; }
   &:hover, &:focus, &:active {
-    border-color: ${({theme}) => `${theme.colors.blue}`};
     background: ${({theme}) => `${theme.colors.grayLight}`};
   }
   > *:not(.background) { display: relative; z-index: 1; }
@@ -54,7 +53,7 @@ const Option = styled.label`
     border-color:  ${({theme}) => `${theme.colors.blue}`}
   }
   input:focus ~ i {
-    box-shadow: ${({theme}) => `0 0 5px  ${theme.colors.gold}`};
+    box-shadow: ${({theme}) => `0 0 5px  ${theme.colors.blue}`};
 `;
 
 const List = styled.ul`

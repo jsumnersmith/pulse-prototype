@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import chroma from 'chroma-js';
 import MediaQuery from 'react-responsive'
+import { Paragraph } from '../../../componentLibrary/text';
 
 const Option = styled.label`
   width: 100%;
-  text-align: center;
+  height: 100%;
+  display: ${({longRubric}) => longRubric ? `flex` : `block` };
+  flex-grow: 1;
+  text-align: ${({longRubric}) => longRubric ? `left` : `center` };
   cursor:pointer;
   color: ${({theme}) => `${theme.colors.grayDark}`};
   text-transform: none;
@@ -61,32 +65,42 @@ const Row = styled.div`
 `;
 
 const DescriptionCell = styled.div`
-  display: table-cell;
-  padding: 0;
+  display: ${({longRubric})=> longRubric ? `block` : `table-cell`};
+  padding: ${(p) => p.longRubric ? `${p.theme.space[2]}px` : `0`};
+  margin-top: ${(p) => p.longRubric ? `${p.theme.space[4]}px` : `0`};
   border: none !important;
+  min-width: 200px;
+  vertical-align: middle;
   @media (max-width: 760px) {
     display: block;
     padding: ${({theme}) => theme.space[2]}px;
   }
 `
 const OptionGroup = styled.div`
-  display: table-row;
+  display: flex;
+  vertical-align: top;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
   @media (max-width: 760px) {
-    display: flex;
-    width: 100%;
+    display: ${({longRubric}) => longRubric ? `block` : `flex` };
+    max-width: ${({longRubric}) => longRubric ? `100% !important` : `inherit` };
+    border-left: ${({theme}) => `solid ${chroma(theme.colors.blue).alpha(.3).css()} ${theme.space[2]}px`};
+    padding-left: ${({theme}) => theme.space[3]}px;
   }
   @media (max-width: 500px) {
     display: block;
   }
 `
 const OptionCell = styled.div`
-  display: table-cell;
+  display: ${({longRubric})=> longRubric ? `flex` : `table-cell`};
+  vertical-align: top;
   padding: 0;
   border: none !important;
+  align-self: stretch;
+  flex-grow: 1;
   @media (max-width: 760px) {
     display: flex;
-    align-self: stretch;
-    flex-grow: 1;
   }
   @media (max-width: 500px) {
     display: block;
@@ -94,35 +108,39 @@ const OptionCell = styled.div`
   }
 `
 
-const MatrixItem = ({label, rubric, name}) => (
+const MatrixItem = ({label, rubric, name, longRubric}) => (
   <Row>
-    <DescriptionCell>{label}</DescriptionCell>
-    <MediaQuery maxWidth={759}><OptionGroup>
+    <DescriptionCell longRubric={longRubric}><Paragraph fontWeight="bold">{label}</Paragraph></DescriptionCell>
+    <MediaQuery maxWidth={759}>
+      {(matches) =>
+        matches || longRubric ?
+          <OptionGroup longRubric={longRubric}>
+          {
+            rubric.map((item, index) => <OptionCell longRubric={longRubric} style={{maxWidth: `${matches ? 100 : 100 / rubric.length}%`}}><RubricItem key={item + index} rubricText={item} name={name + label} longRubric={longRubric}/></OptionCell>)
+          }
+        </OptionGroup>
+      :
+      <React.Fragment>
         {
-          rubric.map((item, index) => <OptionCell><RubricItem key={item + index} rubricText={item} name={name + label}/></OptionCell>)
-        }
-      </OptionGroup>
-    </MediaQuery>
-    <MediaQuery minWidth={760}>
-      {
         rubric.map((item, index) => <OptionCell><RubricItem key={item + index} rubricText={item} name={name + label}/></OptionCell>)
+        }
+      </React.Fragment>
       }
     </MediaQuery>
   </Row>
-
 );
 
-const RubricItem = ({rubricText, name}) => (
-  <Option>
+const RubricItem = ({rubricText, name, longRubric}) => (
+  <Option longRubric={longRubric}>
     <input type="radio" id={rubricText} name={name} />
     <OptionWrapper>
-      {rubricText}
+      <Paragraph>{rubricText}</Paragraph>
     </OptionWrapper>
   </Option>
 )
 
-export default ({choices = [], ...props, rubric=[], name="default"}) => (
+export default ({choices = [], ...props, rubric=[], name="default", longRubric = false}) => (
   <Matrix {...props}>
-    {choices.map((choiceText,index) => <MatrixItem key={`choice-${index}`} label={choiceText} rubric={rubric} name={name}/>)}
+    {choices.map((choiceText,index) => <MatrixItem key={`choice-${index}`} label={choiceText} rubric={rubric} name={name} longRubric={longRubric}/>)}
   </Matrix>
 );

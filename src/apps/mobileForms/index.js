@@ -5,6 +5,8 @@ import { Heading, Paragraph } from '../../componentLibrary/text';
 
 import { Fieldset, Input, Label, Matrix,  MultiChoice, Section, Textarea, Wrapper } from './components/';
 
+import { longRubrics } from '../formBuilder/components/rubricData';
+
 export default () => (
   <Wrapper>
     <Section noBorder>
@@ -82,6 +84,28 @@ export default () => (
           rubric={["Yes", "No"]}
           name="worldRuler-again"
         />
+      </Fieldset>
+      <Fieldset>
+        <Label>Would you like to answer a long question?</Label>
+        <Matrix
+          choices={['Students use strategies and skills that were previously modeled.']}
+          longRubric
+          name="long-test"
+          rubric={longRubrics[0].rubrics}
+         />
+         <Matrix
+          choices={['Students ask criticial questions of each other and evaluate each others responses.']}
+          longRubric
+          name="long-test-2"
+          rubric={longRubrics[1].rubrics}
+
+         />
+         <Matrix
+          choices={['Students are engaged in meaningful activity.']}
+          longRubric
+          name="long-test-3"
+          rubric={longRubrics[2].rubrics}
+         />
       </Fieldset>
     </Section>
     <Section noBorder>
