@@ -15619,11 +15619,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 660px) {
-  .ku-header {
-    display: block;
-  }
-}
 .ku-header {
   position: fixed;
   top: 0;
