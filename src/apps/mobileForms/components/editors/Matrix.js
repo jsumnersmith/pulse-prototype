@@ -5,7 +5,10 @@ import './adding-table.less';
 
 import { Button } from '../../../../componentLibrary/button';
 import { Paragraph } from '../../../../componentLibrary/text';
+import { Icon } from '../../../../componentLibrary/icon';
 import { TextInput } from '../../../../componentLibrary/input';
+
+import Label from '../Label';
 
 const values =[ 'PB&J', 'Turkey Club', 'Chicken Salad', 'Falafel' ]
 
@@ -13,14 +16,17 @@ const options = [ "Hate", "Dislike", "Neutral", "Like", "Love" ]
 
 export default ({onSave}) => (
   <div>
-    <Paragraph>Prompt</Paragraph>
+    <Label>Prompt</Label>
     <TextInput mb={3} value="How do you feel about sandwiches?"/>
+
+    <Label>Group Name <Icon icon="info-circle" color="orange" iconWeight="solid" /></Label>
+    <TextInput mb={3} value="Sandwich Preferences"/>
 
     <div style={{display: 'flex'}}>
       <div style={{flexGrow: 1, marginRight: 10}}>
-        <Paragraph>Question Rows</Paragraph>
+        <Label>Question Rows</Label>
         <SortableComponent
-          headings={['Question Text']}
+          headings={['']}
           rows={values.map((value)=>{
             return {
               columns: [
@@ -33,9 +39,9 @@ export default ({onSave}) => (
         />
       </div>
       <div style={{flexGrow: 1, marginLeft: 10}}>
-        <Paragraph>Option Columns</Paragraph>
+        <Label>Option Columns</Label>
         <SortableComponent
-          headings={['Option Text']}
+          headings={['']}
           rows={options.map((option)=>{
             return {
               columns: [

@@ -71,21 +71,27 @@ export default () => {
         headingText="Rate some options"
         headingIcon="shapes"
         subtitle="6 min"
+        noBorder
       >
       </Section>
       {edit ?
-        <Section editing>
-          <Fieldset>
-            <Label>Would you like to answer a long question?</Label>
-            <MatrixEditor
-              choices={['Students ask criticial questions of each other and evaluate each others responses.']}
-              longRubric
-              name="long-test-2"
-              rubric={longRubrics[1].rubrics}
-              onSave={()=> setEdit()}
-            />
-          </Fieldset>
-        </Section>
+        <div style={{position: 'relative', zIndex: 99999}}>
+          <Section
+            editing
+            headingText="Matrix Question"
+            headingIcon="table"
+          >
+            <Fieldset>
+              <MatrixEditor
+                choices={['Students ask criticial questions of each other and evaluate each others responses.']}
+                longRubric
+                name="long-test-2"
+                rubric={longRubrics[1].rubrics}
+                onSave={()=> setEdit()}
+              />
+            </Fieldset>
+          </Section>
+        </div>
         :
         <Section noBorder>
           <Fieldset>
@@ -101,7 +107,7 @@ export default () => {
           </Fieldset>
         </Section>
       }
-      <Section noBorder>
+      <Section>
         <Fieldset>
           <Label>Who rules the world?</Label>
           <Matrix
@@ -133,9 +139,7 @@ export default () => {
           />
         </Fieldset>
       </Section>
-      <div style={{position: 'relative', zIndex: 99999}}>
 
-      </div>
       <Section noBorder>
         <Button
           block
