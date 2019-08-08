@@ -17,10 +17,10 @@ const Option = styled.label`
   text-transform: none;
   letter-spacing: 0px;
   transition: all .2s ease-in-out;
-  border: ${({theme}) => `solid ${theme.colors.grayLight} ${theme.space[1]}px`};
+  background: ${({theme}) => `${theme.colors.grayLight}`};
   &:checked { background: red; }
   &:hover, &:focus, &:active {
-    background: ${({theme}) => `${theme.colors.grayLight}`};
+    background: ${({theme}) => `${theme.colors.grayMediumLight}`};
   }
   > *:not(.background) { display: relative; z-index: 1; }
   input {

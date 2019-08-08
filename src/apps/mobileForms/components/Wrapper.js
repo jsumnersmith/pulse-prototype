@@ -25,11 +25,11 @@ const Wrapper = styled.div`
 `;
 
 const Inner = styled.div`
-  width: 760px;
-  max-width: 97%;
-  padding: ${({theme})=> theme.space[5]}px;
+  position: relative;
+  z-index: 0;
   margin: ${({theme})=>theme.space[7]}px auto;
-  background: ${({theme})=> theme.colors.white};
+  padding-top: ${({theme})=> theme.space[5]}px;
+  padding-bottom: ${({theme})=> theme.space[5]}px;
   @media (max-width: 500px) {
     padding-left: 0;
     padding-right: 0;
