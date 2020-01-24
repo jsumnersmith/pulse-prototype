@@ -59,6 +59,9 @@ export default class RubricColors extends Component {
           <div className="rubric-color-wrapper">
             {_.map(this.getBlocks(10), (block) => block)}
           </div>
+          <div className="rubric-color-wrapper">
+            {_.map(this.getBlocks(20), (block) => block)}
+          </div>
         </div>
       </div>
     );

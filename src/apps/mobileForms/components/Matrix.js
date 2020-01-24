@@ -24,8 +24,11 @@ const Option = styled.label`
 `;
 
 const OptionWrapper = styled.div`
+  display:flex;
+  align-items: center;
   padding: ${({theme}) => theme.space[4]}px;
   border: ${({theme}) => `solid ${theme.colors.grayLight} ${theme.space[1]}px`};
+  height: 100%;
   &:hover {
     background: ${({theme}) => `${theme.colors.grayLight}`};
     border-color: ${({theme}) => `${theme.colors.grayMediumLight}`};
@@ -93,11 +96,10 @@ const OptionGroup = styled.div`
   }
 `
 const OptionCell = styled.div`
-  display: ${({longRubric})=> longRubric ? `flex` : `table-cell`};
+  display: flex;
   vertical-align: top;
   padding: 0;
   border: none !important;
-  align-self: stretch;
   flex-grow: 1;
   @media (max-width: 760px) {
     display: flex;
@@ -107,6 +109,16 @@ const OptionCell = styled.div`
     text-align: left;
   }
 `
+const OptionCells = styled.div`
+  display: table-cell;
+  min-width: 75%;
+`
+
+const OptionCellsInner = styled.div`
+  display: flex;
+  align-items: stretch;
+`
+
 
 const MatrixItem = ({label, rubric, name, longRubric}) => (
   <Row>
@@ -120,11 +132,13 @@ const MatrixItem = ({label, rubric, name, longRubric}) => (
           }
         </OptionGroup>
       :
-      <React.Fragment>
-        {
-        rubric.map((item, index) => <OptionCell><RubricItem key={item + index} rubricText={item} name={name + label}/></OptionCell>)
-        }
-      </React.Fragment>
+      <OptionCells>
+        <OptionCellsInner>
+          {
+            rubric.map((item, index) => <OptionCell><RubricItem key={item + index} rubricText={item} name={name + label}/></OptionCell>)
+          }
+        </OptionCellsInner>
+      </OptionCells>
       }
     </MediaQuery>
   </Row>

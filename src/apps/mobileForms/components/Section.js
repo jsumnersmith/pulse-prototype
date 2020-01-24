@@ -5,7 +5,7 @@ import { ContentBlock } from '../../../componentLibrary/layout/';
 
 const Section = styled(ContentBlock)`
   position: relative;
-  width: ${({editing}) => editing ? 960 : 760 }px;
+  width: ${({editing}) => editing ? 960 : 860 }px;
   max-width: 97%;
   margin: 0 auto;
   background: ${({theme}) => theme.colors.white};

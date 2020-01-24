@@ -98,8 +98,14 @@ export default () => {
 
               <Label>How do you feel about sandwiches?</Label>
               <Matrix
-                choices={['PB&J', 'Turkey Club', 'Chicken Salad', 'Falafel']}
-                rubric={["Hate", "Dislike", "Neutral", "Like", "Love"]}
+                choices={[
+                  'I can and will use the content and strategies from this professional learning experience in my work.',
+                  'I believe the content and strategies from this professional learning will have a positive impact on student achievement.',
+                  'The objectives of this professional learning session were clear and met.',
+                  'This professional learning has increased my knowledge and understanding.',
+                  'The presenter(s) constructed engaging activities and processes that contributed to a positive learning environment.',
+                  'I felt valued as a professional throughout this experience.']}
+                rubric={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
                 name="other-sandwiches"
               />
               <Button size="sm" onClick={setEdit}>Show Edit View</Button>
